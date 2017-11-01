@@ -20,5 +20,5 @@ const server = http.createServer(function(req, res) {
   }
 });
 
-console.log('listening on 3333');
-server.listen(3333);
+console.log('listening on 3000');
+server.listen(3000);
