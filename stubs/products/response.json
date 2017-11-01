@@ -1,0 +1,72 @@
+{
+  "data": [
+    {
+      "id": "1",
+      "title": "Barclays 5% mega ultimate best deal",
+      "brand": "Barclays",
+      "columns": [
+        {
+          "label": "Min Deposit",
+          "value": "£100"
+        },
+        {
+          "label": "Interest Rate",
+          "value": "3%"
+        },
+        {
+          "label": "Monthly Fee",
+          "value": "£5"
+        }
+      ],
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean bibendum facilisis condimentum. Donec laoreet porttitor condimentum. Nulla luctus efficitur magna, eget rhoncus metus placerat sed.",
+      "highlighted_points": [
+        "Complete online application",
+        "Mobile app",
+        "Customer service winner"
+      ],
+      "technical_points": [
+        "1.5% Early Repayment",
+        "6 months cool off peroid",
+        "No monthly fee for existing customers"
+      ],
+      "links": {
+        "logo": "https://b2bfinance.com/images/partners/ATOM.png",
+        "apply": "https://b2bfinance.com/enquire/buy-to-let"
+      }
+    },
+    {
+      "id": "2",
+      "title": "Barclays 5% mega ultimate best deal",
+      "brand": "Barclays",
+      "columns": [
+        {
+          "label": "Min Deposit",
+          "value": "£100"
+        },
+        {
+          "label": "Interest Rate",
+          "value": "3%"
+        },
+        {
+          "label": "Monthly Fee",
+          "value": "£5"
+        }
+      ],
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean bibendum facilisis condimentum. Donec laoreet porttitor condimentum. Nulla luctus efficitur magna, eget rhoncus metus placerat sed.",
+      "highlighted_points": [
+        "Complete online application",
+        "Mobile app",
+        "Customer service winner"
+      ],
+      "technical_points": [
+        "1.5% Early Repayment",
+        "6 months cool off peroid",
+        "No monthly fee for existing customers"
+      ],
+      "links": {
+        "logo": "https://b2bfinance.com/images/partners/ATOM.png",
+        "apply": "https://b2bfinance.com/enquire/buy-to-let"
+      }
+    }
+  ]
+}
