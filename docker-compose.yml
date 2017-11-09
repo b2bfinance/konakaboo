@@ -5,5 +5,6 @@ services:
     build:
       context: ./stubs/products
     ports:
-      - 3000:3000
-
+      - 3333:3000
+    volumes:
+      - ./stubs/products:/app
