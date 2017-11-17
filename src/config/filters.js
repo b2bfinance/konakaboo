@@ -3,7 +3,6 @@ export function buyToLetInitialState() {
     {
       title: 'Maximum LTV',
       multiChoice: false,
-      filterKey: 'ltv',
       choices: [
         {
           label: '60% LTV +',
@@ -16,6 +15,7 @@ export function buyToLetInitialState() {
         {
           label: '80% LTV +',
           value: 80,
+          chosen: true,
         },
         {
           label: '85% LTV +',
@@ -30,11 +30,11 @@ export function buyToLetInitialState() {
     {
       title: 'Initial Rate Type',
       multiChoice: true,
-      filterKey: 'rateType',
       choices: [
         {
           label: 'Fixed',
           value: 'FIXED',
+          chosen: true,
         },
         {
           label: 'Variable',

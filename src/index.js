@@ -8,12 +8,7 @@ import createStore from './store';
 import { ThemeProvider } from 'styled-components';
 import { setStore } from './api';
 
-const globalState = window.PRODUCTS_INITIAL_STATE || {};
-
-const store = createStore({
-  config: globalState.config,
-  theme: globalState.theme,
-});
+const store = createStore(window.B2B_EMBED_STATE || {});
 
 const { theme } = store.getState();
 

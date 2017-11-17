@@ -1,54 +1,53 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { loadProducts } from '../../actions/products';
 import Product from './Product';
+import styled from 'styled-components';
+
+const StyledProductError = styled.div`
+  background-color: #ff9800;
+  color: #fff;
+  padding: 1rem;
+`
+
+const ProductError = () => (
+  <StyledProductError>
+    We had problems retrieving products for you, retry or come back later.
+  </StyledProductError>
+)
 
 class ProductList extends Component {
-  componentDidMount() {
-    const { hasFiltered, dispatch } = this.props;
-
-    if (hasFiltered) {
-      dispatch()
-    } else {
-      dispatch(loadProducts());
-    }
-  }
-
   render() {
-    const { products } = this.props;
+    const { error, isFetching, hasItems, items } = this.props;
 
-    if (!products) {
+    if (isFetching) {
       return (
         <div>Loading...</div>
       );
     }
 
-    if (!products.length === 0) {
+    if (error) {
+      return (<ProductError />)
+    }
+
+    if (!hasItems) {
       return (
-        <div>Products</div>
+        <div>No products </div>
       );
     }
 
     return (
-      <div>
-        {
-          products.map(product => (
-            <Product key={product.id} product={product}></Product>
-          ))
-        }
-      </div>
+      items.map(product => (
+        <Product key={product.id} product={product}></Product>
+      ))
     );
   }
 }
 
-const mapStateToProps = (state) => {
-  const { filters, products } = state;
-
-  return {
-    hasFiltered: filters.hasFiltered,
-    isFetching: products.isFetching,
-    products: products.items,
-  };
-};
+const mapStateToProps = ({products}) => ({
+  error: products.error,
+  items: products.items,
+  isFetching: products.isFetching,
+  hasItems: products.items.length > 0,
+});
 
 export default connect(mapStateToProps)(ProductList);

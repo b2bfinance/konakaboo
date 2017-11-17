@@ -4,6 +4,7 @@
       "id": "1",
       "title": "Barclays 5% mega ultimate best deal",
       "brand": "Barclays",
+      "highlighted": true,
       "columns": [
         {
           "label": "Min Deposit",
@@ -20,7 +21,7 @@
       ],
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean bibendum facilisis condimentum. Donec laoreet porttitor condimentum. Nulla luctus efficitur magna, eget rhoncus metus placerat sed.",
       "highlighted_points": [
-        "Complete online application",
+        "Online Application",
         "Mobile app",
         "Customer service winner"
       ],
@@ -38,6 +39,7 @@
       "id": "2",
       "title": "Barclays 5% mega ultimate best deal",
       "brand": "Barclays",
+      "highlighted": false,
       "columns": [
         {
           "label": "Min Deposit",

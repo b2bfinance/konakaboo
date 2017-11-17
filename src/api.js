@@ -4,20 +4,25 @@ export function setStore(storeObj) {
   store = storeObj;
 }
 
+function formatFilters(filters) {
+
+}
+
 function getProvider() {
-  const { config, products } = store.getState();
-  return `${config.provider}${products.type}`;
+  const { config, filters } = store.getState();
+
+  if (filters.selectedCount > 0) {
+    return `${config.provider}?query=${formatFilters(filters)}`;
+  }
+
+  return config.provider;
 }
 
 const api = {
-  getProducts() {
-    return fetch(getProvider()).then(res => res.json());
+  async getProducts(filters) {
+    const products = await fetch(getProvider());
+    return products.json();
   },
-
-  getProductsWithFilters() {
-    const { filters } = store.getState();
-    return api.getProducts(`${getProvider()}?query={${filters}}`);
-  }
 }
 
 export default api;

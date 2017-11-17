@@ -1,27 +1,21 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import style from 'styled-components';
-
-const FilterGroup = style.ul`
-  list-style: none;
-  margin: 0;
-  padding: 0;
-`;
+import Filter from './Filter';
 
 class FilterList extends Component {
   render() {
-    const { filters } = this.props;
+    const { groups } = this.props;
 
     return (
-      <div>
-      {
-        filters.map(filter => (
-          <div>{filter.title}</div>
-        ))
-      }
-      </div>
+      groups.map((filter, i) => (
+        <Filter key={i} filter={filter} groupIndex={i}/>
+      ))
     );
   }
 }
 
-export default connect(({filters}) => ({filters}))(FilterList);
+const mapStateToProps = ({filters}) => ({
+  groups: filters.groups,
+});
+
+export default connect(mapStateToProps)(FilterList);

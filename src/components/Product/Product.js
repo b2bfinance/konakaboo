@@ -1,29 +1,51 @@
 import React, { Component } from 'react';
 import styled, { css } from 'styled-components';
+import { queries } from '../../styled/helpers';
 import Row from '../Row';
 import Col  from '../Col';
 import Button from '../Button';
-import { connect } from 'react-redux';
+import ArrowForward from 'material-ui-icons/ArrowForward';
+import AddCircleOutline from 'material-ui-icons/AddCircleOutline';
+import RemoveCircleOutline from 'material-ui-icons/RemoveCircleOutline';
+import CheckCircle from 'material-ui-icons/CheckCircle';
+import Star from 'material-ui-icons/Star';
 
-const ProductContainer = styled.div`
+const buttonIconStyles = {
+  height: '1.125rem',
+  width: '1.125rem',
+  marginLeft: '.35rem',
+};
+
+const Container = styled.div`
   background-color: white;
-  border: 2px solid ${props => props.theme.gray100};
+  border: 2px solid ${props => props.theme.productOutlineBackground};
   margin-bottom: 1.5rem;
 
-  * {
-    box-sizing: border-box;
-  }
+  ${props => props.highlight && css`
+    border-color: ${props.theme.productHighlightOutlineBackground};
+  `}
 `
 
-const ProductHeadingRow = Row.extend`
+const HeadingRow = Row.extend`
   align-items: center;
-  background-color: ${props => props.theme.gray100};
+  background-color: ${props => props.theme.productOutlineBackground};
   padding: .5rem .75rem;
+
+  ${props => props.highlight && css`
+    background-color: ${props.theme.productHighlightOutlineBackground};
+    color: ${props.theme.productHighlightOutlineColor};
+
+    svg {
+      width: 1.125rem;
+      height: 1.125rem;
+      margin-right: .25rem;
+    }
+  `}
 `
 
 const ProductCol = Col.extend`
   align-items: center;
-  background-color: ${props => props.background ? props.theme.gray50 : ''};
+  background-color: ${props => props.background ? props.theme.productColBackground : ''};
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -35,18 +57,19 @@ const ProductCol = Col.extend`
   }
 
   span {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
+    font-weight: ${props => props.theme.mainBoldFontWeight};
     margin-bottom: .5rem;
     line-height: 1.1;
   }
 
   small {
-    font-size: 85%;
+    font-size: 95%;
   }
 `
 
-const ProductMoreInfoRow = Row.extend`
-  border-top: 2px solid ${props => props.theme.gray100};
+const MoreInfoRow = Row.extend`
+  border-top: 2px solid ${props => props.theme.productOutlineBackground};
   padding: 1rem;
 
   ${props => !props.visible && css`
@@ -54,9 +77,46 @@ const ProductMoreInfoRow = Row.extend`
   `}
 `
 
+const ApplyButton = Button.extend`
+  margin-bottom: .5rem;
+`
+
+const InfoList = styled.ul`
+  list-style: none;
+  margin-bottom: 0;
+  margin-top: 1rem;
+  padding: 0;
+`
+
+const HighlightPoint = styled.li`
+  font-size: 1.5rem;
+  font-weight: ${props => props.theme.mainBoldFontWeight};
+
+  ${queries.desktop`
+    padding-right: 1rem;
+  `}
+`
+
+const TechnicalPoint = styled.li`
+  align-items: center;
+  display: flex;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+
+  ${queries.desktop`
+    margin-bottom: .5rem;
+    padding-left: 1rem;
+  `}
+
+  svg {
+    fill: ${props => props.theme.infoCheckColor};
+    margin-right: .5rem;
+  }
+`
+
 export default class Product extends Component {
   state = {
-    isShowingMoreInfo: true,
+    isShowingMoreInfo: false,
   }
 
   handleToggleMoreInfo = event => this.setState({
@@ -74,41 +134,85 @@ export default class Product extends Component {
     ));
   }
 
+  renderInfoButtonIcon() {
+    if (this.state.isShowingMoreInfo) {
+      return (<RemoveCircleOutline style={buttonIconStyles} />);
+    }
+
+    return (<AddCircleOutline style={buttonIconStyles} />);
+  }
+
+  renderHighlightedPoints() {
+    const points = this.props.product.highlighted_points;
+
+    return points.map((point, i) => (
+      <HighlightPoint key={i}>
+        {point}
+      </HighlightPoint>
+    ));
+  }
+
+  renderTechnicalPoints() {
+    const points = this.props.product.technical_points;
+
+    return points.map((point, i) => (
+      <TechnicalPoint key={i}>
+        <CheckCircle />
+        {point}
+      </TechnicalPoint>
+    ))
+  }
+
   render() {
-    const { product } = this.props;
     const { isShowingMoreInfo } = this.state;
+    const {
+      highlighted,
+      title,
+      links,
+      brand,
+      description,
+    } = this.props.product;
 
     return (
-      <ProductContainer>
-        <ProductHeadingRow>
-          {product.title}
-        </ProductHeadingRow>
+      <Container highlight={highlighted}>
+        <HeadingRow highlight={highlighted}>
+          { highlighted &&
+          <Star />
+          }
+          {title}
+        </HeadingRow>
         <Row>
           <ProductCol phone="100" desktop="25">
-            <img src={product.links.logo} alt={product.brand} />
+            <img src={links.logo} alt={brand} />
           </ProductCol>
-          { this.renderColumns() }
+          {this.renderColumns()}
           <ProductCol phone="100" desktop="25">
-            <Button primary>
+            <ApplyButton primary>
               View & Apply
-            </Button>
+              <ArrowForward style={buttonIconStyles} />
+            </ApplyButton>
             <Button secondary slim onClick={this.handleToggleMoreInfo}>
               more info
+              {this.renderInfoButtonIcon()}
             </Button>
           </ProductCol>
         </Row>
-        <ProductMoreInfoRow visible={isShowingMoreInfo}>
-          <span>{product.description}</span>
+        <MoreInfoRow visible={isShowingMoreInfo}>
+          <span>{description}</span>
           <Row>
             <Col phone="100" desktop="50">
-
+              <InfoList>
+                {this.renderHighlightedPoints()}
+              </InfoList>
             </Col>
             <Col phone="100" desktop="50">
-
+              <InfoList>
+                {this.renderTechnicalPoints()}
+              </InfoList>
             </Col>
           </Row>
-        </ProductMoreInfoRow>
-      </ProductContainer>
+        </MoreInfoRow>
+      </Container>
     )
   }
 }

@@ -28,7 +28,7 @@ function productsFailure(error) {
 }
 
 export function loadProducts(type) {
-  return (dispatch, getState, api) => {
+  return async (dispatch, getState, api) => {
     const { isFetching } = getState().products;
 
     if (isFetching) {
@@ -37,9 +37,11 @@ export function loadProducts(type) {
 
     dispatch(productsLoading());
 
-    api.getProducts().then(
-      products => dispatch(productsSuccess(products)),
-      error => dispatch(productsFailure(error))
-    );
+    try {
+      const products = await api.getProducts();
+      dispatch(productsSuccess(products))
+    } catch (e) {
+      dispatch(productsFailure(e));
+    }
   }
 }

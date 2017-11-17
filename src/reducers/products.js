@@ -5,8 +5,9 @@ import {
 } from '../constants';
 
 export default (state = {
-  type: 'buy_to_lets',
-  isFetching: false
+  isFetching: false,
+  error: false,
+  items: [],
 }, action) => {
   switch (action.type) {
     case PRODUCTS_REQUEST:
@@ -19,11 +20,13 @@ export default (state = {
         ...state,
         items: action.payload.products.data,
         isFetching: false,
+        error: false,
       };
     case PRODUCTS_FAILURE:
       return {
         ...state,
         isFetching: false,
+        error: true,
       };
     default:
       return state;

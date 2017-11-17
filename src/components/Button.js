@@ -6,6 +6,7 @@ const Button = styled.a`
   box-sizing: border-box;
   cursor: pointer;
   display: flex;
+  font-weight: ${props => props.theme.mainBoldFontWeight};
   justify-content: center;
   padding: .75rem 1.5rem;
   width: 100%;
@@ -13,16 +14,18 @@ const Button = styled.a`
   user-select: none;
 
   ${props => props.primary && css`
-    background-color: ${props.theme.green};
-    color: white;
+    background-color: ${props.theme.applyButtonBackground};
+    color: ${props.theme.applyButtonColor};
   `}
 
   ${props => props.secondary && css`
-    background-color: ${props.theme.gray50};
+    background-color: ${props.theme.infoButtonBackground};
+    color: ${props.theme.infoButtonColor};
   `}
 
   ${props => props.slim && css`
     padding: .25rem .5rem;
+    font-size: 90%;
   `}
 `
 
