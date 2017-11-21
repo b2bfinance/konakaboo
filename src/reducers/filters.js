@@ -1,36 +1,34 @@
 import {
-  buyToLetInitialState
-} from '../config/filters';
-
-import {
-  ADD_FILTER,
-  REMOVE_FITLER,
+  TOGGLE_FILTER,
   REMOVE_GROUP_FILTERS,
 } from '../constants';
 
-function loadInitialState() {
-  switch (process.env.REACT_APP_PRODUCT_TYPE) {
-    case 'buy_to_lets':
-      return buyToLetInitialState();
-    default:
-      return [];
-  }
-}
-
 export default (state = {
-  selectedCount: 0,
-  groups: loadInitialState(),
+  chosen: [],
+  available: [],
 }, action) => {
   switch (action.type) {
-    case ADD_FILTER:
+    case TOGGLE_FILTER:
+      if (state.chosen.indexOf(action.payload) === -1) {
+        return {
+          ...state,
+          chosen: [
+            ...state.chosen,
+            action.payload,
+          ],
+        };
+      }
+
       return {
-        groups: action.payload,
-        selectedCount: state.selectedCount += 1,
+        ...state,
+        chosen: state.chosen.filter((f) => f !== action.payload),
       };
-      break;
+    case REMOVE_GROUP_FILTERS:
+      return {
+        ...state,
+        chosen: state.chosen.filter((f) => f.split('.')[0] !== action.payload),
+      };
     default:
-
+      return state;
   }
-
-  return state;
 }

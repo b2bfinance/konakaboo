@@ -4,7 +4,7 @@ import { queries } from '../styled/helpers'
 import Row from './Row';
 import Col from './Col';
 import ProductList from './Product/ProductList';
-import FilterList from './Filter/FilterList';
+import FilterGroupList from './Filter/FilterGroupList';
 import { loadProducts } from '../actions/products';
 
 const AppContainer = Row.extend`
@@ -16,6 +16,11 @@ const AppContainer = Row.extend`
   * {
     box-sizing: border-box;
   }
+
+  svg {
+    height: 1.125rem;
+    width: 1.125rem;
+  }
 `
 
 const PaddedCol = Col.extend`
@@ -26,13 +31,8 @@ const PaddedCol = Col.extend`
 
 class App extends Component {
   componentDidMount() {
-    const { selectedCount, dispatch } = this.props;
-
-    if (selectedCount > 0) {
-      dispatch()
-    } else {
-      dispatch(loadProducts());
-    }
+    const { dispatch } = this.props;
+    dispatch(loadProducts());
   }
 
   render() {
@@ -49,7 +49,7 @@ class App extends Component {
     const multiColumn = (
       <Row>
         <Col phone="100" tablet="25" desktop="15">
-          <FilterList />
+          <FilterGroupList />
         </Col>
         <PaddedCol phone="100" tablet="75" desktop="85">
           <ProductList />
@@ -73,11 +73,8 @@ const mapStateToProps = (state) => {
   const { filters, products } = state;
 
   return {
-    selectedCount: filters.selectedCount,
-    filters: filters.groups,
-    isFetching: products.isFetching,
+    filters: filters.available,
     products: products.items,
-    error: products.error,
   };
 };
 

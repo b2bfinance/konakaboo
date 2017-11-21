@@ -27,7 +27,7 @@ function productsFailure(error) {
   };
 }
 
-export function loadProducts(type) {
+export function loadProducts() {
   return async (dispatch, getState, api) => {
     const { isFetching } = getState().products;
 

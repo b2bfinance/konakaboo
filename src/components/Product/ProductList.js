@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import Product from './Product';
 import styled from 'styled-components';
@@ -13,35 +13,36 @@ const ProductError = () => (
   <StyledProductError>
     We had problems retrieving products for you, retry or come back later.
   </StyledProductError>
-)
+);
 
-class ProductList extends Component {
-  render() {
-    const { error, isFetching, hasItems, items } = this.props;
-
-    if (isFetching) {
-      return (
-        <div>Loading...</div>
-      );
-    }
-
-    if (error) {
-      return (<ProductError />)
-    }
-
-    if (!hasItems) {
-      return (
-        <div>No products </div>
-      );
-    }
-
+const ProductList = ({
+  error,
+  isFetching,
+  hasItems,
+  items,
+}) => {
+  if (isFetching) {
     return (
-      items.map(product => (
-        <Product key={product.id} product={product}></Product>
-      ))
+      <div>Loading...</div>
     );
   }
-}
+
+  if (error) {
+    return (<ProductError />);
+  }
+
+  if (!hasItems) {
+    return (
+      <div>No products </div>
+    );
+  }
+
+  return (
+    items.map(product => (
+      <Product key={product.id} product={product}></Product>
+    ))
+  );
+};
 
 const mapStateToProps = ({products}) => ({
   error: products.error,

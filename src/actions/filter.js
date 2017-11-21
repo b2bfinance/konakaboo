@@ -1,33 +1,30 @@
 import {
-  ADD_FILTER,
-  REMOVE_FITLER,
+  TOGGLE_FILTER,
   REMOVE_GROUP_FILTERS,
 } from '../constants';
 
-function addFilter(filters) {
+export function toggleFilter(group, filter) {
   return {
-    type: ADD_FILTER,
-    payload: filters,
+    type: TOGGLE_FILTER,
+    payload: `${group}.${filter}`,
   };
 }
 
-function removeFitler(filters) {
+export function removeGroupFilters(group) {
   return {
-    type: REMOVE_FITLER,
-    payload: filters,
+    type: REMOVE_GROUP_FILTERS,
+    payload: `${group}`,
   };
 }
 
-export function toggleFilter(groupIndex, choiceIndex) {
+export function toggleFilters(group, filter) {
   return (dispatch, getState) => {
     const { filters } = getState();
-    const group = filters.groups[groupIndex];
-    const choice = group.choices[choiceIndex]
 
-    if (choice.chosen) {
-      dispatch(removeFitler(choice));
-    } else {
-      dispatch(addFilter(choice));
+    if (!filters.available[group].multiChoice) {
+      dispatch(removeGroupFilters(group));
     }
+
+    dispatch(toggleFilter(group, filter));
   }
 }

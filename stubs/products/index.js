@@ -11,8 +11,10 @@ const server = http.createServer(function(req, res) {
       fs.createReadStream('response.json').pipe(res);
     break;
     case '/buy_to_lets':
-      res.writeHead(200, {"Content-Type": "application/json"});
-      fs.createReadStream('response.json').pipe(res);
+      setTimeout(() => {
+        res.writeHead(200, {"Content-Type": "application/json"});
+        fs.createReadStream('response.json').pipe(res);
+      }, 1500)
     break;
     default:
       res.writeHead(404, {"Content-Type": "text/plain"});

@@ -10,12 +10,6 @@ import RemoveCircleOutline from 'material-ui-icons/RemoveCircleOutline';
 import CheckCircle from 'material-ui-icons/CheckCircle';
 import Star from 'material-ui-icons/Star';
 
-const buttonIconStyles = {
-  height: '1.125rem',
-  width: '1.125rem',
-  marginLeft: '.35rem',
-};
-
 const Container = styled.div`
   background-color: white;
   border: 2px solid ${props => props.theme.productOutlineBackground};
@@ -119,9 +113,9 @@ export default class Product extends Component {
     isShowingMoreInfo: false,
   }
 
-  handleToggleMoreInfo = event => this.setState({
+  handleToggleMoreInfo = () => this.setState({
     isShowingMoreInfo: !this.state.isShowingMoreInfo,
-  });
+  })
 
   renderColumns() {
     const { columns } = this.props.product;
@@ -136,10 +130,10 @@ export default class Product extends Component {
 
   renderInfoButtonIcon() {
     if (this.state.isShowingMoreInfo) {
-      return (<RemoveCircleOutline style={buttonIconStyles} />);
+      return (<RemoveCircleOutline />);
     }
 
-    return (<AddCircleOutline style={buttonIconStyles} />);
+    return (<AddCircleOutline />);
   }
 
   renderHighlightedPoints() {
@@ -189,7 +183,7 @@ export default class Product extends Component {
           <ProductCol phone="100" desktop="25">
             <ApplyButton primary>
               View & Apply
-              <ArrowForward style={buttonIconStyles} />
+              <ArrowForward />
             </ApplyButton>
             <Button secondary slim onClick={this.handleToggleMoreInfo}>
               more info
