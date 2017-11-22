@@ -1,4 +1,4 @@
-import { queries } from '../styled/helpers';
+import { queries } from '../utils/media';
 import styled from 'styled-components';
 
 const width = (query, width) => {

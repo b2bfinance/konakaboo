@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { queries } from '../styled/helpers'
+import { queries } from '../utils/media'
 import Row from './Row';
 import Col from './Col';
-import ProductList from './Product/ProductList';
-import FilterGroupList from './Filter/FilterGroupList';
+import Product from './Product';
+import Filter from './Filter';
 import { loadProducts } from '../actions/products';
 
 const AppContainer = Row.extend`
@@ -23,12 +23,6 @@ const AppContainer = Row.extend`
   }
 `
 
-const PaddedCol = Col.extend`
-  ${queries.tablet`
-    padding-left: 1.5rem;
-  `}
-`
-
 class App extends Component {
   componentDidMount() {
     const { dispatch } = this.props;
@@ -38,32 +32,19 @@ class App extends Component {
   render() {
     const { filters } = this.props;
 
-    const singleColumn = (
-      <Row>
-        <Col phone="100">
-          <ProductList />
-        </Col>
-      </Row>
-    );
-
-    const multiColumn = (
-      <Row>
-        <Col phone="100" tablet="25" desktop="15">
-          <FilterGroupList />
-        </Col>
-        <PaddedCol phone="100" tablet="75" desktop="85">
-          <ProductList />
-        </PaddedCol>
-      </Row>
-    );
-
     return (
       <AppContainer>
         {
-          filters.length
-          ? multiColumn
-          : singleColumn
+          filters.length &&
+          <Row>
+            <Filter />
+          </Row>
         }
+        <Row>
+          <Col phone="100">
+            <Product />
+          </Col>
+        </Row>
       </AppContainer>
     );
   }

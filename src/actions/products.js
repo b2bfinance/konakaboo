@@ -3,6 +3,7 @@ import {
   PRODUCTS_SUCCESS,
   PRODUCTS_FAILURE,
 } from '../constants';
+import getProducts from '../utils/api';
 
 function productsLoading() {
   return {
@@ -13,9 +14,7 @@ function productsLoading() {
 function productsSuccess(products) {
   return {
     type: PRODUCTS_SUCCESS,
-    payload: {
-      products,
-    },
+    payload: products,
   };
 }
 
@@ -28,8 +27,9 @@ function productsFailure(error) {
 }
 
 export function loadProducts() {
-  return async (dispatch, getState, api) => {
-    const { isFetching } = getState().products;
+  return async (dispatch, getState) => {
+    const { config, filters, products } = getState();
+    const { isFetching } = products;
 
     if (isFetching) {
       return;
@@ -38,7 +38,7 @@ export function loadProducts() {
     dispatch(productsLoading());
 
     try {
-      const products = await api.getProducts();
+      const products = await getProducts(config.provider, filters);
       dispatch(productsSuccess(products))
     } catch (e) {
       dispatch(productsFailure(e));

@@ -9,6 +9,7 @@ const Button = styled.a`
   font-weight: ${props => props.theme.mainBoldFontWeight};
   justify-content: center;
   padding: .75rem 1.5rem;
+  text-decoration: none;
   width: 100%;
   white-space: nowrap;
   user-select: none;

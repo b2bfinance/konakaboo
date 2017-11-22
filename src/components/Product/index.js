@@ -38,8 +38,8 @@ const ProductList = ({
   }
 
   return (
-    items.map(product => (
-      <Product key={product.id} product={product}></Product>
+    items.map((product, i) => (
+      <Product key={i} product={product}></Product>
     ))
   );
 };

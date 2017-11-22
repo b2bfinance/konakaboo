@@ -1,18 +1,18 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import { toggleFilters } from '../../actions/filter';
 import { connect } from 'react-redux';
+import styled, { css } from 'styled-components';
 import CheckBoxOutlineBlank from 'material-ui-icons/CheckBoxOutlineBlank';
 import RadioButtonUnchecked from 'material-ui-icons/RadioButtonUnchecked';
 import CheckBox from 'material-ui-icons/CheckBox';
 import RadioButtonChecked from 'material-ui-icons/RadioButtonChecked';
-import { toggleFilters } from '../../actions/filter';
 
 const FilterChoice = styled.div`
   align-items: center;
   display: flex;
   cursor: pointer;
   justify-content: space-between;
-  padding: .35rem .45rem;
+  padding: .45rem .65rem;
 
   ${props => props.chosen && css`
     background-color: ${props.theme.filterChosenBackground};
@@ -68,7 +68,7 @@ const FilterList = ({
 ));
 
 const mapDispatchToProps = {
-  onChoiceClick: toggleFilters
+  onChoiceClick: toggleFilters,
 };
 
 const mapStateToProps = ({filters}) => ({

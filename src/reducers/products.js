@@ -18,7 +18,7 @@ export default (state = {
     case PRODUCTS_SUCCESS:
       return {
         ...state,
-        items: action.payload.products.data,
+        items: action.payload.data,
         isFetching: false,
         error: false,
       };

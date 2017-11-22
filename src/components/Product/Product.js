@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import styled, { css } from 'styled-components';
-import { queries } from '../../styled/helpers';
+import { queries } from '../../utils/media';
 import Row from '../Row';
 import Col  from '../Col';
 import Button from '../Button';
-import ArrowForward from 'material-ui-icons/ArrowForward';
-import AddCircleOutline from 'material-ui-icons/AddCircleOutline';
-import RemoveCircleOutline from 'material-ui-icons/RemoveCircleOutline';
+import Label from '../Label';
 import CheckCircle from 'material-ui-icons/CheckCircle';
 import Star from 'material-ui-icons/Star';
 
@@ -35,6 +33,26 @@ const HeadingRow = Row.extend`
       margin-right: .25rem;
     }
   `}
+`
+
+const StyledProductLabels = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+
+  ${queries.phone`
+    div {
+      margin: .5rem .5rem 0 0;
+    }
+  `}
+
+  ${queries.desktop`
+    margin-left: auto;
+
+    div {
+      margin: 0 .5rem 0 0;
+    }
+  `}
+
 `
 
 const ProductCol = Col.extend`
@@ -108,6 +126,40 @@ const TechnicalPoint = styled.li`
   }
 `
 
+const ProductLabels = ({labels}) => {
+  return (
+    <StyledProductLabels>
+      {
+        labels.map((label, i) =>
+          <Label key={i}>
+            { label }
+          </Label>
+        )
+      }
+    </StyledProductLabels>
+  )
+};
+
+const ProductColumns = ({columns}) => columns.map((column, i) => (
+  <ProductCol key={i} phone="100" desktop={60 / columns.length} background={(i+1) % 2}>
+    <small>{column.label}</small>
+    <span>{column.value}</span>
+  </ProductCol>
+));
+
+const ProductHighlightPoints = ({points}) => points.map((point, i) => (
+  <HighlightPoint key={i}>
+    {point}
+  </HighlightPoint>
+));
+
+const ProductTechnicalPoints = ({points}) => points.map((point, i) => (
+  <TechnicalPoint key={i}>
+    <CheckCircle />
+    {point}
+  </TechnicalPoint>
+));
+
 export default class Product extends Component {
   state = {
     isShowingMoreInfo: false,
@@ -117,77 +169,40 @@ export default class Product extends Component {
     isShowingMoreInfo: !this.state.isShowingMoreInfo,
   })
 
-  renderColumns() {
-    const { columns } = this.props.product;
-
-    return columns.map((column, i) => (
-      <ProductCol key={i} phone="100" desktop={50 / columns.length} background={(i+1) % 2}>
-        <span>{column.label}</span>
-        <small>{column.value}</small>
-      </ProductCol>
-    ));
-  }
-
-  renderInfoButtonIcon() {
-    if (this.state.isShowingMoreInfo) {
-      return (<RemoveCircleOutline />);
-    }
-
-    return (<AddCircleOutline />);
-  }
-
-  renderHighlightedPoints() {
-    const points = this.props.product.highlighted_points;
-
-    return points.map((point, i) => (
-      <HighlightPoint key={i}>
-        {point}
-      </HighlightPoint>
-    ));
-  }
-
-  renderTechnicalPoints() {
-    const points = this.props.product.technical_points;
-
-    return points.map((point, i) => (
-      <TechnicalPoint key={i}>
-        <CheckCircle />
-        {point}
-      </TechnicalPoint>
-    ))
-  }
-
   render() {
     const { isShowingMoreInfo } = this.state;
     const {
       highlighted,
+      labels,
       title,
       links,
       brand,
+      columns,
       description,
+      technical_points,
+      highlighted_points,
     } = this.props.product;
 
     return (
       <Container highlight={highlighted}>
         <HeadingRow highlight={highlighted}>
           { highlighted &&
-          <Star />
+            <Star />
           }
           {title}
+          <ProductLabels labels={labels} />
         </HeadingRow>
         <Row>
-          <ProductCol phone="100" desktop="25">
+          <ProductCol phone="100" desktop="20">
             <img src={links.logo} alt={brand} />
           </ProductCol>
-          {this.renderColumns()}
-          <ProductCol phone="100" desktop="25">
-            <ApplyButton primary>
-              View & Apply
-              <ArrowForward />
+          <ProductColumns columns={columns} />
+          <ProductCol phone="100" desktop="20">
+            <ApplyButton primary href={links.apply}>
+              See Deal
             </ApplyButton>
             <Button secondary slim onClick={this.handleToggleMoreInfo}>
               more info
-              {this.renderInfoButtonIcon()}
             </Button>
           </ProductCol>
         </Row>
@@ -196,12 +211,12 @@ export default class Product extends Component {
           <Row>
             <Col phone="100" desktop="50">
               <InfoList>
-                {this.renderHighlightedPoints()}
+                <ProductHighlightPoints points={highlighted_points} />
               </InfoList>
             </Col>
             <Col phone="100" desktop="50">
               <InfoList>
-                {this.renderTechnicalPoints()}
+                <ProductTechnicalPoints points={technical_points} />
               </InfoList>
             </Col>
           </Row>

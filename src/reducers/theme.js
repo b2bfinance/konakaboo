@@ -1,5 +1,5 @@
-import theme from '../styled/theme';
+import theme from '../utils/theme';
 
-export default (state = theme, action) => {
+export default (state = theme) => {
   return state;
 }
