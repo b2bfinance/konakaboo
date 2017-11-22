@@ -1,22 +1,29 @@
 {
   "data": [
     {
-      "id": "1",
-      "title": "Barclays 5% mega ultimate best deal",
-      "brand": "Barclays",
+      "title": "Landbay - Buy To Let Wizards",
+      "brand": "Landbay",
       "highlighted": true,
+      "labels": [
+        "broker only",
+        "consumer favourite"
+      ],
       "columns": [
         {
-          "label": "Min Deposit",
-          "value": "£100"
+          "label": "Max LTV",
+          "value": "85%"
         },
         {
-          "label": "Interest Rate",
-          "value": "3%"
+          "label": "Initial Rate",
+          "value": "1.49%"
         },
         {
-          "label": "Monthly Fee",
-          "value": "£5"
+          "label": "Subsequent Rate",
+          "value": "2.75%"
+        },
+        {
+          "label": "Fees",
+          "value": "£1,495"
         }
       ],
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean bibendum facilisis condimentum. Donec laoreet porttitor condimentum. Nulla luctus efficitur magna, eget rhoncus metus placerat sed.",
@@ -31,27 +38,31 @@
         "No monthly fee for existing customers"
       ],
       "links": {
-        "logo": "https://assets.b2bfinance.com/partners/ATOM.png",
+        "logo": "https://b2bfinance.com/images/partners/Landbay.png",
         "apply": "https://b2bfinance.com/enquire/buy-to-let"
       }
     },
     {
-      "id": "2",
-      "title": "Barclays 5% mega ultimate best deal",
-      "brand": "Barclays",
+      "title": "Natwest Low Low Rate",
+      "brand": "Natwest",
       "highlighted": false,
+      "labels": [],
       "columns": [
         {
-          "label": "Min Deposit",
-          "value": "£100"
+          "label": "Max LTV",
+          "value": "85%"
         },
         {
-          "label": "Interest Rate",
-          "value": "3%"
+          "label": "Initial Rate",
+          "value": "1.52%"
         },
         {
-          "label": "Monthly Fee",
-          "value": "£5"
+          "label": "Subsequent Rate",
+          "value": "3.25%"
+        },
+        {
+          "label": "Fees",
+          "value": "£995"
         }
       ],
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean bibendum facilisis condimentum. Donec laoreet porttitor condimentum. Nulla luctus efficitur magna, eget rhoncus metus placerat sed.",
@@ -66,7 +77,48 @@
         "No monthly fee for existing customers"
       ],
       "links": {
-        "logo": "https://b2bfinance.com/images/partners/ATOM.png",
+        "logo": "https://b2bfinance.com/images/partners/NatWest.png",
+        "apply": "https://b2bfinance.com/enquire/buy-to-let"
+      }
+    },
+    {
+      "title": "Precise Oh So Precise Total Winners Deal",
+      "brand": "Barclays",
+      "highlighted": false,
+      "labels": [
+        "broker only"
+      ],
+      "columns": [
+        {
+          "label": "Max LTV",
+          "value": "80%"
+        },
+        {
+          "label": "Initial Rate",
+          "value": "1.75%"
+        },
+        {
+          "label": "Subsequent Rate",
+          "value": "3%"
+        },
+        {
+          "label": "Fees",
+          "value": "£995"
+        }
+      ],
+      "description": "Whether your landlord is a first time buyer, a first time landlord or has a large portfolio, we have a range of products to help. Our range of mortgages also includes products for Limited Companies and HMOs.",
+      "highlighted_points": [
+        "Complete online application",
+        "Mobile app",
+        "Customer service winner"
+      ],
+      "technical_points": [
+        "Rental cover - ICR: based on individual circumstances",
+        "5 year fixed rate products that help maximise the loan size available",
+        "5 year fixed with 4% cashback available on purchases"
+      ],
+      "links": {
+        "logo": "https://b2bfinance.com/images/partners/Precise.png",
         "apply": "https://b2bfinance.com/enquire/buy-to-let"
       }
     }
