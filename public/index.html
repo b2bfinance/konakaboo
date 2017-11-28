@@ -7,43 +7,59 @@
     <script>
       window.B2B_EMBED_STATE = {
         config: {
-          provider: 'http://192.168.170.85:3333/buy_to_lets',
+          provider: "http://192.168.170.85:3333/buy_to_lets?table=4"
         },
         filters: {
-          chosen: [],
-          available: [{
-            "title": "Maximum LTV",
-            "multiChoice": false,
-            "choices": [{
-              "label": "60% LTV +",
-              "value": 60,
-              }, {
-                "label": "70% LTV +",
-                "value": 70,
-              }, {
-                "label": "80% LTV +",
-                "value": 80,
-              }, {
-                "label": "85% LTV +",
-                "value": 85,
-              }, {
-                "label": "90% LTV +",
-                "value": 90,
-              }]
+          chosen: {
+            0: "",
+            1: []
+          },
+          available: [
+            {
+              title: "Maximum LTV",
+              key: "ltv",
+              multiChoice: false,
+              choices: [
+                {
+                  label: "60% LTV +",
+                  value: 60
+                },
+                {
+                  label: "70% LTV +",
+                  value: 70
+                },
+                {
+                  label: "80% LTV +",
+                  value: 80
+                },
+                {
+                  label: "85% LTV +",
+                  value: 85
+                },
+                {
+                  label: "90% LTV +",
+                  value: 90
+                }
+              ]
             },
             {
-              "title": "Initial Rate Type",
-              "multiChoice": true,
-              "choices": [{
-                "label": "Fixed",
-                "value": "FIXED",
-              }, {
-                "label": "Variable",
-                "value": "VARIABLE",
-              }, {
-                "label": "Tracker",
-                "value": "TRACKER",
-              }]
+              title: "Initial Rate Type",
+              key: "type",
+              multiChoice: true,
+              choices: [
+                {
+                  label: "Fixed",
+                  value: "FIXED"
+                },
+                {
+                  label: "Variable",
+                  value: "VARIABLE"
+                },
+                {
+                  label: "Tracker",
+                  value: "TRACKER"
+                }
+              ]
             }
           ]
         }
@@ -51,6 +67,6 @@
     </script>
   </head>
   <body>
-    <div id="b2bfinance-products"></div>
+    <div id="b2bfinance-products" class="hey"></div>
   </body>
 </html>

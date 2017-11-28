@@ -1,8 +1,7 @@
 import reducer from './reducers/combinedReducer';
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
-import api from './utils/api';
 
-export default (initialState) => {
+export default initialState => {
   return createStore(reducer, initialState, applyMiddleware(thunk));
-}
+};

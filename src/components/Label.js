@@ -6,7 +6,7 @@ const Label = styled.div`
   border-radius: 1rem;
   color: ${props => props.theme.productLabelColor};
   font-size: 80%;
-  padding: .2rem .75rem;
-`
+  padding: 0.2rem 0.75rem;
+`;
 
 export default Label;

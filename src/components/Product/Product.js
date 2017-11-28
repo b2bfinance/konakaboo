@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styled, { css } from 'styled-components';
 import { queries } from '../../utils/media';
 import Row from '../Row';
-import Col  from '../Col';
+import Col from '../Col';
 import Button from '../Button';
 import Label from '../Label';
 import CheckCircle from 'material-ui-icons/CheckCircle';
@@ -13,27 +13,31 @@ const Container = styled.div`
   border: 2px solid ${props => props.theme.productOutlineBackground};
   margin-bottom: 1.5rem;
 
-  ${props => props.highlight && css`
-    border-color: ${props.theme.productHighlightOutlineBackground};
-  `}
-`
+  ${props =>
+    props.highlight &&
+    css`
+      border-color: ${props.theme.productHighlightOutlineBackground};
+    `};
+`;
 
 const HeadingRow = Row.extend`
   align-items: center;
   background-color: ${props => props.theme.productOutlineBackground};
-  padding: .5rem .75rem;
+  padding: 0.5rem 0.75rem;
 
-  ${props => props.highlight && css`
-    background-color: ${props.theme.productHighlightOutlineBackground};
-    color: ${props.theme.productHighlightOutlineColor};
+  ${props =>
+    props.highlight &&
+    css`
+      background-color: ${props.theme.productHighlightOutlineBackground};
+      color: ${props.theme.productHighlightOutlineColor};
 
-    svg {
-      width: 1.125rem;
-      height: 1.125rem;
-      margin-right: .25rem;
-    }
-  `}
-`
+      svg {
+        width: 1.125rem;
+        height: 1.125rem;
+        margin-right: 0.25rem;
+      }
+    `};
+`;
 
 const StyledProductLabels = styled.div`
   display: flex;
@@ -43,7 +47,7 @@ const StyledProductLabels = styled.div`
     div {
       margin: .5rem .5rem 0 0;
     }
-  `}
+  `};
 
   ${queries.desktop`
     margin-left: auto;
@@ -51,13 +55,13 @@ const StyledProductLabels = styled.div`
     div {
       margin: 0 .5rem 0 0;
     }
-  `}
-
-`
+  `};
+`;
 
 const ProductCol = Col.extend`
   align-items: center;
-  background-color: ${props => props.background ? props.theme.productColBackground : ''};
+  background-color: ${props =>
+    props.background ? props.theme.productColBackground : ''};
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -71,34 +75,36 @@ const ProductCol = Col.extend`
   span {
     font-size: 1.25rem;
     font-weight: ${props => props.theme.mainBoldFontWeight};
-    margin-bottom: .5rem;
+    margin-bottom: 0.5rem;
     line-height: 1.1;
   }
 
   small {
     font-size: 95%;
   }
-`
+`;
 
 const MoreInfoRow = Row.extend`
   border-top: 2px solid ${props => props.theme.productOutlineBackground};
   padding: 1rem;
 
-  ${props => !props.visible && css`
-    display: none;
-  `}
-`
+  ${props =>
+    !props.visible &&
+    css`
+      display: none;
+    `};
+`;
 
 const ApplyButton = Button.extend`
-  margin-bottom: .5rem;
-`
+  margin-bottom: 0.5rem;
+`;
 
 const InfoList = styled.ul`
   list-style: none;
   margin-bottom: 0;
   margin-top: 1rem;
   padding: 0;
-`
+`;
 
 const HighlightPoint = styled.li`
   font-size: 1.5rem;
@@ -106,8 +112,8 @@ const HighlightPoint = styled.li`
 
   ${queries.desktop`
     padding-right: 1rem;
-  `}
-`
+  `};
+`;
 
 const TechnicalPoint = styled.li`
   align-items: center;
@@ -118,56 +124,55 @@ const TechnicalPoint = styled.li`
   ${queries.desktop`
     margin-bottom: .5rem;
     padding-left: 1rem;
-  `}
+  `};
 
   svg {
     fill: ${props => props.theme.infoCheckColor};
-    margin-right: .5rem;
+    margin-right: 0.5rem;
   }
-`
+`;
 
-const ProductLabels = ({labels}) => {
+const ProductLabels = ({ labels }) => {
   return (
     <StyledProductLabels>
-      {
-        labels.map((label, i) =>
-          <Label key={i}>
-            { label }
-          </Label>
-        )
-      }
+      {labels.map((label, i) => <Label key={i}>{label}</Label>)}
     </StyledProductLabels>
-  )
+  );
 };
 
-const ProductColumns = ({columns}) => columns.map((column, i) => (
-  <ProductCol key={i} phone="100" desktop={60 / columns.length} background={(i+1) % 2}>
-    <small>{column.label}</small>
-    <span>{column.value}</span>
-  </ProductCol>
-));
+const ProductColumns = ({ columns }) =>
+  columns.map((column, i) => (
+    <ProductCol
+      key={i}
+      phone="100"
+      desktop={60 / columns.length}
+      background={(i + 1) % 2}
+    >
+      <small>{column.label}</small>
+      <span>{column.value}</span>
+    </ProductCol>
+  ));
 
-const ProductHighlightPoints = ({points}) => points.map((point, i) => (
-  <HighlightPoint key={i}>
-    {point}
-  </HighlightPoint>
-));
+const ProductHighlightPoints = ({ points }) =>
+  points.map((point, i) => <HighlightPoint key={i}>{point}</HighlightPoint>);
 
-const ProductTechnicalPoints = ({points}) => points.map((point, i) => (
-  <TechnicalPoint key={i}>
-    <CheckCircle />
-    {point}
-  </TechnicalPoint>
-));
+const ProductTechnicalPoints = ({ points }) =>
+  points.map((point, i) => (
+    <TechnicalPoint key={i}>
+      <CheckCircle />
+      {point}
+    </TechnicalPoint>
+  ));
 
 export default class Product extends Component {
   state = {
-    isShowingMoreInfo: false,
-  }
+    isShowingMoreInfo: false
+  };
 
-  handleToggleMoreInfo = () => this.setState({
-    isShowingMoreInfo: !this.state.isShowingMoreInfo,
-  })
+  handleToggleMoreInfo = () =>
+    this.setState({
+      isShowingMoreInfo: !this.state.isShowingMoreInfo
+    });
 
   render() {
     const { isShowingMoreInfo } = this.state;
@@ -180,15 +185,13 @@ export default class Product extends Component {
       columns,
       description,
       technical_points,
-      highlighted_points,
+      highlighted_points
     } = this.props.product;
 
     return (
       <Container highlight={highlighted}>
         <HeadingRow highlight={highlighted}>
-          { highlighted &&
-            <Star />
-          }
+          {highlighted && <Star />}
           {title}
           <ProductLabels labels={labels} />
         </HeadingRow>
@@ -222,6 +225,6 @@ export default class Product extends Component {
           </Row>
         </MoreInfoRow>
       </Container>
-    )
+    );
   }
 }

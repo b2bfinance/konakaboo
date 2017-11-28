@@ -1,30 +1,17 @@
-import {
-  TOGGLE_FILTER,
-  REMOVE_GROUP_FILTERS,
-} from '../constants';
+import { SET_FILTER } from '../constants';
+import { loadProducts } from './products';
 
-export function toggleFilter(group, filter) {
+export function setFilters(group, choices) {
   return {
-    type: TOGGLE_FILTER,
-    payload: `${group}.${filter}`,
+    type: SET_FILTER,
+    group,
+    payload: choices
   };
 }
 
-export function removeGroupFilters(group) {
-  return {
-    type: REMOVE_GROUP_FILTERS,
-    payload: `${group}`,
-  };
-}
-
-export function toggleFilters(group, filter) {
+export function setChosenFiltersForGroup(group, choices) {
   return (dispatch, getState) => {
-    const { filters } = getState();
-
-    if (!filters.available[group].multiChoice) {
-      dispatch(removeGroupFilters(group));
-    }
-
-    dispatch(toggleFilter(group, filter));
-  }
+    dispatch(setFilters(group, choices));
+    dispatch(loadProducts());
+  };
 }

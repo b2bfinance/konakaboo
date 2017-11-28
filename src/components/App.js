@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { queries } from '../utils/media'
 import Row from './Row';
 import Col from './Col';
 import Product from './Product';
@@ -21,7 +20,7 @@ const AppContainer = Row.extend`
     height: 1.125rem;
     width: 1.125rem;
   }
-`
+`;
 
 class App extends Component {
   componentDidMount() {
@@ -34,12 +33,11 @@ class App extends Component {
 
     return (
       <AppContainer>
-        {
-          filters.length &&
+        {filters.length && (
           <Row>
             <Filter />
           </Row>
-        }
+        )}
         <Row>
           <Col phone="100">
             <Product />
@@ -50,12 +48,12 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   const { filters, products } = state;
 
   return {
     filters: filters.available,
-    products: products.items,
+    products: products.items
   };
 };
 

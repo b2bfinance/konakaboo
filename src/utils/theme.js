@@ -18,11 +18,8 @@ export default {
   infoButtonColor: '#37474f',
   infoCheckColor: '#4dc16f',
 
-  filterHeaderBackground: '#009688',
+  filterHeaderBorder: '#009688',
   filterHeaderColor: '#fff',
-  filterBodyColor: '#f5f6f7',
-  filterFooterBorderColor: '#eceff1',
-  filterChosenBackground: '#eceff1',
-  filterChosenColor: '#37474f',
-  filterChosenIconColor: '#01579b',
+  filterChosenBackground: '#009688',
+  filterChosenColor: '#fff'
 };
