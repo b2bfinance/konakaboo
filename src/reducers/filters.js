@@ -1,17 +1,22 @@
-import filters from '../config/filters';
-import {
-  buyToLetInitialState
-} from '../config/filters';
+import { SET_FILTER } from '../constants';
 
-function loadInitialState() {
-  switch (process.env.REACT_APP_PRODUCT_TYPE) {
-    case 'buy_to_lets':
-      return buyToLetInitialState();
+export default (
+  state = {
+    chosen: [],
+    available: []
+  },
+  action
+) => {
+  switch (action.type) {
+    case SET_FILTER:
+      return {
+        ...state,
+        chosen: {
+          ...state.chosen,
+          [action.group]: action.payload
+        }
+      };
     default:
-      return {};
+      return state;
   }
-}
-
-export default (state = loadInitialState(), action) => {
-  return state;
-}
+};

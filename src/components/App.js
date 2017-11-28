@@ -1,27 +1,60 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
+import { connect } from 'react-redux';
 import Row from './Row';
 import Col from './Col';
-import ProductList from './Product/ProductList';
-import FilterList from './Filter/FilterList';
+import Product from './Product';
+import Filter from './Filter';
+import { loadProducts } from '../actions/products';
 
 const AppContainer = Row.extend`
+  font-family: ${props => props.theme.mainFontFamily};
+  font-weight: ${props => props.theme.mainNormalFontWeight};
+  font-size: ${props => props.theme.mainFontSize};
+  color: ${props => props.theme.mainColor};
+
   * {
     box-sizing: border-box;
   }
-`
 
-export default class App extends Component {
+  svg {
+    height: 1.125rem;
+    width: 1.125rem;
+  }
+`;
+
+class App extends Component {
+  componentDidMount() {
+    const { dispatch } = this.props;
+    dispatch(loadProducts());
+  }
+
   render() {
+    const { filters } = this.props;
+
     return (
       <AppContainer>
-        <Col phone="100" tablet="25" desktop="15">
-          <FilterList />
-        </Col>
-        <Col phone="100" tablet="75" desktop="85">
-          <ProductList />
-        </Col>
+        {filters.length && (
+          <Row>
+            <Filter />
+          </Row>
+        )}
+        <Row>
+          <Col phone="100">
+            <Product />
+          </Col>
+        </Row>
       </AppContainer>
     );
   }
 }
+
+const mapStateToProps = state => {
+  const { filters, products } = state;
+
+  return {
+    filters: filters.available,
+    products: products.items
+  };
+};
+
+export default connect(mapStateToProps)(App);
