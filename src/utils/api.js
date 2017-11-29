@@ -1,8 +1,8 @@
 import fetch from 'isomorphic-fetch';
-import { getQueryString } from './filter';
+import { getQueryStringFromState } from './filter';
 
-export function makeProvider(provider, filters) {
-  const filterQuery = getQueryString(filters);
+export function makeProviderURI(provider, filterState) {
+  const filterQuery = getQueryStringFromState(filterState);
 
   if (!filterQuery) {
     return provider;
@@ -15,7 +15,7 @@ export function makeProvider(provider, filters) {
   return `${provider}?${filterQuery}`;
 }
 
-export default async (provider, filters) => {
-  const products = await fetch(makeProvider(provider, filters));
+export default async (provider, filterState) => {
+  const products = await fetch(makeProviderURI(provider, filterState));
   return products.json();
 };

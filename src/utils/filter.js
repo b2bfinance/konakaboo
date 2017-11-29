@@ -4,7 +4,7 @@ export function getChosenForGroup(chosen, group) {
   return chosen[group];
 }
 
-export function getQueryString(filterState) {
+export function getQueryStringFromState(filterState) {
   return queryString.stringify(
     Object.keys(filterState.chosen).reduce((filters, chosen) => {
       const available = filterState.available[chosen];
