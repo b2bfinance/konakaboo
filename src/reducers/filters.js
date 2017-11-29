@@ -2,7 +2,7 @@ import { SET_FILTER } from '../constants';
 
 export default (
   state = {
-    chosen: [],
+    chosen: {},
     available: []
   },
   action

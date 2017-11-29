@@ -49,7 +49,7 @@ const FilterMenuItem = styled(MenuItem)`
     `};
 `;
 
-class Filter extends Component {
+export class Filter extends Component {
   render() {
     const { filters, chosen, handleSelectChange } = this.props;
 

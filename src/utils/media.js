@@ -1,12 +1,12 @@
 import { css } from 'styled-components';
 
-const breakpoints = {
+export const breakpoints = {
   desktop: 992,
   tablet: 576,
   phone: 0
 };
 
-const queries = Object.keys(breakpoints).reduce((acc, label) => {
+export const queries = Object.keys(breakpoints).reduce((acc, label) => {
   acc[label] = (...args) => {
     const width = breakpoints[label];
 
@@ -25,5 +25,3 @@ const queries = Object.keys(breakpoints).reduce((acc, label) => {
 
   return acc;
 }, {});
-
-export { queries };

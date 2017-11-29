@@ -22,7 +22,7 @@ const AppContainer = Row.extend`
   }
 `;
 
-class App extends Component {
+export class App extends Component {
   componentDidMount() {
     const { dispatch } = this.props;
     dispatch(loadProducts());
