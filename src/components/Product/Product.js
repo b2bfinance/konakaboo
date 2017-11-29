@@ -174,6 +174,18 @@ export default class Product extends Component {
       isShowingMoreInfo: !this.state.isShowingMoreInfo
     });
 
+  hasMoreInfo() {
+    const {
+      description,
+      technical_points,
+      highlighted_points
+    } = this.props.product;
+
+    return [description, technical_points, highlighted_points].some(
+      v => v.length > 0
+    );
+  }
+
   render() {
     const { isShowingMoreInfo } = this.state;
     const {
@@ -204,26 +216,30 @@ export default class Product extends Component {
             <ApplyButton primary href={links.apply}>
               See Deal
             </ApplyButton>
-            <Button secondary slim onClick={this.handleToggleMoreInfo}>
-              more info
-            </Button>
+            {this.hasMoreInfo() && (
+              <Button secondary slim onClick={this.handleToggleMoreInfo}>
+                more info
+              </Button>
+            )}
           </ProductCol>
         </Row>
-        <MoreInfoRow visible={isShowingMoreInfo}>
-          <span>{description}</span>
-          <Row>
-            <Col phone="100" desktop="50">
-              <InfoList>
-                <ProductHighlightPoints points={highlighted_points} />
-              </InfoList>
-            </Col>
-            <Col phone="100" desktop="50">
-              <InfoList>
-                <ProductTechnicalPoints points={technical_points} />
-              </InfoList>
-            </Col>
-          </Row>
-        </MoreInfoRow>
+        {this.hasMoreInfo() && (
+          <MoreInfoRow visible={isShowingMoreInfo}>
+            <span>{description}</span>
+            <Row>
+              <Col phone="100" desktop="50">
+                <InfoList>
+                  <ProductHighlightPoints points={highlighted_points} />
+                </InfoList>
+              </Col>
+              <Col phone="100" desktop="50">
+                <InfoList>
+                  <ProductTechnicalPoints points={technical_points} />
+                </InfoList>
+              </Col>
+            </Row>
+          </MoreInfoRow>
+        )}
       </Container>
     );
   }
