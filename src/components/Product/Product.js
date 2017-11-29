@@ -69,6 +69,7 @@ const ProductCol = Col.extend`
   text-align: center;
 
   img {
+    flex-shrink: 0;
     max-width: 100%;
   }
 
