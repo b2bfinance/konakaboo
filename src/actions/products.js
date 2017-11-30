@@ -29,10 +29,6 @@ function productsFailure(error) {
 export function loadProducts() {
   return async (dispatch, getState) => {
     const { config, filters, products } = getState();
-    const { isFetching } = products;
-
-    if (isFetching) {
-    }
 
     dispatch(productsLoading());
 

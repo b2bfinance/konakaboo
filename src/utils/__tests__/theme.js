@@ -11,6 +11,8 @@ test('Default theme contains all required attributes', () => {
     'mainNormalFontWeight',
     'mainFontSize',
     'mainBoldFontWeight',
+    'productMaskBackground',
+    'productEmptyBackground',
     'productOutlineBackground',
     'productOutlineColor',
     'productColBackground',
@@ -31,6 +33,8 @@ test('Default theme contains all required attributes', () => {
 test('Color attributes are valid hex strings', () => {
   const colorAttributes = [
     'mainColor',
+    'productMaskBackground',
+    'productEmptyBackground',
     'productOutlineBackground',
     'productOutlineColor',
     'productColBackground',
