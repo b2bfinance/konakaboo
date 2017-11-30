@@ -34,7 +34,7 @@ function run(bucket, src, dest) {
   fs.createReadStream(src)
     .pipe(file.createWriteStream({ gzip: true }))
     .on('error', (err) => {
-      fatal(`Error creating temporary file: ${err}`);
+      fatal('Error uploading build.', err);
     })
     .on('finish', async () => {
       try {
@@ -45,7 +45,7 @@ function run(bucket, src, dest) {
           cacheControl: 'max-age=86400',
         });
       } catch (e) {
-        fatal(`Unable to complete actions to ensure browsers love us.`, e);
+        fatal('Unable to complete actions to ensure browsers love us.', e);
       }
 
       log('Upload completed.');
