@@ -5,16 +5,16 @@
   "dependencies": {
     "babel-polyfill": "^6.26.0",
     "isomorphic-fetch": "^2.2.1",
-    "material-ui": "^1.0.0-beta.21",
+    "material-ui": "^1.0.0-beta.22",
     "material-ui-icons": "^1.0.0-beta.17",
     "query-string": "^5.0.1",
-    "react": "^16.1.1",
-    "react-dom": "^16.1.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
     "react-redux": "^5.0.6",
     "react-scripts": "1.0.14",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
-    "styled-components": "^2.2.3"
+    "styled-components": "^2.2.4"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -25,6 +25,7 @@
     "tidy": "prettier --config .prettierrc.json --write ./src/**/*.js"
   },
   "devDependencies": {
+    "@google-cloud/storage": "^1.5.0",
     "babel-plugin-module-resolver": "^2.7.1",
     "prettier": "^1.8.2"
   }
