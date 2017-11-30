@@ -47,8 +47,6 @@ function run(bucket, src, dest) {
       } catch (e) {
         fatal('Unable to complete actions to ensure browsers love us.', e);
       }
-
-      log('Upload completed.');
       process.exit(0);
     });
 }
