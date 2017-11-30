@@ -5,8 +5,8 @@
  * USAGE:
  * ======
  * 
- * export GCLOUD_STORAGE_KEY_FILE=/path/to/cert.json
- * push [source]
+ * $ export GCLOUD_STORAGE_KEY_FILE=/path/to/cert.json
+ * $ push
  * 
  * DEPENDENCIES:
  * =============
@@ -14,11 +14,13 @@
  * Requires `node` to be available in your environment, and
  * that you've installed the dependencies via `npm i`.
  * 
- * WARNING:
- * ========
- * This is not safe if only partially executed it will mean
- * the file didn't make it to GCS or the permissions and/or
- * metadata wasn't set which will cause access issues.
+ * WARNINGS:
+ * =========
+ * - This script will not work unless the CWD is this ./scripts
+ *   directory.
+ * - This is not safe if only partially executed it will mean
+ *   the file didn't make it to GCS or the permissions and/or
+ *   metadata wasn't set which will cause access issues.
  */
 
 const bucketName = 'b2bfinanceassets';
@@ -35,8 +37,12 @@ function log(message) {
 }
 
 function fatal(message, err) {
-  process.stdout.write(`[${new Date()}] FATAL: ${message.trim()}\n${err}\n`);
+  process.stderr.write(`[${new Date()}] FATAL: ${message.trim()}\n${err}\n`);
   process.exit(1);
+}
+
+function root(path) {
+  return require('path').join(__dirname, '..', path);
 }
 
 function run(bucket, src, dest) {
@@ -65,18 +71,14 @@ function run(bucket, src, dest) {
 }
 
 function getSource() {
-  if (process.argv.length > 2) {
-    return process.argv[2];
-  }
-
-  const am = require('./build/asset-manifest.json');
+  const am = require(root(`/build/asset-manifest.json`));
   const src = am['main.js'];
 
   if (src === '') {
     fatal('Cannot find main.js in asset-manifest.');
   }
 
-  return `./build/${src}`;
+  return root(`/build/${src}`);
 }
 
 log(`Bucket: ${bucketName}`);
