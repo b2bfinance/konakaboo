@@ -1,19 +1,19 @@
 #!/usr/bin/env node
 /**
  * Products Embed Google Cloud Storage deployment script.
- * 
+ *
  * USAGE:
  * ======
- * 
+ *
  * $ export GCLOUD_STORAGE_KEY_FILE=/path/to/cert.json
  * $ push
- * 
+ *
  * DEPENDENCIES:
  * =============
- * 
+ *
  * Requires `node` to be available in your environment, and
  * that you've installed the dependencies via `npm i`.
- * 
+ *
  * WARNINGS:
  * =========
  * - This script will not work unless the CWD is this ./scripts
@@ -26,7 +26,7 @@
 const bucketName = 'b2bfinanceassets';
 const storageOptions = {
   projectId: 'b2bfinance-186310',
-  keyFilename: process.env.GCLOUD_STORAGE_KEY_FILE || '/run/secrets/google.json',
+  keyFilename: process.env.GCLOUD_STORAGE_KEY_FILE || '/run/secrets/google.json'
 };
 const fs = require('fs');
 const Storage = require('@google-cloud/storage')(storageOptions);
@@ -50,9 +50,10 @@ function run(bucket, src, dest) {
   log(`Writing to: ${dest}`);
 
   const file = bucket.file(dest);
-  fs.createReadStream(src)
+  fs
+    .createReadStream(src)
     .pipe(file.createWriteStream({ gzip: true }))
-    .on('error', (err) => {
+    .on('error', err => {
       fatal('Error uploading build.', err);
     })
     .on('finish', async () => {
@@ -61,7 +62,7 @@ function run(bucket, src, dest) {
         await file.setMetadata({
           contentType: 'application/javascript',
           contentLanguage: 'en',
-          cacheControl: 'max-age=86400',
+          cacheControl: 'max-age=86400'
         });
       } catch (e) {
         fatal('Unable to complete actions to ensure browsers love us.', e);
