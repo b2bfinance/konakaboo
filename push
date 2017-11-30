@@ -1,5 +1,18 @@
+#!/usr/bin/env node
 /**
  * Products Embed Google Cloud Storage deployment script.
+ * 
+ * USAGE:
+ * ======
+ * 
+ * export GCLOUD_STORAGE_KEY_FILE=/path/to/cert.json
+ * push [source]
+ * 
+ * DEPENDENCIES:
+ * =============
+ * 
+ * Requires `node` to be available in your environment, and
+ * that you've installed the dependencies via `npm i`.
  * 
  * WARNING:
  * ========
@@ -52,6 +65,10 @@ function run(bucket, src, dest) {
 }
 
 function getSource() {
+  if (process.argv.length > 2) {
+    return process.argv[2];
+  }
+
   const am = require('./build/asset-manifest.json');
   const src = am['main.js'];
 
