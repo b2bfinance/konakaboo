@@ -9,16 +9,23 @@ const Button = styled.a`
   font-weight: ${props => props.theme.mainBoldFontWeight};
   justify-content: center;
   padding: 0.75rem 1.5rem;
-  text-decoration: none;
   width: 100%;
   white-space: nowrap;
   user-select: none;
+
+  &:hover {
+    text-decoration: none;
+  }
 
   ${props =>
     props.primary &&
     css`
       background-color: ${props.theme.applyButtonBackground};
       color: ${props.theme.applyButtonColor};
+
+      &:hover {
+        color: ${props.theme.applyButtonColor};
+      }
     `};
 
   ${props =>
@@ -26,6 +33,10 @@ const Button = styled.a`
     css`
       background-color: ${props.theme.infoButtonBackground};
       color: ${props.theme.infoButtonColor};
+
+      &:hover {
+        color: ${props.theme.infoButtonColor};
+      }
     `};
 
   ${props =>

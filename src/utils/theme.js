@@ -5,6 +5,8 @@ export default {
   mainFontSize: '1rem',
   mainBoldFontWeight: 400,
 
+  productMaskBackground: '#f5f6f7',
+  productEmptyBackground: '#eceff1',
   productOutlineBackground: '#eceff1',
   productOutlineColor: '#37474f',
   productColBackground: '#f5f6f7',

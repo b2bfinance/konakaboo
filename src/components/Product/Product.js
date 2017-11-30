@@ -8,7 +8,7 @@ import Label from '../Label';
 import CheckCircle from 'material-ui-icons/CheckCircle';
 import Star from 'material-ui-icons/Star';
 
-const Container = styled.div`
+export const Container = styled.div`
   background-color: white;
   border: 2px solid ${props => props.theme.productOutlineBackground};
   margin-bottom: 1.5rem;
@@ -20,7 +20,7 @@ const Container = styled.div`
     `};
 `;
 
-const HeadingRow = Row.extend`
+export const HeadingRow = Row.extend`
   align-items: center;
   background-color: ${props => props.theme.productOutlineBackground};
   padding: 0.5rem 0.75rem;
@@ -39,7 +39,7 @@ const HeadingRow = Row.extend`
     `};
 `;
 
-const StyledProductLabels = styled.div`
+export const StyledProductLabels = styled.div`
   display: flex;
   flex-wrap: wrap;
 
@@ -49,7 +49,7 @@ const StyledProductLabels = styled.div`
     }
   `};
 
-  ${queries.desktop`
+  ${queries.tablet`
     margin-left: auto;
 
     div {
@@ -58,7 +58,7 @@ const StyledProductLabels = styled.div`
   `};
 `;
 
-const ProductCol = Col.extend`
+export const ProductCol = Col.extend`
   align-items: center;
   background-color: ${props =>
     props.background ? props.theme.productColBackground : ''};
@@ -82,10 +82,11 @@ const ProductCol = Col.extend`
 
   small {
     font-size: 95%;
+    font-weight: ${props => props.theme.mainNormalFontWeight};
   }
 `;
 
-const MoreInfoRow = Row.extend`
+export const MoreInfoRow = Row.extend`
   border-top: 2px solid ${props => props.theme.productOutlineBackground};
   padding: 1rem;
 
@@ -96,18 +97,22 @@ const MoreInfoRow = Row.extend`
     `};
 `;
 
-const ApplyButton = Button.extend`
-  margin-bottom: 0.5rem;
+export const ApplyButton = Button.extend`
+  ${props =>
+    props.margin &&
+    css`
+      margin-bottom: 0.5rem;
+    `};
 `;
 
-const InfoList = styled.ul`
+export const InfoList = styled.ul`
   list-style: none;
   margin-bottom: 0;
   margin-top: 1rem;
   padding: 0;
 `;
 
-const HighlightPoint = styled.li`
+export const HighlightPoint = styled.li`
   font-size: 1.5rem;
   font-weight: ${props => props.theme.mainBoldFontWeight};
 
@@ -116,7 +121,7 @@ const HighlightPoint = styled.li`
   `};
 `;
 
-const TechnicalPoint = styled.li`
+export const TechnicalPoint = styled.li`
   align-items: center;
   display: flex;
   font-size: 1.2rem;
@@ -133,7 +138,7 @@ const TechnicalPoint = styled.li`
   }
 `;
 
-const ProductLabels = ({ labels }) => {
+export const ProductLabels = ({ labels }) => {
   return (
     <StyledProductLabels>
       {labels.map((label, i) => <Label key={i}>{label}</Label>)}
@@ -141,7 +146,7 @@ const ProductLabels = ({ labels }) => {
   );
 };
 
-const ProductColumns = ({ columns }) =>
+export const ProductColumns = ({ columns }) =>
   columns.map((column, i) => (
     <ProductCol
       key={i}
@@ -154,10 +159,10 @@ const ProductColumns = ({ columns }) =>
     </ProductCol>
   ));
 
-const ProductHighlightPoints = ({ points }) =>
+export const ProductHighlightPoints = ({ points }) =>
   points.map((point, i) => <HighlightPoint key={i}>{point}</HighlightPoint>);
 
-const ProductTechnicalPoints = ({ points }) =>
+export const ProductTechnicalPoints = ({ points }) =>
   points.map((point, i) => (
     <TechnicalPoint key={i}>
       <CheckCircle />
@@ -214,8 +219,8 @@ export default class Product extends Component {
           </ProductCol>
           <ProductColumns columns={columns} />
           <ProductCol phone="100" desktop="20">
-            <ApplyButton primary href={links.apply}>
-              See Deal
+            <ApplyButton primary margin={this.hasMoreInfo()} href={links.apply}>
+              Get Deal
             </ApplyButton>
             {this.hasMoreInfo() && (
               <Button secondary slim onClick={this.handleToggleMoreInfo}>

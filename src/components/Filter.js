@@ -54,7 +54,7 @@ export class Filter extends Component {
     const { filters, chosen, handleSelectChange } = this.props;
 
     return filters.map(({ title, multiChoice, choices, key }, i) => (
-      <FilterWrapper key={key} phone="100" tablet="50" desktop="25">
+      <FilterWrapper key={key} phone="100" tablet="33.333" desktop="20">
         <FilterFormControl>
           <InputLabel htmlFor={key}>{title}</InputLabel>
           <FilterSelect

@@ -7,8 +7,7 @@ import {
 export default (
   state = {
     isFetching: false,
-    error: false,
-    items: []
+    error: false
   },
   action
 ) => {

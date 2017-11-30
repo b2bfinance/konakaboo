@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Row from './Row';
 import Col from './Col';
-import Product from './Product';
+import ProductList from './Product';
 import Filter from './Filter';
 import { loadProducts } from '../actions/products';
 
-const AppContainer = Row.extend`
+const StyledAppContainer = Row.extend`
   font-family: ${props => props.theme.mainFontFamily};
   font-weight: ${props => props.theme.mainNormalFontWeight};
   font-size: ${props => props.theme.mainFontSize};
@@ -22,28 +22,33 @@ const AppContainer = Row.extend`
   }
 `;
 
-export class App extends Component {
+export class AppContainer extends Component {
   componentDidMount() {
     const { dispatch } = this.props;
     dispatch(loadProducts());
   }
 
   render() {
-    const { filters } = this.props;
+    const { filterCount, products, hasFetched, isFetching, error } = this.props;
 
     return (
-      <AppContainer>
-        {filters.length && (
+      <StyledAppContainer>
+        {filterCount && (
           <Row>
             <Filter />
           </Row>
         )}
         <Row>
           <Col phone="100">
-            <Product />
+            <ProductList
+              products={products}
+              hasFetched={hasFetched}
+              isFetching={isFetching}
+              error={error}
+            />
           </Col>
         </Row>
-      </AppContainer>
+      </StyledAppContainer>
     );
   }
 }
@@ -52,9 +57,12 @@ const mapStateToProps = state => {
   const { filters, products } = state;
 
   return {
-    filters: filters.available,
-    products: products.items
+    filterCount: filters.available.length,
+    isFetching: products.isFetching,
+    hasFetched: !!products.items,
+    products: products.items,
+    error: products.error
   };
 };
 
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps)(AppContainer);
