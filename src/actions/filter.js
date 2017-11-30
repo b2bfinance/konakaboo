@@ -1,4 +1,4 @@
-import { SET_FILTER } from '../constants';
+import { SET_FILTER, RESET_FILTERS } from '../constants';
 import { loadProducts } from './products';
 
 export function setFilters(group, choices) {
@@ -6,6 +6,20 @@ export function setFilters(group, choices) {
     type: SET_FILTER,
     group,
     payload: choices
+  };
+}
+
+function resetFilters() {
+  return {
+    type: RESET_FILTERS,
+    payload: {}
+  };
+}
+
+export function resetAllChosenFilters() {
+  return (dispatch, getState) => {
+    dispatch(resetFilters());
+    dispatch(loadProducts());
   };
 }
 

@@ -1,4 +1,5 @@
-import { SET_FILTER } from '../constants';
+import { SET_FILTER, RESET_FILTERS } from '../constants';
+import { getEmptyChosen } from '../utils/filter';
 
 export default (
   state = {
@@ -15,6 +16,11 @@ export default (
           ...state.chosen,
           [action.group]: action.payload
         }
+      };
+    case RESET_FILTERS:
+      return {
+        ...state,
+        chosen: getEmptyChosen(state.available)
       };
     default:
       return state;
