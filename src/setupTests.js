@@ -55,6 +55,7 @@ global.stubData = {
     withSingleAndMultiChoiceChosen: filterStateStubs[3]
   },
   products: {
+    response: productStubs,
     withHighlight: productStubs.data[0],
     withoutMoreInformation: productStubs.data[1],
     withMoreInformation: productStubs.data[2]
