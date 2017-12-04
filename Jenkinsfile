@@ -11,7 +11,7 @@ pipeline {
         stage('Tests') {
             steps {
                 nvm(nvmInstallURL: 'https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh', nvmIoJsOrgMirror: 'https://iojs.org/dist', nvmNodeJsOrgMirror: 'https://nodejs.org/dist', version: 'v9.0') {
-                    sh 'npm run-script coverage'
+                    sh 'npm run coverage'
                 }
 
                 step([
