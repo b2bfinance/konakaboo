@@ -65,17 +65,9 @@
           "value": "£995"
         }
       ],
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean bibendum facilisis condimentum. Donec laoreet porttitor condimentum. Nulla luctus efficitur magna, eget rhoncus metus placerat sed.",
-      "highlighted_points": [
-        "Complete online application",
-        "Mobile app",
-        "Customer service winner"
-      ],
-      "technical_points": [
-        "1.5% Early Repayment",
-        "6 months cool off peroid",
-        "No monthly fee for existing customers"
-      ],
+      "description": "",
+      "highlighted_points": [],
+      "technical_points": [],
       "links": {
         "logo": "https://b2bfinance.com/images/partners/NatWest.png",
         "apply": "https://b2bfinance.com/enquire/buy-to-let"

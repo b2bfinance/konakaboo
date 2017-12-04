@@ -1,0 +1,565 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ApplyButton renders correctly 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 0.15rem;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  width: 100%;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c0:hover {
+  text-decoration: none;
+}
+
+<a
+  className="c0"
+/>
+`;
+
+exports[`Container renders correctly 1`] = `
+.c0 {
+  background-color: white;
+  border: 2px solid;
+  margin-bottom: 1.5rem;
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`HeadingRow renders correctly 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0.5rem 0.75rem;
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`HighlightPoint renders correctly 1`] = `
+.c0 {
+  font-size: 1.5rem;
+}
+
+@media (min-width:62em) {
+  .c0 {
+    padding-right: 1rem;
+  }
+}
+
+<li
+  className="c0"
+/>
+`;
+
+exports[`InfoList renders correctly 1`] = `
+.c0 {
+  list-style: none;
+  margin-bottom: 0;
+  margin-top: 1rem;
+  padding: 0;
+}
+
+<ul
+  className="c0"
+/>
+`;
+
+exports[`MoreInfoRow renders correctly 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 100%;
+  border-top: 2px solid;
+  padding: 1rem;
+  display: none;
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`Product renders correctly with more information available 1`] = `
+<styled.div
+  highlight={false}
+>
+  <styled.div
+    highlight={false}
+  >
+    Precise Oh So Precise Total Winners Deal
+    <Component
+      labels={
+        Array [
+          "broker only",
+        ]
+      }
+    />
+  </styled.div>
+  <styled.div>
+    <styled.div
+      desktop="20"
+      phone="100"
+    >
+      <img
+        alt="Barclays"
+        src="https://b2bfinance.com/images/partners/Precise.png"
+      />
+    </styled.div>
+    <Component
+      columns={
+        Array [
+          Object {
+            "label": "Max LTV",
+            "value": "80%",
+          },
+          Object {
+            "label": "Initial Rate",
+            "value": "1.75%",
+          },
+          Object {
+            "label": "Subsequent Rate",
+            "value": "3%",
+          },
+          Object {
+            "label": "Fees",
+            "value": "£995",
+          },
+        ]
+      }
+    />
+    <styled.div
+      desktop="20"
+      phone="100"
+    >
+      <styled.a
+        href="https://b2bfinance.com/enquire/buy-to-let"
+        margin={true}
+        primary={true}
+      >
+        Get Deal
+      </styled.a>
+      <styled.a
+        onClick={[Function]}
+        secondary={true}
+        slim={true}
+      >
+        more info
+      </styled.a>
+    </styled.div>
+  </styled.div>
+  <styled.div
+    visible={false}
+  >
+    <span>
+      Whether your landlord is a first time buyer, a first time landlord or has a large portfolio, we have a range of products to help. Our range of mortgages also includes products for Limited Companies and HMOs.
+    </span>
+    <styled.div>
+      <styled.div
+        desktop="50"
+        phone="100"
+      >
+        <styled.ul>
+          <Component
+            points={
+              Array [
+                "Complete online application",
+                "Mobile app",
+                "Customer service winner",
+              ]
+            }
+          />
+        </styled.ul>
+      </styled.div>
+      <styled.div
+        desktop="50"
+        phone="100"
+      >
+        <styled.ul>
+          <Component
+            points={
+              Array [
+                "Rental cover - ICR: based on individual circumstances",
+                "5 year fixed rate products that help maximise the loan size available",
+                "5 year fixed with 4% cashback available on purchases",
+              ]
+            }
+          />
+        </styled.ul>
+      </styled.div>
+    </styled.div>
+  </styled.div>
+</styled.div>
+`;
+
+exports[`Product renders correctly without more information available 1`] = `
+<styled.div
+  highlight={false}
+>
+  <styled.div
+    highlight={false}
+  >
+    Natwest Low Low Rate
+    <Component
+      labels={Array []}
+    />
+  </styled.div>
+  <styled.div>
+    <styled.div
+      desktop="20"
+      phone="100"
+    >
+      <img
+        alt="Natwest"
+        src="https://b2bfinance.com/images/partners/NatWest.png"
+      />
+    </styled.div>
+    <Component
+      columns={
+        Array [
+          Object {
+            "label": "Max LTV",
+            "value": "85%",
+          },
+          Object {
+            "label": "Initial Rate",
+            "value": "1.52%",
+          },
+          Object {
+            "label": "Subsequent Rate",
+            "value": "3.25%",
+          },
+          Object {
+            "label": "Fees",
+            "value": "£995",
+          },
+        ]
+      }
+    />
+    <styled.div
+      desktop="20"
+      phone="100"
+    >
+      <styled.a
+        href="https://b2bfinance.com/enquire/buy-to-let"
+        margin={false}
+        primary={true}
+      >
+        Get Deal
+      </styled.a>
+    </styled.div>
+  </styled.div>
+</styled.div>
+`;
+
+exports[`ProductCol renders correctly 1`] = `
+.c0 {
+  width: 100%;
+  min-height: 1px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 1rem 1.25rem;
+  text-align: center;
+}
+
+.c0 img {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  max-width: 100%;
+}
+
+.c0 span {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.1;
+}
+
+.c0 small {
+  font-size: 95%;
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`ProductColumns renders correctly 1`] = `
+.c0 {
+  width: 100%;
+  min-height: 1px;
+  -webkit-flex: 0 0 100%;
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 1rem 1.25rem;
+  text-align: center;
+}
+
+.c0 img {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  max-width: 100%;
+}
+
+.c0 span {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.1;
+}
+
+.c0 small {
+  font-size: 95%;
+}
+
+@media (min-width:62em) {
+  .c0 {
+    -webkit-flex: 0 0 60%;
+    -ms-flex: 0 0 60%;
+    flex: 0 0 60%;
+    max-width: 60%;
+  }
+}
+
+<div
+  className="c0"
+>
+  <small>
+    test
+  </small>
+  <span>
+    test
+  </span>
+</div>
+`;
+
+exports[`ProductHighlightPoints renders correctly 1`] = `
+.c0 {
+  font-size: 1.5rem;
+}
+
+@media (min-width:62em) {
+  .c0 {
+    padding-right: 1rem;
+  }
+}
+
+<li
+  className="c0"
+>
+  test
+</li>
+`;
+
+exports[`ProductLabels renders correctly 1`] = `
+.c1 {
+  border: 1px solid;
+  border-radius: 1rem;
+  font-size: 80%;
+  padding: 0.2rem 0.75rem;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.c0 div {
+  margin: .5rem .5rem 0 0;
+}
+
+@media (min-width:36em) {
+  .c0 {
+    margin-left: auto;
+  }
+
+  .c0 div {
+    margin: 0 .5rem 0 0;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    test
+  </div>
+</div>
+`;
+
+exports[`ProductTechnicalPoints renders correctly 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.c0 svg {
+  margin-right: 0.5rem;
+}
+
+@media (min-width:62em) {
+  .c0 {
+    margin-bottom: .5rem;
+    padding-left: 1rem;
+  }
+}
+
+<li
+  className="c0"
+>
+  <svg
+    aria-hidden="true"
+    className="MuiSvgIcon-root-1"
+    focusable="false"
+    viewBox="0 0 24 24"
+  >
+    <path
+      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+    />
+  </svg>
+  test
+</li>
+`;
+
+exports[`StyledProductLabels renders correctly 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.c0 div {
+  margin: .5rem .5rem 0 0;
+}
+
+@media (min-width:36em) {
+  .c0 {
+    margin-left: auto;
+  }
+
+  .c0 div {
+    margin: 0 .5rem 0 0;
+  }
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`TechnicalPoint renders correctly 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.c0 svg {
+  margin-right: 0.5rem;
+}
+
+@media (min-width:62em) {
+  .c0 {
+    margin-bottom: .5rem;
+    padding-left: 1rem;
+  }
+}
+
+<li
+  className="c0"
+/>
+`;
