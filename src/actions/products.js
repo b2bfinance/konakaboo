@@ -21,22 +21,19 @@ function productsSuccess(products) {
 function productsFailure(error) {
   return {
     type: PRODUCTS_FAILURE,
-    error: 'Failed',
     payload: error
   };
 }
 
-export function loadProducts() {
-  return async (dispatch, getState) => {
-    const { config, filters, products } = getState();
+export const loadProducts = () => async (dispatch, getState) => {
+  const { config, filters } = getState();
 
-    dispatch(productsLoading());
+  dispatch(productsLoading());
 
-    try {
-      const products = await getProducts(config.provider, filters);
-      dispatch(productsSuccess(products));
-    } catch (e) {
-      dispatch(productsFailure(e));
-    }
-  };
-}
+  try {
+    const products = await getProducts(config.provider, filters);
+    dispatch(productsSuccess(products));
+  } catch (e) {
+    dispatch(productsFailure(e));
+  }
+};
