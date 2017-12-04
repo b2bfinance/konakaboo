@@ -26,6 +26,9 @@ pipeline {
         }
 
         stage('Deploy') {
+            when {
+                environment name: 'BRANCH_NAME', value: 'master'
+            }
             environment {
                 GCLOUD_STORAGE_KEY_FILE = credentials('b2b-gcloud-svc-acc-storage')
             }
@@ -35,6 +38,15 @@ pipeline {
                     sh 'npm run push'
                 }
             }
+        }
+    }
+
+    post {
+        always {
+          step([$class: 'Mailer',
+            notifyEveryUnstableBuild: true,
+            recipients: "devs@legalweb.org.uk",
+            sendToIndividuals: true])
         }
     }
 }
