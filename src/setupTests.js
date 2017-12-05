@@ -1,5 +1,6 @@
 import { configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
+import theme from './utils/theme';
 import productStubs from '../stubs/products/response.json';
 import 'jest-styled-components';
 
@@ -70,6 +71,7 @@ const filterStateStubs = [
 configure({ adapter: new Adapter() });
 
 global.stubData = {
+  theme,
   filters: {
     withNoChosen: filterStateStubs[0],
     withNullMultiChoiceChosen: filterStateStubs[1],

@@ -18,11 +18,15 @@ import Product, {
 } from '../Product';
 
 test('Container renders correctly', () => {
-  expect(renderer.create(<Container />)).toMatchSnapshot();
+  expect(
+    renderer.create(<Container theme={stubData.theme} />)
+  ).toMatchSnapshot();
 });
 
 test('HeadingRow renders correctly', () => {
-  expect(renderer.create(<HeadingRow />)).toMatchSnapshot();
+  expect(
+    renderer.create(<HeadingRow theme={stubData.theme} />)
+  ).toMatchSnapshot();
 });
 
 test('StyledProductLabels renders correctly', () => {
@@ -30,11 +34,15 @@ test('StyledProductLabels renders correctly', () => {
 });
 
 test('ProductCol renders correctly', () => {
-  expect(renderer.create(<ProductCol />)).toMatchSnapshot();
+  expect(
+    renderer.create(<ProductCol theme={stubData.theme} />)
+  ).toMatchSnapshot();
 });
 
 test('MoreInfoRow renders correctly', () => {
-  expect(renderer.create(<MoreInfoRow />)).toMatchSnapshot();
+  expect(
+    renderer.create(<MoreInfoRow theme={stubData.theme} />)
+  ).toMatchSnapshot();
 });
 
 test('ApplyButton renders correctly', () => {
@@ -46,11 +54,15 @@ test('InfoList renders correctly', () => {
 });
 
 test('HighlightPoint renders correctly', () => {
-  expect(renderer.create(<HighlightPoint />)).toMatchSnapshot();
+  expect(
+    renderer.create(<HighlightPoint theme={stubData.theme} />)
+  ).toMatchSnapshot();
 });
 
 test('TechnicalPoint renders correctly', () => {
-  expect(renderer.create(<TechnicalPoint />)).toMatchSnapshot();
+  expect(
+    renderer.create(<TechnicalPoint theme={stubData.theme} />)
+  ).toMatchSnapshot();
 });
 
 test('ProductLabels renders correctly', () => {
