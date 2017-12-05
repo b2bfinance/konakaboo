@@ -1,6 +1,6 @@
 {
   "name": "b2b-products-embed",
-  "version": "1.0.0-beta",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "babel-polyfill": "^6.26.0",
