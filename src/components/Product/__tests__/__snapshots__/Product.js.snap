@@ -32,8 +32,10 @@ exports[`ApplyButton renders correctly 1`] = `
 }
 
 <a
-  className="c0"
-/>
+  class="c0"
+>
+  
+</a>
 `;
 
 exports[`Container renders correctly 1`] = `
@@ -44,8 +46,10 @@ exports[`Container renders correctly 1`] = `
 }
 
 <div
-  className="c0"
-/>
+  class="c0"
+>
+  
+</div>
 `;
 
 exports[`HeadingRow renders correctly 1`] = `
@@ -67,8 +71,10 @@ exports[`HeadingRow renders correctly 1`] = `
 }
 
 <div
-  className="c0"
-/>
+  class="c0"
+>
+  
+</div>
 `;
 
 exports[`HighlightPoint renders correctly 1`] = `
@@ -84,8 +90,10 @@ exports[`HighlightPoint renders correctly 1`] = `
 }
 
 <li
-  className="c0"
-/>
+  class="c0"
+>
+  
+</li>
 `;
 
 exports[`InfoList renders correctly 1`] = `
@@ -97,8 +105,10 @@ exports[`InfoList renders correctly 1`] = `
 }
 
 <ul
-  className="c0"
-/>
+  class="c0"
+>
+  
+</ul>
 `;
 
 exports[`MoreInfoRow renders correctly 1`] = `
@@ -117,8 +127,10 @@ exports[`MoreInfoRow renders correctly 1`] = `
 }
 
 <div
-  className="c0"
-/>
+  class="c0"
+>
+  
+</div>
 `;
 
 exports[`Product renders correctly with more information available 1`] = `
@@ -336,8 +348,10 @@ exports[`ProductCol renders correctly 1`] = `
 }
 
 <div
-  className="c0"
-/>
+  class="c0"
+>
+  
+</div>
 `;
 
 exports[`ProductColumns renders correctly 1`] = `
@@ -394,7 +408,7 @@ exports[`ProductColumns renders correctly 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <small>
     test
@@ -417,7 +431,7 @@ exports[`ProductHighlightPoints renders correctly 1`] = `
 }
 
 <li
-  className="c0"
+  class="c0"
 >
   test
 </li>
@@ -456,10 +470,10 @@ exports[`ProductLabels renders correctly 1`] = `
 }
 
 <div
-  className="c0"
+  class="c0"
 >
   <div
-    className="c1"
+    class="c1"
   >
     test
   </div>
@@ -492,17 +506,19 @@ exports[`ProductTechnicalPoints renders correctly 1`] = `
 }
 
 <li
-  className="c0"
+  class="c0"
 >
   <svg
     aria-hidden="true"
-    className="MuiSvgIcon-root-1"
+    class="MuiSvgIcon-root-1"
     focusable="false"
     viewBox="0 0 24 24"
   >
     <path
       d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
-    />
+    >
+      
+    </path>
   </svg>
   test
 </li>
@@ -534,8 +550,10 @@ exports[`StyledProductLabels renders correctly 1`] = `
 }
 
 <div
-  className="c0"
-/>
+  class="c0"
+>
+  
+</div>
 `;
 
 exports[`TechnicalPoint renders correctly 1`] = `
@@ -565,6 +583,8 @@ exports[`TechnicalPoint renders correctly 1`] = `
 }
 
 <li
-  className="c0"
-/>
+  class="c0"
+>
+  
+</li>
 `;

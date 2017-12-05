@@ -1,3 +1,4 @@
+import React from 'react';
 import { configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import theme from './utils/theme';
@@ -52,17 +53,22 @@ const filterStateStubs = [
   },
   {
     chosen: {
-      0: ['TEST_CHOICE', 'TEST_CHOICE'],
-      1: 'TEST_CHOICE'
+      0: ['TEST_CHOICE_1', 'TEST_CHOICE_2'],
+      1: 'TEST_CHOICE_2'
     },
     available: [
       {
         multiChoice: true,
-        key: 'TEST_KEY'
+        key: 'TEST_KEY_1',
+        choices: [
+          { label: 'TEST_CHOICE_1_LABEL', value: 'TEST_CHOICE_1' },
+          { label: 'TEST_CHOICE_2_LABEL', value: 'TEST_CHOICE_2' }
+        ]
       },
       {
         multiChoice: false,
-        key: 'TEST_KEY_2'
+        key: 'TEST_KEY_2',
+        choices: [{ label: 'TEST_CHOICE_1_LABEL', value: 'TEST_CHOICE_1' }]
       }
     ]
   }
@@ -87,3 +93,5 @@ global.stubData = {
     withMoreInformation: productStubs.data[2]
   }
 };
+
+global.window = {};

@@ -6,7 +6,7 @@ import ProductList from './Product';
 import Filter from './Filter';
 import { loadProducts } from '../actions/products';
 
-const StyledAppContainer = Row.extend`
+export const StyledAppContainer = Row.extend`
   font-family: ${props => props.theme.mainFontFamily};
   font-weight: ${props => props.theme.mainNormalFontWeight};
   font-size: ${props => props.theme.mainFontSize};
@@ -33,7 +33,7 @@ export class AppContainer extends Component {
 
     return (
       <StyledAppContainer>
-        {filterCount && (
+        {filterCount > 0 && (
           <Row>
             <Filter />
           </Row>
@@ -53,7 +53,7 @@ export class AppContainer extends Component {
   }
 }
 
-const mapStateToProps = state => {
+export const mapStateToProps = state => {
   const { filters, products } = state;
 
   return {

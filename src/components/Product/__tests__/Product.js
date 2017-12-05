@@ -1,6 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
-import { shallow } from 'enzyme';
+import { shallow, render } from 'enzyme';
 import Product, {
   Container,
   HeadingRow,
@@ -18,76 +17,60 @@ import Product, {
 } from '../Product';
 
 test('Container renders correctly', () => {
-  expect(
-    renderer.create(<Container theme={stubData.theme} />)
-  ).toMatchSnapshot();
+  expect(render(<Container theme={stubData.theme} />)).toMatchSnapshot();
 });
 
 test('HeadingRow renders correctly', () => {
-  expect(
-    renderer.create(<HeadingRow theme={stubData.theme} />)
-  ).toMatchSnapshot();
+  expect(render(<HeadingRow theme={stubData.theme} />)).toMatchSnapshot();
 });
 
 test('StyledProductLabels renders correctly', () => {
-  expect(renderer.create(<StyledProductLabels />)).toMatchSnapshot();
+  expect(render(<StyledProductLabels />)).toMatchSnapshot();
 });
 
 test('ProductCol renders correctly', () => {
-  expect(
-    renderer.create(<ProductCol theme={stubData.theme} />)
-  ).toMatchSnapshot();
+  expect(render(<ProductCol theme={stubData.theme} />)).toMatchSnapshot();
 });
 
 test('MoreInfoRow renders correctly', () => {
-  expect(
-    renderer.create(<MoreInfoRow theme={stubData.theme} />)
-  ).toMatchSnapshot();
+  expect(render(<MoreInfoRow theme={stubData.theme} />)).toMatchSnapshot();
 });
 
 test('ApplyButton renders correctly', () => {
-  expect(renderer.create(<ApplyButton />)).toMatchSnapshot();
+  expect(render(<ApplyButton />)).toMatchSnapshot();
 });
 
 test('InfoList renders correctly', () => {
-  expect(renderer.create(<InfoList />)).toMatchSnapshot();
+  expect(render(<InfoList />)).toMatchSnapshot();
 });
 
 test('HighlightPoint renders correctly', () => {
-  expect(
-    renderer.create(<HighlightPoint theme={stubData.theme} />)
-  ).toMatchSnapshot();
+  expect(render(<HighlightPoint theme={stubData.theme} />)).toMatchSnapshot();
 });
 
 test('TechnicalPoint renders correctly', () => {
-  expect(
-    renderer.create(<TechnicalPoint theme={stubData.theme} />)
-  ).toMatchSnapshot();
+  expect(render(<TechnicalPoint theme={stubData.theme} />)).toMatchSnapshot();
 });
 
 test('ProductLabels renders correctly', () => {
-  expect(
-    renderer.create(<ProductLabels labels={['test']} />)
-  ).toMatchSnapshot();
+  expect(render(<ProductLabels labels={['test']} />)).toMatchSnapshot();
 });
 
 test('ProductColumns renders correctly', () => {
   expect(
-    renderer.create(
-      <ProductColumns columns={[{ label: 'test', value: 'test' }]} />
-    )
+    render(<ProductColumns columns={[{ label: 'test', value: 'test' }]} />)
   ).toMatchSnapshot();
 });
 
 test('ProductHighlightPoints renders correctly', () => {
   expect(
-    renderer.create(<ProductHighlightPoints points={['test']} />)
+    render(<ProductHighlightPoints points={['test']} />)
   ).toMatchSnapshot();
 });
 
 test('ProductTechnicalPoints renders correctly', () => {
   expect(
-    renderer.create(<ProductTechnicalPoints points={['test']} />)
+    render(<ProductTechnicalPoints points={['test']} />)
   ).toMatchSnapshot();
 });
 
