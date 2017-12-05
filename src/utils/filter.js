@@ -18,9 +18,17 @@ export function getQueryStringFromState(filterState) {
       const isMulti = available.multiChoice;
       const value = filterState.chosen[chosen];
 
-      if (isMulti && value.length > 0) {
-        filters[available.key] = value.join(',');
-      } else if (value) {
+      if (isMulti) {
+        const filteredValues = value.filter(f => (f ? f : false));
+
+        if (filteredValues.length) {
+          filters[available.key] = filteredValues.join(',');
+        }
+
+        return filters;
+      }
+
+      if (value) {
         filters[available.key] = value;
       }
 

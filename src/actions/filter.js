@@ -1,7 +1,7 @@
 import { SET_FILTER, RESET_FILTERS } from '../constants';
 import { loadProducts } from './products';
 
-export function setFilters(group, choices) {
+function setFilters(group, choices) {
   return {
     type: SET_FILTER,
     group,

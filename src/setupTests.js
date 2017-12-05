@@ -7,6 +7,28 @@ const filterStateStubs = [
   { chosen: {} },
   {
     chosen: {
+      0: [undefined, '']
+    },
+    available: [
+      {
+        multiChoice: true,
+        key: 'TEST_KEY'
+      }
+    ]
+  },
+  {
+    chosen: {
+      0: undefined
+    },
+    available: [
+      {
+        multiChoice: false,
+        key: 'TEST_KEY'
+      }
+    ]
+  },
+  {
+    chosen: {
       0: ['TEST_CHOICE', 'TEST_CHOICE']
     },
     available: [
@@ -50,9 +72,11 @@ configure({ adapter: new Adapter() });
 global.stubData = {
   filters: {
     withNoChosen: filterStateStubs[0],
-    withMultiChoiceChosen: filterStateStubs[1],
-    withSingleChoiceChosen: filterStateStubs[2],
-    withSingleAndMultiChoiceChosen: filterStateStubs[3]
+    withNullMultiChoiceChosen: filterStateStubs[1],
+    withNullSingleChoiceChosen: filterStateStubs[2],
+    withMultiChoiceChosen: filterStateStubs[3],
+    withSingleChoiceChosen: filterStateStubs[4],
+    withSingleAndMultiChoiceChosen: filterStateStubs[5]
   },
   products: {
     response: productStubs,
