@@ -74,14 +74,20 @@ test('ProductTechnicalPoints renders correctly', () => {
   ).toMatchSnapshot();
 });
 
-test('Product renders correctly with more information available', () => {
+test('Product with more information available renders correctly', () => {
   expect(
     shallow(<Product product={stubData.products.withMoreInformation} />)
   ).toMatchSnapshot();
 });
 
-test('Product renders correctly without more information available', () => {
+test('Product without more information available renders correctly', () => {
   expect(
     shallow(<Product product={stubData.products.withoutMoreInformation} />)
+  ).toMatchSnapshot();
+});
+
+test('Product with highlighted set renders correctly', () => {
+  expect(
+    shallow(<Product product={stubData.products.withHighlight} />)
   ).toMatchSnapshot();
 });
