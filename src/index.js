@@ -6,7 +6,7 @@ import App from './components/App';
 import createStore from './store';
 import { ThemeProvider } from 'styled-components';
 
-const store = createStore(window.B2B_EMBED_STATE || {});
+const store = createStore(window.PRODUCTS_EMBED_STATE || {});
 const { theme } = store.getState();
 
 ReactDOM.render(
@@ -15,5 +15,5 @@ ReactDOM.render(
       <App />
     </ThemeProvider>
   </Provider>,
-  document.getElementById('b2bfinance-products')
+  document.getElementById('products-embed-container')
 );
