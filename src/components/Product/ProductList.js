@@ -1,12 +1,9 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import Product from './Product';
 import Row from '../Row';
 import Col from '../Col';
-import Button from '../Button';
 import styled, { css } from 'styled-components';
 import { queries } from '../../utils/media';
-import { resetAllChosenFilters } from '../../actions/filter';
 
 export const StyledProductError = styled.div`
   background-color: #ff9800;
@@ -52,18 +49,13 @@ export const ProductLoadingMask = () => (
   </div>
 );
 
-export const EmptyProducts = connect(() => ({}), {
-  handleFilterReset: resetAllChosenFilters
-})(({ handleFilterReset }) => (
+export const EmptyProducts = () => (
   <Row>
     <ProductEmptyContainer phone="100" desktop="35">
       <p>We don't have any products for you to compare.</p>
-      <Button primary onClick={handleFilterReset}>
-        Reset Filters
-      </Button>
     </ProductEmptyContainer>
   </Row>
-));
+);
 
 const ProductList = ({ error, hasFetched, isFetching, products, dispatch }) => {
   if (!hasFetched) {

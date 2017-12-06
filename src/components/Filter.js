@@ -10,7 +10,7 @@ import Input, { InputLabel } from 'material-ui/Input';
 import Select from 'material-ui/Select';
 import { MenuItem } from 'material-ui/Menu';
 
-const FilterWrapper = Col.extend`
+export const FilterWrapper = Col.extend`
   border-radius: 0.2rem;
   margin-bottom: 1rem;
   position: relative;
@@ -24,11 +24,11 @@ const FilterWrapper = Col.extend`
   `};
 `;
 
-const FilterFormControl = styled(FormControl)`
+export const FilterFormControl = styled(FormControl)`
   width: 100%;
 `;
 
-const FilterSelect = styled(Select)`
+export const FilterSelect = styled(Select)`
   &:hover {
     &:before {
       background-color: ${props => props.theme.filterHeaderBorder} !important;
@@ -40,7 +40,7 @@ const FilterSelect = styled(Select)`
   }
 `;
 
-const FilterMenuItem = styled(MenuItem)`
+export const FilterMenuItem = styled(MenuItem)`
   ${props =>
     props.selected &&
     css`
@@ -75,11 +75,11 @@ export class Filter extends Component {
   }
 }
 
-const mapDispatchToProps = {
+export const mapDispatchToProps = {
   handleSelectChange: setChosenFiltersForGroup
 };
 
-const mapStateToProps = ({ filters }) => ({
+export const mapStateToProps = ({ filters }) => ({
   chosen: filters.chosen,
   filters: filters.available
 });

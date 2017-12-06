@@ -39,7 +39,7 @@ test('Creates a query string with single choice filter', () => {
 test('Creates a query string with single and multi choice filters', () => {
   expect(
     getQueryStringFromState(stubData.filters.withSingleAndMultiChoiceChosen)
-  ).toBe('TEST_KEY=TEST_CHOICE%2CTEST_CHOICE&TEST_KEY_2=TEST_CHOICE');
+  ).toBe('TEST_KEY_1=TEST_CHOICE_1%2CTEST_CHOICE_2&TEST_KEY_2=TEST_CHOICE_2');
 });
 
 test('Will not create a query string with multi choice filters that has null values', () => {
