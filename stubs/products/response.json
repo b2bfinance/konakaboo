@@ -40,6 +40,12 @@
       "links": {
         "logo": "https://b2bfinance.com/images/partners/Landbay.png",
         "apply": "https://b2bfinance.com/enquire/buy-to-let"
+      },
+      "meta": {
+        "confirm": {
+          "heading": "Use B2Bfinance.com to apply for this product?",
+          "description": "The product you have chosen is only available through a broker. B2Bfinance.com are brokers who will assist you with your application.The product you have chosen is only available through a broker. B2Bfinance.com are brokers who will assist you with your application."
+        }
       }
     },
     {
@@ -71,6 +77,12 @@
       "links": {
         "logo": "https://b2bfinance.com/images/partners/NatWest.png",
         "apply": "https://b2bfinance.com/enquire/buy-to-let"
+      },
+      "meta": {
+        "confirm": {
+          "heading": "Use B2Bfinance.com to apply for this product?",
+          "description": "The product you have chosen is only available through a broker. B2Bfinance.com are brokers who will assist you with your application.The product you have chosen is only available through a broker. B2Bfinance.com are brokers who will assist you with your application."
+        }
       }
     },
     {
@@ -112,7 +124,8 @@
       "links": {
         "logo": "https://b2bfinance.com/images/partners/Precise.png",
         "apply": "https://b2bfinance.com/enquire/buy-to-let"
-      }
+      },
+      "meta": {}
     }
   ]
 }
