@@ -208,12 +208,7 @@ export default class Product extends Component {
 
   hasConfirmationDialoig() {
     const { meta } = this.props.product;
-
-    if (meta.confirm) {
-      return true;
-    }
-
-    return false;
+    return !!meta.confirm;
   }
 
   render() {
