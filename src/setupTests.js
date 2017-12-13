@@ -90,8 +90,11 @@ global.stubData = {
     response: productStubs,
     withHighlight: productStubs.data[0],
     withoutMoreInformation: productStubs.data[1],
-    withMoreInformation: productStubs.data[2]
+    withMoreInformation: productStubs.data[2],
+    withConfirmation: productStubs.data[0]
   }
 };
 
-global.window = {};
+global.window = {
+  location: {}
+};
