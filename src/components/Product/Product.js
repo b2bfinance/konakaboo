@@ -5,6 +5,7 @@ import Row from '../Row';
 import Col from '../Col';
 import Button from '../Button';
 import Label from '../Label';
+import ProductConfirm from './Confirm';
 import CheckCircle from 'material-ui-icons/CheckCircle';
 import Star from 'material-ui-icons/Star';
 
@@ -172,12 +173,25 @@ export const ProductTechnicalPoints = ({ points }) =>
 
 export default class Product extends Component {
   state = {
-    isShowingMoreInfo: false
+    isShowingMoreInfo: false,
+    isShowingConfirmation: false
   };
 
   handleToggleMoreInfo = () =>
     this.setState({
       isShowingMoreInfo: !this.state.isShowingMoreInfo
+    });
+
+  handleApplyClick = e => {
+    if (this.hasConfirmationDialoig()) {
+      e.preventDefault();
+      this.toggleDialogState();
+    }
+  };
+
+  toggleDialogState = () =>
+    this.setState({
+      isShowingConfirmation: !this.state.isShowingConfirmation
     });
 
   hasMoreInfo() {
@@ -192,6 +206,16 @@ export default class Product extends Component {
     );
   }
 
+  hasConfirmationDialoig() {
+    const { meta } = this.props.product;
+
+    if (meta.confirm) {
+      return true;
+    }
+
+    return false;
+  }
+
   render() {
     const { isShowingMoreInfo } = this.state;
     const {
@@ -203,7 +227,8 @@ export default class Product extends Component {
       columns,
       description,
       technical_points,
-      highlighted_points
+      highlighted_points,
+      meta
     } = this.props.product;
 
     return (
@@ -219,9 +244,23 @@ export default class Product extends Component {
           </ProductCol>
           <ProductColumns columns={columns} />
           <ProductCol phone="100" desktop="20">
-            <ApplyButton primary margin={this.hasMoreInfo()} href={links.apply}>
+            <ApplyButton
+              onClick={this.handleApplyClick}
+              primary
+              margin={this.hasMoreInfo()}
+              href={links.apply}
+            >
               Get Deal
             </ApplyButton>
+            {this.hasConfirmationDialoig() && (
+              <ProductConfirm
+                open={this.state.isShowingConfirmation}
+                handleRequestClose={this.toggleDialogState}
+                title={meta.confirm.heading}
+                description={meta.confirm.description}
+                forwardUrl={links.apply}
+              />
+            )}
             {this.hasMoreInfo() && (
               <Button secondary slim onClick={this.handleToggleMoreInfo}>
                 more info
