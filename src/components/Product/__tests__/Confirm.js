@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow, render } from 'enzyme';
+import Button from '../../Button';
 import Confirm, {
   handleConfirmClick,
   ConfirmButtonCol,
@@ -26,7 +27,14 @@ test('ConfirmDialog renders correctly', () => {
 });
 
 test('Confirm click handler sets the window location correctly', () => {
-  expect(window.location.href).toBe(undefined);
   handleConfirmClick('http://test.com');
   expect(window.location.href).toBe('http://test.com');
+});
+
+test('Clicking the confirmation button sets the window location correctly', () => {
+  shallow(<Confirm forwardUrl="http://clicktest.com" />)
+    .find(Button)
+    .simulate('click');
+
+  expect(window.location.href).toBe('http://clicktest.com');
 });
