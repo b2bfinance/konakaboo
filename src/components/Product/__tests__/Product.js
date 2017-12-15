@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow, render } from 'enzyme';
+import Button from '../../Button';
 import Product, {
   Container,
   HeadingRow,
@@ -98,5 +99,14 @@ test('Clicking the apply button displays the confirmation dialog', () => {
   );
 
   wrapper.find(ApplyButton).simulate('click', { preventDefault() {} });
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('Clicking the more info button displays more information', () => {
+  const wrapper = shallow(
+    <Product product={stubData.products.withMoreInformation} />
+  );
+
+  wrapper.find(Button).simulate('click');
   expect(wrapper).toMatchSnapshot();
 });

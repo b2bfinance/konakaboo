@@ -258,7 +258,7 @@ export default class Product extends Component {
             )}
             {this.hasMoreInfo() && (
               <Button secondary slim onClick={this.handleToggleMoreInfo}>
-                more info
+                {isShowingMoreInfo ? 'less info' : 'more info'}
               </Button>
             )}
           </ProductCol>
