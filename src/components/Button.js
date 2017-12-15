@@ -6,6 +6,7 @@ const Button = styled.a`
   box-sizing: border-box;
   cursor: pointer;
   display: flex;
+  font-family: ${props => props.theme.mainFontFamily};
   font-weight: ${props => props.theme.mainBoldFontWeight};
   justify-content: center;
   padding: 0.75rem 1.5rem;

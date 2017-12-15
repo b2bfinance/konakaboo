@@ -205,6 +205,12 @@ exports[`ProductList with products renders correctly 1`] = `
           "apply": "https://b2bfinance.com/enquire/buy-to-let",
           "logo": "https://b2bfinance.com/images/partners/Landbay.png",
         },
+        "meta": Object {
+          "confirm": Object {
+            "description": "B2Bfinance.com are registered intermediaries who will quote, package and submit your lending request to Natwest. There is no charge for this service as we are paid a small commission by Natwest to cover our time.",
+            "heading": "Application via Brokers only",
+          },
+        },
         "technical_points": Array [
           "1.5% Early Repayment",
           "6 months cool off peroid",
@@ -244,6 +250,12 @@ exports[`ProductList with products renders correctly 1`] = `
         "links": Object {
           "apply": "https://b2bfinance.com/enquire/buy-to-let",
           "logo": "https://b2bfinance.com/images/partners/NatWest.png",
+        },
+        "meta": Object {
+          "confirm": Object {
+            "description": "B2Bfinance.com are registered intermediaries who will quote, package and submit your lending request to Natwest. There is no charge for this service as we are paid a small commission by Natwest to cover our time.",
+            "heading": "Application via Brokers only",
+          },
         },
         "technical_points": Array [],
         "title": "Natwest Low Low Rate",
@@ -287,6 +299,7 @@ exports[`ProductList with products renders correctly 1`] = `
           "apply": "https://b2bfinance.com/enquire/buy-to-let",
           "logo": "https://b2bfinance.com/images/partners/Precise.png",
         },
+        "meta": Object {},
         "technical_points": Array [
           "Rental cover - ICR: based on individual circumstances",
           "5 year fixed rate products that help maximise the loan size available",

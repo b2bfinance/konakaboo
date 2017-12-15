@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Confirm renders correctly 1`] = `
+<Styled(withStyles(Dialog))>
+  <withStyles(DialogTitle)>
+    Application via Brokers only
+  </withStyles(DialogTitle)>
+  <withStyles(DialogContent)>
+    <withStyles(DialogContentText)>
+      B2Bfinance.com are registered intermediaries who will quote, package and submit your lending request to Natwest. There is no charge for this service as we are paid a small commission by Natwest to cover our time.
+    </withStyles(DialogContentText)>
+    <styled.div>
+      <styled.div
+        desktop={40}
+        phone={80}
+        tablet={60}
+      >
+        <styled.a
+          onClick={[Function]}
+          primary={true}
+        >
+          Apply
+        </styled.a>
+      </styled.div>
+    </styled.div>
+  </withStyles(DialogContent)>
+</Styled(withStyles(Dialog))>
+`;
+
+exports[`ConfirmButtonCol renders correctly 1`] = `
+.c0 {
+  width: 100%;
+  min-height: 1px;
+  margin: 1.5rem auto 0;
+}
+
+<div
+  class="c0"
+>
+  
+</div>
+`;
+
+exports[`ConfirmDialog renders correctly 1`] = `
+.c0 {
+  text-align: center;
+}
+
+<withStyles(Dialog)
+  className="c0"
+/>
+`;

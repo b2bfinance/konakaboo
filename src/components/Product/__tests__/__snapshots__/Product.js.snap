@@ -38,6 +38,128 @@ exports[`ApplyButton renders correctly 1`] = `
 </a>
 `;
 
+exports[`Clicking the apply button displays the confirmation dialog 1`] = `
+<styled.div
+  highlight={true}
+>
+  <styled.div
+    highlight={true}
+  >
+    <pure(Star) />
+    Landbay - Buy To Let Wizards
+    <Component
+      labels={
+        Array [
+          "broker only",
+          "consumer favourite",
+        ]
+      }
+    />
+  </styled.div>
+  <styled.div>
+    <styled.div
+      desktop="20"
+      phone="100"
+    >
+      <img
+        alt="Landbay"
+        src="https://b2bfinance.com/images/partners/Landbay.png"
+      />
+    </styled.div>
+    <Component
+      columns={
+        Array [
+          Object {
+            "label": "Max LTV",
+            "value": "85%",
+          },
+          Object {
+            "label": "Initial Rate",
+            "value": "1.49%",
+          },
+          Object {
+            "label": "Subsequent Rate",
+            "value": "2.75%",
+          },
+          Object {
+            "label": "Fees",
+            "value": "£1,495",
+          },
+        ]
+      }
+    />
+    <styled.div
+      desktop="20"
+      phone="100"
+    >
+      <styled.a
+        href="https://b2bfinance.com/enquire/buy-to-let"
+        margin={true}
+        onClick={[Function]}
+        primary={true}
+      >
+        Get Deal
+      </styled.a>
+      <ProductConfirm
+        description="B2Bfinance.com are registered intermediaries who will quote, package and submit your lending request to Natwest. There is no charge for this service as we are paid a small commission by Natwest to cover our time."
+        forwardUrl="https://b2bfinance.com/enquire/buy-to-let"
+        handleRequestClose={[Function]}
+        open={true}
+        title="Application via Brokers only"
+      />
+      <styled.a
+        onClick={[Function]}
+        secondary={true}
+        slim={true}
+      >
+        more info
+      </styled.a>
+    </styled.div>
+  </styled.div>
+  <styled.div
+    visible={false}
+  >
+    <span>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean bibendum facilisis condimentum. Donec laoreet porttitor condimentum. Nulla luctus efficitur magna, eget rhoncus metus placerat sed.
+    </span>
+    <styled.div>
+      <styled.div
+        desktop="50"
+        phone="100"
+      >
+        <styled.ul>
+          <Component
+            points={
+              Array [
+                "Online Application",
+                "Mobile app",
+                "Customer service winner",
+              ]
+            }
+          />
+        </styled.ul>
+      </styled.div>
+      <styled.div
+        desktop="50"
+        phone="100"
+      >
+        <styled.ul>
+          <Component
+            points={
+              Array [
+                "1.5% Early Repayment",
+                "6 months cool off peroid",
+                "No monthly fee for existing customers",
+              ]
+            }
+          />
+        </styled.ul>
+      </styled.div>
+    </styled.div>
+  </styled.div>
+</styled.div>
+`;
+
 exports[`Container renders correctly 1`] = `
 .c0 {
   background-color: white;
@@ -190,10 +312,18 @@ exports[`Product with highlighted set renders correctly 1`] = `
       <styled.a
         href="https://b2bfinance.com/enquire/buy-to-let"
         margin={true}
+        onClick={[Function]}
         primary={true}
       >
         Get Deal
       </styled.a>
+      <ProductConfirm
+        description="B2Bfinance.com are registered intermediaries who will quote, package and submit your lending request to Natwest. There is no charge for this service as we are paid a small commission by Natwest to cover our time."
+        forwardUrl="https://b2bfinance.com/enquire/buy-to-let"
+        handleRequestClose={[Function]}
+        open={false}
+        title="Application via Brokers only"
+      />
       <styled.a
         onClick={[Function]}
         secondary={true}
@@ -302,6 +432,7 @@ exports[`Product with more information available renders correctly 1`] = `
       <styled.a
         href="https://b2bfinance.com/enquire/buy-to-let"
         margin={true}
+        onClick={[Function]}
         primary={true}
       >
         Get Deal
@@ -410,10 +541,18 @@ exports[`Product without more information available renders correctly 1`] = `
       <styled.a
         href="https://b2bfinance.com/enquire/buy-to-let"
         margin={false}
+        onClick={[Function]}
         primary={true}
       >
         Get Deal
       </styled.a>
+      <ProductConfirm
+        description="B2Bfinance.com are registered intermediaries who will quote, package and submit your lending request to Natwest. There is no charge for this service as we are paid a small commission by Natwest to cover our time."
+        forwardUrl="https://b2bfinance.com/enquire/buy-to-let"
+        handleRequestClose={[Function]}
+        open={false}
+        title="Application via Brokers only"
+      />
     </styled.div>
   </styled.div>
 </styled.div>

@@ -40,6 +40,12 @@
       "links": {
         "logo": "https://b2bfinance.com/images/partners/Landbay.png",
         "apply": "https://b2bfinance.com/enquire/buy-to-let"
+      },
+      "meta": {
+        "confirm": {
+          "heading": "Application via Brokers only",
+          "description": "B2Bfinance.com are registered intermediaries who will quote, package and submit your lending request to Natwest. There is no charge for this service as we are paid a small commission by Natwest to cover our time."
+        }
       }
     },
     {
@@ -71,6 +77,12 @@
       "links": {
         "logo": "https://b2bfinance.com/images/partners/NatWest.png",
         "apply": "https://b2bfinance.com/enquire/buy-to-let"
+      },
+      "meta": {
+        "confirm": {
+          "heading": "Application via Brokers only",
+          "description": "B2Bfinance.com are registered intermediaries who will quote, package and submit your lending request to Natwest. There is no charge for this service as we are paid a small commission by Natwest to cover our time."
+        }
       }
     },
     {
@@ -112,7 +124,8 @@
       "links": {
         "logo": "https://b2bfinance.com/images/partners/Precise.png",
         "apply": "https://b2bfinance.com/enquire/buy-to-let"
-      }
+      },
+      "meta": {}
     }
   ]
 }

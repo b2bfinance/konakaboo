@@ -91,3 +91,12 @@ test('Product with highlighted set renders correctly', () => {
     shallow(<Product product={stubData.products.withHighlight} />)
   ).toMatchSnapshot();
 });
+
+test('Clicking the apply button displays the confirmation dialog', () => {
+  const wrapper = shallow(
+    <Product product={stubData.products.withConfirmation} />
+  );
+
+  wrapper.find(ApplyButton).simulate('click', { preventDefault() {} });
+  expect(wrapper).toMatchSnapshot();
+});
