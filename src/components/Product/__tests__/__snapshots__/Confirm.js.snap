@@ -16,7 +16,6 @@ exports[`Confirm renders correctly 1`] = `
         tablet={60}
       >
         <styled.a
-          onClick={[Function]}
           primary={true}
         >
           Apply

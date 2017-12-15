@@ -25,16 +25,3 @@ test('ConfirmButtonCol renders correctly', () => {
 test('ConfirmDialog renders correctly', () => {
   expect(shallow(<ConfirmDialog />)).toMatchSnapshot();
 });
-
-test('Confirm click handler sets the window location correctly', () => {
-  handleConfirmClick('http://test.com');
-  expect(window.location.href).toBe('http://test.com');
-});
-
-test('Clicking the confirmation button sets the window location correctly', () => {
-  shallow(<Confirm forwardUrl="http://clicktest.com" />)
-    .find(Button)
-    .simulate('click');
-
-  expect(window.location.href).toBe('http://clicktest.com');
-});
