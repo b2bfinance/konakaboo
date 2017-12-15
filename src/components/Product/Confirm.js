@@ -9,10 +9,6 @@ import Dialog, {
   DialogContentText
 } from 'material-ui/Dialog';
 
-export function handleConfirmClick(forwardUrl) {
-  window.location.href = forwardUrl;
-}
-
 export const ConfirmButtonCol = Col.extend`
   margin: 1.5rem auto 0;
 `;
@@ -34,7 +30,7 @@ const ProductConfirm = ({
       <DialogContentText>{description}</DialogContentText>
       <Row>
         <ConfirmButtonCol phone={80} tablet={60} desktop={40}>
-          <Button primary onClick={() => handleConfirmClick(forwardUrl)}>
+          <Button primary href={forwardUrl}>
             Apply
           </Button>
         </ConfirmButtonCol>
