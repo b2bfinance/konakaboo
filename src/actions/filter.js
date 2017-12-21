@@ -1,4 +1,4 @@
-import { SET_FILTER, RESET_FILTERS } from '../constants';
+import { SET_FILTER, RESET_FILTERS, RESET_GROUP_FILTERS } from '../constants';
 import { loadProducts } from './products';
 
 function setFilters(group, choices) {
@@ -13,6 +13,21 @@ function resetFilters() {
   return {
     type: RESET_FILTERS,
     payload: {}
+  };
+}
+
+function resetGroupFilters(group) {
+  return {
+    type: RESET_GROUP_FILTERS,
+    group,
+    payload: {}
+  };
+}
+
+export function resetFiltersForGroup(group) {
+  return (dispatch, getState) => {
+    dispatch(resetGroupFilters(group));
+    dispatch(loadProducts());
   };
 }
 

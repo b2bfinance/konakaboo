@@ -1,4 +1,4 @@
-import { SET_FILTER, RESET_FILTERS } from '../constants';
+import { SET_FILTER, RESET_FILTERS, RESET_GROUP_FILTERS } from '../constants';
 import { getEmptyChosen } from '../utils/filter';
 
 export default (
@@ -21,6 +21,14 @@ export default (
       return {
         ...state,
         chosen: getEmptyChosen(state.available)
+      };
+    case RESET_GROUP_FILTERS:
+      return {
+        ...state,
+        chosen: {
+          ...state.chosen,
+          [action.group]: state.available[action.group].multiChoice ? [] : ''
+        }
       };
     default:
       return state;
