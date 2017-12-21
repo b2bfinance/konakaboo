@@ -9,7 +9,7 @@ import { loadProducts } from '../products';
 
 const mockStore = configureMockStore([thunk]);
 
-it('Fetches products successfully', async () => {
+it('fetches products successfully', async () => {
   const expectedActions = [
     { type: PRODUCTS_REQUEST },
     { type: PRODUCTS_SUCCESS, payload: stubData.products.response }
@@ -26,7 +26,7 @@ it('Fetches products successfully', async () => {
   expect(store.getActions()).toEqual(expectedActions);
 });
 
-it('Creates PRODUCTS_FAILURE when fetching products fails', async () => {
+it('creates PRODUCTS_FAILURE when fetching products fails', async () => {
   const expectedActions = [
     { type: PRODUCTS_REQUEST },
     { type: PRODUCTS_FAILURE, payload: { error: true } }

@@ -1,0 +1,216 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Filter /> with multi choice renders correctly 1`] = `
+<styled.div
+  visible={true}
+>
+  <styled.div>
+    Filter Title
+    <withStyles(IconButton)
+      aria-label="Close Filter Choices"
+      onClick={[Function]}
+    >
+      <pure(Close) />
+    </withStyles(IconButton)>
+  </styled.div>
+  <withStyles(List)>
+    <withStyles(ListItem)
+      button={true}
+      key="TEST_CHOICE_1"
+      onClick={[Function]}
+    >
+      <withStyles(Checkbox)
+        checked={true}
+        disableRipple={true}
+        tabIndex={-1}
+      />
+      <withStyles(ListItemText)
+        primary="TEST_CHOICE_1_LABEL"
+      />
+    </withStyles(ListItem)>
+    <withStyles(ListItem)
+      button={true}
+      key="TEST_CHOICE_2"
+      onClick={[Function]}
+    >
+      <withStyles(Checkbox)
+        checked={true}
+        disableRipple={true}
+        tabIndex={-1}
+      />
+      <withStyles(ListItemText)
+        primary="TEST_CHOICE_2_LABEL"
+      />
+    </withStyles(ListItem)>
+  </withStyles(List)>
+</styled.div>
+`;
+
+exports[`<Filter /> with single choice renders correctly 1`] = `
+<styled.div
+  visible={true}
+>
+  <styled.div>
+    Filter Title
+    <withStyles(IconButton)
+      aria-label="Close Filter Choices"
+      onClick={[Function]}
+    >
+      <pure(Close) />
+    </withStyles(IconButton)>
+  </styled.div>
+  <withStyles(List)>
+    <withStyles(ListItem)
+      button={true}
+      key="TEST_CHOICE_1"
+      onClick={[Function]}
+    >
+      <withStyles(Radio)
+        checked={true}
+        disableRipple={true}
+        tabIndex={-1}
+      />
+      <withStyles(ListItemText)
+        primary="TEST_CHOICE_1_LABEL"
+      />
+    </withStyles(ListItem)>
+    <withStyles(ListItem)
+      button={true}
+      key="TEST_CHOICE_2"
+      onClick={[Function]}
+    >
+      <withStyles(Radio)
+        checked={false}
+        disableRipple={true}
+        tabIndex={-1}
+      />
+      <withStyles(ListItemText)
+        primary="TEST_CHOICE_2_LABEL"
+      />
+    </withStyles(ListItem)>
+  </withStyles(List)>
+</styled.div>
+`;
+
+exports[`<FilterHeader /> renders correctly 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #00897B;
+  color: #fff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: 400;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  min-width: 15rem;
+  padding: 0.45rem 0.5rem 0.45rem 0.75rem;
+}
+
+.c0 svg {
+  fill: #fff;
+}
+
+<div
+  class="c0"
+>
+  
+</div>
+`;
+
+exports[`<StyledFilter /> when not visible renders correctly 1`] = `
+.c0 {
+  background-color: #fff;
+  border-radius: 0.2rem;
+  box-shadow: 0 15px 12px rgba(0,0,0,0.22),0 0 38px rgba(0,0,0,0.3);
+  margin-top: 0.3rem;
+  min-width: 100%;
+  opacity: 0;
+  right: 0;
+  -webkit-transform-origin: right top 0;
+  -ms-transform-origin: right top 0;
+  transform-origin: right top 0;
+  -webkit-transform: scale3d(0.8,0.8,1);
+  -ms-transform: scale3d(0.8,0.8,1);
+  transform: scale3d(0.8,0.8,1);
+  -webkit-transition: opacity 250ms cubic-bezier(0.8,0,0.6,1) 0ms, -webkit-transform 250ms cubic-bezier(0.8,0,0.6,1) 0ms,visibility 250ms;
+  -webkit-transition: opacity 250ms cubic-bezier(0.8,0,0.6,1) 0ms, transform 250ms cubic-bezier(0.8,0,0.6,1) 0ms,visibility 250ms;
+  transition: opacity 250ms cubic-bezier(0.8,0,0.6,1) 0ms, transform 250ms cubic-bezier(0.8,0,0.6,1) 0ms,visibility 250ms;
+  visibility: hidden;
+  z-index: 150;
+  bottom: 0;
+  position: fixed;
+}
+
+.c0 ul {
+  max-height: 25.5rem;
+  overflow: auto;
+}
+
+@media (min-width:36em) {
+  .c0 {
+    bottom: auto;
+    position: absolute;
+  }
+}
+
+<div
+  class="c0"
+>
+  
+</div>
+`;
+
+exports[`<StyledFilter /> when visible renders correctly 1`] = `
+.c0 {
+  background-color: #fff;
+  border-radius: 0.2rem;
+  box-shadow: 0 15px 12px rgba(0,0,0,0.22),0 0 38px rgba(0,0,0,0.3);
+  margin-top: 0.3rem;
+  min-width: 100%;
+  opacity: 0;
+  right: 0;
+  -webkit-transform-origin: right top 0;
+  -ms-transform-origin: right top 0;
+  transform-origin: right top 0;
+  -webkit-transform: scale3d(0.8,0.8,1);
+  -ms-transform: scale3d(0.8,0.8,1);
+  transform: scale3d(0.8,0.8,1);
+  -webkit-transition: opacity 250ms cubic-bezier(0.8,0,0.6,1) 0ms, -webkit-transform 250ms cubic-bezier(0.8,0,0.6,1) 0ms,visibility 250ms;
+  -webkit-transition: opacity 250ms cubic-bezier(0.8,0,0.6,1) 0ms, transform 250ms cubic-bezier(0.8,0,0.6,1) 0ms,visibility 250ms;
+  transition: opacity 250ms cubic-bezier(0.8,0,0.6,1) 0ms, transform 250ms cubic-bezier(0.8,0,0.6,1) 0ms,visibility 250ms;
+  visibility: hidden;
+  z-index: 150;
+  opacity: 1;
+  -webkit-transform: scale3d(1,1,1);
+  -ms-transform: scale3d(1,1,1);
+  transform: scale3d(1,1,1);
+  visibility: visible;
+  bottom: 0;
+  position: fixed;
+}
+
+.c0 ul {
+  max-height: 25.5rem;
+  overflow: auto;
+}
+
+@media (min-width:36em) {
+  .c0 {
+    bottom: auto;
+    position: absolute;
+  }
+}
+
+<div
+  class="c0"
+>
+  
+</div>
+`;

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Primary button renders correctly 1`] = `
+exports[`<Button /> primary renders correctly 1`] = `
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -46,7 +46,7 @@ exports[`Primary button renders correctly 1`] = `
 </a>
 `;
 
-exports[`Secondary button renders correctly 1`] = `
+exports[`<Button /> secondary renders correctly 1`] = `
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -92,7 +92,7 @@ exports[`Secondary button renders correctly 1`] = `
 </a>
 `;
 
-exports[`Slim button renders correctly 1`] = `
+exports[`<Button /> slim renders correctly 1`] = `
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;

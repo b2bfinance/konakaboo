@@ -3,25 +3,27 @@ import renderer from 'react-test-renderer';
 import { render, shallow } from 'enzyme';
 import { StyledAppContainer, AppContainer, mapStateToProps } from '../App';
 
-test('StyledAppContainer renders correctly', () => {
+test('<StyledAppContainer /> renders correctly', () => {
   expect(
     render(<StyledAppContainer theme={stubData.theme} />)
   ).toMatchSnapshot();
 });
 
-test('AppContainer with filters renders correctly', () => {
-  expect(
-    shallow(<AppContainer dispatch={jest.fn()} filterCount={1} />)
-  ).toMatchSnapshot();
+describe('<AppContainer />', () => {
+  test('with filters renders correctly', () => {
+    expect(
+      shallow(<AppContainer dispatch={jest.fn()} filterCount={1} />)
+    ).toMatchSnapshot();
+  });
+
+  test('without filters renders correctly', () => {
+    expect(
+      shallow(<AppContainer dispatch={jest.fn()} filterCount={0} />)
+    ).toMatchSnapshot();
+  });
 });
 
-test('AppContainer without filters renders correctly', () => {
-  expect(
-    shallow(<AppContainer dispatch={jest.fn()} filterCount={0} />)
-  ).toMatchSnapshot();
-});
-
-test('Should dispatch loadProducts', () => {
+test('should dispatch loadProducts', () => {
   const mockDispatch = jest.fn();
   shallow(<AppContainer dispatch={mockDispatch} />);
   expect(mockDispatch.mock.calls.length).toBe(1);

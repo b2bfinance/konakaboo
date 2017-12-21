@@ -1,6 +1,6 @@
 import reducers from '../';
 
-it('Should recieve all reducers', () => {
+it('will recieve all reducers', () => {
   expect(Object.keys(reducers)).toEqual([
     'config',
     'theme',

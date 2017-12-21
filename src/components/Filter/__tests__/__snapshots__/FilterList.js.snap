@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ChipContainer /> renders correctly 1`] = `
+.c0 {
+  margin-bottom: 1.5rem;
+  margin-right: 0.5rem;
+  position: relative;
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`<StyledChip /> with no selection renders correctly 1`] = `
+<withStyles(Chip)
+  className=""
+  selection={Array []}
+/>
+`;
+
+exports[`<StyledChip /> with selection renders correctly 1`] = `
+.c0 {
+  background-color: !important;
+  color: !important;
+}
+
+<withStyles(Chip)
+  className="c0"
+  selection={
+    Array [
+      "TEST",
+    ]
+  }
+/>
+`;

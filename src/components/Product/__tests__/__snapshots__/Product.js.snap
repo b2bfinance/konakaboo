@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ApplyButton renders correctly 1`] = `
+exports[`<ApplyButton /> renders correctly 1`] = `
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -38,7 +38,102 @@ exports[`ApplyButton renders correctly 1`] = `
 </a>
 `;
 
-exports[`Clicking the apply button displays the confirmation dialog 1`] = `
+exports[`<Container /> renders correctly 1`] = `
+.c0 {
+  background-color: white;
+  border: 2px solid #eceff1;
+  margin-bottom: 1.5rem;
+}
+
+<div
+  class="c0"
+>
+  
+</div>
+`;
+
+exports[`<HeadingRow /> renders correctly 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #eceff1;
+  padding: 0.5rem 0.75rem;
+}
+
+<div
+  class="c0"
+>
+  
+</div>
+`;
+
+exports[`<HighlightPoint /> renders correctly 1`] = `
+.c0 {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+@media (min-width:62em) {
+  .c0 {
+    padding-right: 1rem;
+  }
+}
+
+<li
+  class="c0"
+>
+  
+</li>
+`;
+
+exports[`<InfoList /> renders correctly 1`] = `
+.c0 {
+  list-style: none;
+  margin-bottom: 0;
+  margin-top: 1rem;
+  padding: 0;
+}
+
+<ul
+  class="c0"
+>
+  
+</ul>
+`;
+
+exports[`<MoreInfoRow /> renders correctly 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 100%;
+  border-top: 2px solid #eceff1;
+  padding: 1rem;
+  display: none;
+}
+
+<div
+  class="c0"
+>
+  
+</div>
+`;
+
+exports[`<Product /> clicking the apply button displays the confirmation dialog 1`] = `
 <styled.div
   highlight={true}
 >
@@ -160,7 +255,7 @@ exports[`Clicking the apply button displays the confirmation dialog 1`] = `
 </styled.div>
 `;
 
-exports[`Clicking the more info button displays more information 1`] = `
+exports[`<Product /> clicking the more info button displays more information 1`] = `
 <styled.div
   highlight={false}
 >
@@ -273,102 +368,7 @@ exports[`Clicking the more info button displays more information 1`] = `
 </styled.div>
 `;
 
-exports[`Container renders correctly 1`] = `
-.c0 {
-  background-color: white;
-  border: 2px solid #eceff1;
-  margin-bottom: 1.5rem;
-}
-
-<div
-  class="c0"
->
-  
-</div>
-`;
-
-exports[`HeadingRow renders correctly 1`] = `
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: #eceff1;
-  padding: 0.5rem 0.75rem;
-}
-
-<div
-  class="c0"
->
-  
-</div>
-`;
-
-exports[`HighlightPoint renders correctly 1`] = `
-.c0 {
-  font-size: 1.5rem;
-  font-weight: 400;
-}
-
-@media (min-width:62em) {
-  .c0 {
-    padding-right: 1rem;
-  }
-}
-
-<li
-  class="c0"
->
-  
-</li>
-`;
-
-exports[`InfoList renders correctly 1`] = `
-.c0 {
-  list-style: none;
-  margin-bottom: 0;
-  margin-top: 1rem;
-  padding: 0;
-}
-
-<ul
-  class="c0"
->
-  
-</ul>
-`;
-
-exports[`MoreInfoRow renders correctly 1`] = `
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  width: 100%;
-  border-top: 2px solid #eceff1;
-  padding: 1rem;
-  display: none;
-}
-
-<div
-  class="c0"
->
-  
-</div>
-`;
-
-exports[`Product with highlighted set renders correctly 1`] = `
+exports[`<Product /> with highlighted set renders correctly 1`] = `
 <styled.div
   highlight={true}
 >
@@ -490,7 +490,7 @@ exports[`Product with highlighted set renders correctly 1`] = `
 </styled.div>
 `;
 
-exports[`Product with more information available renders correctly 1`] = `
+exports[`<Product /> with more information available renders correctly 1`] = `
 <styled.div
   highlight={false}
 >
@@ -603,7 +603,7 @@ exports[`Product with more information available renders correctly 1`] = `
 </styled.div>
 `;
 
-exports[`Product without more information available renders correctly 1`] = `
+exports[`<Product /> without more information available renders correctly 1`] = `
 <styled.div
   highlight={false}
 >
@@ -671,7 +671,7 @@ exports[`Product without more information available renders correctly 1`] = `
 </styled.div>
 `;
 
-exports[`ProductCol renders correctly 1`] = `
+exports[`<ProductCol /> renders correctly 1`] = `
 .c0 {
   width: 100%;
   min-height: 1px;
@@ -720,7 +720,7 @@ exports[`ProductCol renders correctly 1`] = `
 </div>
 `;
 
-exports[`ProductColumns renders correctly 1`] = `
+exports[`<ProductColumns /> renders correctly 1`] = `
 .c0 {
   width: 100%;
   min-height: 1px;
@@ -785,7 +785,7 @@ exports[`ProductColumns renders correctly 1`] = `
 </div>
 `;
 
-exports[`ProductHighlightPoints renders correctly 1`] = `
+exports[`<ProductHighlightPoints /> renders correctly 1`] = `
 .c0 {
   font-size: 1.5rem;
 }
@@ -803,7 +803,7 @@ exports[`ProductHighlightPoints renders correctly 1`] = `
 </li>
 `;
 
-exports[`ProductLabels renders correctly 1`] = `
+exports[`<ProductLabels /> renders correctly 1`] = `
 .c1 {
   border: 1px solid;
   border-radius: 1rem;
@@ -846,7 +846,7 @@ exports[`ProductLabels renders correctly 1`] = `
 </div>
 `;
 
-exports[`ProductTechnicalPoints renders correctly 1`] = `
+exports[`<ProductTechnicalPoints /> renders correctly 1`] = `
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -890,7 +890,7 @@ exports[`ProductTechnicalPoints renders correctly 1`] = `
 </li>
 `;
 
-exports[`StyledProductLabels renders correctly 1`] = `
+exports[`<StyledProductLabels /> renders correctly 1`] = `
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -922,7 +922,7 @@ exports[`StyledProductLabels renders correctly 1`] = `
 </div>
 `;
 
-exports[`TechnicalPoint renders correctly 1`] = `
+exports[`<TechnicalPoint /> renders correctly 1`] = `
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;

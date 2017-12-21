@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Confirm renders correctly 1`] = `
+exports[`<Confirm /> renders correctly 1`] = `
 <Styled(withStyles(Dialog))>
   <withStyles(DialogTitle)>
     Application via Brokers only
@@ -26,7 +26,7 @@ exports[`Confirm renders correctly 1`] = `
 </Styled(withStyles(Dialog))>
 `;
 
-exports[`ConfirmButtonCol renders correctly 1`] = `
+exports[`<ConfirmButtonCol /> renders correctly 1`] = `
 .c0 {
   width: 100%;
   min-height: 1px;
@@ -40,7 +40,7 @@ exports[`ConfirmButtonCol renders correctly 1`] = `
 </div>
 `;
 
-exports[`ConfirmDialog renders correctly 1`] = `
+exports[`<ConfirmDialog /> renders correctly 1`] = `
 .c0 {
   text-align: center;
 }
