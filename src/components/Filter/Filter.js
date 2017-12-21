@@ -76,6 +76,10 @@ function getChosen(chosen, multi, value) {
   return value;
 }
 
+export function handleMouseDown(e) {
+  e.preventDefault();
+}
+
 export const Filter = ({
   visible,
   group,
@@ -86,7 +90,7 @@ export const Filter = ({
   handleClose,
   handleListItemClick
 }) => (
-  <StyledFilter visible={visible}>
+  <StyledFilter visible={visible} onMouseDown={handleMouseDown}>
     <FilterHeader>
       {title}
       <IconButton onClick={handleClose} aria-label="Close Filter Choices">

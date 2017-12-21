@@ -2,6 +2,7 @@
 
 exports[`<Filter /> with multi choice renders correctly 1`] = `
 <styled.div
+  onMouseDown={[Function]}
   visible={true}
 >
   <styled.div>
@@ -48,6 +49,7 @@ exports[`<Filter /> with multi choice renders correctly 1`] = `
 
 exports[`<Filter /> with single choice renders correctly 1`] = `
 <styled.div
+  onMouseDown={[Function]}
   visible={true}
 >
   <styled.div>

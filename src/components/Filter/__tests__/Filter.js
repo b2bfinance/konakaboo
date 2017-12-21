@@ -6,7 +6,8 @@ import {
   getChosen,
   Filter,
   mapDispatchToProps,
-  mapStateToProps
+  mapStateToProps,
+  handleMouseDown
 } from '../Filter';
 import { ListItem } from 'material-ui/List';
 
@@ -124,4 +125,14 @@ test('mapStateToProps maps the state correctly', () => {
   expect(mapStateToProps({ filters: stubState })).toEqual({
     filters: stubState
   });
+});
+
+test('will stop the default action', () => {
+  const e = {
+    preventDefault: jest.fn()
+  };
+
+  handleMouseDown(e);
+
+  expect(e.preventDefault).toHaveBeenCalled();
 });
