@@ -24,7 +24,7 @@ const ProductConfirm = ({
   description,
   forwardUrl
 }) => (
-  <ConfirmDialog open={open} onRequestClose={handleRequestClose}>
+  <ConfirmDialog open={open} onClose={handleRequestClose}>
     <DialogTitle>{title}</DialogTitle>
     <DialogContent>
       <DialogContentText>{description}</DialogContentText>
