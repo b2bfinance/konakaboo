@@ -84,6 +84,7 @@ export class FilterList extends Component {
           deleteIcon={this.renderDeleteIcon(i)}
           onClick={() => this.setActiveFilterGroup(key)}
           onDelete={() => this.handleDeleteChosen(i, key)}
+          onBlur={() => this.setActiveFilterGroup(undefined)}
         />
         <Filter
           visible={activeFilterGroup === key}
