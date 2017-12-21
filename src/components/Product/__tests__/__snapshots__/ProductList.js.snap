@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`EmptyProducts renders correctly 1`] = `
+exports[`<EmptyProducts /> renders correctly 1`] = `
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -45,7 +45,7 @@ exports[`EmptyProducts renders correctly 1`] = `
 </div>
 `;
 
-exports[`ProductEmptyContainer renders correctly 1`] = `
+exports[`<ProductEmptyContainer /> renders correctly 1`] = `
 .c0 {
   width: 100%;
   min-height: 1px;
@@ -61,7 +61,7 @@ exports[`ProductEmptyContainer renders correctly 1`] = `
 </div>
 `;
 
-exports[`ProductError renders correctly 1`] = `
+exports[`<ProductError /> renders correctly 1`] = `
 .c0 {
   background-color: #ff9800;
   color: #fff;
@@ -75,7 +75,7 @@ exports[`ProductError renders correctly 1`] = `
 </div>
 `;
 
-exports[`ProductList when not fetched renders correctly 1`] = `
+exports[`<ProductList /> when not fetched renders correctly 1`] = `
 .c0 {
   height: 35rem;
   margin-bottom: 1.5rem;
@@ -106,7 +106,7 @@ exports[`ProductList when not fetched renders correctly 1`] = `
 </div>
 `;
 
-exports[`ProductList with an error renders correctly 1`] = `
+exports[`<ProductList /> with an error renders correctly 1`] = `
 .c0 {
   background-color: #ff9800;
   color: #fff;
@@ -120,7 +120,7 @@ exports[`ProductList with an error renders correctly 1`] = `
 </div>
 `;
 
-exports[`ProductList with no products renders correctly 1`] = `
+exports[`<ProductList /> with no products renders correctly 1`] = `
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -165,7 +165,7 @@ exports[`ProductList with no products renders correctly 1`] = `
 </div>
 `;
 
-exports[`ProductList with products renders correctly 1`] = `
+exports[`<ProductList /> with products renders correctly 1`] = `
 <styled.div>
   <Product
     key="0"
@@ -312,7 +312,7 @@ exports[`ProductList with products renders correctly 1`] = `
 </styled.div>
 `;
 
-exports[`ProductLoadingMask renders correctly 1`] = `
+exports[`<ProductLoadingMask /> renders correctly 1`] = `
 .c0 {
   height: 35rem;
   margin-bottom: 1.5rem;
@@ -343,7 +343,7 @@ exports[`ProductLoadingMask renders correctly 1`] = `
 </div>
 `;
 
-exports[`ProductMask renders correctly 1`] = `
+exports[`<ProductMask /> renders correctly 1`] = `
 .c0 {
   background-color: #f5f6f7;
   height: 35rem;
@@ -363,7 +363,7 @@ exports[`ProductMask renders correctly 1`] = `
 </div>
 `;
 
-exports[`ProductsLoadingContainer renders correctly 1`] = `
+exports[`<ProductsLoadingContainer /> renders correctly 1`] = `
 <div
   class=""
 >
@@ -371,7 +371,7 @@ exports[`ProductsLoadingContainer renders correctly 1`] = `
 </div>
 `;
 
-exports[`ProductsLoadingContainer while loading renders correctly 1`] = `
+exports[`<ProductsLoadingContainer /> while loading renders correctly 1`] = `
 .c0 {
   opacity: 0.75;
 }
@@ -383,7 +383,7 @@ exports[`ProductsLoadingContainer while loading renders correctly 1`] = `
 </div>
 `;
 
-exports[`StyledProductError renders correctly 1`] = `
+exports[`<StyledProductError /> renders correctly 1`] = `
 .c0 {
   background-color: #ff9800;
   color: #fff;

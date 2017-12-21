@@ -1,14 +1,18 @@
-import { SET_FILTER, RESET_FILTERS } from '../../constants';
+import {
+  SET_FILTER,
+  RESET_FILTERS,
+  RESET_GROUP_FILTERS
+} from '../../constants';
 import reducer from '../filters';
 
-it('Should return the initial state', () => {
+it('will return the initial state', () => {
   expect(reducer(undefined, {})).toEqual({
     chosen: {},
     available: []
   });
 });
 
-it('Should handle SET_FILTER', () => {
+it('will handle SET_FILTER', () => {
   expect(
     reducer(undefined, {
       type: SET_FILTER,
@@ -23,9 +27,11 @@ it('Should handle SET_FILTER', () => {
   });
 });
 
-it('Should handle RESET_FILTERS', () => {
+it('will handle RESET_FILTERS', () => {
+  const filterState = stubData.filters.withSingleAndMultiChoiceChosen;
+
   expect(
-    reducer(stubData.filters.withSingleAndMultiChoiceChosen, {
+    reducer(filterState, {
       type: RESET_FILTERS,
       payload: {}
     })
@@ -34,6 +40,42 @@ it('Should handle RESET_FILTERS', () => {
       0: [],
       1: ''
     },
-    available: stubData.filters.withSingleAndMultiChoiceChosen.available
+    available: filterState.available
+  });
+});
+
+it('will handle multi chosen RESET_GROUP_FILTERS', () => {
+  const filterState = stubData.filters.withSingleAndMultiChoiceChosen;
+
+  expect(
+    reducer(filterState, {
+      type: RESET_GROUP_FILTERS,
+      group: 0,
+      payload: {}
+    })
+  ).toEqual({
+    chosen: {
+      0: [],
+      1: filterState.chosen[1]
+    },
+    available: filterState.available
+  });
+});
+
+it('will handle single chosen RESET_GROUP_FILTERS', () => {
+  const filterState = stubData.filters.withSingleAndMultiChoiceChosen;
+
+  expect(
+    reducer(filterState, {
+      type: RESET_GROUP_FILTERS,
+      group: 1,
+      payload: {}
+    })
+  ).toEqual({
+    chosen: {
+      0: filterState.chosen[0],
+      1: ''
+    },
+    available: filterState.available
   });
 });

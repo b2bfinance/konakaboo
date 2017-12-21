@@ -7,7 +7,7 @@ import Confirm, {
   ConfirmDialog
 } from '../Confirm';
 
-test('Confirm renders correctly', () => {
+test('<Confirm /> renders correctly', () => {
   const {
     heading,
     description
@@ -18,10 +18,10 @@ test('Confirm renders correctly', () => {
   ).toMatchSnapshot();
 });
 
-test('ConfirmButtonCol renders correctly', () => {
+test('<ConfirmButtonCol /> renders correctly', () => {
   expect(render(<ConfirmButtonCol />)).toMatchSnapshot();
 });
 
-test('ConfirmDialog renders correctly', () => {
+test('<ConfirmDialog /> renders correctly', () => {
   expect(shallow(<ConfirmDialog />)).toMatchSnapshot();
 });

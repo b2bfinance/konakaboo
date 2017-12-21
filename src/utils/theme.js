@@ -20,8 +20,8 @@ export default {
   infoButtonColor: '#37474f',
   infoCheckColor: '#4dc16f',
 
-  filterHeaderBorder: '#009688',
-  filterHeaderColor: '#fff',
-  filterChosenBackground: '#009688',
-  filterChosenColor: '#fff'
+  filterChipChosenBackground: '#009688',
+  filterChipChosenColor: '#fff',
+  filterHeaderBackground: '#00897B',
+  filterHeaderColor: '#fff'
 };

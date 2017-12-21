@@ -15,11 +15,10 @@ export const StyledAppContainer = Row.extend`
   * {
     box-sizing: border-box;
   }
+`;
 
-  svg {
-    height: 1.125rem;
-    width: 1.125rem;
-  }
+export const FilterRow = Row.extend`
+  justify-content: flex-end;
 `;
 
 export class AppContainer extends Component {
@@ -34,9 +33,9 @@ export class AppContainer extends Component {
     return (
       <StyledAppContainer>
         {filterCount > 0 && (
-          <Row>
+          <FilterRow>
             <Filter />
-          </Row>
+          </FilterRow>
         )}
         <Row>
           <Col phone="100">

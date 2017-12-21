@@ -1,6 +1,6 @@
 import getProducts, { makeProviderURI } from '../api';
 
-test('Appends filters with a question mark when the provider has no query strings', () => {
+test('appends filters with a question mark when the provider has no query strings', () => {
   expect(
     makeProviderURI(
       'http://localhost:3000',
@@ -9,7 +9,7 @@ test('Appends filters with a question mark when the provider has no query string
   ).toBe('http://localhost:3000?TEST_KEY=TEST_CHOICE');
 });
 
-test('Appends filters with an ampersand when the provider has query strings', () => {
+test('appends filters with an ampersand when the provider has query strings', () => {
   expect(
     makeProviderURI(
       'http://localhost:3000?query=test',
@@ -18,7 +18,7 @@ test('Appends filters with an ampersand when the provider has query strings', ()
   ).toBe('http://localhost:3000?query=test&TEST_KEY=TEST_CHOICE');
 });
 
-test('Request product data and gets json response', async () => {
+test('request product data and gets json response', async () => {
   const respone = await getProducts(
     'http://localhost:3333',
     stubData.filters.withNoChosen

@@ -5,14 +5,14 @@ import {
   PRODUCTS_FAILURE
 } from '../../constants';
 
-it('Should return the initial state', () => {
+it('will return the initial state', () => {
   expect(reducer(undefined, {})).toEqual({
     isFetching: false,
     error: false
   });
 });
 
-it('Should handle PRODUCTS_REQUEST', () => {
+it('will handle PRODUCTS_REQUEST', () => {
   expect(
     reducer(undefined, {
       type: PRODUCTS_REQUEST
@@ -23,7 +23,7 @@ it('Should handle PRODUCTS_REQUEST', () => {
   });
 });
 
-it('Should handle PRODUCTS_SUCCESS', () => {
+it('will handle PRODUCTS_SUCCESS', () => {
   expect(
     reducer(undefined, {
       type: PRODUCTS_SUCCESS,
@@ -36,7 +36,7 @@ it('Should handle PRODUCTS_SUCCESS', () => {
   });
 });
 
-it('Should handle PRODUCTS_FAILURE', () => {
+it('will handle PRODUCTS_FAILURE', () => {
   expect(
     reducer(undefined, {
       type: PRODUCTS_FAILURE,

@@ -1,5 +1,5 @@
 import reducer from '../config';
 
-it('Should return the initial state', () => {
+it('should return the initial state', () => {
   expect(reducer(undefined, {})).toEqual({});
 });

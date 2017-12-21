@@ -54,10 +54,11 @@ const filterStateStubs = [
   {
     chosen: {
       0: ['TEST_CHOICE_1', 'TEST_CHOICE_2'],
-      1: 'TEST_CHOICE_2'
+      1: 'TEST_CHOICE_1'
     },
     available: [
       {
+        title: 'Test Title 1',
         multiChoice: true,
         key: 'TEST_KEY_1',
         choices: [
@@ -66,9 +67,13 @@ const filterStateStubs = [
         ]
       },
       {
+        title: 'Test Title 2',
         multiChoice: false,
         key: 'TEST_KEY_2',
-        choices: [{ label: 'TEST_CHOICE_1_LABEL', value: 'TEST_CHOICE_1' }]
+        choices: [
+          { label: 'TEST_CHOICE_1_LABEL', value: 'TEST_CHOICE_1' },
+          { label: 'TEST_CHOICE_2_LABEL', value: 'TEST_CHOICE_2' }
+        ]
       }
     ]
   }
@@ -93,8 +98,4 @@ global.stubData = {
     withMoreInformation: productStubs.data[2],
     withConfirmation: productStubs.data[0]
   }
-};
-
-global.window = {
-  location: {}
 };

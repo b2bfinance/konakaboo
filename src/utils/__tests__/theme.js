@@ -23,10 +23,10 @@ test('Default theme contains all required attributes', () => {
     'infoButtonBackground',
     'infoButtonColor',
     'infoCheckColor',
-    'filterHeaderBorder',
-    'filterHeaderColor',
-    'filterChosenBackground',
-    'filterChosenColor'
+    'filterChipChosenBackground',
+    'filterChipChosenColor',
+    'filterHeaderBackground',
+    'filterHeaderColor'
   ]);
 });
 
@@ -45,10 +45,10 @@ test('Color attributes are valid hex strings', () => {
     'infoButtonBackground',
     'infoButtonColor',
     'infoCheckColor',
-    'filterHeaderBorder',
-    'filterHeaderColor',
-    'filterChosenBackground',
-    'filterChosenColor'
+    'filterChipChosenBackground',
+    'filterChipChosenColor',
+    'filterHeaderBackground',
+    'filterHeaderColor'
   ];
 
   colorAttributes.forEach(color => {
