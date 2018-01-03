@@ -17,10 +17,6 @@ export const StyledAppContainer = Row.extend`
   }
 `;
 
-export const FilterRow = Row.extend`
-  justify-content: flex-end;
-`;
-
 export class AppContainer extends Component {
   componentDidMount() {
     const { dispatch } = this.props;
@@ -32,11 +28,7 @@ export class AppContainer extends Component {
 
     return (
       <StyledAppContainer>
-        {filterCount > 0 && (
-          <FilterRow>
-            <Filter />
-          </FilterRow>
-        )}
+        {filterCount > 0 && <Filter />}
         <Row>
           <Col phone="100">
             <ProductList

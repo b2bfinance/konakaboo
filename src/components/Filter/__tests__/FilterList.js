@@ -4,6 +4,7 @@ import thunk from 'redux-thunk';
 import configureMockStore from 'redux-mock-store';
 import { Provider } from 'react-redux';
 import FilterList, {
+  FilterRow,
   ChipContainer,
   StyledChip,
   generateChipLabel,
@@ -11,7 +12,12 @@ import FilterList, {
   mapStateToProps
 } from '../FilterList';
 import { Filter } from '../Filter';
+import Chip from 'material-ui/Chip';
 import Cancel from 'material-ui-icons/Cancel';
+
+test('<FilterRow /> renders correctly', () => {
+  expect(shallow(<FilterRow />)).toMatchSnapshot();
+});
 
 test('<ChipContainer /> renders correctly', () => {
   expect(shallow(<ChipContainer />)).toMatchSnapshot();
@@ -62,6 +68,7 @@ describe('<FilterList />', () => {
   beforeEach(() => {
     const mockStore = configureMockStore([thunk]);
     const mockState = stubData.filters.withSingleAndMultiChoiceChosen;
+
     store = mockStore({ config: { provider: '' }, filters: mockState });
 
     wrapper = mount(
@@ -113,7 +120,7 @@ describe('<FilterList />', () => {
 
   test('will close the filter when clicking the associated delete element', () => {
     wrapper
-      .find(StyledChip)
+      .find(Chip)
       .first()
       .simulate('click');
 
@@ -129,11 +136,24 @@ describe('<FilterList />', () => {
         .prop('visible')
     ).toBe(false);
   });
+
+  test('will reset filters when reset chip is clicked', () => {
+    wrapper
+      .find(Chip)
+      .last()
+      .simulate('click');
+
+    expect(store.getActions()).toEqual([
+      { payload: {}, type: 'RESET_FILTERS' },
+      { type: 'PRODUCTS_REQUEST' }
+    ]);
+  });
 });
 
 test('mapDispatchToProps maps the dispatch correctly', () => {
   expect(Object.keys(mapDispatchToProps)).toEqual([
-    'handleResetFiltersForGroup'
+    'handleResetFiltersForGroup',
+    'handleResetFilters'
   ]);
 });
 

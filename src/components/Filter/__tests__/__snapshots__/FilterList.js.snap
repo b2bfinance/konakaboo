@@ -12,8 +12,29 @@ exports[`<ChipContainer /> renders correctly 1`] = `
 />
 `;
 
+exports[`<FilterRow /> renders correctly 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 100%;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+<div
+  className="c0"
+/>
+`;
+
 exports[`<StyledChip /> with no selection renders correctly 1`] = `
-<withStyles(Chip)
+<WithStyles
   className=""
   selection={Array []}
 />
@@ -25,7 +46,7 @@ exports[`<StyledChip /> with selection renders correctly 1`] = `
   color: !important;
 }
 
-<withStyles(Chip)
+<WithStyles
   className="c0"
   selection={
     Array [

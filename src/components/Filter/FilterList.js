@@ -2,11 +2,19 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import styled, { css } from 'styled-components';
 import { getChosenForGroup } from '../../utils/filter';
-import { resetFiltersForGroup } from '../../actions/filter';
+import {
+  resetFiltersForGroup,
+  resetAllChosenFilters
+} from '../../actions/filter';
+import Row from '../Row';
 import Chip from 'material-ui/Chip';
 import Cancel from 'material-ui-icons/Cancel';
 import ArrowDropDown from 'material-ui-icons/ArrowDropDown';
 import Filter from './Filter';
+
+export const FilterRow = Row.extend`
+  justify-content: flex-end;
+`;
 
 export const ChipContainer = styled.div`
   margin-bottom: 1.5rem;
@@ -69,39 +77,45 @@ export class FilterList extends Component {
 
   render() {
     const { activeFilterGroup } = this.state;
-    const { filters, chosen } = this.props;
+    const { filters, chosen, handleResetFilters } = this.props;
 
-    return filters.map(({ title, multiChoice, choices, key }, i) => (
-      <ChipContainer key={key}>
-        <StyledChip
-          selection={getChosenForGroup(chosen, i)}
-          label={generateChipLabel(
-            title,
-            multiChoice,
-            getChosenForGroup(chosen, i),
-            choices
-          )}
-          deleteIcon={this.renderDeleteIcon(i)}
-          onClick={() => this.setActiveFilterGroup(key)}
-          onDelete={() => this.handleDeleteChosen(i, key)}
-          onBlur={() => this.setActiveFilterGroup(undefined)}
-        />
-        <Filter
-          visible={activeFilterGroup === key}
-          group={i}
-          multi={multiChoice}
-          title={title}
-          choices={choices}
-          chosen={getChosenForGroup(chosen, i)}
-          handleClose={() => this.setActiveFilterGroup(undefined)}
-        />
-      </ChipContainer>
-    ));
+    return (
+      <FilterRow>
+        {filters.map(({ title, multiChoice, choices, key }, i) => (
+          <ChipContainer key={key}>
+            <StyledChip
+              selection={getChosenForGroup(chosen, i)}
+              label={generateChipLabel(
+                title,
+                multiChoice,
+                getChosenForGroup(chosen, i),
+                choices
+              )}
+              deleteIcon={this.renderDeleteIcon(i)}
+              onClick={() => this.setActiveFilterGroup(key)}
+              onDelete={() => this.handleDeleteChosen(i, key)}
+              onBlur={() => this.setActiveFilterGroup(undefined)}
+            />
+            <Filter
+              visible={activeFilterGroup === key}
+              group={i}
+              multi={multiChoice}
+              title={title}
+              choices={choices}
+              chosen={getChosenForGroup(chosen, i)}
+              handleClose={() => this.setActiveFilterGroup(undefined)}
+            />
+          </ChipContainer>
+        ))}
+        <Chip label="Reset Filters" onClick={handleResetFilters} />
+      </FilterRow>
+    );
   }
 }
 
 export const mapDispatchToProps = {
-  handleResetFiltersForGroup: resetFiltersForGroup
+  handleResetFiltersForGroup: resetFiltersForGroup,
+  handleResetFilters: resetAllChosenFilters
 };
 
 export const mapStateToProps = ({ filters }) => ({

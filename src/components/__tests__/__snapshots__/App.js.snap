@@ -2,9 +2,7 @@
 
 exports[`<AppContainer /> with filters renders correctly 1`] = `
 <styled.div>
-  <styled.div>
-    <Connect(FilterList) />
-  </styled.div>
+  <Connect(FilterList) />
   <styled.div>
     <styled.div
       phone="100"

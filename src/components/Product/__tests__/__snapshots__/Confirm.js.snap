@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Confirm /> renders correctly 1`] = `
-<Styled(withStyles(Dialog))>
-  <withStyles(DialogTitle)>
+<Styled(WithStyles)>
+  <WithStyles>
     Application via Brokers only
-  </withStyles(DialogTitle)>
-  <withStyles(DialogContent)>
-    <withStyles(DialogContentText)>
+  </WithStyles>
+  <WithStyles>
+    <WithStyles>
       B2Bfinance.com are registered intermediaries who will quote, package and submit your lending request to Natwest. There is no charge for this service as we are paid a small commission by Natwest to cover our time.
-    </withStyles(DialogContentText)>
+    </WithStyles>
     <styled.div>
       <styled.div
         desktop={40}
@@ -22,8 +22,8 @@ exports[`<Confirm /> renders correctly 1`] = `
         </styled.a>
       </styled.div>
     </styled.div>
-  </withStyles(DialogContent)>
-</Styled(withStyles(Dialog))>
+  </WithStyles>
+</Styled(WithStyles)>
 `;
 
 exports[`<ConfirmButtonCol /> renders correctly 1`] = `
@@ -45,7 +45,7 @@ exports[`<ConfirmDialog /> renders correctly 1`] = `
   text-align: center;
 }
 
-<withStyles(Dialog)
+<WithStyles
   className="c0"
 />
 `;

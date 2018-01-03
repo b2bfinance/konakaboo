@@ -1,15 +1,15 @@
 {
   "name": "b2b-products-embed",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "private": true,
   "dependencies": {
     "babel-polyfill": "^6.26.0",
-    "enzyme": "^3.2.0",
+    "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "enzyme-to-json": "^3.2.2",
     "isomorphic-fetch": "^2.2.1",
     "jest-styled-components": "^4.9.0",
-    "material-ui": "^1.0.0-beta.23",
+    "material-ui": "^1.0.0-beta.26",
     "material-ui-icons": "^1.0.0-beta.17",
     "prettier": "^1.9.2",
     "query-string": "^5.0.1",
@@ -19,9 +19,9 @@
     "react-scripts": "1.0.17",
     "react-test-renderer": "^16.2.0",
     "redux": "^3.7.2",
-    "redux-mock-store": "^1.3.0",
+    "redux-mock-store": "^1.4.0",
     "redux-thunk": "^2.2.0",
-    "styled-components": "^2.3.3"
+    "styled-components": "^2.4.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -33,7 +33,7 @@
     "push": "./scripts/push.js"
   },
   "devDependencies": {
-    "@google-cloud/storage": "^1.5.1",
+    "@google-cloud/storage": "^1.5.2",
     "babel-plugin-module-resolver": "^2.7.1"
   },
   "jest": {
