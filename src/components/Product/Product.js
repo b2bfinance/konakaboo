@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { findDOMNode } from 'react-dom';
 import styled, { css } from 'styled-components';
 import { queries } from '../../utils/media';
 import Row from '../Row';
@@ -177,16 +178,33 @@ export default class Product extends Component {
     isShowingConfirmation: false
   };
 
-  handleToggleMoreInfo = () =>
+  setContainerEl = el => {
+    this.productContainer = findDOMNode(el);
+  };
+
+  handleToggleMoreInfo = e => {
+    const { isShowingMoreInfo } = this.state;
+
     this.setState({
-      isShowingMoreInfo: !this.state.isShowingMoreInfo
+      isShowingMoreInfo: !isShowingMoreInfo
     });
+
+    if (!isShowingMoreInfo) {
+      this.productContainer.dispatchEvent(
+        new CustomEvent('more', { detail: this.props.product })
+      );
+    }
+  };
 
   handleApplyClick = e => {
     if (this.hasConfirmationDialoig()) {
       e.preventDefault();
       this.toggleDialogState();
     }
+
+    this.productContainer.dispatchEvent(
+      new CustomEvent('apply', { detail: this.props.product })
+    );
   };
 
   toggleDialogState = () =>
@@ -227,7 +245,7 @@ export default class Product extends Component {
     } = this.props.product;
 
     return (
-      <Container highlight={highlighted}>
+      <Container highlight={highlighted} ref={this.setContainerEl} data-product>
         <HeadingRow highlight={highlighted}>
           {highlighted && <Star />}
           {title}

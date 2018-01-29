@@ -3,7 +3,8 @@
   "version": "1.2.0",
   "private": true,
   "dependencies": {
-    "babel-polyfill": "^6.26.0",
+    "core-js": "^2.5.3",
+    "custom-event-polyfill": "^0.3.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "enzyme-to-json": "^3.2.2",
