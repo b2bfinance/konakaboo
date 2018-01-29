@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow, render } from 'enzyme';
+import { shallow, render, mount } from 'enzyme';
 import Button from '../../Button';
 import Product, {
   Container,
@@ -95,20 +95,23 @@ describe('<Product />', () => {
   });
 
   test('clicking the apply button displays the confirmation dialog', () => {
-    const wrapper = shallow(
+    const wrapper = mount(
       <Product product={stubData.products.withConfirmation} />
     );
 
-    wrapper.find(ApplyButton).simulate('click', { preventDefault() {} });
-    expect(wrapper).toMatchSnapshot();
+    wrapper.find(ApplyButton).simulate('click', {
+      preventDefault() {}
+    });
+
+    expect(wrapper.state('isShowingConfirmation')).toBe(true);
   });
 
   test('clicking the more info button displays more information', () => {
-    const wrapper = shallow(
+    const wrapper = mount(
       <Product product={stubData.products.withMoreInformation} />
     );
 
     wrapper.find(Button).simulate('click');
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.state('isShowingMoreInfo')).toBe(true);
   });
 });
