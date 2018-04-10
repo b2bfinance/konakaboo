@@ -191,7 +191,9 @@ export default class Product extends Component {
 
     if (!isShowingMoreInfo) {
       this.productContainer.dispatchEvent(
-        new CustomEvent('more', { detail: this.props.product })
+        new CustomEvent('more', {
+          detail: this.props.product
+        })
       );
     }
   };
@@ -203,7 +205,9 @@ export default class Product extends Component {
     }
 
     this.productContainer.dispatchEvent(
-      new CustomEvent('apply', { detail: this.props.product })
+      new CustomEvent('apply', {
+        detail: this.props.product
+      })
     );
   };
 
@@ -262,6 +266,8 @@ export default class Product extends Component {
               primary
               margin={this.hasMoreInfo()}
               href={links.apply}
+              target="_blank"
+              rel="noopener"
             >
               Get Deal
             </ApplyButton>
