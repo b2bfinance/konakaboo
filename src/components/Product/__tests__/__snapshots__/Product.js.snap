@@ -193,6 +193,8 @@ exports[`<Product /> with highlighted set renders correctly 1`] = `
         margin={true}
         onClick={[Function]}
         primary={true}
+        rel="noopener"
+        target="_blank"
       >
         Get Deal
       </styled.a>
@@ -314,6 +316,8 @@ exports[`<Product /> with more information available renders correctly 1`] = `
         margin={true}
         onClick={[Function]}
         primary={true}
+        rel="noopener"
+        target="_blank"
       >
         Get Deal
       </styled.a>
@@ -424,6 +428,8 @@ exports[`<Product /> without more information available renders correctly 1`] = 
         margin={false}
         onClick={[Function]}
         primary={true}
+        rel="noopener"
+        target="_blank"
       >
         Get Deal
       </styled.a>
