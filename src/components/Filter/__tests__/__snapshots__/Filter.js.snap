@@ -7,43 +7,43 @@ exports[`<Filter /> with multi choice renders correctly 1`] = `
 >
   <styled.div>
     Filter Title
-    <WithStyles
+    <WithStyles(IconButton)
       aria-label="Close Filter Choices"
       onClick={[Function]}
     >
       <pure(Close) />
-    </WithStyles>
+    </WithStyles(IconButton)>
   </styled.div>
-  <WithStyles>
-    <WithStyles
+  <WithStyles(List)>
+    <WithStyles(ListItem)
       button={true}
       key="TEST_CHOICE_1"
       onClick={[Function]}
     >
-      <WithStyles
+      <WithStyles(Checkbox)
         checked={true}
         disableRipple={true}
         tabIndex={-1}
       />
-      <WithStyles
+      <WithStyles(ListItemText)
         primary="TEST_CHOICE_1_LABEL"
       />
-    </WithStyles>
-    <WithStyles
+    </WithStyles(ListItem)>
+    <WithStyles(ListItem)
       button={true}
       key="TEST_CHOICE_2"
       onClick={[Function]}
     >
-      <WithStyles
+      <WithStyles(Checkbox)
         checked={true}
         disableRipple={true}
         tabIndex={-1}
       />
-      <WithStyles
+      <WithStyles(ListItemText)
         primary="TEST_CHOICE_2_LABEL"
       />
-    </WithStyles>
-  </WithStyles>
+    </WithStyles(ListItem)>
+  </WithStyles(List)>
 </styled.div>
 `;
 
@@ -54,43 +54,43 @@ exports[`<Filter /> with single choice renders correctly 1`] = `
 >
   <styled.div>
     Filter Title
-    <WithStyles
+    <WithStyles(IconButton)
       aria-label="Close Filter Choices"
       onClick={[Function]}
     >
       <pure(Close) />
-    </WithStyles>
+    </WithStyles(IconButton)>
   </styled.div>
-  <WithStyles>
-    <WithStyles
+  <WithStyles(List)>
+    <WithStyles(ListItem)
       button={true}
       key="TEST_CHOICE_1"
       onClick={[Function]}
     >
-      <WithStyles
+      <WithStyles(Radio)
         checked={true}
         disableRipple={true}
         tabIndex={-1}
       />
-      <WithStyles
+      <WithStyles(ListItemText)
         primary="TEST_CHOICE_1_LABEL"
       />
-    </WithStyles>
-    <WithStyles
+    </WithStyles(ListItem)>
+    <WithStyles(ListItem)
       button={true}
       key="TEST_CHOICE_2"
       onClick={[Function]}
     >
-      <WithStyles
+      <WithStyles(Radio)
         checked={false}
         disableRipple={true}
         tabIndex={-1}
       />
-      <WithStyles
+      <WithStyles(ListItemText)
         primary="TEST_CHOICE_2_LABEL"
       />
-    </WithStyles>
-  </WithStyles>
+    </WithStyles(ListItem)>
+  </WithStyles(List)>
 </styled.div>
 `;
 

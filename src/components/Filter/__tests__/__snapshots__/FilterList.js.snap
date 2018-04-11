@@ -34,7 +34,7 @@ exports[`<FilterRow /> renders correctly 1`] = `
 `;
 
 exports[`<StyledChip /> with no selection renders correctly 1`] = `
-<WithStyles
+<WithStyles(Chip)
   className=""
   selection={Array []}
 />
@@ -46,7 +46,7 @@ exports[`<StyledChip /> with selection renders correctly 1`] = `
   color: !important;
 }
 
-<WithStyles
+<WithStyles(Chip)
   className="c0"
   selection={
     Array [
