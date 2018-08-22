@@ -111,7 +111,11 @@ describe('<Product />', () => {
       <Product product={stubData.products.withMoreInformation} />
     );
 
-    wrapper.find(Button).simulate('click');
+    wrapper
+      .find(Button)
+      .filterWhere(wrapper => wrapper.text() === 'more info')
+      .simulate('click');
+
     expect(wrapper.state('isShowingMoreInfo')).toBe(true);
   });
 });

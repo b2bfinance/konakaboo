@@ -21,7 +21,7 @@ export const ProductMask = styled.div`
   `};
 `;
 
-export const ProductEmptyContainer = Col.extend`
+export const ProductEmptyContainer = styled(Col)`
   background-color: ${props => props.theme.productEmptyBackground};
   margin: 2rem auto;
   padding: 2rem;
@@ -72,7 +72,9 @@ const ProductList = ({ error, hasFetched, isFetching, products, dispatch }) => {
 
   return (
     <ProductsLoadingContainer loading={isFetching}>
-      {products.map((product, i) => <Product key={i} product={product} />)}
+      {products.map((product, i) => (
+        <Product key={i} product={product} />
+      ))}
     </ProductsLoadingContainer>
   );
 };

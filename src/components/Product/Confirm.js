@@ -3,13 +3,12 @@ import styled from 'styled-components';
 import Button from '../Button';
 import Row from '../Row';
 import Col from '../Col';
-import Dialog, {
-  DialogTitle,
-  DialogContent,
-  DialogContentText
-} from 'material-ui/Dialog';
+import Dialog from '@material-ui/core/Dialog';
+import DialogTitle from '@material-ui/core/DialogTitle';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
 
-export const ConfirmButtonCol = Col.extend`
+export const ConfirmButtonCol = styled(Col)`
   margin: 1.5rem auto 0;
 `;
 

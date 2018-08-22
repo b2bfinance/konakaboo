@@ -18,6 +18,7 @@ exports[`<ApplyButton /> renders correctly 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   padding: 0.75rem 1.5rem;
+  -webkit-text-decoration: none;
   text-decoration: none;
   width: 100%;
   white-space: nowrap;
@@ -28,6 +29,7 @@ exports[`<ApplyButton /> renders correctly 1`] = `
 }
 
 .c0:hover {
+  -webkit-text-decoration: none;
   text-decoration: none;
 }
 
@@ -53,7 +55,7 @@ exports[`<Container /> renders correctly 1`] = `
 `;
 
 exports[`<HeadingRow /> renders correctly 1`] = `
-.c0 {
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -62,6 +64,9 @@ exports[`<HeadingRow /> renders correctly 1`] = `
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   width: 100%;
+}
+
+.c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -71,7 +76,7 @@ exports[`<HeadingRow /> renders correctly 1`] = `
 }
 
 <div
-  class="c0"
+  class="c0 c1"
 >
   
 </div>
@@ -112,7 +117,7 @@ exports[`<InfoList /> renders correctly 1`] = `
 `;
 
 exports[`<MoreInfoRow /> renders correctly 1`] = `
-.c0 {
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -121,13 +126,16 @@ exports[`<MoreInfoRow /> renders correctly 1`] = `
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   width: 100%;
+}
+
+.c0 {
   border-top: 2px solid #eceff1;
   padding: 1rem;
   display: none;
 }
 
 <div
-  class="c0"
+  class="c0 c1"
 >
   
 </div>
@@ -138,7 +146,7 @@ exports[`<Product /> with highlighted set renders correctly 1`] = `
   data-product={true}
   highlight={true}
 >
-  <styled.div
+  <Styled(styled.div)
     highlight={true}
   >
     <pure(Star) />
@@ -151,9 +159,9 @@ exports[`<Product /> with highlighted set renders correctly 1`] = `
         ]
       }
     />
-  </styled.div>
+  </Styled(styled.div)>
   <styled.div>
-    <styled.div
+    <Styled(styled.div)
       desktop="20"
       phone="100"
     >
@@ -161,7 +169,7 @@ exports[`<Product /> with highlighted set renders correctly 1`] = `
         alt="Landbay"
         src="https://b2bfinance.com/images/partners/Landbay.png"
       />
-    </styled.div>
+    </Styled(styled.div)>
     <Component
       columns={
         Array [
@@ -184,11 +192,11 @@ exports[`<Product /> with highlighted set renders correctly 1`] = `
         ]
       }
     />
-    <styled.div
+    <Styled(styled.div)
       desktop="20"
       phone="100"
     >
-      <styled.a
+      <Styled(styled.a)
         href="https://b2bfinance.com/enquire/buy-to-let"
         margin={true}
         onClick={[Function]}
@@ -197,7 +205,7 @@ exports[`<Product /> with highlighted set renders correctly 1`] = `
         target="_blank"
       >
         Get Deal
-      </styled.a>
+      </Styled(styled.a)>
       <ProductConfirm
         description="B2Bfinance.com are registered intermediaries who will quote, package and submit your lending request to Natwest. There is no charge for this service as we are paid a small commission by Natwest to cover our time."
         forwardUrl="https://b2bfinance.com/enquire/buy-to-let"
@@ -212,9 +220,9 @@ exports[`<Product /> with highlighted set renders correctly 1`] = `
       >
         more info
       </styled.a>
-    </styled.div>
+    </Styled(styled.div)>
   </styled.div>
-  <styled.div
+  <Styled(styled.div)
     visible={false}
   >
     <span>
@@ -254,7 +262,7 @@ exports[`<Product /> with highlighted set renders correctly 1`] = `
         </styled.ul>
       </styled.div>
     </styled.div>
-  </styled.div>
+  </Styled(styled.div)>
 </styled.div>
 `;
 
@@ -263,7 +271,7 @@ exports[`<Product /> with more information available renders correctly 1`] = `
   data-product={true}
   highlight={false}
 >
-  <styled.div
+  <Styled(styled.div)
     highlight={false}
   >
     Precise Oh So Precise Total Winners Deal
@@ -274,9 +282,9 @@ exports[`<Product /> with more information available renders correctly 1`] = `
         ]
       }
     />
-  </styled.div>
+  </Styled(styled.div)>
   <styled.div>
-    <styled.div
+    <Styled(styled.div)
       desktop="20"
       phone="100"
     >
@@ -284,7 +292,7 @@ exports[`<Product /> with more information available renders correctly 1`] = `
         alt="Barclays"
         src="https://b2bfinance.com/images/partners/Precise.png"
       />
-    </styled.div>
+    </Styled(styled.div)>
     <Component
       columns={
         Array [
@@ -307,11 +315,11 @@ exports[`<Product /> with more information available renders correctly 1`] = `
         ]
       }
     />
-    <styled.div
+    <Styled(styled.div)
       desktop="20"
       phone="100"
     >
-      <styled.a
+      <Styled(styled.a)
         href="https://b2bfinance.com/enquire/buy-to-let"
         margin={true}
         onClick={[Function]}
@@ -320,7 +328,7 @@ exports[`<Product /> with more information available renders correctly 1`] = `
         target="_blank"
       >
         Get Deal
-      </styled.a>
+      </Styled(styled.a)>
       <styled.a
         onClick={[Function]}
         secondary={true}
@@ -328,9 +336,9 @@ exports[`<Product /> with more information available renders correctly 1`] = `
       >
         more info
       </styled.a>
-    </styled.div>
+    </Styled(styled.div)>
   </styled.div>
-  <styled.div
+  <Styled(styled.div)
     visible={false}
   >
     <span>
@@ -370,7 +378,7 @@ exports[`<Product /> with more information available renders correctly 1`] = `
         </styled.ul>
       </styled.div>
     </styled.div>
-  </styled.div>
+  </Styled(styled.div)>
 </styled.div>
 `;
 
@@ -379,16 +387,16 @@ exports[`<Product /> without more information available renders correctly 1`] = 
   data-product={true}
   highlight={false}
 >
-  <styled.div
+  <Styled(styled.div)
     highlight={false}
   >
     Natwest Low Low Rate
     <Component
       labels={Array []}
     />
-  </styled.div>
+  </Styled(styled.div)>
   <styled.div>
-    <styled.div
+    <Styled(styled.div)
       desktop="20"
       phone="100"
     >
@@ -396,7 +404,7 @@ exports[`<Product /> without more information available renders correctly 1`] = 
         alt="Natwest"
         src="https://b2bfinance.com/images/partners/NatWest.png"
       />
-    </styled.div>
+    </Styled(styled.div)>
     <Component
       columns={
         Array [
@@ -419,11 +427,11 @@ exports[`<Product /> without more information available renders correctly 1`] = 
         ]
       }
     />
-    <styled.div
+    <Styled(styled.div)
       desktop="20"
       phone="100"
     >
-      <styled.a
+      <Styled(styled.a)
         href="https://b2bfinance.com/enquire/buy-to-let"
         margin={false}
         onClick={[Function]}
@@ -432,7 +440,7 @@ exports[`<Product /> without more information available renders correctly 1`] = 
         target="_blank"
       >
         Get Deal
-      </styled.a>
+      </Styled(styled.a)>
       <ProductConfirm
         description="B2Bfinance.com are registered intermediaries who will quote, package and submit your lending request to Natwest. There is no charge for this service as we are paid a small commission by Natwest to cover our time."
         forwardUrl="https://b2bfinance.com/enquire/buy-to-let"
@@ -440,15 +448,18 @@ exports[`<Product /> without more information available renders correctly 1`] = 
         open={false}
         title="Application via Brokers only"
       />
-    </styled.div>
+    </Styled(styled.div)>
   </styled.div>
 </styled.div>
 `;
 
 exports[`<ProductCol /> renders correctly 1`] = `
-.c0 {
+.c1 {
   width: 100%;
   min-height: 1px;
+}
+
+.c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -473,6 +484,7 @@ exports[`<ProductCol /> renders correctly 1`] = `
   -ms-flex-negative: 0;
   flex-shrink: 0;
   max-width: 100%;
+  max-height: 120px;
 }
 
 .c0 span {
@@ -488,20 +500,23 @@ exports[`<ProductCol /> renders correctly 1`] = `
 }
 
 <div
-  class="c0"
+  class="c0 c1"
 >
   
 </div>
 `;
 
 exports[`<ProductColumns /> renders correctly 1`] = `
-.c0 {
+.c1 {
   width: 100%;
   min-height: 1px;
   -webkit-flex: 0 0 100%;
   -ms-flex: 0 0 100%;
   flex: 0 0 100%;
   max-width: 100%;
+}
+
+.c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -526,6 +541,7 @@ exports[`<ProductColumns /> renders correctly 1`] = `
   -ms-flex-negative: 0;
   flex-shrink: 0;
   max-width: 100%;
+  max-height: 120px;
 }
 
 .c0 span {
@@ -539,7 +555,7 @@ exports[`<ProductColumns /> renders correctly 1`] = `
 }
 
 @media (min-width:62em) {
-  .c0 {
+  .c1 {
     -webkit-flex: 0 0 60%;
     -ms-flex: 0 0 60%;
     flex: 0 0 60%;
@@ -548,7 +564,7 @@ exports[`<ProductColumns /> renders correctly 1`] = `
 }
 
 <div
-  class="c0"
+  class="c0 c1"
 >
   <small>
     test
@@ -654,6 +670,12 @@ exports[`<ProductTechnicalPoints /> renders correctly 1`] = `
     focusable="false"
     viewBox="0 0 24 24"
   >
+    <path
+      d="M0 0h24v24H0z"
+      fill="none"
+    >
+      
+    </path>
     <path
       d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
     >

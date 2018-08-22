@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import styled from 'styled-components';
 import Row from './Row';
 import Col from './Col';
 import ProductList from './Product';
 import Filter from './Filter';
 import { loadProducts } from '../actions/products';
 
-export const StyledAppContainer = Row.extend`
+export const StyledAppContainer = styled(Row)`
   font-family: ${props => props.theme.mainFontFamily};
   font-weight: ${props => props.theme.mainNormalFontWeight};
   font-size: ${props => props.theme.mainFontSize};

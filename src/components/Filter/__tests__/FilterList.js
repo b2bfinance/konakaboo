@@ -12,8 +12,8 @@ import FilterList, {
   mapStateToProps
 } from '../FilterList';
 import { Filter } from '../Filter';
-import Chip from 'material-ui/Chip';
-import Cancel from 'material-ui-icons/Cancel';
+import Chip from '@material-ui/core/Chip';
+import Cancel from '@material-ui/icons/Cancel';
 
 test('<FilterRow /> renders correctly', () => {
   expect(shallow(<FilterRow />)).toMatchSnapshot();
