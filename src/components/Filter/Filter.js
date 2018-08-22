@@ -3,11 +3,13 @@ import { connect } from 'react-redux';
 import { setChosenFiltersForGroup } from '../../actions/filter';
 import styled, { css } from 'styled-components';
 import { queries } from '../../utils/media';
-import List, { ListItem, ListItemText } from 'material-ui/List';
-import IconButton from 'material-ui/IconButton';
-import Checkbox from 'material-ui/Checkbox';
-import Radio from 'material-ui/Radio';
-import Close from 'material-ui-icons/Close';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
+import IconButton from '@material-ui/core/IconButton';
+import Checkbox from '@material-ui/core/Checkbox';
+import Radio from '@material-ui/core/Radio';
+import Close from '@material-ui/icons/Close';
 
 export const StyledFilter = styled.div`
   background-color: #fff;
@@ -132,4 +134,7 @@ export const mapDispatchToProps = {
 
 export const mapStateToProps = ({ filters }) => ({ filters });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Filter);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Filter);

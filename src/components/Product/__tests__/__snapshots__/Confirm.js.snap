@@ -10,7 +10,7 @@ exports[`<Confirm /> renders correctly 1`] = `
       B2Bfinance.com are registered intermediaries who will quote, package and submit your lending request to Natwest. There is no charge for this service as we are paid a small commission by Natwest to cover our time.
     </WithStyles(DialogContentText)>
     <styled.div>
-      <styled.div
+      <Styled(styled.div)
         desktop={40}
         phone={80}
         tablet={60}
@@ -20,21 +20,24 @@ exports[`<Confirm /> renders correctly 1`] = `
         >
           Apply
         </styled.a>
-      </styled.div>
+      </Styled(styled.div)>
     </styled.div>
   </WithStyles(DialogContent)>
 </Styled(WithStyles(Dialog))>
 `;
 
 exports[`<ConfirmButtonCol /> renders correctly 1`] = `
-.c0 {
+.c1 {
   width: 100%;
   min-height: 1px;
+}
+
+.c0 {
   margin: 1.5rem auto 0;
 }
 
 <div
-  class="c0"
+  class="c0 c1"
 >
   
 </div>

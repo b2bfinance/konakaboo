@@ -3,13 +3,12 @@ import { render, shallow } from 'enzyme';
 import {
   StyledFilter,
   FilterHeader,
-  getChosen,
   Filter,
   mapDispatchToProps,
   mapStateToProps,
   handleMouseDown
 } from '../Filter';
-import { ListItem } from 'material-ui/List';
+import ListItem from '@material-ui/core/ListItem';
 
 describe('<StyledFilter />', () => {
   test('when not visible renders correctly', () => {

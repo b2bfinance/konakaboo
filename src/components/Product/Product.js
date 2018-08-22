@@ -7,8 +7,8 @@ import Col from '../Col';
 import Button from '../Button';
 import Label from '../Label';
 import ProductConfirm from './Confirm';
-import CheckCircle from 'material-ui-icons/CheckCircle';
-import Star from 'material-ui-icons/Star';
+import CheckCircle from '@material-ui/icons/CheckCircle';
+import Star from '@material-ui/icons/Star';
 
 export const Container = styled.div`
   background-color: white;
@@ -22,7 +22,7 @@ export const Container = styled.div`
     `};
 `;
 
-export const HeadingRow = Row.extend`
+export const HeadingRow = styled(Row)`
   align-items: center;
   background-color: ${props => props.theme.productOutlineBackground};
   padding: 0.5rem 0.75rem;
@@ -60,7 +60,7 @@ export const StyledProductLabels = styled.div`
   `};
 `;
 
-export const ProductCol = Col.extend`
+export const ProductCol = styled(Col)`
   align-items: center;
   background-color: ${props =>
     props.background ? props.theme.productColBackground : ''};
@@ -73,6 +73,7 @@ export const ProductCol = Col.extend`
   img {
     flex-shrink: 0;
     max-width: 100%;
+    max-height: 120px;
   }
 
   span {
@@ -88,7 +89,7 @@ export const ProductCol = Col.extend`
   }
 `;
 
-export const MoreInfoRow = Row.extend`
+export const MoreInfoRow = styled(Row)`
   border-top: 2px solid ${props => props.theme.productOutlineBackground};
   padding: 1rem;
 
@@ -99,7 +100,7 @@ export const MoreInfoRow = Row.extend`
     `};
 `;
 
-export const ApplyButton = Button.extend`
+export const ApplyButton = styled(Button)`
   ${props =>
     props.margin &&
     css`
@@ -143,7 +144,9 @@ export const TechnicalPoint = styled.li`
 export const ProductLabels = ({ labels }) => {
   return (
     <StyledProductLabels>
-      {labels.map((label, i) => <Label key={i}>{label}</Label>)}
+      {labels.map((label, i) => (
+        <Label key={i}>{label}</Label>
+      ))}
     </StyledProductLabels>
   );
 };

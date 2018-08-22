@@ -7,12 +7,12 @@ import {
   resetAllChosenFilters
 } from '../../actions/filter';
 import Row from '../Row';
-import Chip from 'material-ui/Chip';
-import Cancel from 'material-ui-icons/Cancel';
-import ArrowDropDown from 'material-ui-icons/ArrowDropDown';
+import Chip from '@material-ui/core/Chip';
+import Cancel from '@material-ui/icons/Cancel';
+import ArrowDropDown from '@material-ui/icons/ArrowDropDown';
 import Filter from './Filter';
 
-export const FilterRow = Row.extend`
+export const FilterRow = styled(Row)`
   justify-content: flex-end;
 `;
 
@@ -123,4 +123,7 @@ export const mapStateToProps = ({ filters }) => ({
   filters: filters.available
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(FilterList);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(FilterList);
