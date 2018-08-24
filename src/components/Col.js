@@ -12,7 +12,7 @@ const width = (query, width) => {
   `;
 };
 
-const Col = styled.div`
+export default styled.div`
   width: 100%;
   min-height: 1px;
 
@@ -20,5 +20,3 @@ const Col = styled.div`
   ${props => width('tablet', props.tablet)};
   ${props => width('desktop', props.desktop)};
 `;
-
-export default Col;

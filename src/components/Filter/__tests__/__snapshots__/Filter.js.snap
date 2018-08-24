@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Filter /> with multi choice renders correctly 1`] = `
+exports[`Filter with multi choice renders correctly 1`] = `
 <styled.div
   onMouseDown={[Function]}
   visible={true}
@@ -47,7 +47,7 @@ exports[`<Filter /> with multi choice renders correctly 1`] = `
 </styled.div>
 `;
 
-exports[`<Filter /> with single choice renders correctly 1`] = `
+exports[`Filter with single choice renders correctly 1`] = `
 <styled.div
   onMouseDown={[Function]}
   visible={true}
@@ -94,39 +94,7 @@ exports[`<Filter /> with single choice renders correctly 1`] = `
 </styled.div>
 `;
 
-exports[`<FilterHeader /> renders correctly 1`] = `
-.c0 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: #00897B;
-  color: #fff;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  font-weight: 400;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  min-width: 15rem;
-  padding: 0.45rem 0.5rem 0.45rem 0.75rem;
-}
-
-.c0 svg {
-  fill: #fff;
-}
-
-<div
-  class="c0"
->
-  
-</div>
-`;
-
-exports[`<StyledFilter /> when not visible renders correctly 1`] = `
+exports[`Wrapper when not visible renders correctly 1`] = `
 .c0 {
   background-color: #fff;
   border-radius: 0.2rem;
@@ -169,7 +137,7 @@ exports[`<StyledFilter /> when not visible renders correctly 1`] = `
 </div>
 `;
 
-exports[`<StyledFilter /> when visible renders correctly 1`] = `
+exports[`Wrapper when visible renders correctly 1`] = `
 .c0 {
   background-color: #fff;
   border-radius: 0.2rem;

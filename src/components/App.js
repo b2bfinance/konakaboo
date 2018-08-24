@@ -3,11 +3,17 @@ import { connect } from 'react-redux';
 import styled from 'styled-components';
 import Row from './Row';
 import Col from './Col';
-import ProductList from './Product';
-import Filter from './Filter';
+import { default as ProductList } from './Product/List';
+import { default as FilterList } from './Filter/List';
 import { loadProducts } from '../actions/products';
 
-export const StyledAppContainer = styled(Row)`
+import {
+  resetFiltersForGroup,
+  resetAllChosenFilters,
+  setChosenFiltersForGroup
+} from '../actions/filter';
+
+export const Wrapper = styled(Row)`
   font-family: ${props => props.theme.mainFontFamily};
   font-weight: ${props => props.theme.mainNormalFontWeight};
   font-size: ${props => props.theme.mainFontSize};
@@ -20,16 +26,34 @@ export const StyledAppContainer = styled(Row)`
 
 export class AppContainer extends Component {
   componentDidMount() {
-    const { dispatch } = this.props;
-    dispatch(loadProducts());
+    this.props.loadProducts();
   }
 
   render() {
-    const { filterCount, products, hasFetched, isFetching, error } = this.props;
+    const {
+      filtersChosen,
+      filtersAvailable,
+      filterCount,
+      products,
+      hasFetched,
+      isFetching,
+      error,
+      handleResetFiltersForGroup,
+      handleResetFilters,
+      handleSetChosenForGroup
+    } = this.props;
 
     return (
-      <StyledAppContainer>
-        {filterCount > 0 && <Filter />}
+      <Wrapper>
+        {filterCount > 0 && (
+          <FilterList
+            filtersChosen={filtersChosen}
+            filtersAvailable={filtersAvailable}
+            handleResetFiltersForGroup={handleResetFiltersForGroup}
+            handleResetFilters={handleResetFilters}
+            handleSetChosenForGroup={handleSetChosenForGroup}
+          />
+        )}
         <Row>
           <Col phone="100">
             <ProductList
@@ -40,21 +64,29 @@ export class AppContainer extends Component {
             />
           </Col>
         </Row>
-      </StyledAppContainer>
+      </Wrapper>
     );
   }
 }
 
-export const mapStateToProps = state => {
-  const { filters, products } = state;
-
-  return {
-    filterCount: filters.available.length,
-    isFetching: products.isFetching,
-    hasFetched: !!products.items,
-    products: products.items,
-    error: products.error
-  };
+export const mapDispatchToProps = {
+  handleResetFiltersForGroup: resetFiltersForGroup,
+  handleResetFilters: resetAllChosenFilters,
+  handleSetChosenForGroup: setChosenFiltersForGroup,
+  loadProducts
 };
 
-export default connect(mapStateToProps)(AppContainer);
+export const mapStateToProps = ({ filters, products }) => ({
+  filtersChosen: filters.chosen,
+  filtersAvailable: filters.available,
+  filterCount: filters.available.length,
+  isFetching: products.isFetching,
+  hasFetched: !!products.items,
+  products: products.items,
+  error: products.error
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(AppContainer);

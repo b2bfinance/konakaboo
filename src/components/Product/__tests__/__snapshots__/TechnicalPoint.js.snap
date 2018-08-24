@@ -1,0 +1,102 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TechnicalPoint renders correctly 1`] = `
+Array [
+  .c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.c0 svg {
+  fill: #4dc16f;
+  margin-right: 0.5rem;
+}
+
+@media (min-width:62em) {
+  .c0 {
+    margin-bottom: .5rem;
+    padding-left: 1rem;
+  }
+}
+
+<li
+    class="c0"
+>
+    <svg
+        aria-hidden="true"
+        class="MuiSvgIcon-root-1"
+        focusable="false"
+        viewBox="0 0 24 24"
+    >
+        <path
+            d="M0 0h24v24H0z"
+            fill="none"
+        >
+            
+        </path>
+        <path
+            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+        >
+            
+        </path>
+    </svg>
+    foo
+</li>,
+  .c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.c0 svg {
+  fill: #4dc16f;
+  margin-right: 0.5rem;
+}
+
+@media (min-width:62em) {
+  .c0 {
+    margin-bottom: .5rem;
+    padding-left: 1rem;
+  }
+}
+
+<li
+    class="c0"
+>
+    <svg
+        aria-hidden="true"
+        class="MuiSvgIcon-root-1"
+        focusable="false"
+        viewBox="0 0 24 24"
+    >
+        <path
+            d="M0 0h24v24H0z"
+            fill="none"
+        >
+            
+        </path>
+        <path
+            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+        >
+            
+        </path>
+    </svg>
+    bar
+</li>,
+]
+`;

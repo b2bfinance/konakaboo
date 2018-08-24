@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<ApplyButton /> renders correctly 1`] = `
-.c0 {
+exports[`Product renders correctly with highlighted set 1`] = `
+.c10 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -13,6 +13,8 @@ exports[`<ApplyButton /> renders correctly 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  font-family: Roboto,sans-serif;
+  font-weight: 400;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -26,21 +28,1370 @@ exports[`<ApplyButton /> renders correctly 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  background-color: #4dc16f;
+  color: #fff;
 }
 
-.c0:hover {
+.c10:hover {
   -webkit-text-decoration: none;
   text-decoration: none;
 }
 
-<a
+.c10:hover {
+  color: #fff;
+}
+
+.c11 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 0.15rem;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: Roboto,sans-serif;
+  font-weight: 400;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  width: 100%;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #f5f6f7;
+  color: #37474f;
+  padding: 0.25rem 0.5rem;
+  font-size: 90%;
+}
+
+.c11:hover {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c11:hover {
+  color: #37474f;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.c6 {
+  width: 100%;
+  min-height: 1px;
+  -webkit-flex: 0 0 100%;
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+.c8 {
+  width: 100%;
+  min-height: 1px;
+  -webkit-flex: 0 0 100%;
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+.c13 {
+  width: 100%;
+  min-height: 1px;
+  -webkit-flex: 0 0 100%;
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+.c14 {
+  list-style: none;
+  margin-bottom: 0;
+  margin-top: 1rem;
+  padding: 0;
+}
+
+.c15 {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.c16 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.c16 svg {
+  fill: #4dc16f;
+  margin-right: 0.5rem;
+}
+
+.c12 {
+  border-top: 2px solid #eceff1;
+  padding: 1rem;
+  display: none;
+}
+
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #eceff1;
+  padding: 0.5rem 0.75rem;
+  background-color: #009688;
+  color: #fff;
+}
+
+.c1 svg {
+  width: 1.125rem;
+  height: 1.125rem;
+  margin-right: 0.25rem;
+}
+
+.c4 {
+  border: 1px solid;
+  border-radius: 1rem;
+  font-size: 80%;
+  padding: 0.2rem 0.75rem;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.c3 div {
+  margin: .5rem .5rem 0 0;
+}
+
+.c5 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 1rem 1.25rem;
+  text-align: center;
+}
+
+.c5 img {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  max-width: 100%;
+  max-height: 120px;
+}
+
+.c5 span {
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+  line-height: 1.1;
+}
+
+.c5 small {
+  font-size: 95%;
+  font-weight: 300;
+}
+
+.c7 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #f5f6f7;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 1rem 1.25rem;
+  text-align: center;
+}
+
+.c7 img {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  max-width: 100%;
+  max-height: 120px;
+}
+
+.c7 span {
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+  line-height: 1.1;
+}
+
+.c7 small {
+  font-size: 95%;
+  font-weight: 300;
+}
+
+.c9 {
+  margin-bottom: 0.5rem;
+}
+
+.c0 {
+  background-color: white;
+  border: 2px solid #eceff1;
+  margin-bottom: 1.5rem;
+  border-color: #009688;
+}
+
+@media (min-width:62em) {
+  .c6 {
+    -webkit-flex: 0 0 20%;
+    -ms-flex: 0 0 20%;
+    flex: 0 0 20%;
+    max-width: 20%;
+  }
+}
+
+@media (min-width:62em) {
+  .c8 {
+    -webkit-flex: 0 0 15%;
+    -ms-flex: 0 0 15%;
+    flex: 0 0 15%;
+    max-width: 15%;
+  }
+}
+
+@media (min-width:62em) {
+  .c13 {
+    -webkit-flex: 0 0 50%;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+@media (min-width:62em) {
+  .c15 {
+    padding-right: 1rem;
+  }
+}
+
+@media (min-width:62em) {
+  .c16 {
+    margin-bottom: .5rem;
+    padding-left: 1rem;
+  }
+}
+
+@media (min-width:36em) {
+  .c3 {
+    margin-left: auto;
+  }
+
+  .c3 div {
+    margin: 0 .5rem 0 0;
+  }
+}
+
+<div
   class="c0"
+  data-product="true"
 >
-  
-</a>
+  <div
+    class="c1 c2"
+  >
+    <svg
+      aria-hidden="true"
+      class="MuiSvgIcon-root-1"
+      focusable="false"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M0 0h24v24H0z"
+        fill="none"
+      >
+        
+      </path>
+      <path
+        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+      >
+        
+      </path>
+      <path
+        d="M0 0h24v24H0z"
+        fill="none"
+      >
+        
+      </path>
+    </svg>
+    Landbay - Buy To Let Wizards
+    <div
+      class="c3"
+    >
+      <div
+        class="c4"
+      >
+        broker only
+      </div>
+      <div
+        class="c4"
+      >
+        consumer favourite
+      </div>
+    </div>
+  </div>
+  <div
+    class="c2"
+  >
+    <div
+      class="c5 c6"
+    >
+      <img
+        alt="Landbay"
+        src="https://b2bfinance.com/images/partners/Landbay.png"
+      >
+        
+      </img>
+    </div>
+    <div
+      class="c7 c8"
+    >
+      <small>
+        Max LTV
+      </small>
+      <span>
+        85%
+      </span>
+    </div>
+    <div
+      class="c5 c8"
+    >
+      <small>
+        Initial Rate
+      </small>
+      <span>
+        1.49%
+      </span>
+    </div>
+    <div
+      class="c7 c8"
+    >
+      <small>
+        Subsequent Rate
+      </small>
+      <span>
+        2.75%
+      </span>
+    </div>
+    <div
+      class="c5 c8"
+    >
+      <small>
+        Fees
+      </small>
+      <span>
+        £1,495
+      </span>
+    </div>
+    <div
+      class="c5 c6"
+    >
+      <a
+        class="c9 c10"
+        href="https://b2bfinance.com/enquire/buy-to-let"
+        rel="noopener"
+        target="_blank"
+      >
+        Get Deal
+      </a>
+      <a
+        class="c11"
+      >
+        more info
+      </a>
+    </div>
+  </div>
+  <div
+    class="c12 c2"
+  >
+    <span>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean bibendum facilisis condimentum. Donec laoreet porttitor condimentum. Nulla luctus efficitur magna, eget rhoncus metus placerat sed.
+    </span>
+    <div
+      class="c2"
+    >
+      <div
+        class="c13"
+      >
+        <ul
+          class="c14"
+        >
+          <li
+            class="c15"
+          >
+            Online Application
+          </li>
+          <li
+            class="c15"
+          >
+            Mobile app
+          </li>
+          <li
+            class="c15"
+          >
+            Customer service winner
+          </li>
+        </ul>
+      </div>
+      <div
+        class="c13"
+      >
+        <ul
+          class="c14"
+        >
+          <li
+            class="c16"
+          >
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root-1"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M0 0h24v24H0z"
+                fill="none"
+              >
+                
+              </path>
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+              >
+                
+              </path>
+            </svg>
+            1.5% Early Repayment
+          </li>
+          <li
+            class="c16"
+          >
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root-1"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M0 0h24v24H0z"
+                fill="none"
+              >
+                
+              </path>
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+              >
+                
+              </path>
+            </svg>
+            6 months cool off peroid
+          </li>
+          <li
+            class="c16"
+          >
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root-1"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M0 0h24v24H0z"
+                fill="none"
+              >
+                
+              </path>
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+              >
+                
+              </path>
+            </svg>
+            No monthly fee for existing customers
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
 `;
 
-exports[`<Container /> renders correctly 1`] = `
+exports[`Product renders correctly with more information available  1`] = `
+.c10 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 0.15rem;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: Roboto,sans-serif;
+  font-weight: 400;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  width: 100%;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #4dc16f;
+  color: #fff;
+}
+
+.c10:hover {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c10:hover {
+  color: #fff;
+}
+
+.c11 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 0.15rem;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: Roboto,sans-serif;
+  font-weight: 400;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  width: 100%;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #f5f6f7;
+  color: #37474f;
+  padding: 0.25rem 0.5rem;
+  font-size: 90%;
+}
+
+.c11:hover {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c11:hover {
+  color: #37474f;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.c6 {
+  width: 100%;
+  min-height: 1px;
+  -webkit-flex: 0 0 100%;
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+.c8 {
+  width: 100%;
+  min-height: 1px;
+  -webkit-flex: 0 0 100%;
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+.c13 {
+  width: 100%;
+  min-height: 1px;
+  -webkit-flex: 0 0 100%;
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+.c14 {
+  list-style: none;
+  margin-bottom: 0;
+  margin-top: 1rem;
+  padding: 0;
+}
+
+.c15 {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.c16 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.c16 svg {
+  fill: #4dc16f;
+  margin-right: 0.5rem;
+}
+
+.c12 {
+  border-top: 2px solid #eceff1;
+  padding: 1rem;
+  display: none;
+}
+
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #eceff1;
+  padding: 0.5rem 0.75rem;
+}
+
+.c4 {
+  border: 1px solid;
+  border-radius: 1rem;
+  font-size: 80%;
+  padding: 0.2rem 0.75rem;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.c3 div {
+  margin: .5rem .5rem 0 0;
+}
+
+.c5 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 1rem 1.25rem;
+  text-align: center;
+}
+
+.c5 img {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  max-width: 100%;
+  max-height: 120px;
+}
+
+.c5 span {
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+  line-height: 1.1;
+}
+
+.c5 small {
+  font-size: 95%;
+  font-weight: 300;
+}
+
+.c7 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #f5f6f7;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 1rem 1.25rem;
+  text-align: center;
+}
+
+.c7 img {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  max-width: 100%;
+  max-height: 120px;
+}
+
+.c7 span {
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+  line-height: 1.1;
+}
+
+.c7 small {
+  font-size: 95%;
+  font-weight: 300;
+}
+
+.c9 {
+  margin-bottom: 0.5rem;
+}
+
+.c0 {
+  background-color: white;
+  border: 2px solid #eceff1;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width:62em) {
+  .c6 {
+    -webkit-flex: 0 0 20%;
+    -ms-flex: 0 0 20%;
+    flex: 0 0 20%;
+    max-width: 20%;
+  }
+}
+
+@media (min-width:62em) {
+  .c8 {
+    -webkit-flex: 0 0 15%;
+    -ms-flex: 0 0 15%;
+    flex: 0 0 15%;
+    max-width: 15%;
+  }
+}
+
+@media (min-width:62em) {
+  .c13 {
+    -webkit-flex: 0 0 50%;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+@media (min-width:62em) {
+  .c15 {
+    padding-right: 1rem;
+  }
+}
+
+@media (min-width:62em) {
+  .c16 {
+    margin-bottom: .5rem;
+    padding-left: 1rem;
+  }
+}
+
+@media (min-width:36em) {
+  .c3 {
+    margin-left: auto;
+  }
+
+  .c3 div {
+    margin: 0 .5rem 0 0;
+  }
+}
+
+<div
+  class="c0"
+  data-product="true"
+>
+  <div
+    class="c1 c2"
+  >
+    Precise Oh So Precise Total Winners Deal
+    <div
+      class="c3"
+    >
+      <div
+        class="c4"
+      >
+        broker only
+      </div>
+    </div>
+  </div>
+  <div
+    class="c2"
+  >
+    <div
+      class="c5 c6"
+    >
+      <img
+        alt="Barclays"
+        src="https://b2bfinance.com/images/partners/Precise.png"
+      >
+        
+      </img>
+    </div>
+    <div
+      class="c7 c8"
+    >
+      <small>
+        Max LTV
+      </small>
+      <span>
+        80%
+      </span>
+    </div>
+    <div
+      class="c5 c8"
+    >
+      <small>
+        Initial Rate
+      </small>
+      <span>
+        1.75%
+      </span>
+    </div>
+    <div
+      class="c7 c8"
+    >
+      <small>
+        Subsequent Rate
+      </small>
+      <span>
+        3%
+      </span>
+    </div>
+    <div
+      class="c5 c8"
+    >
+      <small>
+        Fees
+      </small>
+      <span>
+        £995
+      </span>
+    </div>
+    <div
+      class="c5 c6"
+    >
+      <a
+        class="c9 c10"
+        href="https://b2bfinance.com/enquire/buy-to-let"
+        rel="noopener"
+        target="_blank"
+      >
+        Get Deal
+      </a>
+      <a
+        class="c11"
+      >
+        more info
+      </a>
+    </div>
+  </div>
+  <div
+    class="c12 c2"
+  >
+    <span>
+      Whether your landlord is a first time buyer, a first time landlord or has a large portfolio, we have a range of products to help. Our range of mortgages also includes products for Limited Companies and HMOs.
+    </span>
+    <div
+      class="c2"
+    >
+      <div
+        class="c13"
+      >
+        <ul
+          class="c14"
+        >
+          <li
+            class="c15"
+          >
+            Complete online application
+          </li>
+          <li
+            class="c15"
+          >
+            Mobile app
+          </li>
+          <li
+            class="c15"
+          >
+            Customer service winner
+          </li>
+        </ul>
+      </div>
+      <div
+        class="c13"
+      >
+        <ul
+          class="c14"
+        >
+          <li
+            class="c16"
+          >
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root-1"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M0 0h24v24H0z"
+                fill="none"
+              >
+                
+              </path>
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+              >
+                
+              </path>
+            </svg>
+            Rental cover - ICR: based on individual circumstances
+          </li>
+          <li
+            class="c16"
+          >
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root-1"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M0 0h24v24H0z"
+                fill="none"
+              >
+                
+              </path>
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+              >
+                
+              </path>
+            </svg>
+            5 year fixed rate products that help maximise the loan size available
+          </li>
+          <li
+            class="c16"
+          >
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root-1"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M0 0h24v24H0z"
+                fill="none"
+              >
+                
+              </path>
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+              >
+                
+              </path>
+            </svg>
+            5 year fixed with 4% cashback available on purchases
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Product renders correctly without more information available  1`] = `
+.c8 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 0.15rem;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: Roboto,sans-serif;
+  font-weight: 400;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  width: 100%;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #4dc16f;
+  color: #fff;
+}
+
+.c8:hover {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c8:hover {
+  color: #fff;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.c5 {
+  width: 100%;
+  min-height: 1px;
+  -webkit-flex: 0 0 100%;
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+.c7 {
+  width: 100%;
+  min-height: 1px;
+  -webkit-flex: 0 0 100%;
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #eceff1;
+  padding: 0.5rem 0.75rem;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.c3 div {
+  margin: .5rem .5rem 0 0;
+}
+
+.c4 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 1rem 1.25rem;
+  text-align: center;
+}
+
+.c4 img {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  max-width: 100%;
+  max-height: 120px;
+}
+
+.c4 span {
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+  line-height: 1.1;
+}
+
+.c4 small {
+  font-size: 95%;
+  font-weight: 300;
+}
+
+.c6 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #f5f6f7;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 1rem 1.25rem;
+  text-align: center;
+}
+
+.c6 img {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  max-width: 100%;
+  max-height: 120px;
+}
+
+.c6 span {
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+  line-height: 1.1;
+}
+
+.c6 small {
+  font-size: 95%;
+  font-weight: 300;
+}
+
+.c0 {
+  background-color: white;
+  border: 2px solid #eceff1;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width:62em) {
+  .c5 {
+    -webkit-flex: 0 0 20%;
+    -ms-flex: 0 0 20%;
+    flex: 0 0 20%;
+    max-width: 20%;
+  }
+}
+
+@media (min-width:62em) {
+  .c7 {
+    -webkit-flex: 0 0 15%;
+    -ms-flex: 0 0 15%;
+    flex: 0 0 15%;
+    max-width: 15%;
+  }
+}
+
+@media (min-width:36em) {
+  .c3 {
+    margin-left: auto;
+  }
+
+  .c3 div {
+    margin: 0 .5rem 0 0;
+  }
+}
+
+<div
+  class="c0"
+  data-product="true"
+>
+  <div
+    class="c1 c2"
+  >
+    Natwest Low Low Rate
+    <div
+      class="c3"
+    >
+      
+    </div>
+  </div>
+  <div
+    class="c2"
+  >
+    <div
+      class="c4 c5"
+    >
+      <img
+        alt="Natwest"
+        src="https://b2bfinance.com/images/partners/NatWest.png"
+      >
+        
+      </img>
+    </div>
+    <div
+      class="c6 c7"
+    >
+      <small>
+        Max LTV
+      </small>
+      <span>
+        85%
+      </span>
+    </div>
+    <div
+      class="c4 c7"
+    >
+      <small>
+        Initial Rate
+      </small>
+      <span>
+        1.52%
+      </span>
+    </div>
+    <div
+      class="c6 c7"
+    >
+      <small>
+        Subsequent Rate
+      </small>
+      <span>
+        3.25%
+      </span>
+    </div>
+    <div
+      class="c4 c7"
+    >
+      <small>
+        Fees
+      </small>
+      <span>
+        £995
+      </span>
+    </div>
+    <div
+      class="c4 c5"
+    >
+      <a
+        class="c8"
+        href="https://b2bfinance.com/enquire/buy-to-let"
+        rel="noopener"
+        target="_blank"
+      >
+        Get Deal
+      </a>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Wrapper render correctly without highlight 1`] = `
 .c0 {
   background-color: white;
   border: 2px solid #eceff1;
@@ -54,661 +1405,12 @@ exports[`<Container /> renders correctly 1`] = `
 </div>
 `;
 
-exports[`<HeadingRow /> renders correctly 1`] = `
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  width: 100%;
-}
-
+exports[`Wrapper renders correctly with highlight 1`] = `
 .c0 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: #eceff1;
-  padding: 0.5rem 0.75rem;
-}
-
-<div
-  class="c0 c1"
->
-  
-</div>
-`;
-
-exports[`<HighlightPoint /> renders correctly 1`] = `
-.c0 {
-  font-size: 1.5rem;
-  font-weight: 400;
-}
-
-@media (min-width:62em) {
-  .c0 {
-    padding-right: 1rem;
-  }
-}
-
-<li
-  class="c0"
->
-  
-</li>
-`;
-
-exports[`<InfoList /> renders correctly 1`] = `
-.c0 {
-  list-style: none;
-  margin-bottom: 0;
-  margin-top: 1rem;
-  padding: 0;
-}
-
-<ul
-  class="c0"
->
-  
-</ul>
-`;
-
-exports[`<MoreInfoRow /> renders correctly 1`] = `
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  width: 100%;
-}
-
-.c0 {
-  border-top: 2px solid #eceff1;
-  padding: 1rem;
-  display: none;
-}
-
-<div
-  class="c0 c1"
->
-  
-</div>
-`;
-
-exports[`<Product /> with highlighted set renders correctly 1`] = `
-<styled.div
-  data-product={true}
-  highlight={true}
->
-  <Styled(styled.div)
-    highlight={true}
-  >
-    <pure(Star) />
-    Landbay - Buy To Let Wizards
-    <Component
-      labels={
-        Array [
-          "broker only",
-          "consumer favourite",
-        ]
-      }
-    />
-  </Styled(styled.div)>
-  <styled.div>
-    <Styled(styled.div)
-      desktop="20"
-      phone="100"
-    >
-      <img
-        alt="Landbay"
-        src="https://b2bfinance.com/images/partners/Landbay.png"
-      />
-    </Styled(styled.div)>
-    <Component
-      columns={
-        Array [
-          Object {
-            "label": "Max LTV",
-            "value": "85%",
-          },
-          Object {
-            "label": "Initial Rate",
-            "value": "1.49%",
-          },
-          Object {
-            "label": "Subsequent Rate",
-            "value": "2.75%",
-          },
-          Object {
-            "label": "Fees",
-            "value": "£1,495",
-          },
-        ]
-      }
-    />
-    <Styled(styled.div)
-      desktop="20"
-      phone="100"
-    >
-      <Styled(styled.a)
-        href="https://b2bfinance.com/enquire/buy-to-let"
-        margin={true}
-        onClick={[Function]}
-        primary={true}
-        rel="noopener"
-        target="_blank"
-      >
-        Get Deal
-      </Styled(styled.a)>
-      <ProductConfirm
-        description="B2Bfinance.com are registered intermediaries who will quote, package and submit your lending request to Natwest. There is no charge for this service as we are paid a small commission by Natwest to cover our time."
-        forwardUrl="https://b2bfinance.com/enquire/buy-to-let"
-        handleRequestClose={[Function]}
-        open={false}
-        title="Application via Brokers only"
-      />
-      <styled.a
-        onClick={[Function]}
-        secondary={true}
-        slim={true}
-      >
-        more info
-      </styled.a>
-    </Styled(styled.div)>
-  </styled.div>
-  <Styled(styled.div)
-    visible={false}
-  >
-    <span>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean bibendum facilisis condimentum. Donec laoreet porttitor condimentum. Nulla luctus efficitur magna, eget rhoncus metus placerat sed.
-    </span>
-    <styled.div>
-      <styled.div
-        desktop="50"
-        phone="100"
-      >
-        <styled.ul>
-          <Component
-            points={
-              Array [
-                "Online Application",
-                "Mobile app",
-                "Customer service winner",
-              ]
-            }
-          />
-        </styled.ul>
-      </styled.div>
-      <styled.div
-        desktop="50"
-        phone="100"
-      >
-        <styled.ul>
-          <Component
-            points={
-              Array [
-                "1.5% Early Repayment",
-                "6 months cool off peroid",
-                "No monthly fee for existing customers",
-              ]
-            }
-          />
-        </styled.ul>
-      </styled.div>
-    </styled.div>
-  </Styled(styled.div)>
-</styled.div>
-`;
-
-exports[`<Product /> with more information available renders correctly 1`] = `
-<styled.div
-  data-product={true}
-  highlight={false}
->
-  <Styled(styled.div)
-    highlight={false}
-  >
-    Precise Oh So Precise Total Winners Deal
-    <Component
-      labels={
-        Array [
-          "broker only",
-        ]
-      }
-    />
-  </Styled(styled.div)>
-  <styled.div>
-    <Styled(styled.div)
-      desktop="20"
-      phone="100"
-    >
-      <img
-        alt="Barclays"
-        src="https://b2bfinance.com/images/partners/Precise.png"
-      />
-    </Styled(styled.div)>
-    <Component
-      columns={
-        Array [
-          Object {
-            "label": "Max LTV",
-            "value": "80%",
-          },
-          Object {
-            "label": "Initial Rate",
-            "value": "1.75%",
-          },
-          Object {
-            "label": "Subsequent Rate",
-            "value": "3%",
-          },
-          Object {
-            "label": "Fees",
-            "value": "£995",
-          },
-        ]
-      }
-    />
-    <Styled(styled.div)
-      desktop="20"
-      phone="100"
-    >
-      <Styled(styled.a)
-        href="https://b2bfinance.com/enquire/buy-to-let"
-        margin={true}
-        onClick={[Function]}
-        primary={true}
-        rel="noopener"
-        target="_blank"
-      >
-        Get Deal
-      </Styled(styled.a)>
-      <styled.a
-        onClick={[Function]}
-        secondary={true}
-        slim={true}
-      >
-        more info
-      </styled.a>
-    </Styled(styled.div)>
-  </styled.div>
-  <Styled(styled.div)
-    visible={false}
-  >
-    <span>
-      Whether your landlord is a first time buyer, a first time landlord or has a large portfolio, we have a range of products to help. Our range of mortgages also includes products for Limited Companies and HMOs.
-    </span>
-    <styled.div>
-      <styled.div
-        desktop="50"
-        phone="100"
-      >
-        <styled.ul>
-          <Component
-            points={
-              Array [
-                "Complete online application",
-                "Mobile app",
-                "Customer service winner",
-              ]
-            }
-          />
-        </styled.ul>
-      </styled.div>
-      <styled.div
-        desktop="50"
-        phone="100"
-      >
-        <styled.ul>
-          <Component
-            points={
-              Array [
-                "Rental cover - ICR: based on individual circumstances",
-                "5 year fixed rate products that help maximise the loan size available",
-                "5 year fixed with 4% cashback available on purchases",
-              ]
-            }
-          />
-        </styled.ul>
-      </styled.div>
-    </styled.div>
-  </Styled(styled.div)>
-</styled.div>
-`;
-
-exports[`<Product /> without more information available renders correctly 1`] = `
-<styled.div
-  data-product={true}
-  highlight={false}
->
-  <Styled(styled.div)
-    highlight={false}
-  >
-    Natwest Low Low Rate
-    <Component
-      labels={Array []}
-    />
-  </Styled(styled.div)>
-  <styled.div>
-    <Styled(styled.div)
-      desktop="20"
-      phone="100"
-    >
-      <img
-        alt="Natwest"
-        src="https://b2bfinance.com/images/partners/NatWest.png"
-      />
-    </Styled(styled.div)>
-    <Component
-      columns={
-        Array [
-          Object {
-            "label": "Max LTV",
-            "value": "85%",
-          },
-          Object {
-            "label": "Initial Rate",
-            "value": "1.52%",
-          },
-          Object {
-            "label": "Subsequent Rate",
-            "value": "3.25%",
-          },
-          Object {
-            "label": "Fees",
-            "value": "£995",
-          },
-        ]
-      }
-    />
-    <Styled(styled.div)
-      desktop="20"
-      phone="100"
-    >
-      <Styled(styled.a)
-        href="https://b2bfinance.com/enquire/buy-to-let"
-        margin={false}
-        onClick={[Function]}
-        primary={true}
-        rel="noopener"
-        target="_blank"
-      >
-        Get Deal
-      </Styled(styled.a)>
-      <ProductConfirm
-        description="B2Bfinance.com are registered intermediaries who will quote, package and submit your lending request to Natwest. There is no charge for this service as we are paid a small commission by Natwest to cover our time."
-        forwardUrl="https://b2bfinance.com/enquire/buy-to-let"
-        handleRequestClose={[Function]}
-        open={false}
-        title="Application via Brokers only"
-      />
-    </Styled(styled.div)>
-  </styled.div>
-</styled.div>
-`;
-
-exports[`<ProductCol /> renders correctly 1`] = `
-.c1 {
-  width: 100%;
-  min-height: 1px;
-}
-
-.c0 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding: 1rem 1.25rem;
-  text-align: center;
-}
-
-.c0 img {
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-  max-width: 100%;
-  max-height: 120px;
-}
-
-.c0 span {
-  font-size: 1.25rem;
-  font-weight: 400;
-  margin-bottom: 0.5rem;
-  line-height: 1.1;
-}
-
-.c0 small {
-  font-size: 95%;
-  font-weight: 300;
-}
-
-<div
-  class="c0 c1"
->
-  
-</div>
-`;
-
-exports[`<ProductColumns /> renders correctly 1`] = `
-.c1 {
-  width: 100%;
-  min-height: 1px;
-  -webkit-flex: 0 0 100%;
-  -ms-flex: 0 0 100%;
-  flex: 0 0 100%;
-  max-width: 100%;
-}
-
-.c0 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding: 1rem 1.25rem;
-  text-align: center;
-}
-
-.c0 img {
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-  max-width: 100%;
-  max-height: 120px;
-}
-
-.c0 span {
-  font-size: 1.25rem;
-  margin-bottom: 0.5rem;
-  line-height: 1.1;
-}
-
-.c0 small {
-  font-size: 95%;
-}
-
-@media (min-width:62em) {
-  .c1 {
-    -webkit-flex: 0 0 60%;
-    -ms-flex: 0 0 60%;
-    flex: 0 0 60%;
-    max-width: 60%;
-  }
-}
-
-<div
-  class="c0 c1"
->
-  <small>
-    test
-  </small>
-  <span>
-    test
-  </span>
-</div>
-`;
-
-exports[`<ProductHighlightPoints /> renders correctly 1`] = `
-.c0 {
-  font-size: 1.5rem;
-}
-
-@media (min-width:62em) {
-  .c0 {
-    padding-right: 1rem;
-  }
-}
-
-<li
-  class="c0"
->
-  test
-</li>
-`;
-
-exports[`<ProductLabels /> renders correctly 1`] = `
-.c1 {
-  border: 1px solid;
-  border-radius: 1rem;
-  font-size: 80%;
-  padding: 0.2rem 0.75rem;
-}
-
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-}
-
-.c0 div {
-  margin: .5rem .5rem 0 0;
-}
-
-@media (min-width:36em) {
-  .c0 {
-    margin-left: auto;
-  }
-
-  .c0 div {
-    margin: 0 .5rem 0 0;
-  }
-}
-
-<div
-  class="c0"
->
-  <div
-    class="c1"
-  >
-    test
-  </div>
-</div>
-`;
-
-exports[`<ProductTechnicalPoints /> renders correctly 1`] = `
-.c0 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-}
-
-.c0 svg {
-  margin-right: 0.5rem;
-}
-
-@media (min-width:62em) {
-  .c0 {
-    margin-bottom: .5rem;
-    padding-left: 1rem;
-  }
-}
-
-<li
-  class="c0"
->
-  <svg
-    aria-hidden="true"
-    class="MuiSvgIcon-root-1"
-    focusable="false"
-    viewBox="0 0 24 24"
-  >
-    <path
-      d="M0 0h24v24H0z"
-      fill="none"
-    >
-      
-    </path>
-    <path
-      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
-    >
-      
-    </path>
-  </svg>
-  test
-</li>
-`;
-
-exports[`<StyledProductLabels /> renders correctly 1`] = `
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-}
-
-.c0 div {
-  margin: .5rem .5rem 0 0;
-}
-
-@media (min-width:36em) {
-  .c0 {
-    margin-left: auto;
-  }
-
-  .c0 div {
-    margin: 0 .5rem 0 0;
-  }
+  background-color: white;
+  border: 2px solid #eceff1;
+  margin-bottom: 1.5rem;
+  border-color: #009688;
 }
 
 <div
@@ -716,37 +1418,4 @@ exports[`<StyledProductLabels /> renders correctly 1`] = `
 >
   
 </div>
-`;
-
-exports[`<TechnicalPoint /> renders correctly 1`] = `
-.c0 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-}
-
-.c0 svg {
-  fill: #4dc16f;
-  margin-right: 0.5rem;
-}
-
-@media (min-width:62em) {
-  .c0 {
-    margin-bottom: .5rem;
-    padding-left: 1rem;
-  }
-}
-
-<li
-  class="c0"
->
-  
-</li>
 `;

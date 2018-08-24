@@ -1,31 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<AppContainer /> with filters renders correctly 1`] = `
+exports[`AppContainer renders correctly with filters  1`] = `
 <Styled(styled.div)>
-  <Connect(FilterList) />
+  <List />
   <styled.div>
     <styled.div
       phone="100"
     >
-      <ProductList />
+      <Component />
     </styled.div>
   </styled.div>
 </Styled(styled.div)>
 `;
 
-exports[`<AppContainer /> without filters renders correctly 1`] = `
+exports[`AppContainer renders correctly without filters  1`] = `
 <Styled(styled.div)>
   <styled.div>
     <styled.div
       phone="100"
     >
-      <ProductList />
+      <Component />
     </styled.div>
   </styled.div>
 </Styled(styled.div)>
 `;
 
-exports[`<StyledAppContainer /> renders correctly 1`] = `
+exports[`Wrapper renders correctly 1`] = `
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;

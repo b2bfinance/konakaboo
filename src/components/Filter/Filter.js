@@ -1,8 +1,7 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { setChosenFiltersForGroup } from '../../actions/filter';
 import styled, { css } from 'styled-components';
 import { queries } from '../../utils/media';
+import { getChosenWithModification } from '../../utils/filter';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
@@ -10,8 +9,9 @@ import IconButton from '@material-ui/core/IconButton';
 import Checkbox from '@material-ui/core/Checkbox';
 import Radio from '@material-ui/core/Radio';
 import Close from '@material-ui/icons/Close';
+import Header from './Header';
 
-export const StyledFilter = styled.div`
+export const Wrapper = styled.div`
   background-color: #fff;
   border-radius: 0.2rem;
   box-shadow: 0 15px 12px rgba(0, 0, 0, 0.22), 0 0 38px rgba(0, 0, 0, 0.3);
@@ -50,62 +50,37 @@ export const StyledFilter = styled.div`
   }
 `;
 
-export const FilterHeader = styled.div`
-  align-items: center;
-  background-color: ${props => props.theme.filterHeaderBackground};
-  color: ${props => props.theme.filterHeaderColor};
-  display: flex;
-  font-weight: ${props => props.theme.mainBoldFontWeight};
-  justify-content: space-between;
-  min-width: 15rem;
-  padding: 0.45rem 0.5rem 0.45rem 0.75rem;
-
-  svg {
-    fill: ${props => props.theme.filterHeaderColor};
-  }
-`;
-
-function getChosen(chosen, multi, value) {
-  if (multi) {
-    if (chosen.indexOf(value) === -1) {
-      chosen.push(value);
-      return chosen;
-    }
-
-    return chosen.filter(f => f !== value);
-  }
-
-  return value;
-}
-
 export function handleMouseDown(e) {
   e.preventDefault();
 }
 
-export const Filter = ({
+export default ({
   visible,
   group,
   multi,
   title,
   choices,
   chosen,
-  handleClose,
-  handleListItemClick
+  handleSetChosenForGroup,
+  handleClose
 }) => (
-  <StyledFilter visible={visible} onMouseDown={handleMouseDown}>
-    <FilterHeader>
+  <Wrapper visible={visible} onMouseDown={handleMouseDown}>
+    <Header>
       {title}
       <IconButton onClick={handleClose} aria-label="Close Filter Choices">
         <Close />
       </IconButton>
-    </FilterHeader>
+    </Header>
     <List>
       {choices.map(choice => (
         <ListItem
           key={choice.value}
           button
           onClick={() =>
-            handleListItemClick(group, getChosen(chosen, multi, choice.value))
+            handleSetChosenForGroup(
+              group,
+              getChosenWithModification(chosen, multi, choice.value)
+            )
           }
         >
           {multi ? (
@@ -125,16 +100,5 @@ export const Filter = ({
         </ListItem>
       ))}
     </List>
-  </StyledFilter>
+  </Wrapper>
 );
-
-export const mapDispatchToProps = {
-  handleListItemClick: setChosenFiltersForGroup
-};
-
-export const mapStateToProps = ({ filters }) => ({ filters });
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Filter);

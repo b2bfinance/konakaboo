@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Labels renders correctly 1`] = `
+.c1 {
+  border: 1px solid;
+  border-radius: 1rem;
+  font-size: 80%;
+  padding: 0.2rem 0.75rem;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.c0 div {
+  margin: .5rem .5rem 0 0;
+}
+
+@media (min-width:36em) {
+  .c0 {
+    margin-left: auto;
+  }
+
+  .c0 div {
+    margin: 0 .5rem 0 0;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    foo
+  </div>
+  <div
+    class="c1"
+  >
+    bar
+  </div>
+</div>
+`;

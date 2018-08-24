@@ -1,30 +1,19 @@
 import React from 'react';
 import { render, shallow } from 'enzyme';
-import {
-  StyledFilter,
-  FilterHeader,
-  Filter,
-  mapDispatchToProps,
-  mapStateToProps,
-  handleMouseDown
-} from '../Filter';
+import Filter, { Wrapper, handleMouseDown } from '../Filter';
 import ListItem from '@material-ui/core/ListItem';
 
-describe('<StyledFilter />', () => {
+describe('Wrapper', () => {
   test('when not visible renders correctly', () => {
-    expect(render(<StyledFilter />)).toMatchSnapshot();
+    expect(render(<Wrapper />)).toMatchSnapshot();
   });
 
   test('when visible renders correctly', () => {
-    expect(render(<StyledFilter visible />)).toMatchSnapshot();
+    expect(render(<Wrapper visible />)).toMatchSnapshot();
   });
 });
 
-test('<FilterHeader /> renders correctly', () => {
-  expect(render(<FilterHeader theme={stubData.theme} />)).toMatchSnapshot();
-});
-
-describe('<Filter />', () => {
+describe('Filter', () => {
   const stubFilters = stubData.filters.withSingleAndMultiChoiceChosen;
   let filters;
   let props;
@@ -46,7 +35,7 @@ describe('<Filter />', () => {
       group: 1,
       title: 'Filter Title',
       handleClose: jest.fn(),
-      handleListItemClick: jest.fn()
+      handleSetChosenForGroup: jest.fn()
     };
   });
 
@@ -76,7 +65,9 @@ describe('<Filter />', () => {
       .at(1)
       .simulate('click');
 
-    expect(props.handleListItemClick.mock.calls[0][1]).toBe('TEST_CHOICE_2');
+    expect(props.handleSetChosenForGroup.mock.calls[0][1]).toBe(
+      'TEST_CHOICE_2'
+    );
   });
 
   test('multi ListItem can be selected', () => {
@@ -93,7 +84,7 @@ describe('<Filter />', () => {
       .at(0)
       .simulate('click');
 
-    expect(props.handleListItemClick.mock.calls[0][1]).toEqual([
+    expect(props.handleSetChosenForGroup.mock.calls[0][1]).toEqual([
       'TEST_CHOICE_1'
     ]);
   });
@@ -108,21 +99,9 @@ describe('<Filter />', () => {
       .at(0)
       .simulate('click');
 
-    expect(props.handleListItemClick.mock.calls[0][1]).toEqual([
+    expect(props.handleSetChosenForGroup.mock.calls[0][1]).toEqual([
       'TEST_CHOICE_2'
     ]);
-  });
-});
-
-test('mapDispatchToProps maps the dispatch correctly', () => {
-  expect(Object.keys(mapDispatchToProps)).toEqual(['handleListItemClick']);
-});
-
-test('mapStateToProps maps the state correctly', () => {
-  const stubState = stubData.filters.withSingleAndMultiChoiceChosen;
-
-  expect(mapStateToProps({ filters: stubState })).toEqual({
-    filters: stubState
   });
 });
 

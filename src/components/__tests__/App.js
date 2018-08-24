@@ -1,49 +1,45 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { render, shallow } from 'enzyme';
-import { StyledAppContainer, AppContainer, mapStateToProps } from '../App';
+import { Wrapper, AppContainer, mapStateToProps } from '../App';
 
-test('<StyledAppContainer /> renders correctly', () => {
-  expect(
-    render(<StyledAppContainer theme={stubData.theme} />)
-  ).toMatchSnapshot();
-});
-
-describe('<AppContainer />', () => {
-  test('with filters renders correctly', () => {
-    expect(
-      shallow(<AppContainer dispatch={jest.fn()} filterCount={1} />)
-    ).toMatchSnapshot();
-  });
-
-  test('without filters renders correctly', () => {
-    expect(
-      shallow(<AppContainer dispatch={jest.fn()} filterCount={0} />)
-    ).toMatchSnapshot();
+describe('Wrapper', () => {
+  test('renders correctly', () => {
+    expect(render(<Wrapper theme={stubData.theme} />)).toMatchSnapshot();
   });
 });
 
-test('should dispatch loadProducts', () => {
-  const mockDispatch = jest.fn();
-  shallow(<AppContainer dispatch={mockDispatch} />);
-  expect(mockDispatch.mock.calls.length).toBe(1);
-});
+describe('AppContainer', () => {
+  test('renders correctly with filters ', () => {
+    expect(
+      shallow(<AppContainer loadProducts={jest.fn()} filterCount={1} />)
+    ).toMatchSnapshot();
+  });
 
-test('mapStateToProps maps the state correctly', () => {
-  const stubState = {
-    filters: stubData.filters.withSingleAndMultiChoiceChosen,
-    products: {
-      error: false,
-      isFetching: false,
-      items: stubData.products.response.data
-    }
-  };
+  test('renders correctly without filters ', () => {
+    expect(
+      shallow(<AppContainer loadProducts={jest.fn()} filterCount={0} />)
+    ).toMatchSnapshot();
+  });
 
-  expect(mapStateToProps(stubState)).toEqual({
-    filterCount: stubState.filters.available.length,
-    isFetching: false,
-    hasFetched: true,
-    products: stubState.products.items,
-    error: false
+  test('should dispatch loadProducts', () => {
+    const loadProducts = jest.fn();
+    shallow(<AppContainer loadProducts={loadProducts} />);
+    expect(loadProducts.mock.calls.length).toBe(1);
+  });
+
+  test('mapStateToProps maps the state correctly', () => {
+    const mappedState = mapStateToProps({
+      filters: { available: [] },
+      products: {}
+    });
+
+    expect(mappedState).toHaveProperty('filtersChosen');
+    expect(mappedState).toHaveProperty('filtersAvailable');
+    expect(mappedState).toHaveProperty('filterCount');
+    expect(mappedState).toHaveProperty('isFetching');
+    expect(mappedState).toHaveProperty('hasFetched');
+    expect(mappedState).toHaveProperty('products');
+    expect(mappedState).toHaveProperty('error');
   });
 });
