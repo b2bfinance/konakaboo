@@ -10,13 +10,13 @@ describe('Wrapper', () => {
 });
 
 describe('AppContainer', () => {
-  test('renders correctly with filters ', () => {
+  test('renders correctly with filters', () => {
     expect(
       shallow(<AppContainer loadProducts={jest.fn()} filterCount={1} />)
     ).toMatchSnapshot();
   });
 
-  test('renders correctly without filters ', () => {
+  test('renders correctly without filters', () => {
     expect(
       shallow(<AppContainer loadProducts={jest.fn()} filterCount={0} />)
     ).toMatchSnapshot();

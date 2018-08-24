@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AppContainer renders correctly with filters  1`] = `
+exports[`AppContainer renders correctly with filters 1`] = `
 <Styled(styled.div)>
   <List />
   <styled.div>
@@ -13,7 +13,7 @@ exports[`AppContainer renders correctly with filters  1`] = `
 </Styled(styled.div)>
 `;
 
-exports[`AppContainer renders correctly without filters  1`] = `
+exports[`AppContainer renders correctly without filters 1`] = `
 <Styled(styled.div)>
   <styled.div>
     <styled.div
