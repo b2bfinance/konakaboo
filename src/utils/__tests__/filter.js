@@ -1,7 +1,8 @@
 import {
   getChosenForGroup,
   getEmptyChosen,
-  getQueryStringFromState
+  getQueryStringFromState,
+  generateChipLabel
 } from '../filter';
 
 test('gets the chosen filter from the specified group', () => {
@@ -52,4 +53,32 @@ test('will not create a query string with single choice filters that has null va
   expect(
     getQueryStringFromState(stubData.filters.withNullSingleChoiceChosen)
   ).toBe('');
+});
+
+describe('generateChipLabel', () => {
+  const choices = [
+    { label: 'Chosen Label', value: 'chosen_1' },
+    { label: 'Chosen Label', value: 'chosen_2' },
+    { label: 'Chosen Label', value: 'chosen_3' }
+  ];
+
+  test('creates a none multi label with no chosen', () => {
+    expect(generateChipLabel('label', false, '', choices)).toBe('label');
+  });
+
+  test('creates a multi label with no chosen', () => {
+    expect(generateChipLabel('label', true, [], choices)).toBe('label');
+  });
+
+  test('creates a none multi label with chosen', () => {
+    expect(generateChipLabel('label', false, 'chosen_1', choices)).toBe(
+      'Chosen Label'
+    );
+  });
+
+  test('creates a multi label with chosen', () => {
+    expect(
+      generateChipLabel('label', true, ['chosen_1', 'chosen_2'], choices)
+    ).toBe('Chosen Label +1');
+  });
 });

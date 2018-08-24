@@ -1,121 +1,94 @@
 import React from 'react';
-import { shallow, render, mount } from 'enzyme';
+import { ThemeProvider } from 'styled-components';
+import { render, mount } from 'enzyme';
 import Button from '../../Button';
-import Product, {
-  Container,
-  HeadingRow,
-  StyledProductLabels,
-  ProductCol,
-  MoreInfoRow,
-  ApplyButton,
-  InfoList,
-  HighlightPoint,
-  TechnicalPoint,
-  ProductLabels,
-  ProductColumns,
-  ProductHighlightPoints,
-  ProductTechnicalPoints
-} from '../Product';
+import Product, { Wrapper } from '../Product';
+import ApplyButton from '../ApplyButton';
+import Confirm from '../Confirm';
 
-test('<Container /> renders correctly', () => {
-  expect(render(<Container theme={stubData.theme} />)).toMatchSnapshot();
-});
-
-test('<HeadingRow /> renders correctly', () => {
-  expect(render(<HeadingRow theme={stubData.theme} />)).toMatchSnapshot();
-});
-
-test('<StyledProductLabels /> renders correctly', () => {
-  expect(render(<StyledProductLabels />)).toMatchSnapshot();
-});
-
-test('<ProductCol /> renders correctly', () => {
-  expect(render(<ProductCol theme={stubData.theme} />)).toMatchSnapshot();
-});
-
-test('<MoreInfoRow /> renders correctly', () => {
-  expect(render(<MoreInfoRow theme={stubData.theme} />)).toMatchSnapshot();
-});
-
-test('<ApplyButton /> renders correctly', () => {
-  expect(render(<ApplyButton />)).toMatchSnapshot();
-});
-
-test('<InfoList /> renders correctly', () => {
-  expect(render(<InfoList />)).toMatchSnapshot();
-});
-
-test('<HighlightPoint /> renders correctly', () => {
-  expect(render(<HighlightPoint theme={stubData.theme} />)).toMatchSnapshot();
-});
-
-test('<TechnicalPoint /> renders correctly', () => {
-  expect(render(<TechnicalPoint theme={stubData.theme} />)).toMatchSnapshot();
-});
-
-test('<ProductLabels /> renders correctly', () => {
-  expect(render(<ProductLabels labels={['test']} />)).toMatchSnapshot();
-});
-
-test('<ProductColumns /> renders correctly', () => {
-  expect(
-    render(<ProductColumns columns={[{ label: 'test', value: 'test' }]} />)
-  ).toMatchSnapshot();
-});
-
-test('<ProductHighlightPoints /> renders correctly', () => {
-  expect(
-    render(<ProductHighlightPoints points={['test']} />)
-  ).toMatchSnapshot();
-});
-
-test('<ProductTechnicalPoints /> renders correctly', () => {
-  expect(
-    render(<ProductTechnicalPoints points={['test']} />)
-  ).toMatchSnapshot();
-});
-
-describe('<Product />', () => {
-  test('with more information available renders correctly', () => {
+describe('Wrapper', () => {
+  test('render correctly without highlight', () => {
     expect(
-      shallow(<Product product={stubData.products.withMoreInformation} />)
+      render(<Wrapper highlight={false} theme={stubData.theme} />)
     ).toMatchSnapshot();
   });
 
-  test('without more information available renders correctly', () => {
+  test('renders correctly with highlight', () => {
     expect(
-      shallow(<Product product={stubData.products.withoutMoreInformation} />)
+      render(<Wrapper highlight={true} theme={stubData.theme} />)
+    ).toMatchSnapshot();
+  });
+});
+
+describe('Product', () => {
+  const ThemedProduct = ({ theme, product }) => (
+    <ThemeProvider theme={theme}>
+      <Product product={product} />
+    </ThemeProvider>
+  );
+
+  test('renders correctly with more information available ', () => {
+    expect(
+      render(
+        <ThemedProduct
+          product={stubData.products.withMoreInformation}
+          theme={stubData.theme}
+        />
+      )
     ).toMatchSnapshot();
   });
 
-  test('with highlighted set renders correctly', () => {
+  test('renders correctly without more information available ', () => {
     expect(
-      shallow(<Product product={stubData.products.withHighlight} />)
+      render(
+        <ThemedProduct
+          product={stubData.products.withoutMoreInformation}
+          theme={stubData.theme}
+        />
+      )
+    ).toMatchSnapshot();
+  });
+
+  test('renders correctly with highlighted set', () => {
+    expect(
+      render(
+        <ThemedProduct
+          product={stubData.products.withHighlight}
+          theme={stubData.theme}
+        />
+      )
     ).toMatchSnapshot();
   });
 
   test('clicking the apply button displays the confirmation dialog', () => {
     const wrapper = mount(
-      <Product product={stubData.products.withConfirmation} />
+      <ThemedProduct
+        product={stubData.products.withConfirmation}
+        theme={stubData.theme}
+      />
     );
 
     wrapper.find(ApplyButton).simulate('click', {
       preventDefault() {}
     });
 
-    expect(wrapper.state('isShowingConfirmation')).toBe(true);
+    expect(wrapper.find(Confirm).exists()).toBe(true);
   });
 
   test('clicking the more info button displays more information', () => {
     const wrapper = mount(
-      <Product product={stubData.products.withMoreInformation} />
+      <ThemedProduct
+        product={stubData.products.withMoreInformation}
+        theme={stubData.theme}
+      />
     );
 
-    wrapper
+    const moreButton = wrapper
       .find(Button)
-      .filterWhere(wrapper => wrapper.text() === 'more info')
-      .simulate('click');
+      .filterWhere(wrapper => wrapper.text() === 'more info');
 
-    expect(wrapper.state('isShowingMoreInfo')).toBe(true);
+    moreButton.simulate('click');
+
+    expect(moreButton.text()).toBe('less info');
   });
 });

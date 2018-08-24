@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-const Button = styled.a`
+export default styled.a`
   align-items: center;
   border-radius: 0.15rem;
   box-sizing: border-box;
@@ -48,5 +48,3 @@ const Button = styled.a`
       font-size: 90%;
     `};
 `;
-
-export default Button;

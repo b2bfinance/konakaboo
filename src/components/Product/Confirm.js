@@ -8,22 +8,22 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 
+export const Wrapper = styled(Dialog)`
+  text-align: center;
+`;
+
 export const ConfirmButtonCol = styled(Col)`
   margin: 1.5rem auto 0;
 `;
 
-export const ConfirmDialog = styled(Dialog)`
-  text-align: center;
-`;
-
-const ProductConfirm = ({
+export default ({
   open,
   handleRequestClose,
   title,
   description,
   forwardUrl
 }) => (
-  <ConfirmDialog open={open} onClose={handleRequestClose}>
+  <Wrapper open={open} onClose={handleRequestClose}>
     <DialogTitle>{title}</DialogTitle>
     <DialogContent>
       <DialogContentText>{description}</DialogContentText>
@@ -35,7 +35,5 @@ const ProductConfirm = ({
         </ConfirmButtonCol>
       </Row>
     </DialogContent>
-  </ConfirmDialog>
+  </Wrapper>
 );
-
-export default ProductConfirm;

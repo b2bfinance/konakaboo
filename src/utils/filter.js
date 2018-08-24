@@ -36,3 +36,31 @@ export function getQueryStringFromState(filterState) {
     }, {})
   );
 }
+
+export function generateChipLabel(title, multi, chosen, choices) {
+  const firstChosen = multi ? chosen[0] : chosen;
+  const firstSelection = choices.find(f => f.value === firstChosen);
+
+  if (multi && chosen.length > 1) {
+    return `${firstSelection.label} +${chosen.length - 1}`;
+  }
+
+  if (firstSelection) {
+    return firstSelection.label;
+  }
+
+  return title;
+}
+
+export function getChosenWithModification(chosen, multi, value) {
+  if (multi) {
+    if (chosen.indexOf(value) === -1) {
+      chosen.push(value);
+      return chosen;
+    }
+
+    return chosen.filter(f => f !== value);
+  }
+
+  return value;
+}

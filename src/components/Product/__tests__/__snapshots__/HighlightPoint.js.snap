@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HighlightPoint renders correctly 1`] = `
+Array [
+  .c0 {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+@media (min-width:62em) {
+  .c0 {
+    padding-right: 1rem;
+  }
+}
+
+<li
+    class="c0"
+>
+    foo
+</li>,
+  .c0 {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+@media (min-width:62em) {
+  .c0 {
+    padding-right: 1rem;
+  }
+}
+
+<li
+    class="c0"
+>
+    bar
+</li>,
+]
+`;

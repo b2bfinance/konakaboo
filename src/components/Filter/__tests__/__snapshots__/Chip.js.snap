@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Chip renders correctly with no selection 1`] = `
+<div
+  class="MuiChip-root-1 "
+  role="button"
+  selection=""
+  tabindex="-1"
+>
+  <span
+    class="MuiChip-label-14"
+  >
+    
+  </span>
+</div>
+`;
+
+exports[`Chip renders correctly with selection 1`] = `
+.c0 {
+  background-color: !important;
+  color: !important;
+}
+
+<div
+  class="MuiChip-root-1 c0"
+  role="button"
+  selection="0,1"
+  tabindex="-1"
+>
+  <span
+    class="MuiChip-label-14"
+  >
+    
+  </span>
+</div>
+`;
+
+exports[`ChipHolder renders correctly 1`] = `
+.c0 {
+  margin-bottom: 1.5rem;
+  margin-right: 0.5rem;
+  position: relative;
+}
+
+<div
+  class="c0"
+>
+  
+</div>
+`;

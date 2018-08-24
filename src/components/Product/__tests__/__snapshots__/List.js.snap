@@ -1,88 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<EmptyProducts /> renders correctly 1`] = `
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  width: 100%;
-}
-
-.c2 {
-  width: 100%;
-  min-height: 1px;
-  -webkit-flex: 0 0 100%;
-  -ms-flex: 0 0 100%;
-  flex: 0 0 100%;
-  max-width: 100%;
-}
-
-.c1 {
-  margin: 2rem auto;
-  padding: 2rem;
-}
-
-@media (min-width:62em) {
-  .c2 {
-    -webkit-flex: 0 0 35%;
-    -ms-flex: 0 0 35%;
-    flex: 0 0 35%;
-    max-width: 35%;
-  }
-}
-
-<div
-  class="c0"
->
-  <div
-    class="c1 c2"
-  >
-    <p>
-      We don't have any products for you to compare.
-    </p>
-  </div>
-</div>
-`;
-
-exports[`<ProductEmptyContainer /> renders correctly 1`] = `
-.c1 {
-  width: 100%;
-  min-height: 1px;
-}
-
-.c0 {
-  background-color: #eceff1;
-  margin: 2rem auto;
-  padding: 2rem;
-}
-
-<div
-  class="c0 c1"
->
-  
-</div>
-`;
-
-exports[`<ProductError /> renders correctly 1`] = `
-.c0 {
-  background-color: #ff9800;
-  color: #fff;
-  padding: 1rem;
-}
-
-<div
-  class="c0"
->
-  We had problems retrieving products for you, retry or come back later.
-</div>
-`;
-
-exports[`<ProductList /> when not fetched renders correctly 1`] = `
-.c0 {
+exports[`List renders correctly when fetching has not started 1`] = `
+Array [
+  .c0 {
   height: 35rem;
   margin-bottom: 1.5rem;
 }
@@ -93,26 +13,47 @@ exports[`<ProductList /> when not fetched renders correctly 1`] = `
   }
 }
 
-<div>
-  <div
+<div
     class="c0"
-  >
+>
     
-  </div>
-  <div
+</div>,
+  .c0 {
+  height: 35rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width:62em) {
+  .c0 {
+    height: 9rem;
+  }
+}
+
+<div
     class="c0"
-  >
+>
     
-  </div>
-  <div
+</div>,
+  .c0 {
+  height: 35rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width:62em) {
+  .c0 {
+    height: 9rem;
+  }
+}
+
+<div
     class="c0"
-  >
+>
     
-  </div>
-</div>
+</div>,
+]
 `;
 
-exports[`<ProductList /> with an error renders correctly 1`] = `
+exports[`List renders correctly with an error 1`] = `
 .c0 {
   background-color: #ff9800;
   color: #fff;
@@ -126,7 +67,7 @@ exports[`<ProductList /> with an error renders correctly 1`] = `
 </div>
 `;
 
-exports[`<ProductList /> with no products renders correctly 1`] = `
+exports[`List renders correctly with no products 1`] = `
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -168,14 +109,14 @@ exports[`<ProductList /> with no products renders correctly 1`] = `
     class="c1 c2"
   >
     <p>
-      We don't have any products for you to compare.
+      There are no product matching your requirements.
     </p>
   </div>
 </div>
 `;
 
-exports[`<ProductList /> with products renders correctly 1`] = `
-<styled.div>
+exports[`List renders correctly with products 1`] = `
+<Component>
   <Product
     key="0"
     product={
@@ -318,90 +259,5 @@ exports[`<ProductList /> with products renders correctly 1`] = `
       }
     }
   />
-</styled.div>
-`;
-
-exports[`<ProductLoadingMask /> renders correctly 1`] = `
-.c0 {
-  height: 35rem;
-  margin-bottom: 1.5rem;
-}
-
-@media (min-width:62em) {
-  .c0 {
-    height: 9rem;
-  }
-}
-
-<div>
-  <div
-    class="c0"
-  >
-    
-  </div>
-  <div
-    class="c0"
-  >
-    
-  </div>
-  <div
-    class="c0"
-  >
-    
-  </div>
-</div>
-`;
-
-exports[`<ProductMask /> renders correctly 1`] = `
-.c0 {
-  background-color: #f5f6f7;
-  height: 35rem;
-  margin-bottom: 1.5rem;
-}
-
-@media (min-width:62em) {
-  .c0 {
-    height: 9rem;
-  }
-}
-
-<div
-  class="c0"
->
-  
-</div>
-`;
-
-exports[`<ProductsLoadingContainer /> renders correctly 1`] = `
-<div
-  class=""
->
-  
-</div>
-`;
-
-exports[`<ProductsLoadingContainer /> while loading renders correctly 1`] = `
-.c0 {
-  opacity: 0.75;
-}
-
-<div
-  class="c0"
->
-  
-</div>
-`;
-
-exports[`<StyledProductError /> renders correctly 1`] = `
-.c0 {
-  background-color: #ff9800;
-  color: #fff;
-  padding: 1rem;
-}
-
-<div
-  class="c0"
->
-  
-</div>
+</Component>
 `;
