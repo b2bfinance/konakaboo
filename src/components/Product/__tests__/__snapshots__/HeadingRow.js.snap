@@ -12,15 +12,33 @@ exports[`HeadingRow renders correctly with highlight 1`] = `
   width: 100%;
 }
 
+.c3 {
+  border: 1px solid;
+  border-radius: 1rem;
+  font-size: 80%;
+  padding: 0.2rem 0.75rem;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.c2 div {
+  margin: .5rem .5rem 0 0;
+}
+
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #eceff1;
   padding: 0.5rem 0.75rem;
-  background-color: #009688;
-  color: #fff;
 }
 
 .c0 svg {
@@ -29,10 +47,51 @@ exports[`HeadingRow renders correctly with highlight 1`] = `
   margin-right: 0.25rem;
 }
 
+@media (min-width:36em) {
+  .c2 {
+    margin-left: auto;
+  }
+
+  .c2 div {
+    margin: 0 .5rem 0 0;
+  }
+}
+
 <div
   class="c0 c1"
 >
-  
+  <svg
+    aria-hidden="true"
+    class="MuiSvgIcon-root-1"
+    focusable="false"
+    viewBox="0 0 24 24"
+  >
+    <path
+      d="M0 0h24v24H0z"
+      fill="none"
+    >
+      
+    </path>
+    <path
+      d="M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58.55 0 1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.55-.23-1.06-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z"
+    >
+      
+    </path>
+  </svg>
+  <div
+    class="c2"
+  >
+    <div
+      class="c3"
+    >
+      foo
+    </div>
+    <div
+      class="c3"
+    >
+      bar
+    </div>
+  </div>
 </div>
 `;
 
@@ -48,18 +107,61 @@ exports[`HeadingRow renders correctly without highlight 1`] = `
   width: 100%;
 }
 
+.c3 {
+  border: 1px solid;
+  border-radius: 1rem;
+  font-size: 80%;
+  padding: 0.2rem 0.75rem;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.c2 div {
+  margin: .5rem .5rem 0 0;
+}
+
 .c0 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #eceff1;
   padding: 0.5rem 0.75rem;
+}
+
+@media (min-width:36em) {
+  .c2 {
+    margin-left: auto;
+  }
+
+  .c2 div {
+    margin: 0 .5rem 0 0;
+  }
 }
 
 <div
   class="c0 c1"
 >
-  
+  <div
+    class="c2"
+  >
+    <div
+      class="c3"
+    >
+      foo
+    </div>
+    <div
+      class="c3"
+    >
+      bar
+    </div>
+  </div>
 </div>
 `;

@@ -4,12 +4,16 @@ import HeadingRow from '../HeadingRow';
 
 describe('HeadingRow', () => {
   test('renders correctly without highlight', () => {
-    expect(render(<HeadingRow theme={stubData.theme} />)).toMatchSnapshot();
+    expect(
+      render(<HeadingRow labels={['foo', 'bar']} theme={stubData.theme} />)
+    ).toMatchSnapshot();
   });
 
   test('renders correctly with highlight', () => {
     expect(
-      render(<HeadingRow highlight theme={stubData.theme} />)
+      render(
+        <HeadingRow highlight labels={['foo', 'bar']} theme={stubData.theme} />
+      )
     ).toMatchSnapshot();
   });
 });

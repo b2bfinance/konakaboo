@@ -5,6 +5,7 @@ import { queries } from '../../utils/media';
 export const Wrapper = styled.li`
   font-size: 1.5rem;
   font-weight: ${props => props.theme.mainBoldFontWeight};
+  margin-bottom: 0.5rem;
 
   ${queries.desktop`
     padding-right: 1rem;

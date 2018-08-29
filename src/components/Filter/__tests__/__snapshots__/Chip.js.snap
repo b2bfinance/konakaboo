@@ -8,7 +8,7 @@ exports[`Chip renders correctly with no selection 1`] = `
   tabindex="-1"
 >
   <span
-    class="MuiChip-label-14"
+    class="MuiChip-label-17"
   >
     
   </span>
@@ -28,7 +28,7 @@ exports[`Chip renders correctly with selection 1`] = `
   tabindex="-1"
 >
   <span
-    class="MuiChip-label-14"
+    class="MuiChip-label-17"
   >
     
   </span>

@@ -30,7 +30,6 @@ exports[`Confirm renders correctly 1`] = `
 
 exports[`ConfirmButtonCol renders correctly 1`] = `
 .c1 {
-  width: 100%;
   min-height: 1px;
 }
 
