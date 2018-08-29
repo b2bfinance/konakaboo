@@ -7,7 +7,6 @@ import HighlightPoint from './HighlightPoint';
 import TechnicalPoint from './TechnicalPoint';
 
 export const Wrapper = styled(Row)`
-  border-top: 2px solid ${props => props.theme.productOutlineBackground};
   padding: 1rem;
 
   ${props =>

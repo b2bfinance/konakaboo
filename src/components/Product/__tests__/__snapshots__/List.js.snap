@@ -80,7 +80,6 @@ exports[`List renders correctly with no products 1`] = `
 }
 
 .c2 {
-  width: 100%;
   min-height: 1px;
   -webkit-flex: 0 0 100%;
   -ms-flex: 0 0 100%;

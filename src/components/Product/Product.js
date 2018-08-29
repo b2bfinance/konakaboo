@@ -4,12 +4,11 @@ import styled, { css } from 'styled-components';
 import Row from '../Row';
 import Button from '../Button';
 import Confirm from './Confirm';
-import Star from '@material-ui/icons/Star';
 import MoreInfoRow from './MoreInfoRow';
 import HeadingRow from './HeadingRow';
-import Labels from './Labels';
 import Col, { MultiCol } from './Col';
 import ApplyButton from './ApplyButton';
+import FeaturedHighlightPointRow from './FeaturedHighlightPointRow';
 
 export const Wrapper = styled.div`
   background-color: white;
@@ -101,11 +100,7 @@ export default class Product extends React.Component {
 
     return (
       <Wrapper highlight={highlighted} ref={this.setContainerEl} data-product>
-        <HeadingRow highlight={highlighted}>
-          {highlighted && <Star />}
-          {title}
-          <Labels labels={labels} />
-        </HeadingRow>
+        <HeadingRow highlight={highlighted} title={title} labels={labels} />
         <Row>
           <Col phone="100" desktop="20">
             <img src={links.logo} alt={brand} />
@@ -138,6 +133,12 @@ export default class Product extends React.Component {
             )}
           </Col>
         </Row>
+        {highlighted_points.length > 0 && (
+          <FeaturedHighlightPointRow
+            highlight={highlighted}
+            feature={highlighted_points[0]}
+          />
+        )}
         {this.hasMoreInfo() && (
           <MoreInfoRow
             visible={isShowingMoreInfo}

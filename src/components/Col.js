@@ -13,7 +13,6 @@ const width = (query, width) => {
 };
 
 export default styled.div`
-  width: 100%;
   min-height: 1px;
 
   ${props => width('phone', props.phone)};

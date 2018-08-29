@@ -18,6 +18,7 @@ export const Wrapper = styled(Row)`
   font-weight: ${props => props.theme.mainNormalFontWeight};
   font-size: ${props => props.theme.mainFontSize};
   color: ${props => props.theme.mainColor};
+  line-height: ${props => props.theme.mainLineHeight};
 
   * {
     box-sizing: border-box;

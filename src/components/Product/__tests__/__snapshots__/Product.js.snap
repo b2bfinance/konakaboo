@@ -95,7 +95,6 @@ exports[`Product renders correctly with highlighted set 1`] = `
 }
 
 .c6 {
-  width: 100%;
   min-height: 1px;
   -webkit-flex: 0 0 100%;
   -ms-flex: 0 0 100%;
@@ -104,7 +103,6 @@ exports[`Product renders correctly with highlighted set 1`] = `
 }
 
 .c8 {
-  width: 100%;
   min-height: 1px;
   -webkit-flex: 0 0 100%;
   -ms-flex: 0 0 100%;
@@ -113,7 +111,10 @@ exports[`Product renders correctly with highlighted set 1`] = `
 }
 
 .c13 {
-  width: 100%;
+  min-height: 1px;
+}
+
+.c17 {
   min-height: 1px;
   -webkit-flex: 0 0 100%;
   -ms-flex: 0 0 100%;
@@ -121,19 +122,20 @@ exports[`Product renders correctly with highlighted set 1`] = `
   max-width: 100%;
 }
 
-.c14 {
+.c18 {
   list-style: none;
   margin-bottom: 0;
   margin-top: 1rem;
   padding: 0;
 }
 
-.c15 {
+.c19 {
   font-size: 1.5rem;
   font-weight: 400;
+  margin-bottom: 0.5rem;
 }
 
-.c16 {
+.c20 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -146,32 +148,14 @@ exports[`Product renders correctly with highlighted set 1`] = `
   margin-bottom: 1rem;
 }
 
-.c16 svg {
+.c20 svg {
   fill: #4dc16f;
   margin-right: 0.5rem;
 }
 
-.c12 {
-  border-top: 2px solid #eceff1;
+.c16 {
   padding: 1rem;
   display: none;
-}
-
-.c1 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: #eceff1;
-  padding: 0.5rem 0.75rem;
-  background-color: #009688;
-  color: #fff;
-}
-
-.c1 svg {
-  width: 1.125rem;
-  height: 1.125rem;
-  margin-right: 0.25rem;
 }
 
 .c4 {
@@ -193,6 +177,23 @@ exports[`Product renders correctly with highlighted set 1`] = `
 
 .c3 div {
   margin: .5rem .5rem 0 0;
+}
+
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #eceff1;
+  padding: 0.5rem 0.75rem;
+  background-color: #009688;
+  color: #fff;
+}
+
+.c1 svg {
+  width: 1.125rem;
+  height: 1.125rem;
+  margin-right: 0.25rem;
 }
 
 .c5 {
@@ -280,6 +281,27 @@ exports[`Product renders correctly with highlighted set 1`] = `
   margin-bottom: 0.5rem;
 }
 
+.c12 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-top: 2px solid #eceff1;
+  padding: 0.35rem 0.75rem;
+  border-color: #009688;
+}
+
+.c14 {
+  color: #ea3f79;
+  font-size: 1.25rem;
+}
+
+.c15 {
+  margin-left: 0.35rem;
+  opacity: 0.85;
+  font-size: 85%;
+}
+
 .c0 {
   background-color: white;
   border: 2px solid #eceff1;
@@ -306,7 +328,7 @@ exports[`Product renders correctly with highlighted set 1`] = `
 }
 
 @media (min-width:62em) {
-  .c13 {
+  .c17 {
     -webkit-flex: 0 0 50%;
     -ms-flex: 0 0 50%;
     flex: 0 0 50%;
@@ -315,13 +337,13 @@ exports[`Product renders correctly with highlighted set 1`] = `
 }
 
 @media (min-width:62em) {
-  .c15 {
+  .c19 {
     padding-right: 1rem;
   }
 }
 
 @media (min-width:62em) {
-  .c16 {
+  .c20 {
     margin-bottom: .5rem;
     padding-left: 1rem;
   }
@@ -357,13 +379,7 @@ exports[`Product renders correctly with highlighted set 1`] = `
         
       </path>
       <path
-        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
-      >
-        
-      </path>
-      <path
-        d="M0 0h24v24H0z"
-        fill="none"
+        d="M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58.55 0 1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.55-.23-1.06-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z"
       >
         
       </path>
@@ -458,6 +474,47 @@ exports[`Product renders correctly with highlighted set 1`] = `
   <div
     class="c12 c2"
   >
+    <div
+      class="c13"
+    >
+      <div
+        class="c14"
+      >
+        <svg
+          aria-hidden="true"
+          class="MuiSvgIcon-root-1 MuiSvgIcon-fontSizeInherit-7"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M0 0h24v24H0V0z"
+            fill="none"
+          >
+            
+          </path>
+          <g>
+            <path
+              d="M12 7.13l.97 2.29.47 1.11 1.2.1 2.47.21-1.88 1.63-.91.79.27 1.18.56 2.41-2.12-1.28-1.03-.64-1.03.62-2.12 1.28.56-2.41.27-1.18-.91-.79-1.88-1.63 2.47-.21 1.2-.1.47-1.11.97-2.27M12 2L9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2z"
+            >
+              
+            </path>
+          </g>
+        </svg>
+      </div>
+    </div>
+    <div
+      class="c13"
+    >
+      <div
+        class="c15"
+      >
+        Online Application
+      </div>
+    </div>
+  </div>
+  <div
+    class="c16 c2"
+  >
     <span>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean bibendum facilisis condimentum. Donec laoreet porttitor condimentum. Nulla luctus efficitur magna, eget rhoncus metus placerat sed.
     </span>
@@ -465,36 +522,36 @@ exports[`Product renders correctly with highlighted set 1`] = `
       class="c2"
     >
       <div
-        class="c13"
+        class="c17"
       >
         <ul
-          class="c14"
+          class="c18"
         >
           <li
-            class="c15"
+            class="c19"
           >
             Online Application
           </li>
           <li
-            class="c15"
+            class="c19"
           >
             Mobile app
           </li>
           <li
-            class="c15"
+            class="c19"
           >
             Customer service winner
           </li>
         </ul>
       </div>
       <div
-        class="c13"
+        class="c17"
       >
         <ul
-          class="c14"
+          class="c18"
         >
           <li
-            class="c16"
+            class="c20"
           >
             <svg
               aria-hidden="true"
@@ -517,7 +574,7 @@ exports[`Product renders correctly with highlighted set 1`] = `
             1.5% Early Repayment
           </li>
           <li
-            class="c16"
+            class="c20"
           >
             <svg
               aria-hidden="true"
@@ -540,7 +597,7 @@ exports[`Product renders correctly with highlighted set 1`] = `
             6 months cool off peroid
           </li>
           <li
-            class="c16"
+            class="c20"
           >
             <svg
               aria-hidden="true"
@@ -664,7 +721,6 @@ exports[`Product renders correctly with more information available  1`] = `
 }
 
 .c6 {
-  width: 100%;
   min-height: 1px;
   -webkit-flex: 0 0 100%;
   -ms-flex: 0 0 100%;
@@ -673,7 +729,6 @@ exports[`Product renders correctly with more information available  1`] = `
 }
 
 .c8 {
-  width: 100%;
   min-height: 1px;
   -webkit-flex: 0 0 100%;
   -ms-flex: 0 0 100%;
@@ -682,7 +737,10 @@ exports[`Product renders correctly with more information available  1`] = `
 }
 
 .c13 {
-  width: 100%;
+  min-height: 1px;
+}
+
+.c17 {
   min-height: 1px;
   -webkit-flex: 0 0 100%;
   -ms-flex: 0 0 100%;
@@ -690,19 +748,20 @@ exports[`Product renders correctly with more information available  1`] = `
   max-width: 100%;
 }
 
-.c14 {
+.c18 {
   list-style: none;
   margin-bottom: 0;
   margin-top: 1rem;
   padding: 0;
 }
 
-.c15 {
+.c19 {
   font-size: 1.5rem;
   font-weight: 400;
+  margin-bottom: 0.5rem;
 }
 
-.c16 {
+.c20 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -715,24 +774,14 @@ exports[`Product renders correctly with more information available  1`] = `
   margin-bottom: 1rem;
 }
 
-.c16 svg {
+.c20 svg {
   fill: #4dc16f;
   margin-right: 0.5rem;
 }
 
-.c12 {
-  border-top: 2px solid #eceff1;
+.c16 {
   padding: 1rem;
   display: none;
-}
-
-.c1 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: #eceff1;
-  padding: 0.5rem 0.75rem;
 }
 
 .c4 {
@@ -754,6 +803,15 @@ exports[`Product renders correctly with more information available  1`] = `
 
 .c3 div {
   margin: .5rem .5rem 0 0;
+}
+
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #eceff1;
+  padding: 0.5rem 0.75rem;
 }
 
 .c5 {
@@ -841,6 +899,26 @@ exports[`Product renders correctly with more information available  1`] = `
   margin-bottom: 0.5rem;
 }
 
+.c12 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-top: 2px solid #eceff1;
+  padding: 0.35rem 0.75rem;
+}
+
+.c14 {
+  color: #ea3f79;
+  font-size: 1.25rem;
+}
+
+.c15 {
+  margin-left: 0.35rem;
+  opacity: 0.85;
+  font-size: 85%;
+}
+
 .c0 {
   background-color: white;
   border: 2px solid #eceff1;
@@ -866,7 +944,7 @@ exports[`Product renders correctly with more information available  1`] = `
 }
 
 @media (min-width:62em) {
-  .c13 {
+  .c17 {
     -webkit-flex: 0 0 50%;
     -ms-flex: 0 0 50%;
     flex: 0 0 50%;
@@ -875,13 +953,13 @@ exports[`Product renders correctly with more information available  1`] = `
 }
 
 @media (min-width:62em) {
-  .c15 {
+  .c19 {
     padding-right: 1rem;
   }
 }
 
 @media (min-width:62em) {
-  .c16 {
+  .c20 {
     margin-bottom: .5rem;
     padding-left: 1rem;
   }
@@ -989,6 +1067,47 @@ exports[`Product renders correctly with more information available  1`] = `
   <div
     class="c12 c2"
   >
+    <div
+      class="c13"
+    >
+      <div
+        class="c14"
+      >
+        <svg
+          aria-hidden="true"
+          class="MuiSvgIcon-root-1 MuiSvgIcon-fontSizeInherit-7"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M0 0h24v24H0V0z"
+            fill="none"
+          >
+            
+          </path>
+          <g>
+            <path
+              d="M12 7.13l.97 2.29.47 1.11 1.2.1 2.47.21-1.88 1.63-.91.79.27 1.18.56 2.41-2.12-1.28-1.03-.64-1.03.62-2.12 1.28.56-2.41.27-1.18-.91-.79-1.88-1.63 2.47-.21 1.2-.1.47-1.11.97-2.27M12 2L9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2z"
+            >
+              
+            </path>
+          </g>
+        </svg>
+      </div>
+    </div>
+    <div
+      class="c13"
+    >
+      <div
+        class="c15"
+      >
+        Complete online application
+      </div>
+    </div>
+  </div>
+  <div
+    class="c16 c2"
+  >
     <span>
       Whether your landlord is a first time buyer, a first time landlord or has a large portfolio, we have a range of products to help. Our range of mortgages also includes products for Limited Companies and HMOs.
     </span>
@@ -996,36 +1115,36 @@ exports[`Product renders correctly with more information available  1`] = `
       class="c2"
     >
       <div
-        class="c13"
+        class="c17"
       >
         <ul
-          class="c14"
+          class="c18"
         >
           <li
-            class="c15"
+            class="c19"
           >
             Complete online application
           </li>
           <li
-            class="c15"
+            class="c19"
           >
             Mobile app
           </li>
           <li
-            class="c15"
+            class="c19"
           >
             Customer service winner
           </li>
         </ul>
       </div>
       <div
-        class="c13"
+        class="c17"
       >
         <ul
-          class="c14"
+          class="c18"
         >
           <li
-            class="c16"
+            class="c20"
           >
             <svg
               aria-hidden="true"
@@ -1048,7 +1167,7 @@ exports[`Product renders correctly with more information available  1`] = `
             Rental cover - ICR: based on individual circumstances
           </li>
           <li
-            class="c16"
+            class="c20"
           >
             <svg
               aria-hidden="true"
@@ -1071,7 +1190,7 @@ exports[`Product renders correctly with more information available  1`] = `
             5 year fixed rate products that help maximise the loan size available
           </li>
           <li
-            class="c16"
+            class="c20"
           >
             <svg
               aria-hidden="true"
@@ -1153,7 +1272,6 @@ exports[`Product renders correctly without more information available  1`] = `
 }
 
 .c5 {
-  width: 100%;
   min-height: 1px;
   -webkit-flex: 0 0 100%;
   -ms-flex: 0 0 100%;
@@ -1162,21 +1280,11 @@ exports[`Product renders correctly without more information available  1`] = `
 }
 
 .c7 {
-  width: 100%;
   min-height: 1px;
   -webkit-flex: 0 0 100%;
   -ms-flex: 0 0 100%;
   flex: 0 0 100%;
   max-width: 100%;
-}
-
-.c1 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: #eceff1;
-  padding: 0.5rem 0.75rem;
 }
 
 .c3 {
@@ -1191,6 +1299,15 @@ exports[`Product renders correctly without more information available  1`] = `
 
 .c3 div {
   margin: .5rem .5rem 0 0;
+}
+
+.c1 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #eceff1;
+  padding: 0.5rem 0.75rem;
 }
 
 .c4 {

@@ -4,6 +4,7 @@ export default {
   mainNormalFontWeight: 300,
   mainFontSize: '1rem',
   mainBoldFontWeight: 400,
+  mainLineHeight: 1,
 
   productMaskBackground: '#f5f6f7',
   productEmptyBackground: '#eceff1',
@@ -19,6 +20,8 @@ export default {
   infoButtonBackground: '#f5f6f7',
   infoButtonColor: '#37474f',
   infoCheckColor: '#4dc16f',
+
+  productFeaturedIconColor: '#ea3f79',
 
   filterChipChosenBackground: '#009688',
   filterChipChosenColor: '#fff',
