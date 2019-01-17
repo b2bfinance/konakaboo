@@ -18,7 +18,7 @@ export const Disclaimer = styled.div`
 `;
 
 export const DetailRow = styled(TableRow)`
-  height: 32px !important;
+  height: 24px !important;
 `;
 
 export const DetailCell = styled(TableCell)`
@@ -35,7 +35,7 @@ export default ({ detailed, disclaimer }) => (
     <Grid container spacing={32}>
       {detailed &&
         Object.keys(detailed).map(heading => (
-          <Grid item xs={12} sm={6} key={heading}>
+          <Grid item xs={12} sm={6} lg={4} key={heading}>
             <Typography variant="h6">{heading}</Typography>
             <Table padding="none">
               <TableBody>
