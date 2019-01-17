@@ -93,4 +93,8 @@ log(`Bucket: ${bucketName}`);
 log(`Project: ${storageOptions.projectId}`);
 log(`Key file: ${storageOptions.keyFile}`);
 
-run(bucket, getSource(), `products-embed/main-${pkg.version}.js`);
+let version = pkg.version;
+do {
+  run(bucket, getSource(), `products-embed/main-${version}.js`);
+  version = version.substr(0, version.lastIndexOf('.'))
+} while (version != "");
