@@ -1,5 +1,4 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
 import { render, shallow } from 'enzyme';
 import { Wrapper, AppContainer, mapStateToProps } from '../App';
 

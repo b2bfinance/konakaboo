@@ -2,40 +2,20 @@
 
 exports[`ApplyButton renders correctly 1`] = `
 .c0 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  border-radius: 0.15rem;
-  box-sizing: border-box;
-  cursor: pointer;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding: 0.75rem 1.5rem;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  width: 100%;
-  white-space: nowrap;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+  background-color: !important;
+  width: 100% !important;
+  box-shadow: none !important;
 }
 
-.c0:hover {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-}
-
-<a
-  class="c0"
+<button
+  class="MuiButtonBase-root-11 MuiFab-root-1 c0"
+  tabindex="0"
+  type="button"
 >
-  
-</a>
+  <span
+    class="MuiFab-label-2"
+  >
+    apply
+  </span>
+</button>
 `;

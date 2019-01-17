@@ -1,0 +1,129 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Grid renders correctly 1`] = `
+.c0 {
+  min-height: 1px;
+  border-top: 2px solid #f5f6f7;
+  padding: 8px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.c0:first-child {
+  border-top: 0;
+  border-left: 0;
+}
+
+@media (min-width:36em) {
+  .c0 {
+    border-top: 0;
+    border-left: 2px solid #f5f6f7;
+  }
+}
+
+<div
+  class="c0"
+/>
+`;
+
+exports[`ProductMultiGrid renders correctly 1`] = `
+Array [
+  .c0 {
+  min-height: 1px;
+  -webkit-flex: 0 0 100%;
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
+  max-width: 100%;
+  border-top: 2px solid #f5f6f7;
+  padding: 8px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.c0:first-child {
+  border-top: 0;
+  border-left: 0;
+}
+
+@media (min-width:36em) {
+  .c0 {
+    -webkit-flex: 0 0 40%;
+    -ms-flex: 0 0 40%;
+    flex: 0 0 40%;
+    max-width: 40%;
+  }
+}
+
+@media (min-width:36em) {
+  .c0 {
+    border-top: 0;
+    border-left: 2px solid #f5f6f7;
+  }
+}
+
+<div
+    class="c0"
+  >
+    <h6
+      class="MuiTypography-root-1 MuiTypography-subtitle2-20"
+    >
+      foo
+    </h6>
+    <h1
+      class="MuiTypography-root-1 MuiTypography-display1-5"
+    >
+      bar
+    </h1>
+  </div>,
+  .c0 {
+  min-height: 1px;
+  -webkit-flex: 0 0 100%;
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
+  max-width: 100%;
+  border-top: 2px solid #f5f6f7;
+  padding: 8px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.c0:first-child {
+  border-top: 0;
+  border-left: 0;
+}
+
+@media (min-width:36em) {
+  .c0 {
+    -webkit-flex: 0 0 40%;
+    -ms-flex: 0 0 40%;
+    flex: 0 0 40%;
+    max-width: 40%;
+  }
+}
+
+@media (min-width:36em) {
+  .c0 {
+    border-top: 0;
+    border-left: 2px solid #f5f6f7;
+  }
+}
+
+<div
+    class="c0"
+  >
+    <h6
+      class="MuiTypography-root-1 MuiTypography-subtitle2-20"
+    >
+      bar
+    </h6>
+    <h1
+      class="MuiTypography-root-1 MuiTypography-display1-5"
+    >
+      foo
+    </h1>
+  </div>,
+]
+`;

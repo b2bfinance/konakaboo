@@ -10,7 +10,5 @@ exports[`InfoList renders correctly 1`] = `
 
 <ul
   class="c0"
->
-  
-</ul>
+/>
 `;

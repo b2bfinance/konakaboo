@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MoreInfoButton renders correctly 1`] = `
+.c0 {
+  margin-bottom: 8px !important;
+}
+
+<a
+  class="MuiTypography-root-6 MuiTypography-colorPrimary-36 MuiTypography-inline-41 MuiLink-root-1 MuiLink-underlineHover-3 c0"
+>
+  more info button
+</a>
+`;

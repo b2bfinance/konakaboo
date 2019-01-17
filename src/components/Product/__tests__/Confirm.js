@@ -1,13 +1,9 @@
 import React from 'react';
 import { shallow, render } from 'enzyme';
 import Confirm, { Wrapper, ConfirmButtonCol } from '../Confirm';
-import Button from '../../Button';
 
 describe('Confirm', () => {
-  const {
-    heading,
-    description
-  } = stubData.products.withConfirmation.meta.confirm;
+  const { heading, description } = stubData.products.item.meta.confirm;
 
   test('renders correctly', () => {
     expect(

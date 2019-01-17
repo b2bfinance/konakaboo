@@ -29,7 +29,5 @@ exports[`<Col /> renders correctly 1`] = `
 
 <div
   class="c0"
->
-  
-</div>
+/>
 `;

@@ -1,3 +1,5 @@
+import green from '@material-ui/core/colors/green';
+
 export default {
   mainColor: '#37474f',
   mainFontFamily: 'Roboto,sans-serif',
@@ -8,18 +10,20 @@ export default {
 
   productMaskBackground: '#f5f6f7',
   productEmptyBackground: '#eceff1',
-  productOutlineBackground: '#eceff1',
+  productOutlineBackground: '#f5f6f7',
+  productBorder: '#eceff1',
   productOutlineColor: '#37474f',
-  productColBackground: '#f5f6f7',
+
   productHighlightOutlineBackground: '#009688',
+  productHighlightBorder: '#009688',
   productHighlightOutlineColor: '#fff',
 
-  applyButtonBackground: '#4dc16f',
+  applyButtonBackground: green['500'],
   applyButtonColor: '#fff',
 
   infoButtonBackground: '#f5f6f7',
   infoButtonColor: '#37474f',
-  infoCheckColor: '#4dc16f',
+  infoCheckColor: green['500'],
 
   productFeaturedIconColor: '#ea3f79',
 

@@ -38,9 +38,7 @@ Array [
 
 <div
     class="c0"
->
-    
-</div>,
+  />,
   .c0 {
   background-color: #f5f6f7;
   height: 35rem;
@@ -55,9 +53,7 @@ Array [
 
 <div
     class="c0"
->
-    
-</div>,
+  />,
   .c0 {
   background-color: #f5f6f7;
   height: 35rem;
@@ -72,8 +68,6 @@ Array [
 
 <div
     class="c0"
->
-    
-</div>,
+  />,
 ]
 `;

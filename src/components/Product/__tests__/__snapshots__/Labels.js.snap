@@ -18,6 +18,10 @@ exports[`Labels renders correctly 1`] = `
   flex-wrap: wrap;
 }
 
+.c0:last-child div {
+  margin-right: 0;
+}
+
 .c0 div {
   margin: .5rem .5rem 0 0;
 }

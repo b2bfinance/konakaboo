@@ -9,7 +9,7 @@ exports[`Filter with multi choice renders correctly 1`] = `
     Filter Title
     <WithStyles(IconButton)
       aria-label="Close Filter Choices"
-      onClick={[Function]}
+      onClick={[MockFunction]}
     >
       <pure(CloseIcon) />
     </WithStyles(IconButton)>
@@ -56,7 +56,7 @@ exports[`Filter with single choice renders correctly 1`] = `
     Filter Title
     <WithStyles(IconButton)
       aria-label="Close Filter Choices"
-      onClick={[Function]}
+      onClick={[MockFunction]}
     >
       <pure(CloseIcon) />
     </WithStyles(IconButton)>
@@ -132,9 +132,7 @@ exports[`Wrapper when not visible renders correctly 1`] = `
 
 <div
   class="c0"
->
-  
-</div>
+/>
 `;
 
 exports[`Wrapper when visible renders correctly 1`] = `
@@ -180,7 +178,5 @@ exports[`Wrapper when visible renders correctly 1`] = `
 
 <div
   class="c0"
->
-  
-</div>
+/>
 `;

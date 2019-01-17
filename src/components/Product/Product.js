@@ -1,153 +1,123 @@
-import React from 'react';
-import { findDOMNode } from 'react-dom';
+import React, { useState } from 'react';
 import styled, { css } from 'styled-components';
-import Row from '../Row';
-import Button from '../Button';
+import Grid from '@material-ui/core/Grid';
 import Confirm from './Confirm';
-import MoreInfoRow from './MoreInfoRow';
+import MoreInfo from './MoreInfo';
 import HeadingRow from './HeadingRow';
-import Col, { MultiCol } from './Col';
+import ProductGrid, { ProductMultiGrid } from './Grid';
+import MoreInfoButton from './MoreInfoButton';
 import ApplyButton from './ApplyButton';
 import FeaturedHighlightPointRow from './FeaturedHighlightPointRow';
+import Typography from '@material-ui/core/Typography';
 
 export const Wrapper = styled.div`
   background-color: white;
-  border: 2px solid ${props => props.theme.productOutlineBackground};
-  margin-bottom: 1.5rem;
+  margin-bottom: 56px;
 
   ${props =>
-    props.highlight &&
+    props.standOut &&
     css`
-      border-color: ${props.theme.productHighlightOutlineBackground};
+      border-color: ${props.theme.productHighlightBorder};
     `};
 `;
 
-export default class Product extends React.Component {
-  state = {
-    isShowingMoreInfo: false,
-    isShowingConfirmation: false
-  };
+export const ProductBody = styled(Grid)`
+  border: 2px solid ${props => props.theme.productBorder};
+`;
 
-  setContainerEl = el => {
-    this.productContainer = findDOMNode(el);
-  };
+export const ProductDescription = styled(Typography)`
+  border-top: 2px solid ${props => props.theme.productBorder};
+  padding: 24px 16px;
+  width: 100%;
+`;
 
-  handleToggleMoreInfo = e => {
-    const { isShowingMoreInfo } = this.state;
+export const Product = ({
+  highlighted,
+  labels,
+  title,
+  links,
+  brand,
+  columns,
+  description,
+  feature_point,
+  detailed,
+  disclaimer,
+  meta
+}) => {
+  const [withInfo, setWithInfo] = useState(false);
+  const [withConfirmation, setWithConfirmation] = useState(false);
 
-    this.setState({
-      isShowingMoreInfo: !isShowingMoreInfo
-    });
-
-    if (!isShowingMoreInfo) {
-      this.productContainer.dispatchEvent(
-        new CustomEvent('more', {
-          detail: this.props.product
-        })
-      );
-    }
-  };
-
-  handleApplyClick = e => {
-    if (this.hasConfirmationDialoig()) {
-      e.preventDefault();
-      this.toggleDialogState();
-    }
-
-    this.productContainer.dispatchEvent(
-      new CustomEvent('apply', {
-        detail: this.props.product
-      })
-    );
-  };
-
-  toggleDialogState = () =>
-    this.setState({
-      isShowingConfirmation: !this.state.isShowingConfirmation
-    });
-
-  hasMoreInfo() {
-    const {
-      description,
-      technical_points,
-      highlighted_points
-    } = this.props.product;
-
-    return [description, technical_points, highlighted_points].some(
-      v => v.length > 0
-    );
-  }
-
-  hasConfirmationDialoig() {
-    const { meta } = this.props.product;
-    return !!meta.confirm;
-  }
-
-  render() {
-    const { isShowingMoreInfo } = this.state;
-    const {
-      highlighted,
-      labels,
-      title,
-      links,
-      brand,
-      columns,
-      description,
-      technical_points,
-      highlighted_points,
-      meta
-    } = this.props.product;
-
-    return (
-      <Wrapper highlight={highlighted} ref={this.setContainerEl} data-product>
-        <HeadingRow highlight={highlighted} title={title} labels={labels} />
-        <Row>
-          <Col phone="100" desktop="20">
-            <img src={links.logo} alt={brand} />
-          </Col>
-          <MultiCol columns={columns} />
-          <Col phone="100" desktop="20">
-            <ApplyButton
-              onClick={this.handleApplyClick}
-              primary
-              margin={this.hasMoreInfo()}
-              href={links.apply}
-              target="_blank"
-              rel="noopener"
-            >
-              Get Deal
-            </ApplyButton>
-            {this.hasConfirmationDialoig() && (
-              <Confirm
-                open={this.state.isShowingConfirmation}
-                handleRequestClose={this.toggleDialogState}
-                title={meta.confirm.heading}
-                description={meta.confirm.description}
-                forwardUrl={links.apply}
-              />
-            )}
-            {this.hasMoreInfo() && (
-              <Button secondary slim onClick={this.handleToggleMoreInfo}>
-                {isShowingMoreInfo ? 'less info' : 'more info'}
-              </Button>
-            )}
-          </Col>
-        </Row>
-        {highlighted_points.length > 0 && (
+  return (
+    <Wrapper standOut={highlighted}>
+      <HeadingRow
+        logo={links.logo}
+        brand={brand}
+        standOut={highlighted}
+        title={title}
+        labels={labels}
+      />
+      <ProductBody container alignItems="center">
+        <ProductMultiGrid columns={columns} />
+        <ProductGrid phone={100} tablet={20}>
+          <Grid container alignContent="center">
+            <Grid item xs={12}>
+              {detailed && (
+                <MoreInfoButton
+                  onClick={() => setWithInfo(!withInfo)}
+                  component="button"
+                >
+                  more details
+                </MoreInfoButton>
+              )}
+            </Grid>
+            <Grid item xs={12}>
+              <ApplyButton
+                variant="extended"
+                color="primary"
+                size="medium"
+                href={links.apply}
+                target="_blank"
+                rel="noopener"
+                onClick={
+                  meta.confirm
+                    ? e => e.preventDefault() || setWithConfirmation(true)
+                    : undefined
+                }
+              >
+                Get Deal
+              </ApplyButton>
+            </Grid>
+          </Grid>
+        </ProductGrid>
+        <ProductDescription variant="body2">{description}</ProductDescription>
+        {feature_point && (
           <FeaturedHighlightPointRow
-            highlight={highlighted}
-            feature={highlighted_points[0]}
+            standOut={highlighted}
+            feature={feature_point}
           />
         )}
-        {this.hasMoreInfo() && (
-          <MoreInfoRow
-            visible={isShowingMoreInfo}
-            description={description}
-            highlights={highlighted_points}
-            technical={technical_points}
-          />
-        )}
-      </Wrapper>
-    );
-  }
-}
+      </ProductBody>
+      <MoreInfo
+        open={withInfo}
+        onClose={() => setWithInfo(false)}
+        title={title}
+        links={links}
+        brand={brand}
+        description={description}
+        detailed={detailed}
+        disclaimer={disclaimer}
+      />
+      {meta.confirm && (
+        <Confirm
+          open={withConfirmation}
+          handleRequestClose={() => setWithConfirmation(false)}
+          title={meta.confirm.heading}
+          description={meta.confirm.description}
+          forwardUrl={links.apply}
+        />
+      )}
+    </Wrapper>
+  );
+};
+
+export default Product;

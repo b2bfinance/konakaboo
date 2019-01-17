@@ -1,7 +1,8 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { render, mount } from 'enzyme';
-import Button from '../../Button';
+import Drawer from '@material-ui/core/Drawer';
+import MoreInfoButton from '../MoreInfoButton';
 import Product, { Wrapper } from '../Product';
 import ApplyButton from '../ApplyButton';
 import Confirm from '../Confirm';
@@ -23,37 +24,15 @@ describe('Wrapper', () => {
 describe('Product', () => {
   const ThemedProduct = ({ theme, product }) => (
     <ThemeProvider theme={theme}>
-      <Product product={product} />
+      <Product {...product} />
     </ThemeProvider>
   );
 
-  test('renders correctly with more information available ', () => {
+  test('renders correctly', () => {
     expect(
       render(
         <ThemedProduct
-          product={stubData.products.withMoreInformation}
-          theme={stubData.theme}
-        />
-      )
-    ).toMatchSnapshot();
-  });
-
-  test('renders correctly without more information available ', () => {
-    expect(
-      render(
-        <ThemedProduct
-          product={stubData.products.withoutMoreInformation}
-          theme={stubData.theme}
-        />
-      )
-    ).toMatchSnapshot();
-  });
-
-  test('renders correctly with highlighted set', () => {
-    expect(
-      render(
-        <ThemedProduct
-          product={stubData.products.withHighlight}
+          product={stubData.products.item}
           theme={stubData.theme}
         />
       )
@@ -62,10 +41,7 @@ describe('Product', () => {
 
   test('clicking the apply button displays the confirmation dialog', () => {
     const wrapper = mount(
-      <ThemedProduct
-        product={stubData.products.withConfirmation}
-        theme={stubData.theme}
-      />
+      <ThemedProduct product={stubData.products.item} theme={stubData.theme} />
     );
 
     wrapper.find(ApplyButton).simulate('click', {
@@ -77,18 +53,13 @@ describe('Product', () => {
 
   test('clicking the more info button displays more information', () => {
     const wrapper = mount(
-      <ThemedProduct
-        product={stubData.products.withMoreInformation}
-        theme={stubData.theme}
-      />
+      <ThemedProduct product={stubData.products.item} theme={stubData.theme} />
     );
 
-    const moreButton = wrapper
-      .find(Button)
-      .filterWhere(wrapper => wrapper.text() === 'more info');
+    const moreButton = wrapper.find(MoreInfoButton);
 
     moreButton.simulate('click');
 
-    expect(moreButton.text()).toBe('less info');
+    expect(wrapper.find(Drawer).props().open).toBe(true);
   });
 });
