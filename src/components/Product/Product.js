@@ -89,7 +89,9 @@ export const Product = ({
             </Grid>
           </Grid>
         </ProductGrid>
-        <ProductDescription variant="body2">{description}</ProductDescription>
+        {description && (
+          <ProductDescription variant="body2">{description}</ProductDescription>
+        )}
         {feature_point && <FeaturedHighlightPointRow feature={feature_point} />}
       </ProductBody>
       {detailed && (
