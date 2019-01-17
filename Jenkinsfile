@@ -3,8 +3,8 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                sh 'docker run --rm --user $(id -u):$(id -g) -v $(pwd):/app --working-dir /app node:11 yarn -v'
-                sh 'docker run --rm --user $(id -u):$(id -g) -v $(pwd):/app --working-dir /app node:11 yarn install'
+                sh 'docker run --rm --user $(id -u):$(id -g) -v $(pwd):/app --workdir /app node:11 yarn -v'
+                sh 'docker run --rm --user $(id -u):$(id -g) -v $(pwd):/app --workdir /app node:11 yarn install'
             }
         }
         stage('Tests') {
@@ -12,7 +12,7 @@ pipeline {
                 CODECOV_TOKEN="7e91e7ca-1bad-4783-89fb-8fee7d975e23"
             }
             steps {
-                sh 'docker run --rm -v $(pwd):/app --working-dir /app node:11 yarn coverage'
+                sh 'docker run --rm -v $(pwd):/app --workdir /app node:11 yarn coverage'
 
                 step([
                     $class: 'CloverPublisher',
