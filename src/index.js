@@ -1,5 +1,4 @@
 import 'core-js/modules/es6.array.find';
-import 'custom-event-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
