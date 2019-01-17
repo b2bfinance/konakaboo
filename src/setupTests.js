@@ -1,4 +1,3 @@
-import React from 'react';
 import { configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import theme from './utils/theme';
@@ -93,9 +92,6 @@ global.stubData = {
   },
   products: {
     response: productStubs,
-    withHighlight: productStubs.data[0],
-    withoutMoreInformation: productStubs.data[1],
-    withMoreInformation: productStubs.data[2],
-    withConfirmation: productStubs.data[0]
+    item: productStubs.data[0]
   }
 };
