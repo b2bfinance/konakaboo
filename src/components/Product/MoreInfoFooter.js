@@ -9,6 +9,7 @@ export const Wrapper = styled(Grid)`
   border-top: 2px solid ${props => props.theme.productBorder};
   padding: 16px;
   margin-top: auto;
+  min-height: 85px;
 `;
 
 export default ({ link, onClose }) => (
