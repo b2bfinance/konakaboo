@@ -13,16 +13,16 @@ import Typography from '@material-ui/core/Typography';
 export const Wrapper = styled.div`
   background-color: white;
   margin-bottom: 56px;
+`;
+
+export const ProductBody = styled(Grid)`
+  border: 2px solid ${props => props.theme.productBorder};
 
   ${props =>
     props.standOut &&
     css`
       border-color: ${props.theme.productHighlightBorder};
     `};
-`;
-
-export const ProductBody = styled(Grid)`
-  border: 2px solid ${props => props.theme.productBorder};
 `;
 
 export const ProductDescription = styled(Typography)`
@@ -48,11 +48,11 @@ export const Product = ({
   const [withConfirmation, setWithConfirmation] = useState(false);
 
   return (
-    <Wrapper standOut={highlighted}>
+    <Wrapper>
       <HeadingRow
         logo={links.logo}
         brand={brand}
-        standOut={highlighted}
+        highlighted={highlighted}
         title={title}
         labels={labels}
       />
@@ -90,23 +90,20 @@ export const Product = ({
           </Grid>
         </ProductGrid>
         <ProductDescription variant="body2">{description}</ProductDescription>
-        {feature_point && (
-          <FeaturedHighlightPointRow
-            standOut={highlighted}
-            feature={feature_point}
-          />
-        )}
+        {feature_point && <FeaturedHighlightPointRow feature={feature_point} />}
       </ProductBody>
-      <MoreInfo
-        open={withInfo}
-        onClose={() => setWithInfo(false)}
-        title={title}
-        links={links}
-        brand={brand}
-        description={description}
-        detailed={detailed}
-        disclaimer={disclaimer}
-      />
+      {detailed && (
+        <MoreInfo
+          open={withInfo}
+          onClose={() => setWithInfo(false)}
+          title={title}
+          links={links}
+          brand={brand}
+          description={description}
+          detailed={detailed}
+          disclaimer={disclaimer}
+        />
+      )}
       {meta.confirm && (
         <Confirm
           open={withConfirmation}

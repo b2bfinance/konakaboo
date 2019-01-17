@@ -45,9 +45,8 @@ exports[`Product renders correctly 1`] = `
 }
 
 .c4 {
-  width: 1.125rem;
-  height: 1.125rem;
-  margin-right: 0.25rem;
+  margin-left: 0.25rem;
+  color: #ffb74d;
 }
 
 .c2 {
@@ -70,7 +69,7 @@ exports[`Product renders correctly 1`] = `
   -ms-flex: 0 0 100%;
   flex: 0 0 100%;
   max-width: 100%;
-  border-top: 2px solid #f5f6f7;
+  border-top: 2px solid #eceff1;
   padding: 8px;
   margin-top: 16px;
   margin-bottom: 16px;
@@ -83,36 +82,23 @@ exports[`Product renders correctly 1`] = `
 }
 
 .c13 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: #f5f6f7;
+  background-color: #eceff1;
   border-top: 2px solid #eceff1;
   padding: 8px 16px;
-  border-color: #009688;
 }
 
 .c14 {
-  color: #ea3f79;
+  color: #f06292;
   font-size: 1.25rem;
 }
 
 .c15 {
-  margin-left: 0.35rem;
-  opacity: 0.85;
-  font-size: 85%;
+  margin-left: 4px;
 }
 
 .c0 {
   background-color: white;
   margin-bottom: 56px;
-  border-color: #009688;
 }
 
 .c8 {
@@ -137,7 +123,7 @@ exports[`Product renders correctly 1`] = `
 
 @media (min-width:62em) {
   .c2 {
-    border: 2px solid #f5f6f7;
+    border: 2px solid #eceff1;
     margin-bottom: -32px;
     padding: 8px;
     text-align: center;
@@ -162,7 +148,7 @@ exports[`Product renders correctly 1`] = `
 @media (min-width:36em) {
   .c9 {
     border-top: 0;
-    border-left: 2px solid #f5f6f7;
+    border-left: 2px solid #eceff1;
   }
 }
 
@@ -194,31 +180,47 @@ exports[`Product renders correctly 1`] = `
         <div
           class="MuiGrid-item-2 MuiGrid-grid-xs-12-41"
         >
-          <h1
-            class="MuiTypography-root-98 MuiTypography-headline-103"
+          <div
+            class="MuiGrid-container-1 MuiGrid-align-items-xs-center-9"
           >
-            Landbay
-          </h1>
+            <div
+              class="MuiGrid-item-2"
+            >
+              <h1
+                class="MuiTypography-root-98 MuiTypography-headline-103"
+              >
+                Landbay
+              </h1>
+            </div>
+            <div
+              class="MuiGrid-item-2"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root-134 c4"
+                focusable="false"
+                role="presentation"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M13.5.67s.74 2.65.74 4.8c0 2.06-1.35 3.73-3.41 3.73-2.07 0-3.63-1.67-3.63-3.73l.03-.36C5.21 7.51 4 10.62 4 14c0 4.42 3.58 8 8 8s8-3.58 8-8C20 8.61 17.41 3.8 13.5.67zM11.71 19c-1.78 0-3.22-1.4-3.22-3.14 0-1.62 1.05-2.76 2.81-3.12 1.77-.36 3.6-1.21 4.62-2.58.39 1.29.59 2.65.59 4.04 0 2.65-2.15 4.8-4.8 4.8z"
+                />
+                <path
+                  d="M0 0h24v24H0z"
+                  fill="none"
+                />
+              </svg>
+            </div>
+          </div>
         </div>
         <div
           class="MuiGrid-item-2 MuiGrid-grid-xs-12-41"
         >
-          <svg
-            aria-hidden="true"
-            class="MuiSvgIcon-root-134 c4"
-            focusable="false"
-            role="presentation"
-            viewBox="0 0 24 24"
+          <p
+            class="MuiTypography-root-98 MuiTypography-body1-107"
           >
-            <path
-              d="M0 0h24v24H0z"
-              fill="none"
-            />
-            <path
-              d="M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58.55 0 1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.55-.23-1.06-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z"
-            />
-          </svg>
-          Landbay - Buy To Let Wizards
+            Landbay - Buy To Let Wizards
+          </p>
         </div>
       </div>
     </div>
@@ -345,34 +347,46 @@ exports[`Product renders correctly 1`] = `
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean bibendum facilisis condimentum. Donec laoreet porttitor condimentum. Nulla luctus efficitur magna, eget rhoncus metus placerat sed.
     </p>
     <div
-      class="c13"
+      class="MuiGrid-container-1 MuiGrid-align-items-xs-center-9 c13"
     >
-      <span
-        class="c14"
+      <div
+        class="MuiGrid-item-2"
       >
-        <svg
-          aria-hidden="true"
-          class="MuiSvgIcon-root-134 MuiSvgIcon-fontSizeInherit-140"
-          focusable="false"
-          role="presentation"
-          viewBox="0 0 24 24"
+        <span
+          class="c14"
         >
-          <path
-            d="M0 0h24v24H0V0z"
-            fill="none"
-          />
-          <g>
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root-134 MuiSvgIcon-fontSizeInherit-140"
+            focusable="false"
+            role="presentation"
+            viewBox="0 0 24 24"
+          >
             <path
-              d="M12 7.13l.97 2.29.47 1.11 1.2.1 2.47.21-1.88 1.63-.91.79.27 1.18.56 2.41-2.12-1.28-1.03-.64-1.03.62-2.12 1.28.56-2.41.27-1.18-.91-.79-1.88-1.63 2.47-.21 1.2-.1.47-1.11.97-2.27M12 2L9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2z"
+              d="M0 0h24v24H0V0z"
+              fill="none"
             />
-          </g>
-        </svg>
-      </span>
-      <span
-        class="c15"
+            <g>
+              <path
+                d="M12 7.13l.97 2.29.47 1.11 1.2.1 2.47.21-1.88 1.63-.91.79.27 1.18.56 2.41-2.12-1.28-1.03-.64-1.03.62-2.12 1.28.56-2.41.27-1.18-.91-.79-1.88-1.63 2.47-.21 1.2-.1.47-1.11.97-2.27M12 2L9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2z"
+              />
+            </g>
+          </svg>
+        </span>
+      </div>
+      <div
+        class="MuiGrid-item-2"
       >
-        Awarded best broker 2019
-      </span>
+        <h6
+          class="MuiTypography-root-98 MuiTypography-subtitle1-116"
+        >
+          <span
+            class="c15"
+          >
+            Awarded best broker 2019
+          </span>
+        </h6>
+      </div>
     </div>
   </div>
 </div>

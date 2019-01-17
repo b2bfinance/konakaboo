@@ -26,14 +26,6 @@ exports[`AppContainer renders correctly without filters 1`] = `
 `;
 
 exports[`Wrapper renders correctly 1`] = `
-.c0 {
-  font-family: Roboto,sans-serif;
-  font-weight: 300;
-  font-size: 1rem;
-  color: #37474f;
-  line-height: 1;
-}
-
 .c0 * {
   box-sizing: border-box;
 }

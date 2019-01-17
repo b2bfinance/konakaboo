@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import LocalOfferIcon from '@material-ui/icons/LocalOffer';
+import WhatsHotICon from '@material-ui/icons/Whatshot';
 import Grid from '@material-ui/core/Grid';
 import { Typography } from '@material-ui/core';
 import Labels from './Labels';
@@ -11,10 +11,9 @@ export const Wrapper = styled(Grid)`
   padding: 16px;
 `;
 
-export const StandOutIcon = styled(LocalOfferIcon)`
-  width: 1.125rem;
-  height: 1.125rem;
-  margin-right: 0.25rem;
+export const HighlightedIcon = styled(WhatsHotICon)`
+  margin-left: 0.25rem;
+  color: ${props => props.theme.productHighlightColor};
 `;
 
 export const ProductLogoContainer = styled.div`
@@ -22,7 +21,7 @@ export const ProductLogoContainer = styled.div`
   margin-right: 16px;
 
   ${queries.desktop`
-    border: 2px solid ${props => props.theme.productOutlineBackground};
+    border: 2px solid ${props => props.theme.productBorder};
     margin-bottom: -32px;
     padding: 8px;
     text-align: center;
@@ -42,7 +41,7 @@ export const ProductLabels = styled(Grid)`
   float: right;
 `;
 
-export default ({ logo, brand, standOut, title, labels }) => (
+export default ({ logo, brand, highlighted, title, labels }) => (
   <Wrapper container>
     <Grid item xs={12} md={2}>
       <ProductLogoContainer>
@@ -52,11 +51,15 @@ export default ({ logo, brand, standOut, title, labels }) => (
     <Grid item xs={12} md={7}>
       <Grid container>
         <Grid item xs={12}>
-          <Typography variant="headline">{brand}</Typography>
+          <Grid container alignItems="center">
+            <Grid item>
+              <Typography variant="headline">{brand}</Typography>
+            </Grid>
+            <Grid item>{highlighted && <HighlightedIcon />}</Grid>
+          </Grid>
         </Grid>
         <Grid item xs={12}>
-          {standOut && <StandOutIcon />}
-          {title}
+          <Typography>{title}</Typography>
         </Grid>
       </Grid>
     </Grid>

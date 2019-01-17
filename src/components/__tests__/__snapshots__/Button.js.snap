@@ -1,11 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Button /> renders correctly 1`] = `
-.c0 {
-  font-family: Roboto,sans-serif;
-  font-weight: 400;
-}
-
 .c0:hover {
   -webkit-text-decoration: none;
   text-decoration: none;

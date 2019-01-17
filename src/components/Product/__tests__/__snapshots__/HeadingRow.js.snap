@@ -96,13 +96,28 @@ exports[`HeadingRow renders correctly with highlight 1`] = `
       <div
         class="MuiGrid-item-2 MuiGrid-grid-xs-12-41"
       >
-        <h1
-          class="MuiTypography-root-98 MuiTypography-headline-103"
-        />
+        <div
+          class="MuiGrid-container-1 MuiGrid-align-items-xs-center-9"
+        >
+          <div
+            class="MuiGrid-item-2"
+          >
+            <h1
+              class="MuiTypography-root-98 MuiTypography-headline-103"
+            />
+          </div>
+          <div
+            class="MuiGrid-item-2"
+          />
+        </div>
       </div>
       <div
         class="MuiGrid-item-2 MuiGrid-grid-xs-12-41"
-      />
+      >
+        <p
+          class="MuiTypography-root-98 MuiTypography-body1-107"
+        />
+      </div>
     </div>
   </div>
   <div
@@ -226,13 +241,28 @@ exports[`HeadingRow renders correctly without highlight 1`] = `
       <div
         class="MuiGrid-item-2 MuiGrid-grid-xs-12-41"
       >
-        <h1
-          class="MuiTypography-root-98 MuiTypography-headline-103"
-        />
+        <div
+          class="MuiGrid-container-1 MuiGrid-align-items-xs-center-9"
+        >
+          <div
+            class="MuiGrid-item-2"
+          >
+            <h1
+              class="MuiTypography-root-98 MuiTypography-headline-103"
+            />
+          </div>
+          <div
+            class="MuiGrid-item-2"
+          />
+        </div>
       </div>
       <div
         class="MuiGrid-item-2 MuiGrid-grid-xs-12-41"
-      />
+      >
+        <p
+          class="MuiTypography-root-98 MuiTypography-body1-107"
+        />
+      </div>
     </div>
   </div>
   <div
