@@ -93,7 +93,7 @@ async function getSource() {
       files.map(file => fs.promises.readFile(path.join(staticDir, file)))
     );
 
-    await fs.promises.writeFile(buildFilename, contents);
+    await fs.promises.writeFile(buildFilename, contents.join(''));
   } catch (e) {
     fatal(e);
   }
