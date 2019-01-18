@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { getChosenForGroup, generateChipLabel } from '../../utils/filter';
-import Row from '../Row';
 import Cancel from '@material-ui/icons/Cancel';
 import ArrowDropDown from '@material-ui/icons/ArrowDropDown';
+import Grid from '@material-ui/core/Grid';
+import { getChosenForGroup, generateChipLabel } from '../../utils/filter';
 import Filter from './Filter';
 import Chip, { BaseChip, ChipHolder } from './Chip';
 
-export const Wrapper = styled(Row)`
+export const Wrapper = styled(Grid)`
   justify-content: flex-end;
 `;
 
@@ -53,7 +53,7 @@ export default class List extends Component {
     } = this.props;
 
     return (
-      <Wrapper>
+      <Wrapper container>
         {filtersAvailable.map((filter, i) => (
           <ChipHolder key={filter.key}>
             <Chip

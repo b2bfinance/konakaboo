@@ -1,10 +1,8 @@
-import styled, { css } from 'styled-components';
-import Button from '../Button';
+import styled from 'styled-components';
+import Fab from '@material-ui/core/Fab';
 
-export default styled(Button)`
-  ${props =>
-    props.margin &&
-    css`
-      margin-bottom: 0.5rem;
-    `};
+export default styled(Fab)`
+  background-color: ${props => props.theme.applyButtonBackground} !important;
+  width: 100% !important;
+  box-shadow: none !important;
 `;

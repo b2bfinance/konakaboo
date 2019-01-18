@@ -1,79 +1,57 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`FeaturedHighlightPointRow renders correctly 1`] = `
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  width: 100%;
-}
-
-.c2 {
-  min-height: 1px;
-}
-
 .c0 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   border-top: 2px solid;
-  padding: 0.35rem 0.75rem;
+  padding: 8px 16px;
 }
 
-.c3 {
+.c1 {
   font-size: 1.25rem;
 }
 
-.c4 {
-  margin-left: 0.35rem;
-  opacity: 0.85;
-  font-size: 85%;
+.c2 {
+  margin-left: 4px;
 }
 
 <div
-  class="c0 c1"
+  class="MuiGrid-container-1 MuiGrid-align-items-xs-center-9 c0"
 >
   <div
-    class="c2"
+    class="MuiGrid-item-2"
   >
-    <div
-      class="c3"
+    <span
+      class="c1"
     >
       <svg
         aria-hidden="true"
-        class="MuiSvgIcon-root-1 MuiSvgIcon-fontSizeInherit-7"
+        class="MuiSvgIcon-root-98 MuiSvgIcon-fontSizeInherit-104"
         focusable="false"
+        role="presentation"
         viewBox="0 0 24 24"
       >
         <path
           d="M0 0h24v24H0V0z"
           fill="none"
-        >
-          
-        </path>
+        />
         <g>
           <path
             d="M12 7.13l.97 2.29.47 1.11 1.2.1 2.47.21-1.88 1.63-.91.79.27 1.18.56 2.41-2.12-1.28-1.03-.64-1.03.62-2.12 1.28.56-2.41.27-1.18-.91-.79-1.88-1.63 2.47-.21 1.2-.1.47-1.11.97-2.27M12 2L9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2z"
-          >
-            
-          </path>
+          />
         </g>
       </svg>
-    </div>
+    </span>
   </div>
   <div
-    class="c2"
+    class="MuiGrid-item-2"
   >
-    <div
-      class="c4"
+    <h6
+      class="MuiTypography-root-107 MuiTypography-subtitle1-125"
     >
-      
-    </div>
+      <span
+        class="c2"
+      />
+    </h6>
   </div>
 </div>
 `;

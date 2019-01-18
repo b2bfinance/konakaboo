@@ -4,6 +4,6 @@ import ApplyButton from '../ApplyButton';
 
 describe('ApplyButton', () => {
   test('renders correctly', () => {
-    expect(render(<ApplyButton />)).toMatchSnapshot();
+    expect(render(<ApplyButton>apply</ApplyButton>)).toMatchSnapshot();
   });
 });

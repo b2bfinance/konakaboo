@@ -1,0 +1,225 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DetailCell renders correctly 1`] = `
+.c0 {
+  border: 0 !important;
+}
+
+<td
+  class="MuiTableCell-root-103 c0"
+/>
+`;
+
+exports[`DetailRow renders correctly 1`] = `
+.c0 {
+  height: 24px !important;
+}
+
+<tr
+  class="MuiTableRow-root-98 c0"
+/>
+`;
+
+exports[`Disclaimer renders correctly 1`] = `
+.c0 {
+  margin-bottom: 32px;
+  padding: 16px;
+}
+
+<div
+  class="c0"
+/>
+`;
+
+exports[`MoreInfoBody renders correctly 1`] = `
+.c0 {
+  padding: 16px;
+}
+
+.c1 {
+  margin-bottom: 32px;
+  padding: 16px;
+}
+
+.c2 {
+  height: 24px !important;
+}
+
+.c3 {
+  border: 0 !important;
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <p
+      class="MuiTypography-root-115 MuiTypography-body1-124"
+    >
+      Application for this product will impact your credit score.
+    </p>
+  </div>
+  <div
+    class="MuiGrid-container-1 MuiGrid-spacing-xs-32-26"
+  >
+    <div
+      class="MuiGrid-item-2 MuiGrid-grid-xs-12-41 MuiGrid-grid-sm-6-49 MuiGrid-grid-lg-4-75"
+    >
+      <h6
+        class="MuiTypography-root-115 MuiTypography-h6-132"
+      >
+        Highlight Points
+      </h6>
+      <table
+        class="MuiTable-root-151"
+      >
+        <tbody
+          class="MuiTableBody-root-152"
+        >
+          <tr
+            class="MuiTableRow-root-98 c2"
+          >
+            <td
+              class="MuiTableCell-root-103 MuiTableCell-head-104 MuiTableCell-paddingNone-110 c3"
+            >
+              Max LTV
+            </td>
+            <td
+              class="MuiTableCell-root-103 MuiTableCell-body-105 MuiTableCell-alignRight-113 MuiTableCell-paddingNone-110 c3"
+            >
+              85%
+            </td>
+          </tr>
+          <tr
+            class="MuiTableRow-root-98 c2"
+          >
+            <td
+              class="MuiTableCell-root-103 MuiTableCell-head-104 MuiTableCell-paddingNone-110 c3"
+            >
+              Initial Rate
+            </td>
+            <td
+              class="MuiTableCell-root-103 MuiTableCell-body-105 MuiTableCell-alignRight-113 MuiTableCell-paddingNone-110 c3"
+            >
+              1.49%
+            </td>
+          </tr>
+          <tr
+            class="MuiTableRow-root-98 c2"
+          >
+            <td
+              class="MuiTableCell-root-103 MuiTableCell-head-104 MuiTableCell-paddingNone-110 c3"
+            >
+              Subsequent Rate
+            </td>
+            <td
+              class="MuiTableCell-root-103 MuiTableCell-body-105 MuiTableCell-alignRight-113 MuiTableCell-paddingNone-110 c3"
+            >
+              2.75%
+            </td>
+          </tr>
+          <tr
+            class="MuiTableRow-root-98 c2"
+          >
+            <td
+              class="MuiTableCell-root-103 MuiTableCell-head-104 MuiTableCell-paddingNone-110 c3"
+            >
+              Fees
+            </td>
+            <td
+              class="MuiTableCell-root-103 MuiTableCell-body-105 MuiTableCell-alignRight-113 MuiTableCell-paddingNone-110 c3"
+            >
+              £1,495
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div
+      class="MuiGrid-item-2 MuiGrid-grid-xs-12-41 MuiGrid-grid-sm-6-49 MuiGrid-grid-lg-4-75"
+    >
+      <h6
+        class="MuiTypography-root-115 MuiTypography-h6-132"
+      >
+        Technical Points
+      </h6>
+      <table
+        class="MuiTable-root-151"
+      >
+        <tbody
+          class="MuiTableBody-root-152"
+        >
+          <tr
+            class="MuiTableRow-root-98 c2"
+          >
+            <td
+              class="MuiTableCell-root-103 MuiTableCell-head-104 MuiTableCell-paddingNone-110 c3"
+            >
+              Max LTV
+            </td>
+            <td
+              class="MuiTableCell-root-103 MuiTableCell-body-105 MuiTableCell-alignRight-113 MuiTableCell-paddingNone-110 c3"
+            >
+              85%
+            </td>
+          </tr>
+          <tr
+            class="MuiTableRow-root-98 c2"
+          >
+            <td
+              class="MuiTableCell-root-103 MuiTableCell-head-104 MuiTableCell-paddingNone-110 c3"
+            >
+              Initial Rate
+            </td>
+            <td
+              class="MuiTableCell-root-103 MuiTableCell-body-105 MuiTableCell-alignRight-113 MuiTableCell-paddingNone-110 c3"
+            >
+              1.49%
+            </td>
+          </tr>
+          <tr
+            class="MuiTableRow-root-98 c2"
+          >
+            <td
+              class="MuiTableCell-root-103 MuiTableCell-head-104 MuiTableCell-paddingNone-110 c3"
+            >
+              Subsequent Rate
+            </td>
+            <td
+              class="MuiTableCell-root-103 MuiTableCell-body-105 MuiTableCell-alignRight-113 MuiTableCell-paddingNone-110 c3"
+            >
+              2.75%
+            </td>
+          </tr>
+          <tr
+            class="MuiTableRow-root-98 c2"
+          >
+            <td
+              class="MuiTableCell-root-103 MuiTableCell-head-104 MuiTableCell-paddingNone-110 c3"
+            >
+              Fees
+            </td>
+            <td
+              class="MuiTableCell-root-103 MuiTableCell-body-105 MuiTableCell-alignRight-113 MuiTableCell-paddingNone-110 c3"
+            >
+              £1,495
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Wrapper renders correctly 1`] = `
+.c0 {
+  padding: 16px;
+}
+
+<div
+  class="c0"
+/>
+`;

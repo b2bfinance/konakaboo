@@ -22,7 +22,7 @@ export default ({ error, hasFetched, isFetching, products }) => {
   return (
     <Loading loading={isFetching}>
       {products.map((product, i) => (
-        <Product key={i} product={product} />
+        <Product key={i} {...product} />
       ))}
     </Loading>
   );

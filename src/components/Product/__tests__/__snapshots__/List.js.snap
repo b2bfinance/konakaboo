@@ -15,9 +15,7 @@ Array [
 
 <div
     class="c0"
->
-    
-</div>,
+  />,
   .c0 {
   height: 35rem;
   margin-bottom: 1.5rem;
@@ -31,9 +29,7 @@ Array [
 
 <div
     class="c0"
->
-    
-</div>,
+  />,
   .c0 {
   height: 35rem;
   margin-bottom: 1.5rem;
@@ -47,9 +43,7 @@ Array [
 
 <div
     class="c0"
->
-    
-</div>,
+  />,
 ]
 `;
 
@@ -69,59 +63,47 @@ exports[`List renders correctly with an error 1`] = `
 
 exports[`List renders correctly with no products 1`] = `
 .c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  width: 100%;
-}
-
-.c2 {
-  min-height: 1px;
-  -webkit-flex: 0 0 100%;
-  -ms-flex: 0 0 100%;
-  flex: 0 0 100%;
-  max-width: 100%;
-}
-
-.c1 {
   margin: 2rem auto;
   padding: 2rem;
-}
-
-@media (min-width:62em) {
-  .c2 {
-    -webkit-flex: 0 0 35%;
-    -ms-flex: 0 0 35%;
-    flex: 0 0 35%;
-    max-width: 35%;
-  }
 }
 
 <div
   class="c0"
 >
-  <div
-    class="c1 c2"
-  >
-    <p>
-      There are no product matching your requirements.
-    </p>
-  </div>
+  <p>
+    There are no product matching your requirements.
+  </p>
 </div>
 `;
 
 exports[`List renders correctly with products 1`] = `
-<Component>
+<_default>
   <Product
-    key="0"
-    product={
+    brand="Landbay"
+    columns={
+      Array [
+        Object {
+          "label": "Max LTV",
+          "value": "85%",
+        },
+        Object {
+          "label": "Initial Rate",
+          "value": "1.49%",
+        },
+        Object {
+          "label": "Subsequent Rate",
+          "value": "2.75%",
+        },
+        Object {
+          "label": "Fees",
+          "value": "£1,495",
+        },
+      ]
+    }
+    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean bibendum facilisis condimentum. Donec laoreet porttitor condimentum. Nulla luctus efficitur magna, eget rhoncus metus placerat sed."
+    detailed={
       Object {
-        "brand": "Landbay",
-        "columns": Array [
+        "Highlight Points": Array [
           Object {
             "label": "Max LTV",
             "value": "85%",
@@ -139,124 +121,51 @@ exports[`List renders correctly with products 1`] = `
             "value": "£1,495",
           },
         ],
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean bibendum facilisis condimentum. Donec laoreet porttitor condimentum. Nulla luctus efficitur magna, eget rhoncus metus placerat sed.",
-        "highlighted": true,
-        "highlighted_points": Array [
-          "Online Application",
-          "Mobile app",
-          "Customer service winner",
-        ],
-        "labels": Array [
-          "broker only",
-          "consumer favourite",
-        ],
-        "links": Object {
-          "apply": "https://b2bfinance.com/enquire/buy-to-let",
-          "logo": "https://b2bfinance.com/images/partners/Landbay.png",
-        },
-        "meta": Object {
-          "confirm": Object {
-            "description": "B2Bfinance.com are registered intermediaries who will quote, package and submit your lending request to Natwest. There is no charge for this service as we are paid a small commission by Natwest to cover our time.",
-            "heading": "Application via Brokers only",
-          },
-        },
-        "technical_points": Array [
-          "1.5% Early Repayment",
-          "6 months cool off peroid",
-          "No monthly fee for existing customers",
-        ],
-        "title": "Landbay - Buy To Let Wizards",
-      }
-    }
-  />
-  <Product
-    key="1"
-    product={
-      Object {
-        "brand": "Natwest",
-        "columns": Array [
+        "Technical Points": Array [
           Object {
             "label": "Max LTV",
             "value": "85%",
           },
           Object {
             "label": "Initial Rate",
-            "value": "1.52%",
+            "value": "1.49%",
           },
           Object {
             "label": "Subsequent Rate",
-            "value": "3.25%",
+            "value": "2.75%",
           },
           Object {
             "label": "Fees",
-            "value": "£995",
+            "value": "£1,495",
           },
         ],
-        "description": "",
-        "highlighted": false,
-        "highlighted_points": Array [],
-        "labels": Array [],
-        "links": Object {
-          "apply": "https://b2bfinance.com/enquire/buy-to-let",
-          "logo": "https://b2bfinance.com/images/partners/NatWest.png",
-        },
-        "meta": Object {
-          "confirm": Object {
-            "description": "B2Bfinance.com are registered intermediaries who will quote, package and submit your lending request to Natwest. There is no charge for this service as we are paid a small commission by Natwest to cover our time.",
-            "heading": "Application via Brokers only",
-          },
-        },
-        "technical_points": Array [],
-        "title": "Natwest Low Low Rate",
       }
     }
-  />
-  <Product
-    key="2"
-    product={
+    disclaimer="Application for this product will impact your credit score."
+    feature_point="Awarded best broker 2019"
+    highlighted={true}
+    key="0"
+    labels={
+      Array [
+        "broker only",
+        "consumer favourite",
+      ]
+    }
+    links={
       Object {
-        "brand": "Barclays",
-        "columns": Array [
-          Object {
-            "label": "Max LTV",
-            "value": "80%",
-          },
-          Object {
-            "label": "Initial Rate",
-            "value": "1.75%",
-          },
-          Object {
-            "label": "Subsequent Rate",
-            "value": "3%",
-          },
-          Object {
-            "label": "Fees",
-            "value": "£995",
-          },
-        ],
-        "description": "Whether your landlord is a first time buyer, a first time landlord or has a large portfolio, we have a range of products to help. Our range of mortgages also includes products for Limited Companies and HMOs.",
-        "highlighted": false,
-        "highlighted_points": Array [
-          "Complete online application",
-          "Mobile app",
-          "Customer service winner",
-        ],
-        "labels": Array [
-          "broker only",
-        ],
-        "links": Object {
-          "apply": "https://b2bfinance.com/enquire/buy-to-let",
-          "logo": "https://b2bfinance.com/images/partners/Precise.png",
-        },
-        "meta": Object {},
-        "technical_points": Array [
-          "Rental cover - ICR: based on individual circumstances",
-          "5 year fixed rate products that help maximise the loan size available",
-          "5 year fixed with 4% cashback available on purchases",
-        ],
-        "title": "Precise Oh So Precise Total Winners Deal",
+        "apply": "https://b2bfinance.com/enquire/buy-to-let",
+        "logo": "https://b2bfinance.com/images/partners/Landbay.png",
       }
     }
+    meta={
+      Object {
+        "confirm": Object {
+          "description": "B2Bfinance.com are registered intermediaries who will quote, package and submit your lending request to Natwest. There is no charge for this service as we are paid a small commission by Natwest to cover our time.",
+          "heading": "Application via Brokers only",
+        },
+      }
+    }
+    title="Landbay - Buy To Let Wizards"
   />
-</Component>
+</_default>
 `;

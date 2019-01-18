@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
-import Row from './Row';
+import Grid from '@material-ui/core/Grid';
 import Col from './Col';
 import { default as ProductList } from './Product/List';
 import { default as FilterList } from './Filter/List';
@@ -13,7 +13,7 @@ import {
   setChosenFiltersForGroup
 } from '../actions/filter';
 
-export const Wrapper = styled(Row)`
+export const Wrapper = styled.div`
   font-family: ${props => props.theme.mainFontFamily};
   font-weight: ${props => props.theme.mainNormalFontWeight};
   font-size: ${props => props.theme.mainFontSize};
@@ -55,7 +55,7 @@ export class AppContainer extends Component {
             handleSetChosenForGroup={handleSetChosenForGroup}
           />
         )}
-        <Row>
+        <Grid>
           <Col phone="100">
             <ProductList
               products={products}
@@ -64,7 +64,7 @@ export class AppContainer extends Component {
               error={error}
             />
           </Col>
-        </Row>
+        </Grid>
       </Wrapper>
     );
   }

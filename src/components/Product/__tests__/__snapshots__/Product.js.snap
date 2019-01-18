@@ -1,171 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Product renders correctly with highlighted set 1`] = `
+exports[`Product renders correctly 1`] = `
 .c10 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  border-radius: 0.15rem;
-  box-sizing: border-box;
-  cursor: pointer;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  font-family: Roboto,sans-serif;
-  font-weight: 400;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding: 0.75rem 1.5rem;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  width: 100%;
-  white-space: nowrap;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  background-color: #4dc16f;
-  color: #fff;
-}
-
-.c10:hover {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-}
-
-.c10:hover {
-  color: #fff;
+  margin-bottom: 8px !important;
 }
 
 .c11 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  border-radius: 0.15rem;
-  box-sizing: border-box;
-  cursor: pointer;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  font-family: Roboto,sans-serif;
-  font-weight: 400;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding: 0.75rem 1.5rem;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  width: 100%;
-  white-space: nowrap;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  background-color: #f5f6f7;
-  color: #37474f;
-  padding: 0.25rem 0.5rem;
-  font-size: 90%;
+  background-color: #4caf50 !important;
+  width: 100% !important;
+  box-shadow: none !important;
 }
 
-.c11:hover {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-}
-
-.c11:hover {
-  color: #37474f;
-}
-
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  width: 100%;
-}
-
-.c6 {
-  min-height: 1px;
-  -webkit-flex: 0 0 100%;
-  -ms-flex: 0 0 100%;
-  flex: 0 0 100%;
-  max-width: 100%;
-}
-
-.c8 {
-  min-height: 1px;
-  -webkit-flex: 0 0 100%;
-  -ms-flex: 0 0 100%;
-  flex: 0 0 100%;
-  max-width: 100%;
-}
-
-.c13 {
-  min-height: 1px;
-}
-
-.c17 {
-  min-height: 1px;
-  -webkit-flex: 0 0 100%;
-  -ms-flex: 0 0 100%;
-  flex: 0 0 100%;
-  max-width: 100%;
-}
-
-.c18 {
-  list-style: none;
-  margin-bottom: 0;
-  margin-top: 1rem;
-  padding: 0;
-}
-
-.c19 {
-  font-size: 1.5rem;
-  font-weight: 400;
-  margin-bottom: 0.5rem;
-}
-
-.c20 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-}
-
-.c20 svg {
-  fill: #4dc16f;
-  margin-right: 0.5rem;
-}
-
-.c16 {
-  padding: 1rem;
-  display: none;
-}
-
-.c4 {
+.c7 {
   border: 1px solid;
   border-radius: 1rem;
   font-size: 80%;
   padding: 0.2rem 0.75rem;
 }
 
-.c3 {
+.c6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -175,7 +28,11 @@ exports[`Product renders correctly with highlighted set 1`] = `
   flex-wrap: wrap;
 }
 
-.c3 div {
+.c6:last-child div {
+  margin-right: 0;
+}
+
+.c6 div {
   margin: .5rem .5rem 0 0;
 }
 
@@ -184,133 +41,103 @@ exports[`Product renders correctly with highlighted set 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #eceff1;
-  padding: 0.5rem 0.75rem;
-  background-color: #009688;
-  color: #fff;
+  padding: 16px;
 }
 
-.c1 svg {
-  width: 1.125rem;
-  height: 1.125rem;
-  margin-right: 0.25rem;
+.c4 {
+  margin-left: 0.25rem;
+  color: #ffb74d;
+}
+
+.c2 {
+  background-color: white;
+  margin-right: 16px;
+}
+
+.c3 {
+  max-width: 100%;
+  max-height: 125px;
 }
 
 .c5 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding: 1rem 1.25rem;
-  text-align: center;
-}
-
-.c5 img {
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-  max-width: 100%;
-  max-height: 120px;
-}
-
-.c5 span {
-  font-size: 1.25rem;
-  font-weight: 400;
-  margin-bottom: 0.5rem;
-  line-height: 1.1;
-}
-
-.c5 small {
-  font-size: 95%;
-  font-weight: 300;
-}
-
-.c7 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: #f5f6f7;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding: 1rem 1.25rem;
-  text-align: center;
-}
-
-.c7 img {
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-  max-width: 100%;
-  max-height: 120px;
-}
-
-.c7 span {
-  font-size: 1.25rem;
-  font-weight: 400;
-  margin-bottom: 0.5rem;
-  line-height: 1.1;
-}
-
-.c7 small {
-  font-size: 95%;
-  font-weight: 300;
+  float: right;
 }
 
 .c9 {
-  margin-bottom: 0.5rem;
+  min-height: 1px;
+  -webkit-flex: 0 0 100%;
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
+  max-width: 100%;
+  border-top: 2px solid #eceff1;
+  padding: 8px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  text-align: center;
 }
 
-.c12 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+.c9:first-child {
+  border-top: 0;
+  border-left: 0;
+}
+
+.c13 {
+  background-color: #eceff1;
   border-top: 2px solid #eceff1;
-  padding: 0.35rem 0.75rem;
-  border-color: #009688;
+  padding: 8px 16px;
 }
 
 .c14 {
-  color: #ea3f79;
+  color: #f06292;
   font-size: 1.25rem;
 }
 
 .c15 {
-  margin-left: 0.35rem;
-  opacity: 0.85;
-  font-size: 85%;
+  margin-left: 4px;
 }
 
 .c0 {
   background-color: white;
+  margin-bottom: 56px;
+}
+
+.c8 {
   border: 2px solid #eceff1;
-  margin-bottom: 1.5rem;
-  border-color: #009688;
+}
+
+.c12 {
+  border-top: 2px solid #eceff1;
+  padding: 24px 16px;
+  width: 100%;
+}
+
+@media (min-width:36em) {
+  .c6 {
+    margin-left: auto;
+  }
+
+  .c6 div {
+    margin: 0 .5rem 0 0;
+  }
 }
 
 @media (min-width:62em) {
-  .c6 {
+  .c2 {
+    border: 2px solid #eceff1;
+    margin-bottom: -32px;
+    padding: 8px;
+    text-align: center;
+  }
+}
+
+@media (min-width:62em) {
+  .c3 {
+    max-height: 75px;
+  }
+}
+
+@media (min-width:36em) {
+  .c9 {
     -webkit-flex: 0 0 20%;
     -ms-flex: 0 0 20%;
     flex: 0 0 20%;
@@ -318,1191 +145,248 @@ exports[`Product renders correctly with highlighted set 1`] = `
   }
 }
 
-@media (min-width:62em) {
-  .c8 {
-    -webkit-flex: 0 0 15%;
-    -ms-flex: 0 0 15%;
-    flex: 0 0 15%;
-    max-width: 15%;
-  }
-}
-
-@media (min-width:62em) {
-  .c17 {
-    -webkit-flex: 0 0 50%;
-    -ms-flex: 0 0 50%;
-    flex: 0 0 50%;
-    max-width: 50%;
-  }
-}
-
-@media (min-width:62em) {
-  .c19 {
-    padding-right: 1rem;
-  }
-}
-
-@media (min-width:62em) {
-  .c20 {
-    margin-bottom: .5rem;
-    padding-left: 1rem;
-  }
-}
-
 @media (min-width:36em) {
-  .c3 {
-    margin-left: auto;
-  }
-
-  .c3 div {
-    margin: 0 .5rem 0 0;
+  .c9 {
+    border-top: 0;
+    border-left: 2px solid #eceff1;
   }
 }
 
 <div
   class="c0"
-  data-product="true"
 >
   <div
-    class="c1 c2"
+    class="MuiGrid-container-1 c1"
   >
-    <svg
-      aria-hidden="true"
-      class="MuiSvgIcon-root-1"
-      focusable="false"
-      viewBox="0 0 24 24"
-    >
-      <path
-        d="M0 0h24v24H0z"
-        fill="none"
-      >
-        
-      </path>
-      <path
-        d="M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58.55 0 1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.55-.23-1.06-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z"
-      >
-        
-      </path>
-    </svg>
-    Landbay - Buy To Let Wizards
     <div
-      class="c3"
+      class="MuiGrid-item-2 MuiGrid-grid-xs-12-41 MuiGrid-grid-md-2-59"
     >
       <div
-        class="c4"
+        class="c2"
       >
-        broker only
+        <img
+          alt="Landbay"
+          class="c3"
+          src="https://b2bfinance.com/images/partners/Landbay.png"
+        />
       </div>
+    </div>
+    <div
+      class="MuiGrid-item-2 MuiGrid-grid-xs-12-41 MuiGrid-grid-md-7-64"
+    >
       <div
-        class="c4"
+        class="MuiGrid-container-1"
       >
-        consumer favourite
+        <div
+          class="MuiGrid-item-2 MuiGrid-grid-xs-12-41"
+        >
+          <div
+            class="MuiGrid-container-1 MuiGrid-align-items-xs-center-9"
+          >
+            <div
+              class="MuiGrid-item-2"
+            >
+              <h1
+                class="MuiTypography-root-98 MuiTypography-headline-103"
+              >
+                Landbay
+              </h1>
+            </div>
+            <div
+              class="MuiGrid-item-2"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root-134 c4"
+                focusable="false"
+                role="presentation"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M13.5.67s.74 2.65.74 4.8c0 2.06-1.35 3.73-3.41 3.73-2.07 0-3.63-1.67-3.63-3.73l.03-.36C5.21 7.51 4 10.62 4 14c0 4.42 3.58 8 8 8s8-3.58 8-8C20 8.61 17.41 3.8 13.5.67zM11.71 19c-1.78 0-3.22-1.4-3.22-3.14 0-1.62 1.05-2.76 2.81-3.12 1.77-.36 3.6-1.21 4.62-2.58.39 1.29.59 2.65.59 4.04 0 2.65-2.15 4.8-4.8 4.8z"
+                />
+                <path
+                  d="M0 0h24v24H0z"
+                  fill="none"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div
+          class="MuiGrid-item-2 MuiGrid-grid-xs-12-41"
+        >
+          <p
+            class="MuiTypography-root-98 MuiTypography-body1-107"
+          >
+            Landbay - Buy To Let Wizards
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      class="MuiGrid-item-2 MuiGrid-grid-xs-12-41 MuiGrid-grid-md-3-60"
+    >
+      <div
+        class="c5"
+      >
+        <div
+          class="c6"
+        >
+          <div
+            class="c7"
+          >
+            broker only
+          </div>
+          <div
+            class="c7"
+          >
+            consumer favourite
+          </div>
+        </div>
       </div>
     </div>
   </div>
   <div
-    class="c2"
+    class="MuiGrid-container-1 MuiGrid-align-items-xs-center-9 c8"
   >
     <div
-      class="c5 c6"
+      class="c9"
     >
-      <img
-        alt="Landbay"
-        src="https://b2bfinance.com/images/partners/Landbay.png"
+      <h6
+        class="MuiTypography-root-98 MuiTypography-subtitle2-117"
       >
-        
-      </img>
-    </div>
-    <div
-      class="c7 c8"
-    >
-      <small>
         Max LTV
-      </small>
-      <span>
+      </h6>
+      <h1
+        class="MuiTypography-root-98 MuiTypography-display1-102"
+      >
         85%
-      </span>
+      </h1>
     </div>
     <div
-      class="c5 c8"
+      class="c9"
     >
-      <small>
+      <h6
+        class="MuiTypography-root-98 MuiTypography-subtitle2-117"
+      >
         Initial Rate
-      </small>
-      <span>
+      </h6>
+      <h1
+        class="MuiTypography-root-98 MuiTypography-display1-102"
+      >
         1.49%
-      </span>
+      </h1>
     </div>
     <div
-      class="c7 c8"
+      class="c9"
     >
-      <small>
+      <h6
+        class="MuiTypography-root-98 MuiTypography-subtitle2-117"
+      >
         Subsequent Rate
-      </small>
-      <span>
+      </h6>
+      <h1
+        class="MuiTypography-root-98 MuiTypography-display1-102"
+      >
         2.75%
-      </span>
+      </h1>
     </div>
     <div
-      class="c5 c8"
+      class="c9"
     >
-      <small>
+      <h6
+        class="MuiTypography-root-98 MuiTypography-subtitle2-117"
+      >
         Fees
-      </small>
-      <span>
+      </h6>
+      <h1
+        class="MuiTypography-root-98 MuiTypography-display1-102"
+      >
         £1,495
-      </span>
+      </h1>
     </div>
     <div
-      class="c5 c6"
-    >
-      <a
-        class="c9 c10"
-        href="https://b2bfinance.com/enquire/buy-to-let"
-        rel="noopener"
-        target="_blank"
-      >
-        Get Deal
-      </a>
-      <a
-        class="c11"
-      >
-        more info
-      </a>
-    </div>
-  </div>
-  <div
-    class="c12 c2"
-  >
-    <div
-      class="c13"
+      class="c9"
     >
       <div
-        class="c14"
+        class="MuiGrid-container-1 MuiGrid-align-content-xs-center-13"
       >
-        <svg
-          aria-hidden="true"
-          class="MuiSvgIcon-root-1 MuiSvgIcon-fontSizeInherit-7"
-          focusable="false"
-          viewBox="0 0 24 24"
+        <div
+          class="MuiGrid-item-2 MuiGrid-grid-xs-12-41"
         >
-          <path
-            d="M0 0h24v24H0V0z"
-            fill="none"
+          <button
+            class="MuiTypography-root-98 MuiTypography-colorPrimary-128 MuiTypography-inline-133 MuiLink-root-143 MuiLink-button-147 MuiLink-underlineHover-145 c10"
           >
-            
-          </path>
-          <g>
-            <path
-              d="M12 7.13l.97 2.29.47 1.11 1.2.1 2.47.21-1.88 1.63-.91.79.27 1.18.56 2.41-2.12-1.28-1.03-.64-1.03.62-2.12 1.28.56-2.41.27-1.18-.91-.79-1.88-1.63 2.47-.21 1.2-.1.47-1.11.97-2.27M12 2L9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2z"
+            more details
+          </button>
+        </div>
+        <div
+          class="MuiGrid-item-2 MuiGrid-grid-xs-12-41"
+        >
+          <a
+            class="MuiButtonBase-root-158 MuiFab-root-148 MuiFab-extended-152 MuiFab-primary-150 MuiFab-sizeMedium-157 c11"
+            href="https://b2bfinance.com/enquire/buy-to-let"
+            rel="noopener"
+            role="button"
+            tabindex="0"
+            target="_blank"
+          >
+            <span
+              class="MuiFab-label-149"
             >
-              
-            </path>
-          </g>
-        </svg>
+              Get Deal
+            </span>
+          </a>
+        </div>
       </div>
     </div>
-    <div
-      class="c13"
+    <p
+      class="MuiTypography-root-98 MuiTypography-body2-106 c12"
     >
-      <div
-        class="c15"
-      >
-        Online Application
-      </div>
-    </div>
-  </div>
-  <div
-    class="c16 c2"
-  >
-    <span>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean bibendum facilisis condimentum. Donec laoreet porttitor condimentum. Nulla luctus efficitur magna, eget rhoncus metus placerat sed.
-    </span>
+    </p>
     <div
-      class="c2"
+      class="MuiGrid-container-1 MuiGrid-align-items-xs-center-9 c13"
     >
       <div
-        class="c17"
+        class="MuiGrid-item-2"
       >
-        <ul
-          class="c18"
+        <span
+          class="c14"
         >
-          <li
-            class="c19"
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root-134 MuiSvgIcon-fontSizeInherit-140"
+            focusable="false"
+            role="presentation"
+            viewBox="0 0 24 24"
           >
-            Online Application
-          </li>
-          <li
-            class="c19"
-          >
-            Mobile app
-          </li>
-          <li
-            class="c19"
-          >
-            Customer service winner
-          </li>
-        </ul>
-      </div>
-      <div
-        class="c17"
-      >
-        <ul
-          class="c18"
-        >
-          <li
-            class="c20"
-          >
-            <svg
-              aria-hidden="true"
-              class="MuiSvgIcon-root-1"
-              focusable="false"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M0 0h24v24H0z"
-                fill="none"
-              >
-                
-              </path>
-              <path
-                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
-              >
-                
-              </path>
-            </svg>
-            1.5% Early Repayment
-          </li>
-          <li
-            class="c20"
-          >
-            <svg
-              aria-hidden="true"
-              class="MuiSvgIcon-root-1"
-              focusable="false"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M0 0h24v24H0z"
-                fill="none"
-              >
-                
-              </path>
-              <path
-                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
-              >
-                
-              </path>
-            </svg>
-            6 months cool off peroid
-          </li>
-          <li
-            class="c20"
-          >
-            <svg
-              aria-hidden="true"
-              class="MuiSvgIcon-root-1"
-              focusable="false"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M0 0h24v24H0z"
-                fill="none"
-              >
-                
-              </path>
-              <path
-                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
-              >
-                
-              </path>
-            </svg>
-            No monthly fee for existing customers
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Product renders correctly with more information available  1`] = `
-.c10 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  border-radius: 0.15rem;
-  box-sizing: border-box;
-  cursor: pointer;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  font-family: Roboto,sans-serif;
-  font-weight: 400;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding: 0.75rem 1.5rem;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  width: 100%;
-  white-space: nowrap;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  background-color: #4dc16f;
-  color: #fff;
-}
-
-.c10:hover {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-}
-
-.c10:hover {
-  color: #fff;
-}
-
-.c11 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  border-radius: 0.15rem;
-  box-sizing: border-box;
-  cursor: pointer;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  font-family: Roboto,sans-serif;
-  font-weight: 400;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding: 0.75rem 1.5rem;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  width: 100%;
-  white-space: nowrap;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  background-color: #f5f6f7;
-  color: #37474f;
-  padding: 0.25rem 0.5rem;
-  font-size: 90%;
-}
-
-.c11:hover {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-}
-
-.c11:hover {
-  color: #37474f;
-}
-
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  width: 100%;
-}
-
-.c6 {
-  min-height: 1px;
-  -webkit-flex: 0 0 100%;
-  -ms-flex: 0 0 100%;
-  flex: 0 0 100%;
-  max-width: 100%;
-}
-
-.c8 {
-  min-height: 1px;
-  -webkit-flex: 0 0 100%;
-  -ms-flex: 0 0 100%;
-  flex: 0 0 100%;
-  max-width: 100%;
-}
-
-.c13 {
-  min-height: 1px;
-}
-
-.c17 {
-  min-height: 1px;
-  -webkit-flex: 0 0 100%;
-  -ms-flex: 0 0 100%;
-  flex: 0 0 100%;
-  max-width: 100%;
-}
-
-.c18 {
-  list-style: none;
-  margin-bottom: 0;
-  margin-top: 1rem;
-  padding: 0;
-}
-
-.c19 {
-  font-size: 1.5rem;
-  font-weight: 400;
-  margin-bottom: 0.5rem;
-}
-
-.c20 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-}
-
-.c20 svg {
-  fill: #4dc16f;
-  margin-right: 0.5rem;
-}
-
-.c16 {
-  padding: 1rem;
-  display: none;
-}
-
-.c4 {
-  border: 1px solid;
-  border-radius: 1rem;
-  font-size: 80%;
-  padding: 0.2rem 0.75rem;
-}
-
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-}
-
-.c3 div {
-  margin: .5rem .5rem 0 0;
-}
-
-.c1 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: #eceff1;
-  padding: 0.5rem 0.75rem;
-}
-
-.c5 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding: 1rem 1.25rem;
-  text-align: center;
-}
-
-.c5 img {
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-  max-width: 100%;
-  max-height: 120px;
-}
-
-.c5 span {
-  font-size: 1.25rem;
-  font-weight: 400;
-  margin-bottom: 0.5rem;
-  line-height: 1.1;
-}
-
-.c5 small {
-  font-size: 95%;
-  font-weight: 300;
-}
-
-.c7 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: #f5f6f7;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding: 1rem 1.25rem;
-  text-align: center;
-}
-
-.c7 img {
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-  max-width: 100%;
-  max-height: 120px;
-}
-
-.c7 span {
-  font-size: 1.25rem;
-  font-weight: 400;
-  margin-bottom: 0.5rem;
-  line-height: 1.1;
-}
-
-.c7 small {
-  font-size: 95%;
-  font-weight: 300;
-}
-
-.c9 {
-  margin-bottom: 0.5rem;
-}
-
-.c12 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  border-top: 2px solid #eceff1;
-  padding: 0.35rem 0.75rem;
-}
-
-.c14 {
-  color: #ea3f79;
-  font-size: 1.25rem;
-}
-
-.c15 {
-  margin-left: 0.35rem;
-  opacity: 0.85;
-  font-size: 85%;
-}
-
-.c0 {
-  background-color: white;
-  border: 2px solid #eceff1;
-  margin-bottom: 1.5rem;
-}
-
-@media (min-width:62em) {
-  .c6 {
-    -webkit-flex: 0 0 20%;
-    -ms-flex: 0 0 20%;
-    flex: 0 0 20%;
-    max-width: 20%;
-  }
-}
-
-@media (min-width:62em) {
-  .c8 {
-    -webkit-flex: 0 0 15%;
-    -ms-flex: 0 0 15%;
-    flex: 0 0 15%;
-    max-width: 15%;
-  }
-}
-
-@media (min-width:62em) {
-  .c17 {
-    -webkit-flex: 0 0 50%;
-    -ms-flex: 0 0 50%;
-    flex: 0 0 50%;
-    max-width: 50%;
-  }
-}
-
-@media (min-width:62em) {
-  .c19 {
-    padding-right: 1rem;
-  }
-}
-
-@media (min-width:62em) {
-  .c20 {
-    margin-bottom: .5rem;
-    padding-left: 1rem;
-  }
-}
-
-@media (min-width:36em) {
-  .c3 {
-    margin-left: auto;
-  }
-
-  .c3 div {
-    margin: 0 .5rem 0 0;
-  }
-}
-
-<div
-  class="c0"
-  data-product="true"
->
-  <div
-    class="c1 c2"
-  >
-    Precise Oh So Precise Total Winners Deal
-    <div
-      class="c3"
-    >
-      <div
-        class="c4"
-      >
-        broker only
-      </div>
-    </div>
-  </div>
-  <div
-    class="c2"
-  >
-    <div
-      class="c5 c6"
-    >
-      <img
-        alt="Barclays"
-        src="https://b2bfinance.com/images/partners/Precise.png"
-      >
-        
-      </img>
-    </div>
-    <div
-      class="c7 c8"
-    >
-      <small>
-        Max LTV
-      </small>
-      <span>
-        80%
-      </span>
-    </div>
-    <div
-      class="c5 c8"
-    >
-      <small>
-        Initial Rate
-      </small>
-      <span>
-        1.75%
-      </span>
-    </div>
-    <div
-      class="c7 c8"
-    >
-      <small>
-        Subsequent Rate
-      </small>
-      <span>
-        3%
-      </span>
-    </div>
-    <div
-      class="c5 c8"
-    >
-      <small>
-        Fees
-      </small>
-      <span>
-        £995
-      </span>
-    </div>
-    <div
-      class="c5 c6"
-    >
-      <a
-        class="c9 c10"
-        href="https://b2bfinance.com/enquire/buy-to-let"
-        rel="noopener"
-        target="_blank"
-      >
-        Get Deal
-      </a>
-      <a
-        class="c11"
-      >
-        more info
-      </a>
-    </div>
-  </div>
-  <div
-    class="c12 c2"
-  >
-    <div
-      class="c13"
-    >
-      <div
-        class="c14"
-      >
-        <svg
-          aria-hidden="true"
-          class="MuiSvgIcon-root-1 MuiSvgIcon-fontSizeInherit-7"
-          focusable="false"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M0 0h24v24H0V0z"
-            fill="none"
-          >
-            
-          </path>
-          <g>
             <path
-              d="M12 7.13l.97 2.29.47 1.11 1.2.1 2.47.21-1.88 1.63-.91.79.27 1.18.56 2.41-2.12-1.28-1.03-.64-1.03.62-2.12 1.28.56-2.41.27-1.18-.91-.79-1.88-1.63 2.47-.21 1.2-.1.47-1.11.97-2.27M12 2L9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2z"
-            >
-              
-            </path>
-          </g>
-        </svg>
+              d="M0 0h24v24H0V0z"
+              fill="none"
+            />
+            <g>
+              <path
+                d="M12 7.13l.97 2.29.47 1.11 1.2.1 2.47.21-1.88 1.63-.91.79.27 1.18.56 2.41-2.12-1.28-1.03-.64-1.03.62-2.12 1.28.56-2.41.27-1.18-.91-.79-1.88-1.63 2.47-.21 1.2-.1.47-1.11.97-2.27M12 2L9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2z"
+              />
+            </g>
+          </svg>
+        </span>
       </div>
-    </div>
-    <div
-      class="c13"
-    >
       <div
-        class="c15"
+        class="MuiGrid-item-2"
       >
-        Complete online application
-      </div>
-    </div>
-  </div>
-  <div
-    class="c16 c2"
-  >
-    <span>
-      Whether your landlord is a first time buyer, a first time landlord or has a large portfolio, we have a range of products to help. Our range of mortgages also includes products for Limited Companies and HMOs.
-    </span>
-    <div
-      class="c2"
-    >
-      <div
-        class="c17"
-      >
-        <ul
-          class="c18"
+        <h6
+          class="MuiTypography-root-98 MuiTypography-subtitle1-116"
         >
-          <li
-            class="c19"
+          <span
+            class="c15"
           >
-            Complete online application
-          </li>
-          <li
-            class="c19"
-          >
-            Mobile app
-          </li>
-          <li
-            class="c19"
-          >
-            Customer service winner
-          </li>
-        </ul>
+            Awarded best broker 2019
+          </span>
+        </h6>
       </div>
-      <div
-        class="c17"
-      >
-        <ul
-          class="c18"
-        >
-          <li
-            class="c20"
-          >
-            <svg
-              aria-hidden="true"
-              class="MuiSvgIcon-root-1"
-              focusable="false"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M0 0h24v24H0z"
-                fill="none"
-              >
-                
-              </path>
-              <path
-                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
-              >
-                
-              </path>
-            </svg>
-            Rental cover - ICR: based on individual circumstances
-          </li>
-          <li
-            class="c20"
-          >
-            <svg
-              aria-hidden="true"
-              class="MuiSvgIcon-root-1"
-              focusable="false"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M0 0h24v24H0z"
-                fill="none"
-              >
-                
-              </path>
-              <path
-                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
-              >
-                
-              </path>
-            </svg>
-            5 year fixed rate products that help maximise the loan size available
-          </li>
-          <li
-            class="c20"
-          >
-            <svg
-              aria-hidden="true"
-              class="MuiSvgIcon-root-1"
-              focusable="false"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M0 0h24v24H0z"
-                fill="none"
-              >
-                
-              </path>
-              <path
-                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
-              >
-                
-              </path>
-            </svg>
-            5 year fixed with 4% cashback available on purchases
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Product renders correctly without more information available  1`] = `
-.c8 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  border-radius: 0.15rem;
-  box-sizing: border-box;
-  cursor: pointer;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  font-family: Roboto,sans-serif;
-  font-weight: 400;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding: 0.75rem 1.5rem;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  width: 100%;
-  white-space: nowrap;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  background-color: #4dc16f;
-  color: #fff;
-}
-
-.c8:hover {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-}
-
-.c8:hover {
-  color: #fff;
-}
-
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  width: 100%;
-}
-
-.c5 {
-  min-height: 1px;
-  -webkit-flex: 0 0 100%;
-  -ms-flex: 0 0 100%;
-  flex: 0 0 100%;
-  max-width: 100%;
-}
-
-.c7 {
-  min-height: 1px;
-  -webkit-flex: 0 0 100%;
-  -ms-flex: 0 0 100%;
-  flex: 0 0 100%;
-  max-width: 100%;
-}
-
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-}
-
-.c3 div {
-  margin: .5rem .5rem 0 0;
-}
-
-.c1 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: #eceff1;
-  padding: 0.5rem 0.75rem;
-}
-
-.c4 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding: 1rem 1.25rem;
-  text-align: center;
-}
-
-.c4 img {
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-  max-width: 100%;
-  max-height: 120px;
-}
-
-.c4 span {
-  font-size: 1.25rem;
-  font-weight: 400;
-  margin-bottom: 0.5rem;
-  line-height: 1.1;
-}
-
-.c4 small {
-  font-size: 95%;
-  font-weight: 300;
-}
-
-.c6 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: #f5f6f7;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding: 1rem 1.25rem;
-  text-align: center;
-}
-
-.c6 img {
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-  max-width: 100%;
-  max-height: 120px;
-}
-
-.c6 span {
-  font-size: 1.25rem;
-  font-weight: 400;
-  margin-bottom: 0.5rem;
-  line-height: 1.1;
-}
-
-.c6 small {
-  font-size: 95%;
-  font-weight: 300;
-}
-
-.c0 {
-  background-color: white;
-  border: 2px solid #eceff1;
-  margin-bottom: 1.5rem;
-}
-
-@media (min-width:62em) {
-  .c5 {
-    -webkit-flex: 0 0 20%;
-    -ms-flex: 0 0 20%;
-    flex: 0 0 20%;
-    max-width: 20%;
-  }
-}
-
-@media (min-width:62em) {
-  .c7 {
-    -webkit-flex: 0 0 15%;
-    -ms-flex: 0 0 15%;
-    flex: 0 0 15%;
-    max-width: 15%;
-  }
-}
-
-@media (min-width:36em) {
-  .c3 {
-    margin-left: auto;
-  }
-
-  .c3 div {
-    margin: 0 .5rem 0 0;
-  }
-}
-
-<div
-  class="c0"
-  data-product="true"
->
-  <div
-    class="c1 c2"
-  >
-    Natwest Low Low Rate
-    <div
-      class="c3"
-    >
-      
-    </div>
-  </div>
-  <div
-    class="c2"
-  >
-    <div
-      class="c4 c5"
-    >
-      <img
-        alt="Natwest"
-        src="https://b2bfinance.com/images/partners/NatWest.png"
-      >
-        
-      </img>
-    </div>
-    <div
-      class="c6 c7"
-    >
-      <small>
-        Max LTV
-      </small>
-      <span>
-        85%
-      </span>
-    </div>
-    <div
-      class="c4 c7"
-    >
-      <small>
-        Initial Rate
-      </small>
-      <span>
-        1.52%
-      </span>
-    </div>
-    <div
-      class="c6 c7"
-    >
-      <small>
-        Subsequent Rate
-      </small>
-      <span>
-        3.25%
-      </span>
-    </div>
-    <div
-      class="c4 c7"
-    >
-      <small>
-        Fees
-      </small>
-      <span>
-        £995
-      </span>
-    </div>
-    <div
-      class="c4 c5"
-    >
-      <a
-        class="c8"
-        href="https://b2bfinance.com/enquire/buy-to-let"
-        rel="noopener"
-        target="_blank"
-      >
-        Get Deal
-      </a>
     </div>
   </div>
 </div>
@@ -1511,28 +395,21 @@ exports[`Product renders correctly without more information available  1`] = `
 exports[`Wrapper render correctly without highlight 1`] = `
 .c0 {
   background-color: white;
-  border: 2px solid #eceff1;
-  margin-bottom: 1.5rem;
+  margin-bottom: 56px;
 }
 
 <div
   class="c0"
->
-  
-</div>
+/>
 `;
 
 exports[`Wrapper renders correctly with highlight 1`] = `
 .c0 {
   background-color: white;
-  border: 2px solid #eceff1;
-  margin-bottom: 1.5rem;
-  border-color: #009688;
+  margin-bottom: 56px;
 }
 
 <div
   class="c0"
->
-  
-</div>
+/>
 `;

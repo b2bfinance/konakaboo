@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MoreInfoFooter renders correctly 1`] = `
+.c1 {
+  background-color: !important;
+  width: 100% !important;
+  box-shadow: none !important;
+}
+
+.c0 {
+  border-top: 2px solid;
+  padding: 16px;
+  margin-top: auto;
+  min-height: 85px;
+}
+
+<div
+  class="MuiGrid-container-1 MuiGrid-align-items-xs-center-9 MuiGrid-justify-xs-space-between-20 c0"
+>
+  <div
+    class="MuiGrid-item-2 MuiGrid-grid-xs-5-34 MuiGrid-grid-sm-7-50 MuiGrid-grid-lg-8-79"
+  >
+    <button
+      class="MuiButtonBase-root-124 MuiButton-root-98 MuiButton-text-100 MuiButton-flat-103 MuiButton-sizeSmall-121"
+      tabindex="0"
+      type="button"
+    >
+      <span
+        class="MuiButton-label-99"
+      >
+        <svg
+          aria-hidden="true"
+          class="MuiSvgIcon-root-127 MuiSvgIcon-fontSizeSmall-134"
+          focusable="false"
+          role="presentation"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+          />
+          <path
+            d="M0 0h24v24H0z"
+            fill="none"
+          />
+        </svg>
+         close
+      </span>
+    </button>
+  </div>
+  <div
+    class="MuiGrid-item-2 MuiGrid-grid-xs-7-36 MuiGrid-grid-sm-5-48 MuiGrid-grid-lg-4-75"
+  >
+    <a
+      class="MuiButtonBase-root-124 MuiFab-root-136 MuiFab-extended-140 MuiFab-primary-138 c1"
+      href="https://b2bfinance.com/enquire/buy-to-let"
+      role="button"
+      tabindex="0"
+    >
+      <span
+        class="MuiFab-label-137"
+      >
+        Continue
+      </span>
+    </a>
+  </div>
+</div>
+`;
+
+exports[`Wrapper renders correctly 1`] = `
+.c0 {
+  border-top: 2px solid;
+  padding: 16px;
+  margin-top: auto;
+  min-height: 85px;
+}
+
+<div
+  class="c0"
+/>
+`;

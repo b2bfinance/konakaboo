@@ -1,30 +1,21 @@
+import blueGrey from '@material-ui/core/colors/blueGrey';
+import green from '@material-ui/core/colors/green';
+import orange from '@material-ui/core/colors/orange';
+import teal from '@material-ui/core/colors/teal';
+import pink from '@material-ui/core/colors/pink';
+
 export default {
-  mainColor: '#37474f',
-  mainFontFamily: 'Roboto,sans-serif',
-  mainNormalFontWeight: 300,
-  mainFontSize: '1rem',
-  mainBoldFontWeight: 400,
-  mainLineHeight: 1,
-
-  productMaskBackground: '#f5f6f7',
-  productEmptyBackground: '#eceff1',
-  productOutlineBackground: '#eceff1',
-  productOutlineColor: '#37474f',
-  productColBackground: '#f5f6f7',
-  productHighlightOutlineBackground: '#009688',
-  productHighlightOutlineColor: '#fff',
-
-  applyButtonBackground: '#4dc16f',
+  productMaskBackground: blueGrey['50'],
+  productEmptyBackground: blueGrey['50'],
+  productBorder: blueGrey['50'],
+  productHighlightColor: orange['300'],
+  applyButtonBackground: green['500'],
   applyButtonColor: '#fff',
-
-  infoButtonBackground: '#f5f6f7',
-  infoButtonColor: '#37474f',
-  infoCheckColor: '#4dc16f',
-
-  productFeaturedIconColor: '#ea3f79',
-
-  filterChipChosenBackground: '#009688',
+  infoButtonBackground: blueGrey['50'],
+  infoButtonColor: blueGrey['800'],
+  productFeaturedIconColor: pink['300'],
+  filterChipChosenBackground: teal['500'],
   filterChipChosenColor: '#fff',
-  filterHeaderBackground: '#00897B',
+  filterHeaderBackground: teal['500'],
   filterHeaderColor: '#fff'
 };

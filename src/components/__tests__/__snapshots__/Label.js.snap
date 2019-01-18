@@ -10,7 +10,5 @@ exports[`<Label /> renders correctly 1`] = `
 
 <div
   class="c0"
->
-  
-</div>
+/>
 `;

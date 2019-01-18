@@ -1,141 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Button /> primary renders correctly 1`] = `
-.c0 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  border-radius: 0.15rem;
-  box-sizing: border-box;
-  cursor: pointer;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  font-family: Roboto,sans-serif;
-  font-weight: 400;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding: 0.75rem 1.5rem;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  width: 100%;
-  white-space: nowrap;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  background-color: #4dc16f;
-  color: #fff;
-}
-
+exports[`<Button /> renders correctly 1`] = `
 .c0:hover {
   -webkit-text-decoration: none;
   text-decoration: none;
 }
 
-.c0:hover {
-  color: #fff;
-}
-
-<a
-  class="c0"
+<button
+  class="MuiButtonBase-root-27 MuiButton-root-1 MuiButton-text-3 MuiButton-flat-6 c0"
+  tabindex="0"
+  theme="[object Object]"
+  type="button"
 >
-  
-</a>
-`;
-
-exports[`<Button /> secondary renders correctly 1`] = `
-.c0 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  border-radius: 0.15rem;
-  box-sizing: border-box;
-  cursor: pointer;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  font-family: Roboto,sans-serif;
-  font-weight: 400;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding: 0.75rem 1.5rem;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  width: 100%;
-  white-space: nowrap;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  background-color: #f5f6f7;
-  color: #37474f;
-}
-
-.c0:hover {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-}
-
-.c0:hover {
-  color: #37474f;
-}
-
-<a
-  class="c0"
->
-  
-</a>
-`;
-
-exports[`<Button /> slim renders correctly 1`] = `
-.c0 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  border-radius: 0.15rem;
-  box-sizing: border-box;
-  cursor: pointer;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  font-family: Roboto,sans-serif;
-  font-weight: 400;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding: 0.75rem 1.5rem;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  width: 100%;
-  white-space: nowrap;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  padding: 0.25rem 0.5rem;
-  font-size: 90%;
-}
-
-.c0:hover {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-}
-
-<a
-  class="c0"
->
-  
-</a>
+  <span
+    class="MuiButton-label-2"
+  >
+    button
+  </span>
+</button>
 `;

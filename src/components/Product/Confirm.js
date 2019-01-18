@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import Button from '../Button';
-import Row from '../Row';
+import ApplyButton from './ApplyButton';
 import Col from '../Col';
+import Grid from '@material-ui/core/Grid';
 import Dialog from '@material-ui/core/Dialog';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import DialogContent from '@material-ui/core/DialogContent';
@@ -27,13 +27,13 @@ export default ({
     <DialogTitle>{title}</DialogTitle>
     <DialogContent>
       <DialogContentText>{description}</DialogContentText>
-      <Row>
+      <Grid>
         <ConfirmButtonCol phone={80} tablet={60} desktop={40}>
-          <Button primary href={forwardUrl}>
-            Apply
-          </Button>
+          <ApplyButton variant="extended" color="primary" href={forwardUrl}>
+            Confirm
+          </ApplyButton>
         </ConfirmButtonCol>
-      </Row>
+      </Grid>
     </DialogContent>
   </Wrapper>
 );

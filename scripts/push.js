@@ -23,11 +23,16 @@
  *   metadata wasn't set which will cause access issues.
  */
 
+import path from 'path';
+import pkg from '../package.json';
+
 const bucketName = 'b2bfinanceassets';
+
 const storageOptions = {
   projectId: 'b2bfinance-186310',
   keyFilename: process.env.GCLOUD_STORAGE_KEY_FILE || '/run/secrets/google.json'
 };
+
 const fs = require('fs');
 const Storage = require('@google-cloud/storage')(storageOptions);
 const bucket = Storage.bucket(bucketName);
@@ -41,8 +46,8 @@ function fatal(message, err) {
   process.exit(1);
 }
 
-function root(path) {
-  return require('path').join(__dirname, '..', path);
+function root(location) {
+  return path.join(__dirname, '..', location);
 }
 
 function run(bucket, src, dest) {
@@ -50,8 +55,8 @@ function run(bucket, src, dest) {
   log(`Writing to: ${dest}`);
 
   const file = bucket.file(dest);
-  fs
-    .createReadStream(src)
+
+  fs.createReadStream(src)
     .pipe(file.createWriteStream({ gzip: true }))
     .on('error', err => {
       fatal('Error uploading build.', err);
@@ -59,6 +64,7 @@ function run(bucket, src, dest) {
     .on('finish', async () => {
       try {
         await file.makePublic();
+
         await file.setMetadata({
           contentType: 'application/javascript',
           contentLanguage: 'en',
@@ -67,12 +73,13 @@ function run(bucket, src, dest) {
       } catch (e) {
         fatal('Unable to complete actions to ensure browsers love us.', e);
       }
+
       process.exit(0);
     });
 }
 
-function getSource() {
-  const am = require(root(`/build/asset-manifest.json`));
+async function getSource() {
+  const am = await import(root(`/build/asset-manifest.json`));
   const src = am['main.js'];
 
   if (src === '') {
@@ -86,4 +93,8 @@ log(`Bucket: ${bucketName}`);
 log(`Project: ${storageOptions.projectId}`);
 log(`Key file: ${storageOptions.keyFile}`);
 
-run(bucket, getSource(), 'products-embed/main.js');
+let version = pkg.version;
+do {
+  run(bucket, getSource(), `products-embed/main-${version}.js`);
+  version = version.substr(0, version.lastIndexOf('.'))
+} while (version != "");

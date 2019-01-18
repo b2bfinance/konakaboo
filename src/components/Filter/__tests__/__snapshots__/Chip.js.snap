@@ -8,10 +8,8 @@ exports[`Chip renders correctly with no selection 1`] = `
   tabindex="-1"
 >
   <span
-    class="MuiChip-label-17"
-  >
-    
-  </span>
+    class="MuiChip-label-20"
+  />
 </div>
 `;
 
@@ -28,10 +26,8 @@ exports[`Chip renders correctly with selection 1`] = `
   tabindex="-1"
 >
   <span
-    class="MuiChip-label-17"
-  >
-    
-  </span>
+    class="MuiChip-label-20"
+  />
 </div>
 `;
 
@@ -42,9 +38,7 @@ exports[`ChipHolder renders correctly 1`] = `
   position: relative;
 }
 
-<div
+<span
   class="c0"
->
-  
-</div>
+/>
 `;
