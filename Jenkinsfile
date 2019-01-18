@@ -35,7 +35,7 @@ pipeline {
                 GCLOUD_STORAGE_KEY_FILE = credentials('b2b-gcloud-svc-acc-storage')
             }
             steps {
-                nvm(nvmInstallURL: 'https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh', nvmIoJsOrgMirror: 'https://iojs.org/dist', nvmNodeJsOrgMirror: 'https://nodejs.org/dist', version: 'v9.0') {
+                nvm(nvmInstallURL: 'https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh', nvmIoJsOrgMirror: 'https://iojs.org/dist', nvmNodeJsOrgMirror: 'https://nodejs.org/dist', version: 'v11.6') {
                     sh 'NODE_ENV=production npm run-script build'
                     sh 'npm run push'
                 }
