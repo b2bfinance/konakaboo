@@ -7,8 +7,13 @@ exports[`Product renders correctly 1`] = `
 
 .c11 {
   background-color: #4caf50 !important;
+  color: #fff;
   width: 100% !important;
   box-shadow: none !important;
+}
+
+.c11:hover {
+  color: #fff;
 }
 
 .c7 {
@@ -70,9 +75,7 @@ exports[`Product renders correctly 1`] = `
   flex: 0 0 100%;
   max-width: 100%;
   border-top: 2px solid #eceff1;
-  padding: 8px;
-  margin-top: 16px;
-  margin-bottom: 16px;
+  padding: 16px 8px;
   text-align: center;
 }
 
@@ -147,6 +150,9 @@ exports[`Product renders correctly 1`] = `
 
 @media (min-width:36em) {
   .c9 {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    padding: 8px;
     border-top: 0;
     border-left: 2px solid #eceff1;
   }
@@ -248,7 +254,7 @@ exports[`Product renders correctly 1`] = `
     </div>
   </div>
   <div
-    class="MuiGrid-container-1 MuiGrid-align-items-xs-center-9 c8"
+    class="MuiGrid-container-1 c8"
   >
     <div
       class="c9"

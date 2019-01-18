@@ -6,12 +6,13 @@ import { queries } from '../../utils/media';
 
 export const Wrapper = styled(Col)`
   border-top: 2px solid ${props => props.theme.productBorder};
-  padding: 8px;
-  margin-top: 16px;
-  margin-bottom: 16px;
+  padding: 16px 8px;
   text-align: center;
 
   ${queries.tablet`
+    margin-top: 16px;
+    margin-bottom: 16px;
+    padding: 8px;
     border-top: 0;
     border-left: 2px solid ${props => props.theme.productBorder};
   `};
