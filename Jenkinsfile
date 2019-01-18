@@ -45,6 +45,8 @@ pipeline {
 
     post {
         always {
+          cleanWs()
+
           step([$class: 'Mailer',
             notifyEveryUnstableBuild: true,
             recipients: "devs@legalweb.org.uk",

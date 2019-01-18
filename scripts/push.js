@@ -74,20 +74,31 @@ function run(bucket, src, dest) {
       } catch (e) {
         fatal('Unable to complete actions to ensure browsers love us.', e);
       }
-
-      process.exit(0);
     });
 }
 
-function getSource() {
+async function getSource() {
   const am = require(root(`/build/asset-manifest.json`));
-  const src = am['main.js'];
+  const staticDir = root('./build/static/js');
+  const buildFilename = `./build/${new Date().getTime()}.js`;
 
-  if (src === '') {
-    fatal('Cannot find main.js in asset-manifest.');
+  if (!am) {
+    fatal('Cannot find asset-manifest.');
   }
 
-  return root(`/build/${src}`);
+  try {
+    const files = await fs.promises.readdir(staticDir);
+
+    const contents = await Promise.all(
+      files.map(file => fs.promises.readFile(path.join(staticDir, file)))
+    );
+
+    await fs.promises.writeFile(buildFilename, contents);
+  } catch (e) {
+    fatal(e);
+  }
+
+  return buildFilename;
 }
 
 log(`Bucket: ${bucketName}`);
@@ -95,7 +106,13 @@ log(`Project: ${storageOptions.projectId}`);
 log(`Key file: ${storageOptions.keyFile}`);
 
 let version = pkg.version;
+let source = getSource();
+
+const main = async () => {
+  run(bucket, await source, `products-embed/main-${version}.js`);
+};
+
 do {
-  run(bucket, getSource(), `products-embed/main-${version}.js`);
+  main();
   version = version.substr(0, version.lastIndexOf('.'));
 } while (version != '');
