@@ -108,11 +108,11 @@ log(`Key file: ${storageOptions.keyFile}`);
 let version = pkg.version;
 let source = getSource();
 
-const main = async () => {
-  run(bucket, await source, `products-embed/main-${version}.js`);
+const main = async buildVersion => {
+  run(bucket, await source, `products-embed/main-${buildVersion}.js`);
 };
 
 do {
-  main();
+  main(version);
   version = version.substr(0, version.lastIndexOf('.'));
 } while (version != '');
