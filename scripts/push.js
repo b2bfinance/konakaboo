@@ -74,8 +74,6 @@ function run(bucket, src, dest) {
       } catch (e) {
         fatal('Unable to complete actions to ensure browsers love us.', e);
       }
-
-      process.exit(0);
     });
 }
 
@@ -112,9 +110,9 @@ let source = getSource();
 
 const main = async () => {
   run(bucket, await source, `products-embed/main-${version}.js`);
-  version = version.substr(0, version.lastIndexOf('.'));
 };
 
 do {
   main();
+  version = version.substr(0, version.lastIndexOf('.'));
 } while (version != '');
