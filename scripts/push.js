@@ -23,8 +23,10 @@
  *   metadata wasn't set which will cause access issues.
  */
 
-import path from 'path';
-import pkg from '../package.json';
+const fs = require('fs');
+const path = require('path');
+const gcStorage = require('@google-cloud/storage');
+const pkg = require('../package.json');
 
 const bucketName = 'b2bfinanceassets';
 
@@ -33,8 +35,7 @@ const storageOptions = {
   keyFilename: process.env.GCLOUD_STORAGE_KEY_FILE || '/run/secrets/google.json'
 };
 
-const fs = require('fs');
-const Storage = require('@google-cloud/storage')(storageOptions);
+const Storage = gcStorage(storageOptions);
 const bucket = Storage.bucket(bucketName);
 
 function log(message) {
@@ -78,8 +79,8 @@ function run(bucket, src, dest) {
     });
 }
 
-async function getSource() {
-  const am = await import(root(`/build/asset-manifest.json`));
+function getSource() {
+  const am = require(root(`/build/asset-manifest.json`));
   const src = am['main.js'];
 
   if (src === '') {
@@ -96,5 +97,5 @@ log(`Key file: ${storageOptions.keyFile}`);
 let version = pkg.version;
 do {
   run(bucket, getSource(), `products-embed/main-${version}.js`);
-  version = version.substr(0, version.lastIndexOf('.'))
-} while (version != "");
+  version = version.substr(0, version.lastIndexOf('.'));
+} while (version != '');
