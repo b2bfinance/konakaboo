@@ -4,9 +4,7 @@ exports[`Grid renders correctly 1`] = `
 .c0 {
   min-height: 1px;
   border-top: 2px solid #eceff1;
-  padding: 8px;
-  margin-top: 16px;
-  margin-bottom: 16px;
+  padding: 16px 8px;
   text-align: center;
 }
 
@@ -17,6 +15,9 @@ exports[`Grid renders correctly 1`] = `
 
 @media (min-width:36em) {
   .c0 {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    padding: 8px;
     border-top: 0;
     border-left: 2px solid #eceff1;
   }
@@ -36,9 +37,7 @@ Array [
   flex: 0 0 100%;
   max-width: 100%;
   border-top: 2px solid #eceff1;
-  padding: 8px;
-  margin-top: 16px;
-  margin-bottom: 16px;
+  padding: 16px 8px;
   text-align: center;
 }
 
@@ -58,6 +57,9 @@ Array [
 
 @media (min-width:36em) {
   .c0 {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    padding: 8px;
     border-top: 0;
     border-left: 2px solid #eceff1;
   }
@@ -84,9 +86,7 @@ Array [
   flex: 0 0 100%;
   max-width: 100%;
   border-top: 2px solid #eceff1;
-  padding: 8px;
-  margin-top: 16px;
-  margin-bottom: 16px;
+  padding: 16px 8px;
   text-align: center;
 }
 
@@ -106,6 +106,9 @@ Array [
 
 @media (min-width:36em) {
   .c0 {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    padding: 8px;
     border-top: 0;
     border-left: 2px solid #eceff1;
   }
