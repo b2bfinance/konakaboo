@@ -56,7 +56,7 @@ export const Product = ({
         title={title}
         labels={labels}
       />
-      <ProductBody container alignItems="center">
+      <ProductBody container>
         <ProductMultiGrid columns={columns} />
         <ProductGrid phone={100} tablet={20}>
           <Grid container alignContent="center">
