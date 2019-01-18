@@ -13,6 +13,7 @@ export const Wrapper = styled(Grid)`
 export const HighlightIcon = styled.span`
   color: ${props => props.theme.productFeaturedIconColor};
   font-size: 1.25rem;
+  line-height: 0;
 `;
 
 export const Feature = styled.span`
