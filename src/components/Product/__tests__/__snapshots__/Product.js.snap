@@ -93,6 +93,7 @@ exports[`Product renders correctly 1`] = `
 .c14 {
   color: #f06292;
   font-size: 1.25rem;
+  line-height: 0;
 }
 
 .c15 {
