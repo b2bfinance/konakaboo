@@ -11,7 +11,6 @@ import FeaturedHighlightPointRow from './FeaturedHighlightPointRow';
 import Typography from '@material-ui/core/Typography';
 
 export const Wrapper = styled.div`
-  background-color: white;
   margin-bottom: 56px;
 `;
 
