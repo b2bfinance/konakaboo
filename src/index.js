@@ -5,9 +5,10 @@ import { Provider } from 'react-redux';
 import App from './components/App';
 import createStore from './store';
 import { ThemeProvider } from 'styled-components';
+import defaultTheme from './utils/theme';
 
 const store = createStore(window.PRODUCTS_EMBED_STATE || {});
-const { theme } = store.getState();
+const theme = { ...defaultTheme, ...store.getState().theme };
 
 ReactDOM.render(
   <Provider store={store}>

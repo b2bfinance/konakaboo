@@ -101,7 +101,6 @@ exports[`Product renders correctly 1`] = `
 }
 
 .c0 {
-  background-color: white;
   margin-bottom: 56px;
 }
 
@@ -401,7 +400,6 @@ exports[`Product renders correctly 1`] = `
 
 exports[`Wrapper render correctly without highlight 1`] = `
 .c0 {
-  background-color: white;
   margin-bottom: 56px;
 }
 
@@ -412,7 +410,6 @@ exports[`Wrapper render correctly without highlight 1`] = `
 
 exports[`Wrapper renders correctly with highlight 1`] = `
 .c0 {
-  background-color: white;
   margin-bottom: 56px;
 }
 
