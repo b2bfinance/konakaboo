@@ -8,7 +8,7 @@ exports[`Wrapper renders correctly 1`] = `
       "Naked": [Function],
       "attrs": Array [],
       "componentStyle": ComponentStyle {
-        "componentId": "sc-ifAKCX",
+        "componentId": "sc-EHOje",
         "isStatic": true,
         "rules": Array [
           "
@@ -382,7 +382,7 @@ exports[`Wrapper renders correctly 1`] = `
         "name": "MuiGrid",
       },
       "render": [Function],
-      "styledComponentId": "sc-ifAKCX",
+      "styledComponentId": "sc-EHOje",
       "target": [Function],
       "toString": [Function],
       "warnTooManyClasses": [Function],

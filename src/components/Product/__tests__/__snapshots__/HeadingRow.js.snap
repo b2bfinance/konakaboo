@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`HeadingRow renders correctly with highlight 1`] = `
-.c5 {
+.c6 {
   border: 1px solid;
   border-radius: 1rem;
   font-size: 80%;
   padding: 0.2rem 0.75rem;
 }
 
-.c4 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -18,11 +18,11 @@ exports[`HeadingRow renders correctly with highlight 1`] = `
   flex-wrap: wrap;
 }
 
-.c4:last-child div {
+.c5:last-child div {
   margin-right: 0;
 }
 
-.c4 div {
+.c5 div {
   margin: .5rem .5rem 0 0;
 }
 
@@ -45,15 +45,19 @@ exports[`HeadingRow renders correctly with highlight 1`] = `
 }
 
 .c3 {
+  color: !important;
+}
+
+.c4 {
   float: right;
 }
 
 @media (min-width:36em) {
-  .c4 {
+  .c5 {
     margin-left: auto;
   }
 
-  .c4 div {
+  .c5 div {
     margin: 0 .5rem 0 0;
   }
 }
@@ -62,7 +66,7 @@ exports[`HeadingRow renders correctly with highlight 1`] = `
   .c1 {
     border: 2px solid;
     margin-bottom: -32px;
-    padding: 8px;
+    padding: 12px 8px;
     text-align: center;
   }
 }
@@ -103,7 +107,7 @@ exports[`HeadingRow renders correctly with highlight 1`] = `
             class="MuiGrid-item-2"
           >
             <h1
-              class="MuiTypography-root-98 MuiTypography-headline-103"
+              class="MuiTypography-root-98 MuiTypography-headline-103 c3"
             />
           </div>
           <div
@@ -115,7 +119,7 @@ exports[`HeadingRow renders correctly with highlight 1`] = `
         class="MuiGrid-item-2 MuiGrid-grid-xs-12-41"
       >
         <p
-          class="MuiTypography-root-98 MuiTypography-body1-107"
+          class="MuiTypography-root-98 MuiTypography-body1-107 c3"
         />
       </div>
     </div>
@@ -124,18 +128,18 @@ exports[`HeadingRow renders correctly with highlight 1`] = `
     class="MuiGrid-item-2 MuiGrid-grid-xs-12-41 MuiGrid-grid-md-3-60"
   >
     <div
-      class="c3"
+      class="c4"
     >
       <div
-        class="c4"
+        class="c5"
       >
         <div
-          class="c5"
+          class="c6"
         >
           foo
         </div>
         <div
-          class="c5"
+          class="c6"
         >
           bar
         </div>
@@ -146,14 +150,14 @@ exports[`HeadingRow renders correctly with highlight 1`] = `
 `;
 
 exports[`HeadingRow renders correctly without highlight 1`] = `
-.c5 {
+.c6 {
   border: 1px solid;
   border-radius: 1rem;
   font-size: 80%;
   padding: 0.2rem 0.75rem;
 }
 
-.c4 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -163,11 +167,11 @@ exports[`HeadingRow renders correctly without highlight 1`] = `
   flex-wrap: wrap;
 }
 
-.c4:last-child div {
+.c5:last-child div {
   margin-right: 0;
 }
 
-.c4 div {
+.c5 div {
   margin: .5rem .5rem 0 0;
 }
 
@@ -190,15 +194,19 @@ exports[`HeadingRow renders correctly without highlight 1`] = `
 }
 
 .c3 {
+  color: !important;
+}
+
+.c4 {
   float: right;
 }
 
 @media (min-width:36em) {
-  .c4 {
+  .c5 {
     margin-left: auto;
   }
 
-  .c4 div {
+  .c5 div {
     margin: 0 .5rem 0 0;
   }
 }
@@ -207,7 +215,7 @@ exports[`HeadingRow renders correctly without highlight 1`] = `
   .c1 {
     border: 2px solid;
     margin-bottom: -32px;
-    padding: 8px;
+    padding: 12px 8px;
     text-align: center;
   }
 }
@@ -248,7 +256,7 @@ exports[`HeadingRow renders correctly without highlight 1`] = `
             class="MuiGrid-item-2"
           >
             <h1
-              class="MuiTypography-root-98 MuiTypography-headline-103"
+              class="MuiTypography-root-98 MuiTypography-headline-103 c3"
             />
           </div>
           <div
@@ -260,7 +268,7 @@ exports[`HeadingRow renders correctly without highlight 1`] = `
         class="MuiGrid-item-2 MuiGrid-grid-xs-12-41"
       >
         <p
-          class="MuiTypography-root-98 MuiTypography-body1-107"
+          class="MuiTypography-root-98 MuiTypography-body1-107 c3"
         />
       </div>
     </div>
@@ -269,18 +277,18 @@ exports[`HeadingRow renders correctly without highlight 1`] = `
     class="MuiGrid-item-2 MuiGrid-grid-xs-12-41 MuiGrid-grid-md-3-60"
   >
     <div
-      class="c3"
+      class="c4"
     >
       <div
-        class="c4"
+        class="c5"
       >
         <div
-          class="c5"
+          class="c6"
         >
           foo
         </div>
         <div
-          class="c5"
+          class="c6"
         >
           bar
         </div>
@@ -288,4 +296,14 @@ exports[`HeadingRow renders correctly without highlight 1`] = `
     </div>
   </div>
 </div>
+`;
+
+exports[`ProductHeading renders correctly 1`] = `
+.c0 {
+  color: !important;
+}
+
+<p
+  class="MuiTypography-root-98 MuiTypography-body1-107 c0"
+/>
 `;

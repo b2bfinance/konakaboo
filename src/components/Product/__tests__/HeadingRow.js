@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'enzyme';
-import HeadingRow from '../HeadingRow';
+import HeadingRow, { ProductHeading } from '../HeadingRow';
 
 describe('HeadingRow', () => {
   test('renders correctly without highlight', () => {
@@ -15,5 +15,11 @@ describe('HeadingRow', () => {
         <HeadingRow highlight labels={['foo', 'bar']} theme={stubData.theme} />
       )
     ).toMatchSnapshot();
+  });
+});
+
+describe('ProductHeading', () => {
+  test('renders correctly', () => {
+    expect(render(<ProductHeading theme={stubData.theme} />)).toMatchSnapshot();
   });
 });

@@ -34,13 +34,13 @@ export default ({ title, brand, logo, onClose }) => (
   <Wrapper>
     <Grid container spacing={32}>
       <Hidden xsDown>
-        <Grid item>
+        <Grid item sm={3} md={3} xl={2}>
           <LogoWrapper>
             <Logo src={logo} alt={brand} />
           </LogoWrapper>
         </Grid>
       </Hidden>
-      <Grid item>
+      <Grid item sm={9} md={9} xl={10} mt={1}>
         <Grid container>
           <Grid item xs={12}>
             <Typography variant="h4">{brand}</Typography>

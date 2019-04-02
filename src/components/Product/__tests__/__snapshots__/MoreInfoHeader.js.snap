@@ -59,7 +59,8 @@ exports[`MoreInfoHeader renders correctly 1`] = `
     class="MuiGrid-container-1 MuiGrid-spacing-xs-32-26"
   >
     <div
-      class="MuiGrid-item-2"
+      class="MuiGrid-item-2 MuiGrid-grid-sm-9-52 MuiGrid-grid-md-9-66 MuiGrid-grid-xl-10-95"
+      mt="1"
     >
       <div
         class="MuiGrid-container-1"

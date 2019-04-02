@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, shallow } from 'enzyme';
-import Filter, { Wrapper, handleMouseDown } from '../Filter';
+import Filter, { Wrapper, Heading, handleMouseDown } from '../Filter';
 import ListItem from '@material-ui/core/ListItem';
 
 describe('Wrapper', () => {
@@ -10,6 +10,12 @@ describe('Wrapper', () => {
 
   test('when visible renders correctly', () => {
     expect(render(<Wrapper visible />)).toMatchSnapshot();
+  });
+});
+
+describe('Heading', () => {
+  test('renders correctly', () => {
+    expect(render(<Heading />)).toMatchSnapshot();
   });
 });
 

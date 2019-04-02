@@ -16,6 +16,7 @@ export const Wrapper = styled.div`
 
 export const ProductBody = styled(Grid)`
   border: 2px solid ${props => props.theme.productBorder};
+  background-color: ${props => props.theme.productBackground};
 
   ${props =>
     props.standOut &&
