@@ -9,10 +9,11 @@ test('Default theme contains all required attributes', () => {
     'productMaskBackground',
     'productEmptyBackground',
     'productBorder',
+    'productBackground',
+    'productHeadingColor',
     'productHighlightColor',
     'applyButtonBackground',
     'applyButtonColor',
-    'infoButtonBackground',
     'infoButtonColor',
     'productFeaturedIconColor',
     'filterChipChosenBackground',
@@ -22,15 +23,16 @@ test('Default theme contains all required attributes', () => {
   ]);
 });
 
-test('Color attributes are valid hex strings', () => {
+test('Theme attributes are valid', () => {
   const colorAttributes = [
     'productMaskBackground',
     'productEmptyBackground',
     'productBorder',
+    'productBackground',
+    'productHeadingColor',
     'productHighlightColor',
     'applyButtonBackground',
     'applyButtonColor',
-    'infoButtonBackground',
     'infoButtonColor',
     'productFeaturedIconColor',
     'filterChipChosenBackground',
@@ -40,6 +42,12 @@ test('Color attributes are valid hex strings', () => {
   ];
 
   colorAttributes.forEach(color => {
-    expect(isValidHex(theme[color])).toBeTruthy();
+    expect(
+      [
+        isValidHex(theme[color]),
+        ['unset', 'inherit'].indexOf(theme[color]) !== -1,
+        theme[color].startsWith('rgb')
+      ].some(b => b === true)
+    ).toBeTruthy();
   });
 });
