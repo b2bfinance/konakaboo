@@ -2,14 +2,20 @@
 
 exports[`ApplyButton renders correctly 1`] = `
 .c0 {
-  background-color: !important;
+  background-color: #4caf50 !important;
+  color: #fff !important;
   width: 100% !important;
   box-shadow: none !important;
+}
+
+.c0:hover {
+  color: #fff !important;
 }
 
 <button
   class="MuiButtonBase-root-11 MuiFab-root-1 c0"
   tabindex="0"
+  theme="[object Object]"
   type="button"
 >
   <span

@@ -3,11 +3,11 @@ import Fab from '@material-ui/core/Fab';
 
 export default styled(Fab)`
   background-color: ${props => props.theme.applyButtonBackground} !important;
-  color: ${props => props.theme.applyButtonColor};
+  color: ${props => props.theme.applyButtonColor} !important;
   width: 100% !important;
   box-shadow: none !important;
 
   &:hover {
-    color: ${props => props.theme.applyButtonColor};
+    color: ${props => props.theme.applyButtonColor} !important;
   }
 `;
