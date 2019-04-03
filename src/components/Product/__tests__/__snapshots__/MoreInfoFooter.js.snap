@@ -3,8 +3,13 @@
 exports[`MoreInfoFooter renders correctly 1`] = `
 .c1 {
   background-color: !important;
+  color: !important;
   width: 100% !important;
   box-shadow: none !important;
+}
+
+.c1:hover {
+  color: !important;
 }
 
 .c0 {

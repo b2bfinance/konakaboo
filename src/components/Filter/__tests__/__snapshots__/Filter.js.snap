@@ -6,7 +6,11 @@ exports[`Filter with multi choice renders correctly 1`] = `
   visible={true}
 >
   <styled.div>
-    Filter Title
+    <Styled(WithStyles(Typography))
+      variant="subheading"
+    >
+      Filter Title
+    </Styled(WithStyles(Typography))>
     <WithStyles(IconButton)
       aria-label="Close Filter Choices"
       onClick={[MockFunction]}
@@ -53,7 +57,11 @@ exports[`Filter with single choice renders correctly 1`] = `
   visible={true}
 >
   <styled.div>
-    Filter Title
+    <Styled(WithStyles(Typography))
+      variant="subheading"
+    >
+      Filter Title
+    </Styled(WithStyles(Typography))>
     <WithStyles(IconButton)
       aria-label="Close Filter Choices"
       onClick={[MockFunction]}
@@ -92,6 +100,16 @@ exports[`Filter with single choice renders correctly 1`] = `
     </WithStyles(ListItem)>
   </WithStyles(List)>
 </styled.div>
+`;
+
+exports[`Heading renders correctly 1`] = `
+.c0 {
+  color: !important;
+}
+
+<p
+  class="MuiTypography-root-1 MuiTypography-body1-10 c0"
+/>
 `;
 
 exports[`Wrapper when not visible renders correctly 1`] = `

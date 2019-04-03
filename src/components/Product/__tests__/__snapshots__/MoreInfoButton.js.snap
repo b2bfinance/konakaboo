@@ -3,6 +3,7 @@
 exports[`MoreInfoButton renders correctly 1`] = `
 .c0 {
   margin-bottom: 8px !important;
+  color: !important;
 }
 
 <a

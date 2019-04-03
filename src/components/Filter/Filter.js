@@ -10,6 +10,7 @@ import Checkbox from '@material-ui/core/Checkbox';
 import Radio from '@material-ui/core/Radio';
 import Close from '@material-ui/icons/Close';
 import Header from './Header';
+import { Typography } from '@material-ui/core';
 
 export const Wrapper = styled.div`
   background-color: #fff;
@@ -50,6 +51,10 @@ export const Wrapper = styled.div`
   }
 `;
 
+export const Heading = styled(Typography)`
+  color: ${props => props.theme.filterHeaderColor} !important;
+`;
+
 export function handleMouseDown(e) {
   e.preventDefault();
 }
@@ -66,7 +71,7 @@ export default ({
 }) => (
   <Wrapper visible={visible} onMouseDown={handleMouseDown}>
     <Header>
-      {title}
+      <Heading variant="subheading">{title}</Heading>
       <IconButton onClick={handleClose} aria-label="Close Filter Choices">
         <Close />
       </IconButton>

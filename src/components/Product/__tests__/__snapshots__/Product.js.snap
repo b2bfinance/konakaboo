@@ -1,29 +1,30 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Product renders correctly 1`] = `
-.c10 {
+.c11 {
   margin-bottom: 8px !important;
+  color: #3f51b5 !important;
 }
 
-.c11 {
+.c12 {
   background-color: #4caf50 !important;
-  color: #fff;
+  color: #fff !important;
   width: 100% !important;
   box-shadow: none !important;
 }
 
-.c11:hover {
-  color: #fff;
+.c12:hover {
+  color: #fff !important;
 }
 
-.c7 {
+.c8 {
   border: 1px solid;
   border-radius: 1rem;
   font-size: 80%;
   padding: 0.2rem 0.75rem;
 }
 
-.c6 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -33,11 +34,11 @@ exports[`Product renders correctly 1`] = `
   flex-wrap: wrap;
 }
 
-.c6:last-child div {
+.c7:last-child div {
   margin-right: 0;
 }
 
-.c6 div {
+.c7 div {
   margin: .5rem .5rem 0 0;
 }
 
@@ -49,7 +50,7 @@ exports[`Product renders correctly 1`] = `
   padding: 16px;
 }
 
-.c4 {
+.c5 {
   margin-left: 0.25rem;
   color: #ffb74d;
 }
@@ -64,11 +65,15 @@ exports[`Product renders correctly 1`] = `
   max-height: 125px;
 }
 
-.c5 {
+.c4 {
+  color: inherit !important;
+}
+
+.c6 {
   float: right;
 }
 
-.c9 {
+.c10 {
   min-height: 1px;
   -webkit-flex: 0 0 100%;
   -ms-flex: 0 0 100%;
@@ -79,24 +84,24 @@ exports[`Product renders correctly 1`] = `
   text-align: center;
 }
 
-.c9:first-child {
+.c10:first-child {
   border-top: 0;
   border-left: 0;
 }
 
-.c13 {
+.c14 {
   background-color: #eceff1;
   border-top: 2px solid #eceff1;
   padding: 8px 16px;
 }
 
-.c14 {
+.c15 {
   color: #f06292;
   font-size: 1.25rem;
   line-height: 0;
 }
 
-.c15 {
+.c16 {
   margin-left: 4px;
 }
 
@@ -104,22 +109,23 @@ exports[`Product renders correctly 1`] = `
   margin-bottom: 56px;
 }
 
-.c8 {
+.c9 {
   border: 2px solid #eceff1;
+  background-color: #fff;
 }
 
-.c12 {
+.c13 {
   border-top: 2px solid #eceff1;
   padding: 24px 16px;
   width: 100%;
 }
 
 @media (min-width:36em) {
-  .c6 {
+  .c7 {
     margin-left: auto;
   }
 
-  .c6 div {
+  .c7 div {
     margin: 0 .5rem 0 0;
   }
 }
@@ -128,7 +134,7 @@ exports[`Product renders correctly 1`] = `
   .c2 {
     border: 2px solid #eceff1;
     margin-bottom: -32px;
-    padding: 8px;
+    padding: 12px 8px;
     text-align: center;
   }
 }
@@ -140,7 +146,7 @@ exports[`Product renders correctly 1`] = `
 }
 
 @media (min-width:36em) {
-  .c9 {
+  .c10 {
     -webkit-flex: 0 0 20%;
     -ms-flex: 0 0 20%;
     flex: 0 0 20%;
@@ -149,7 +155,7 @@ exports[`Product renders correctly 1`] = `
 }
 
 @media (min-width:36em) {
-  .c9 {
+  .c10 {
     margin-top: 16px;
     margin-bottom: 16px;
     padding: 8px;
@@ -192,18 +198,18 @@ exports[`Product renders correctly 1`] = `
             <div
               class="MuiGrid-item-2"
             >
-              <h1
-                class="MuiTypography-root-98 MuiTypography-headline-103"
+              <p
+                class="MuiTypography-root-98 MuiTypography-headline-103 c4"
               >
                 Landbay
-              </h1>
+              </p>
             </div>
             <div
               class="MuiGrid-item-2"
             >
               <svg
                 aria-hidden="true"
-                class="MuiSvgIcon-root-134 c4"
+                class="MuiSvgIcon-root-134 c5"
                 focusable="false"
                 role="presentation"
                 viewBox="0 0 24 24"
@@ -223,7 +229,7 @@ exports[`Product renders correctly 1`] = `
           class="MuiGrid-item-2 MuiGrid-grid-xs-12-41"
         >
           <p
-            class="MuiTypography-root-98 MuiTypography-body1-107"
+            class="MuiTypography-root-98 MuiTypography-body1-107 c4"
           >
             Landbay - Buy To Let Wizards
           </p>
@@ -234,18 +240,18 @@ exports[`Product renders correctly 1`] = `
       class="MuiGrid-item-2 MuiGrid-grid-xs-12-41 MuiGrid-grid-md-3-60"
     >
       <div
-        class="c5"
+        class="c6"
       >
         <div
-          class="c6"
+          class="c7"
         >
           <div
-            class="c7"
+            class="c8"
           >
             broker only
           </div>
           <div
-            class="c7"
+            class="c8"
           >
             consumer favourite
           </div>
@@ -254,66 +260,66 @@ exports[`Product renders correctly 1`] = `
     </div>
   </div>
   <div
-    class="MuiGrid-container-1 c8"
+    class="MuiGrid-container-1 c9"
   >
     <div
-      class="c9"
+      class="c10"
     >
-      <h6
+      <span
         class="MuiTypography-root-98 MuiTypography-subtitle2-117"
       >
         Max LTV
-      </h6>
-      <h1
-        class="MuiTypography-root-98 MuiTypography-display1-102"
+      </span>
+      <span
+        class="MuiTypography-root-98 MuiTypography-h5-114 MuiTypography-colorTextSecondary-131"
       >
         85%
-      </h1>
+      </span>
     </div>
     <div
-      class="c9"
+      class="c10"
     >
-      <h6
+      <span
         class="MuiTypography-root-98 MuiTypography-subtitle2-117"
       >
         Initial Rate
-      </h6>
-      <h1
-        class="MuiTypography-root-98 MuiTypography-display1-102"
+      </span>
+      <span
+        class="MuiTypography-root-98 MuiTypography-h5-114 MuiTypography-colorTextSecondary-131"
       >
         1.49%
-      </h1>
+      </span>
     </div>
     <div
-      class="c9"
+      class="c10"
     >
-      <h6
+      <span
         class="MuiTypography-root-98 MuiTypography-subtitle2-117"
       >
         Subsequent Rate
-      </h6>
-      <h1
-        class="MuiTypography-root-98 MuiTypography-display1-102"
+      </span>
+      <span
+        class="MuiTypography-root-98 MuiTypography-h5-114 MuiTypography-colorTextSecondary-131"
       >
         2.75%
-      </h1>
+      </span>
     </div>
     <div
-      class="c9"
+      class="c10"
     >
-      <h6
+      <span
         class="MuiTypography-root-98 MuiTypography-subtitle2-117"
       >
         Fees
-      </h6>
-      <h1
-        class="MuiTypography-root-98 MuiTypography-display1-102"
+      </span>
+      <span
+        class="MuiTypography-root-98 MuiTypography-h5-114 MuiTypography-colorTextSecondary-131"
       >
         £1,495
-      </h1>
+      </span>
     </div>
     <div
-      class="c9"
+      class="c10"
     >
       <div
         class="MuiGrid-container-1 MuiGrid-align-content-xs-center-13"
@@ -322,7 +328,7 @@ exports[`Product renders correctly 1`] = `
           class="MuiGrid-item-2 MuiGrid-grid-xs-12-41"
         >
           <button
-            class="MuiTypography-root-98 MuiTypography-colorPrimary-128 MuiTypography-inline-133 MuiLink-root-143 MuiLink-button-147 MuiLink-underlineHover-145 c10"
+            class="MuiTypography-root-98 MuiTypography-colorPrimary-128 MuiTypography-inline-133 MuiLink-root-143 MuiLink-button-147 MuiLink-underlineHover-145 c11"
           >
             more details
           </button>
@@ -331,7 +337,7 @@ exports[`Product renders correctly 1`] = `
           class="MuiGrid-item-2 MuiGrid-grid-xs-12-41"
         >
           <a
-            class="MuiButtonBase-root-158 MuiFab-root-148 MuiFab-extended-152 MuiFab-primary-150 MuiFab-sizeMedium-157 c11"
+            class="MuiButtonBase-root-158 MuiFab-root-148 MuiFab-extended-152 MuiFab-primary-150 MuiFab-sizeMedium-157 c12"
             href="https://b2bfinance.com/enquire/buy-to-let"
             rel="noopener"
             role="button"
@@ -348,18 +354,18 @@ exports[`Product renders correctly 1`] = `
       </div>
     </div>
     <p
-      class="MuiTypography-root-98 MuiTypography-body2-106 c12"
+      class="MuiTypography-root-98 MuiTypography-body2-106 c13"
     >
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean bibendum facilisis condimentum. Donec laoreet porttitor condimentum. Nulla luctus efficitur magna, eget rhoncus metus placerat sed.
     </p>
     <div
-      class="MuiGrid-container-1 MuiGrid-align-items-xs-center-9 c13"
+      class="MuiGrid-container-1 MuiGrid-align-items-xs-center-9 c14"
     >
       <div
         class="MuiGrid-item-2"
       >
         <span
-          class="c14"
+          class="c15"
         >
           <svg
             aria-hidden="true"
@@ -387,7 +393,7 @@ exports[`Product renders correctly 1`] = `
           class="MuiTypography-root-98 MuiTypography-subtitle1-116"
         >
           <span
-            class="c15"
+            class="c16"
           >
             Awarded best broker 2019
           </span>

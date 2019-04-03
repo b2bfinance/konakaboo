@@ -23,7 +23,7 @@ export const ProductLogoContainer = styled.div`
   ${queries.desktop`
     border: 2px solid ${props => props.theme.productBorder};
     margin-bottom: -32px;
-    padding: 8px;
+    padding: 12px 8px;
     text-align: center;
   `};
 `;
@@ -35,6 +35,10 @@ export const ProductLogo = styled.img`
   ${queries.desktop`
     max-height: 75px;
   `};
+`;
+
+export const ProductHeading = styled(Typography)`
+  color: ${props => props.theme.productHeadingColor} !important;
 `;
 
 export const ProductLabels = styled(Grid)`
@@ -53,13 +57,15 @@ export default ({ logo, brand, highlighted, title, labels }) => (
         <Grid item xs={12}>
           <Grid container alignItems="center">
             <Grid item>
-              <Typography variant="headline">{brand}</Typography>
+              <ProductHeading variant="headline" component="p">
+                {brand}
+              </ProductHeading>
             </Grid>
             <Grid item>{highlighted && <HighlightedIcon />}</Grid>
           </Grid>
         </Grid>
         <Grid item xs={12}>
-          <Typography>{title}</Typography>
+          <ProductHeading>{title}</ProductHeading>
         </Grid>
       </Grid>
     </Grid>
