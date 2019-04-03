@@ -20,6 +20,6 @@ describe('HeadingRow', () => {
 
 describe('ProductHeading', () => {
   test('renders correctly', () => {
-    expect(render(<ProductHeading theme={stubData.theme} />)).toMatchSnapshot();
+    expect(render(<ProductHeading />)).toMatchSnapshot();
   });
 });
