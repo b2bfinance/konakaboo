@@ -198,11 +198,11 @@ exports[`Product renders correctly 1`] = `
             <div
               class="MuiGrid-item-2"
             >
-              <h1
+              <p
                 class="MuiTypography-root-98 MuiTypography-headline-103 c4"
               >
                 Landbay
-              </h1>
+              </p>
             </div>
             <div
               class="MuiGrid-item-2"
