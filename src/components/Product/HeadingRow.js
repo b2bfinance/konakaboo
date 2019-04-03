@@ -57,7 +57,9 @@ export default ({ logo, brand, highlighted, title, labels }) => (
         <Grid item xs={12}>
           <Grid container alignItems="center">
             <Grid item>
-              <ProductHeading variant="headline">{brand}</ProductHeading>
+              <ProductHeading variant="headline" component="p">
+                {brand}
+              </ProductHeading>
             </Grid>
             <Grid item>{highlighted && <HighlightedIcon />}</Grid>
           </Grid>
