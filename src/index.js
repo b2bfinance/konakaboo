@@ -7,14 +7,24 @@ import createStore from './store';
 import { ThemeProvider } from 'styled-components';
 import defaultTheme from './utils/theme';
 
-const store = createStore(window.PRODUCTS_EMBED_STATE || {});
-const theme = { ...defaultTheme, ...store.getState().theme };
+const products = window.PRODUCTS_EMBED_STATE || [];
 
-ReactDOM.render(
-  <Provider store={store}>
-    <ThemeProvider theme={theme}>
-      <App />
-    </ThemeProvider>
-  </Provider>,
-  document.getElementById('products-embed-container')
-);
+products.forEach((product, i) => {
+  try {
+    const store = createStore(product);
+    const theme = { ...defaultTheme, ...store.getState().theme };
+
+    ReactDOM.render(
+      <Provider store={store}>
+        <ThemeProvider theme={theme}>
+          <App />
+        </ThemeProvider>
+      </Provider>,
+      document.querySelector(product.config.selector)
+    );
+  } catch (e) {
+    throw new Error(
+      `Invalid product configuration in window.PRODUCTS_EMBED_STATE[${i}]`
+    );
+  }
+});

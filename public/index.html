@@ -1,72 +1,81 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
     <title>B2B Products Embed</title>
     <script>
-      window.PRODUCTS_EMBED_STATE = {
-        config: {
-          provider: "%REACT_APP_PROVIDER_URI%"
-        },
-        filters: {
-          chosen: {
-            0: '',
-            1: []
+      window.PRODUCTS_EMBED_STATE = [
+        {
+          config: {
+            selector: '#products-embed-container',
+            provider: '%REACT_APP_PROVIDER_URI%'
           },
-          available: [
-            {
-              title: "Maximum LTV",
-              key: "ltv",
-              multiChoice: false,
-              choices: [
-                {
-                  label: "60% LTV +",
-                  value: '60'
-                },
-                {
-                  label: "70% LTV +",
-                  value: '70'
-                },
-                {
-                  label: "80% LTV +",
-                  value: '80'
-                },
-                {
-                  label: "85% LTV +",
-                  value: '85'
-                },
-                {
-                  label: "90% LTV +",
-                  value: '90'
-                }
-              ]
+          filters: {
+            chosen: {
+              0: '',
+              1: []
             },
-            {
-              title: "Initial Rate Type",
-              key: "type",
-              multiChoice: true,
-              choices: [
-                {
-                  label: "Fixed",
-                  value: "FIXED"
-                },
-                {
-                  label: "Variable",
-                  value: "VARIABLE"
-                },
-                {
-                  label: "Tracker",
-                  value: "TRACKER"
-                }
-              ]
-            }
-          ]
+            available: [
+              {
+                title: 'Maximum LTV',
+                key: 'ltv',
+                multiChoice: false,
+                choices: [
+                  {
+                    label: '60% LTV +',
+                    value: '60'
+                  },
+                  {
+                    label: '70% LTV +',
+                    value: '70'
+                  },
+                  {
+                    label: '80% LTV +',
+                    value: '80'
+                  },
+                  {
+                    label: '85% LTV +',
+                    value: '85'
+                  },
+                  {
+                    label: '90% LTV +',
+                    value: '90'
+                  }
+                ]
+              },
+              {
+                title: 'Initial Rate Type',
+                key: 'type',
+                multiChoice: true,
+                choices: [
+                  {
+                    label: 'Fixed',
+                    value: 'FIXED'
+                  },
+                  {
+                    label: 'Variable',
+                    value: 'VARIABLE'
+                  },
+                  {
+                    label: 'Tracker',
+                    value: 'TRACKER'
+                  }
+                ]
+              }
+            ]
+          }
         }
-      };
+      ];
     </script>
   </head>
   <body>
-    <div id="products-embed-container" style="max-width: 1000px; margin: auto"></div>
+    <div
+      id="products-embed-container"
+      style="max-width: 1000px; margin: auto"
+    ></div>
   </body>
 </html>
