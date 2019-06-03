@@ -4,7 +4,7 @@ import Error from './Error';
 import Loading, { Mask } from './Loading';
 import Empty from './Empty';
 
-export default ({ error, hasFetched, isFetching, products }) => {
+export default ({ error, hasFetched, isFetching, cta, products }) => {
   if (error) {
     return (
       <Error message="We had problems retrieving products for you, retry or come back later." />
@@ -22,7 +22,7 @@ export default ({ error, hasFetched, isFetching, products }) => {
   return (
     <Loading loading={isFetching}>
       {products.map((product, i) => (
-        <Product key={i} {...product} />
+        <Product key={i} cta={cta} {...product} />
       ))}
     </Loading>
   );

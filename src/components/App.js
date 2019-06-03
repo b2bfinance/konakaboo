@@ -36,6 +36,7 @@ export class AppContainer extends Component {
       filtersAvailable,
       filterCount,
       products,
+      cta,
       hasFetched,
       isFetching,
       error,
@@ -58,6 +59,7 @@ export class AppContainer extends Component {
         <Grid>
           <Col phone="100">
             <ProductList
+              cta={cta}
               products={products}
               hasFetched={hasFetched}
               isFetching={isFetching}
@@ -77,7 +79,8 @@ export const mapDispatchToProps = {
   loadProducts
 };
 
-export const mapStateToProps = ({ filters, products }) => ({
+export const mapStateToProps = ({ config, filters, products }) => ({
+  cta: config.cta,
   filtersChosen: filters.chosen,
   filtersAvailable: filters.available,
   filterCount: filters.available.length,
