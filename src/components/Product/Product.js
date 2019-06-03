@@ -32,6 +32,7 @@ export const ProductDescription = styled(Typography)`
 `;
 
 export const Product = ({
+  cta,
   highlighted,
   labels,
   title,
@@ -84,7 +85,7 @@ export const Product = ({
                     : undefined
                 }
               >
-                Get Deal
+                {cta}
               </ApplyButton>
             </Grid>
           </Grid>

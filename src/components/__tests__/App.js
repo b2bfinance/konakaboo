@@ -29,6 +29,7 @@ describe('AppContainer', () => {
 
   test('mapStateToProps maps the state correctly', () => {
     const mappedState = mapStateToProps({
+      config: {},
       filters: { available: [] },
       products: {}
     });
@@ -40,5 +41,6 @@ describe('AppContainer', () => {
     expect(mappedState).toHaveProperty('hasFetched');
     expect(mappedState).toHaveProperty('products');
     expect(mappedState).toHaveProperty('error');
+    expect(mappedState).toHaveProperty('cta');
   });
 });

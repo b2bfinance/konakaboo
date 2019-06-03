@@ -346,9 +346,7 @@ exports[`Product renders correctly 1`] = `
           >
             <span
               class="MuiFab-label-149"
-            >
-              Get Deal
-            </span>
+            />
           </a>
         </div>
       </div>
