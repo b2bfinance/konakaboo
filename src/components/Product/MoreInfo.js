@@ -12,12 +12,12 @@ export const MoreInfoDrawer = styled(Drawer)`
 
 const useStyles = makeStyles({
   paper: {
-    maxWidth: '60%',
+    width: '60%',
     '@media(max-width: 1280px)': {
-      maxWidth: '70%'
+      width: '70%'
     },
     '@media(max-width: 960px)': {
-      maxWidth: '85%'
+      width: '85%'
     }
   }
 });
