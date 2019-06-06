@@ -121,6 +121,12 @@ exports[`List renders correctly with products 1`] = `
             "value": "£1,495",
           },
         ],
+        "Point List": Array [
+          Object {
+            "label": "",
+            "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          },
+        ],
         "Technical Points": Array [
           Object {
             "label": "Max LTV",
