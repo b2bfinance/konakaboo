@@ -1,11 +1,11 @@
-import React from 'react';
-import styled from 'styled-components';
 import Grid from '@material-ui/core/Grid';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
 import Typography from '@material-ui/core/Typography';
+import React from 'react';
+import styled from 'styled-components';
 
 export const Wrapper = styled(Grid)`
   padding: 16px;
@@ -39,12 +39,20 @@ export default ({ detailed, disclaimer }) => (
             <Typography variant="h6">{heading}</Typography>
             <Table padding="none">
               <TableBody>
-                {detailed[heading].map(detail => (
-                  <DetailRow key={detail.label}>
-                    <DetailCell variant="head">{detail.label}</DetailCell>
-                    <DetailCell align="right">{detail.value}</DetailCell>
-                  </DetailRow>
-                ))}
+                {detailed[heading].map(detail =>
+                  detail.label ? (
+                    <DetailRow key={detail.label}>
+                      <DetailCell variant="head">{detail.label}</DetailCell>
+                      <DetailCell align="right">{detail.value}</DetailCell>
+                    </DetailRow>
+                  ) : (
+                    <DetailRow key={detail.value}>
+                      <DetailCell>
+                        <Typography paragraph>{detail.value}</Typography>
+                      </DetailCell>
+                    </DetailRow>
+                  )
+                )}
               </TableBody>
             </Table>
           </Grid>
