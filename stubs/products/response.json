@@ -61,6 +61,12 @@
             "label": "Fees",
             "value": "£1,495"
           }
+        ],
+        "Point List": [
+          {
+            "label": "",
+            "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+          }
         ]
       },
       "feature_point": "Awarded best broker 2019",
