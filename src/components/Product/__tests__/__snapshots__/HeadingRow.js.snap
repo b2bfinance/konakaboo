@@ -2,10 +2,10 @@
 
 exports[`HeadingRow renders correctly with highlight 1`] = `
 .c6 {
-  border: 1px solid;
   border-radius: 1rem;
-  font-size: 80%;
   padding: 0.2rem 0.75rem;
+  background-color: #546e7a;
+  color: #eceff1;
 }
 
 .c5 {
@@ -136,12 +136,20 @@ exports[`HeadingRow renders correctly with highlight 1`] = `
         <div
           class="c6"
         >
-          foo
+          <span
+            class="MuiTypography-root-98 MuiTypography-caption-108 MuiTypography-colorInherit-127"
+          >
+            foo
+          </span>
         </div>
         <div
           class="c6"
         >
-          bar
+          <span
+            class="MuiTypography-root-98 MuiTypography-caption-108 MuiTypography-colorInherit-127"
+          >
+            bar
+          </span>
         </div>
       </div>
     </div>
@@ -151,10 +159,10 @@ exports[`HeadingRow renders correctly with highlight 1`] = `
 
 exports[`HeadingRow renders correctly without highlight 1`] = `
 .c6 {
-  border: 1px solid;
   border-radius: 1rem;
-  font-size: 80%;
   padding: 0.2rem 0.75rem;
+  background-color: #546e7a;
+  color: #eceff1;
 }
 
 .c5 {
@@ -285,12 +293,20 @@ exports[`HeadingRow renders correctly without highlight 1`] = `
         <div
           class="c6"
         >
-          foo
+          <span
+            class="MuiTypography-root-98 MuiTypography-caption-108 MuiTypography-colorInherit-127"
+          >
+            foo
+          </span>
         </div>
         <div
           class="c6"
         >
-          bar
+          <span
+            class="MuiTypography-root-98 MuiTypography-caption-108 MuiTypography-colorInherit-127"
+          >
+            bar
+          </span>
         </div>
       </div>
     </div>
