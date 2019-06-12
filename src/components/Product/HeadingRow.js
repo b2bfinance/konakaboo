@@ -42,7 +42,12 @@ export const ProductHeading = styled(Typography)`
 `;
 
 export const ProductLabels = styled(Grid)`
-  float: right;
+  margin-top: 0.5rem;
+
+  ${queries.desktop`
+    float: right;
+    max-height: 75px;
+  `};
 `;
 
 export default ({ logo, brand, highlighted, title, labels }) => (
