@@ -2,10 +2,10 @@
 
 exports[`Labels renders correctly 1`] = `
 .c1 {
-  border: 1px solid;
   border-radius: 1rem;
-  font-size: 80%;
   padding: 0.2rem 0.75rem;
+  background-color: #546e7a;
+  color: #eceff1;
 }
 
 .c0 {
@@ -42,12 +42,20 @@ exports[`Labels renders correctly 1`] = `
   <div
     class="c1"
   >
-    foo
+    <span
+      class="MuiTypography-root-1 MuiTypography-caption-11 MuiTypography-colorInherit-30"
+    >
+      foo
+    </span>
   </div>
   <div
     class="c1"
   >
-    bar
+    <span
+      class="MuiTypography-root-1 MuiTypography-caption-11 MuiTypography-colorInherit-30"
+    >
+      bar
+    </span>
   </div>
 </div>
 `;

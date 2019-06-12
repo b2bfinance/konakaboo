@@ -18,10 +18,10 @@ exports[`Product renders correctly 1`] = `
 }
 
 .c8 {
-  border: 1px solid;
   border-radius: 1rem;
-  font-size: 80%;
   padding: 0.2rem 0.75rem;
+  background-color: #546e7a;
+  color: #eceff1;
 }
 
 .c7 {
@@ -248,12 +248,20 @@ exports[`Product renders correctly 1`] = `
           <div
             class="c8"
           >
-            broker only
+            <span
+              class="MuiTypography-root-98 MuiTypography-caption-108 MuiTypography-colorInherit-127"
+            >
+              broker only
+            </span>
           </div>
           <div
             class="c8"
           >
-            consumer favourite
+            <span
+              class="MuiTypography-root-98 MuiTypography-caption-108 MuiTypography-colorInherit-127"
+            >
+              consumer favourite
+            </span>
           </div>
         </div>
       </div>

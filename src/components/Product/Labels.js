@@ -31,7 +31,7 @@ export const Wrapper = styled.div`
 export default ({ labels }) => (
   <Wrapper>
     {labels.map((label, i) => (
-      <Label key={i}>{label}</Label>
+      <Label key={i} label={label} />
     ))}
   </Wrapper>
 );
