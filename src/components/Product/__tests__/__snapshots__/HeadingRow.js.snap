@@ -5,7 +5,12 @@ exports[`HeadingRow renders correctly with highlight 1`] = `
   border-radius: 1rem;
   padding: 0.2rem 0.75rem;
   background-color: #546e7a;
+  margin-right: 0.25rem;
   color: #eceff1;
+}
+
+.c6:last-child {
+  margin-right: 0;
 }
 
 .c5 {
@@ -16,14 +21,6 @@ exports[`HeadingRow renders correctly with highlight 1`] = `
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-}
-
-.c5:last-child div {
-  margin-right: 0;
-}
-
-.c5 div {
-  margin: .5rem .5rem 0 0;
 }
 
 .c0 {
@@ -49,17 +46,7 @@ exports[`HeadingRow renders correctly with highlight 1`] = `
 }
 
 .c4 {
-  float: right;
-}
-
-@media (min-width:36em) {
-  .c5 {
-    margin-left: auto;
-  }
-
-  .c5 div {
-    margin: 0 .5rem 0 0;
-  }
+  margin-top: 0.5rem;
 }
 
 @media (min-width:62em) {
@@ -73,6 +60,13 @@ exports[`HeadingRow renders correctly with highlight 1`] = `
 
 @media (min-width:62em) {
   .c2 {
+    max-height: 75px;
+  }
+}
+
+@media (min-width:62em) {
+  .c4 {
+    float: right;
     max-height: 75px;
   }
 }
@@ -162,7 +156,12 @@ exports[`HeadingRow renders correctly without highlight 1`] = `
   border-radius: 1rem;
   padding: 0.2rem 0.75rem;
   background-color: #546e7a;
+  margin-right: 0.25rem;
   color: #eceff1;
+}
+
+.c6:last-child {
+  margin-right: 0;
 }
 
 .c5 {
@@ -173,14 +172,6 @@ exports[`HeadingRow renders correctly without highlight 1`] = `
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-}
-
-.c5:last-child div {
-  margin-right: 0;
-}
-
-.c5 div {
-  margin: .5rem .5rem 0 0;
 }
 
 .c0 {
@@ -206,17 +197,7 @@ exports[`HeadingRow renders correctly without highlight 1`] = `
 }
 
 .c4 {
-  float: right;
-}
-
-@media (min-width:36em) {
-  .c5 {
-    margin-left: auto;
-  }
-
-  .c5 div {
-    margin: 0 .5rem 0 0;
-  }
+  margin-top: 0.5rem;
 }
 
 @media (min-width:62em) {
@@ -230,6 +211,13 @@ exports[`HeadingRow renders correctly without highlight 1`] = `
 
 @media (min-width:62em) {
   .c2 {
+    max-height: 75px;
+  }
+}
+
+@media (min-width:62em) {
+  .c4 {
+    float: right;
     max-height: 75px;
   }
 }

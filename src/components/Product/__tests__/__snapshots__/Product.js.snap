@@ -21,7 +21,12 @@ exports[`Product renders correctly 1`] = `
   border-radius: 1rem;
   padding: 0.2rem 0.75rem;
   background-color: #546e7a;
+  margin-right: 0.25rem;
   color: #eceff1;
+}
+
+.c8:last-child {
+  margin-right: 0;
 }
 
 .c7 {
@@ -32,14 +37,6 @@ exports[`Product renders correctly 1`] = `
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-}
-
-.c7:last-child div {
-  margin-right: 0;
-}
-
-.c7 div {
-  margin: .5rem .5rem 0 0;
 }
 
 .c1 {
@@ -70,7 +67,7 @@ exports[`Product renders correctly 1`] = `
 }
 
 .c6 {
-  float: right;
+  margin-top: 0.5rem;
 }
 
 .c10 {
@@ -120,16 +117,6 @@ exports[`Product renders correctly 1`] = `
   width: 100%;
 }
 
-@media (min-width:36em) {
-  .c7 {
-    margin-left: auto;
-  }
-
-  .c7 div {
-    margin: 0 .5rem 0 0;
-  }
-}
-
 @media (min-width:62em) {
   .c2 {
     border: 2px solid #eceff1;
@@ -141,6 +128,13 @@ exports[`Product renders correctly 1`] = `
 
 @media (min-width:62em) {
   .c3 {
+    max-height: 75px;
+  }
+}
+
+@media (min-width:62em) {
+  .c6 {
+    float: right;
     max-height: 75px;
   }
 }

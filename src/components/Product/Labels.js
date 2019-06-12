@@ -6,26 +6,6 @@ import Label from '../Label';
 export const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-
-  &:last-child {
-    div {
-      margin-right: 0;
-    }
-  }
-
-  ${queries.phone`
-    div {
-      margin: .5rem .5rem 0 0;
-    }
-  `};
-
-  ${queries.tablet`
-    margin-left: auto;
-
-    div {
-      margin: 0 .5rem 0 0;
-    }
-  `};
 `;
 
 export default ({ labels }) => (
