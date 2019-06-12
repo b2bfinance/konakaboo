@@ -12,6 +12,11 @@ import Typography from '@material-ui/core/Typography';
 
 export const Wrapper = styled.div`
   margin-bottom: 56px;
+  ${props =>
+    props.faded &&
+    css`
+      opacity: 0.6;
+    `};
 `;
 
 export const ProductBody = styled(Grid)`
@@ -49,7 +54,7 @@ export const Product = ({
   const [withConfirmation, setWithConfirmation] = useState(false);
 
   return (
-    <Wrapper>
+    <Wrapper faded={meta.faded}>
       <HeadingRow
         logo={links.logo}
         brand={brand}
