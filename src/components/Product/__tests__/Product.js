@@ -8,15 +8,15 @@ import ApplyButton from '../ApplyButton';
 import Confirm from '../Confirm';
 
 describe('Wrapper', () => {
-  test('render correctly without highlight', () => {
+  test('render correctly without fade', () => {
     expect(
-      render(<Wrapper highlight={false} theme={stubData.theme} />)
+      render(<Wrapper faded={false} theme={stubData.theme} />)
     ).toMatchSnapshot();
   });
 
-  test('renders correctly with highlight', () => {
+  test('renders correctly with fade', () => {
     expect(
-      render(<Wrapper highlight={true} theme={stubData.theme} />)
+      render(<Wrapper faded={true} theme={stubData.theme} />)
     ).toMatchSnapshot();
   });
 });
