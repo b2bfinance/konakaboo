@@ -7,7 +7,11 @@ import createStore from './store';
 import { ThemeProvider } from 'styled-components';
 import defaultTheme from './utils/theme';
 
-const products = window.PRODUCTS_EMBED_STATE || [];
+let products = window.PRODUCTS_EMBED_STATE || [];
+
+if (!products.length) {
+  products = [products];
+}
 
 products.forEach((product, i) => {
   try {
@@ -20,7 +24,9 @@ products.forEach((product, i) => {
           <App />
         </ThemeProvider>
       </Provider>,
-      document.querySelector(product.config.selector)
+      document.querySelector(
+        product.config.selector || '#products-embed-container'
+      )
     );
   } catch (e) {
     throw new Error(
