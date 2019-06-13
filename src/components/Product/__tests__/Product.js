@@ -6,8 +6,15 @@ import MoreInfoButton from '../MoreInfoButton';
 import Product, { Wrapper } from '../Product';
 import ApplyButton from '../ApplyButton';
 import Confirm from '../Confirm';
+import { createMount, createRender } from '@material-ui/core/test-utils';
 
 describe('Wrapper', () => {
+  let render;
+
+  beforeEach(() => {
+    render = createRender();
+  });
+
   test('render correctly without fade', () => {
     expect(
       render(<Wrapper faded={false} theme={stubData.theme} />)
@@ -29,6 +36,8 @@ describe('Product', () => {
   );
 
   test('renders correctly', () => {
+    const render = createRender();
+
     expect(
       render(
         <ThemedProduct
@@ -40,6 +49,7 @@ describe('Product', () => {
   });
 
   test('clicking the apply button displays the confirmation dialog', () => {
+    const mount = createMount();
     const wrapper = mount(
       <ThemedProduct product={stubData.products.item} theme={stubData.theme} />
     );
@@ -52,6 +62,7 @@ describe('Product', () => {
   });
 
   test('clicking the more info button displays more information', () => {
+    const mount = createMount();
     const wrapper = mount(
       <ThemedProduct product={stubData.products.item} theme={stubData.theme} />
     );

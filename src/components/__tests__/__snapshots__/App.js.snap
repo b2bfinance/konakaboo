@@ -3,25 +3,25 @@
 exports[`AppContainer renders correctly with filters 1`] = `
 <styled.div>
   <List />
-  <WithStyles(Grid)>
+  <WithStyles(ForwardRef(Grid))>
     <styled.div
       phone="100"
     >
       <_default />
     </styled.div>
-  </WithStyles(Grid)>
+  </WithStyles(ForwardRef(Grid))>
 </styled.div>
 `;
 
 exports[`AppContainer renders correctly without filters 1`] = `
 <styled.div>
-  <WithStyles(Grid)>
+  <WithStyles(ForwardRef(Grid))>
     <styled.div
       phone="100"
     >
       <_default />
     </styled.div>
-  </WithStyles(Grid)>
+  </WithStyles(ForwardRef(Grid))>
 </styled.div>
 `;
 

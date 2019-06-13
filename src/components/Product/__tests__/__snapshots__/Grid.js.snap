@@ -68,16 +68,16 @@ Array [
 <div
     class="c0"
   >
-    <span
-      class="MuiTypography-root-1 MuiTypography-subtitle2-20"
+    <h6
+      class="MuiTypography-root MuiTypography-subtitle2"
     >
       foo
-    </span>
-    <span
-      class="MuiTypography-root-1 MuiTypography-h5-17 MuiTypography-colorTextSecondary-34"
+    </h6>
+    <h5
+      class="MuiTypography-root MuiTypography-h5 MuiTypography-colorTextSecondary"
     >
       bar
-    </span>
+    </h5>
   </div>,
   .c0 {
   min-height: 1px;
@@ -117,16 +117,16 @@ Array [
 <div
     class="c0"
   >
-    <span
-      class="MuiTypography-root-1 MuiTypography-subtitle2-20"
+    <h6
+      class="MuiTypography-root MuiTypography-subtitle2"
     >
       bar
-    </span>
-    <span
-      class="MuiTypography-root-1 MuiTypography-h5-17 MuiTypography-colorTextSecondary-34"
+    </h6>
+    <h5
+      class="MuiTypography-root MuiTypography-h5 MuiTypography-colorTextSecondary"
     >
       foo
-    </span>
+    </h5>
   </div>,
 ]
 `;

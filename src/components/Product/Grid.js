@@ -33,14 +33,14 @@ export const ProductMultiGrid = ({ columns, theme }) =>
       phone={100}
       tablet={80 / columns.length}
     >
-      <Typography variant="subtitle2" component="span">
-        {column.label}
-      </Typography>
-      <Typography variant="h5" component="span" color="textSecondary">
+      <Typography variant="subtitle2">{column.label}</Typography>
+      <Typography variant="h5" color="textSecondary">
         {column.value}
       </Typography>
       {column.subtext && (
-        <Typography variant="caption">{column.subtext}</Typography>
+        <Typography variant="caption" color="textSecondary">
+          {column.subtext}
+        </Typography>
       )}
     </Wrapper>
   ));

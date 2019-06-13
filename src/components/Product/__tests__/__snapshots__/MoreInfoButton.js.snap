@@ -7,7 +7,7 @@ exports[`MoreInfoButton renders correctly 1`] = `
 }
 
 <a
-  class="MuiTypography-root-6 MuiTypography-colorPrimary-36 MuiTypography-inline-41 MuiLink-root-1 MuiLink-underlineHover-3 c0"
+  class="MuiTypography-root MuiLink-root MuiLink-underlineHover c0 MuiTypography-colorPrimary"
 >
   more info button
 </a>

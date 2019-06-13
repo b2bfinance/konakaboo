@@ -2,13 +2,11 @@
 
 exports[`Chip renders correctly with no selection 1`] = `
 <div
-  class="MuiChip-root-1 "
-  role="button"
+  class="MuiChip-root "
   selection=""
-  tabindex="-1"
 >
   <span
-    class="MuiChip-label-20"
+    class="MuiChip-label"
   />
 </div>
 `;
@@ -20,13 +18,11 @@ exports[`Chip renders correctly with selection 1`] = `
 }
 
 <div
-  class="MuiChip-root-1 c0"
-  role="button"
+  class="MuiChip-root c0"
   selection="0,1"
-  tabindex="-1"
 >
   <span
-    class="MuiChip-label-20"
+    class="MuiChip-label"
   />
 </div>
 `;

@@ -56,29 +56,29 @@ exports[`MoreInfoHeader renders correctly 1`] = `
   class="c0"
 >
   <div
-    class="MuiGrid-container-1 MuiGrid-spacing-xs-32-26"
+    class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-4"
   >
     <div
-      class="MuiGrid-item-2 MuiGrid-grid-sm-9-52 MuiGrid-grid-md-9-66 MuiGrid-grid-xl-10-95"
+      class="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-9 MuiGrid-grid-md-9 MuiGrid-grid-xl-10"
       mt="1"
     >
       <div
-        class="MuiGrid-container-1"
+        class="MuiGrid-root MuiGrid-container"
       >
         <div
-          class="MuiGrid-item-2 MuiGrid-grid-xs-12-41"
+          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
         >
           <h4
-            class="MuiTypography-root-98 MuiTypography-h4-113"
+            class="MuiTypography-root MuiTypography-h4"
           >
             Landbay
           </h4>
         </div>
         <div
-          class="MuiGrid-item-2 MuiGrid-grid-xs-12-41"
+          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
         >
           <h6
-            class="MuiTypography-root-98 MuiTypography-subtitle1-116"
+            class="MuiTypography-root MuiTypography-subtitle1"
           >
             Landbay - Buy To Let Wizards
           </h6>
@@ -91,16 +91,16 @@ exports[`MoreInfoHeader renders correctly 1`] = `
   >
     <button
       aria-label="Close"
-      class="MuiButtonBase-root-140 MuiIconButton-root-134"
+      class="MuiButtonBase-root MuiIconButton-root"
       tabindex="0"
       type="button"
     >
       <span
-        class="MuiIconButton-label-139"
+        class="MuiIconButton-label"
       >
         <svg
           aria-hidden="true"
-          class="MuiSvgIcon-root-143"
+          class="MuiSvgIcon-root"
           focusable="false"
           role="presentation"
           viewBox="0 0 24 24"

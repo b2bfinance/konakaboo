@@ -6,48 +6,52 @@ exports[`Filter with multi choice renders correctly 1`] = `
   visible={true}
 >
   <styled.div>
-    <Styled(WithStyles(Typography))
-      variant="subheading"
+    <Styled(WithStyles(ForwardRef(Typography)))
+      variant="subtitle1"
     >
       Filter Title
-    </Styled(WithStyles(Typography))>
-    <WithStyles(IconButton)
+    </Styled(WithStyles(ForwardRef(Typography)))>
+    <WithStyles(ForwardRef(IconButton))
       aria-label="Close Filter Choices"
       onClick={[MockFunction]}
     >
-      <pure(CloseIcon) />
-    </WithStyles(IconButton)>
+      <CloseIcon />
+    </WithStyles(ForwardRef(IconButton))>
   </styled.div>
-  <WithStyles(List)>
-    <WithStyles(ListItem)
+  <WithStyles(ForwardRef(List))>
+    <WithStyles(ForwardRef(ListItem))
       button={true}
       key="TEST_CHOICE_1"
       onClick={[Function]}
     >
-      <WithStyles(Checkbox)
-        checked={true}
-        disableRipple={true}
-        tabIndex={-1}
-      />
-      <WithStyles(ListItemText)
+      <WithStyles(ForwardRef(ListItemIcon))>
+        <WithStyles(ForwardRef(Checkbox))
+          checked={true}
+          disableRipple={true}
+          tabIndex={-1}
+        />
+      </WithStyles(ForwardRef(ListItemIcon))>
+      <WithStyles(ForwardRef(ListItemText))
         primary="TEST_CHOICE_1_LABEL"
       />
-    </WithStyles(ListItem)>
-    <WithStyles(ListItem)
+    </WithStyles(ForwardRef(ListItem))>
+    <WithStyles(ForwardRef(ListItem))
       button={true}
       key="TEST_CHOICE_2"
       onClick={[Function]}
     >
-      <WithStyles(Checkbox)
-        checked={true}
-        disableRipple={true}
-        tabIndex={-1}
-      />
-      <WithStyles(ListItemText)
+      <WithStyles(ForwardRef(ListItemIcon))>
+        <WithStyles(ForwardRef(Checkbox))
+          checked={true}
+          disableRipple={true}
+          tabIndex={-1}
+        />
+      </WithStyles(ForwardRef(ListItemIcon))>
+      <WithStyles(ForwardRef(ListItemText))
         primary="TEST_CHOICE_2_LABEL"
       />
-    </WithStyles(ListItem)>
-  </WithStyles(List)>
+    </WithStyles(ForwardRef(ListItem))>
+  </WithStyles(ForwardRef(List))>
 </styled.div>
 `;
 
@@ -57,58 +61,58 @@ exports[`Filter with single choice renders correctly 1`] = `
   visible={true}
 >
   <styled.div>
-    <Styled(WithStyles(Typography))
-      variant="subheading"
+    <Styled(WithStyles(ForwardRef(Typography)))
+      variant="subtitle1"
     >
       Filter Title
-    </Styled(WithStyles(Typography))>
-    <WithStyles(IconButton)
+    </Styled(WithStyles(ForwardRef(Typography)))>
+    <WithStyles(ForwardRef(IconButton))
       aria-label="Close Filter Choices"
       onClick={[MockFunction]}
     >
-      <pure(CloseIcon) />
-    </WithStyles(IconButton)>
+      <CloseIcon />
+    </WithStyles(ForwardRef(IconButton))>
   </styled.div>
-  <WithStyles(List)>
-    <WithStyles(ListItem)
+  <WithStyles(ForwardRef(List))>
+    <WithStyles(ForwardRef(ListItem))
       button={true}
       key="TEST_CHOICE_1"
       onClick={[Function]}
     >
-      <WithStyles(Radio)
-        checked={true}
-        disableRipple={true}
-        tabIndex={-1}
-      />
-      <WithStyles(ListItemText)
+      <WithStyles(ForwardRef(ListItemIcon))>
+        <WithStyles(ForwardRef(Radio))
+          checked={true}
+          disableRipple={true}
+          tabIndex={-1}
+        />
+      </WithStyles(ForwardRef(ListItemIcon))>
+      <WithStyles(ForwardRef(ListItemText))
         primary="TEST_CHOICE_1_LABEL"
       />
-    </WithStyles(ListItem)>
-    <WithStyles(ListItem)
+    </WithStyles(ForwardRef(ListItem))>
+    <WithStyles(ForwardRef(ListItem))
       button={true}
       key="TEST_CHOICE_2"
       onClick={[Function]}
     >
-      <WithStyles(Radio)
-        checked={false}
-        disableRipple={true}
-        tabIndex={-1}
-      />
-      <WithStyles(ListItemText)
+      <WithStyles(ForwardRef(ListItemIcon))>
+        <WithStyles(ForwardRef(Radio))
+          checked={false}
+          disableRipple={true}
+          tabIndex={-1}
+        />
+      </WithStyles(ForwardRef(ListItemIcon))>
+      <WithStyles(ForwardRef(ListItemText))
         primary="TEST_CHOICE_2_LABEL"
       />
-    </WithStyles(ListItem)>
-  </WithStyles(List)>
+    </WithStyles(ForwardRef(ListItem))>
+  </WithStyles(ForwardRef(List))>
 </styled.div>
 `;
 
 exports[`Heading renders correctly 1`] = `
-.c0 {
-  color: !important;
-}
-
 <p
-  class="MuiTypography-root-1 MuiTypography-body1-10 c0"
+  class="MuiTypography-root MuiTypography-body1"
 />
 `;
 

@@ -1,21 +1,24 @@
-import React from 'react';
-import { mount, shallow } from 'enzyme';
-import List, { Wrapper } from '../List';
-import Filter from '../Filter';
-import Chip, { BaseChip } from '../Chip';
+import { createMount, createRender } from '@material-ui/core/test-utils';
 import Cancel from '@material-ui/icons/Cancel';
+import React from 'react';
+import Chip, { BaseChip } from '../Chip';
+import Filter from '../Filter';
+import List, { Wrapper } from '../List';
 
 test('Wrapper renders correctly', () => {
-  expect(shallow(<Wrapper />)).toMatchSnapshot();
+  const render = createRender();
+  expect(render(<Wrapper />)).toMatchSnapshot();
 });
 
 describe('List', () => {
   let handleResetFiltersForGroup;
   let handleSetChosenForGroup;
   let handleResetFilters;
+  let mount;
   let wrapper;
 
   beforeEach(() => {
+    mount = createMount();
     handleResetFiltersForGroup = jest.fn();
     handleSetChosenForGroup = jest.fn();
     handleResetFilters = jest.fn();
@@ -31,6 +34,10 @@ describe('List', () => {
         handleSetChosenForGroup={handleSetChosenForGroup}
       />
     );
+  });
+
+  afterEach(() => {
+    mount.cleanUp();
   });
 
   test('has the correct chip labels', () => {

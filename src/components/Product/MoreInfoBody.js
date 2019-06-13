@@ -32,7 +32,7 @@ export default ({ detailed, disclaimer }) => (
         <Typography>{disclaimer}</Typography>
       </Disclaimer>
     )}
-    <Grid container spacing={32}>
+    <Grid container spacing={4}>
       {detailed &&
         Object.keys(detailed).map(heading => (
           <Grid item xs={12} sm={6} lg={4} key={heading}>

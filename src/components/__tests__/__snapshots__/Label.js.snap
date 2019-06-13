@@ -17,7 +17,7 @@ exports[`<Label /> renders correctly with an unsupported color label 1`] = `
   class="c0"
 >
   <span
-    class="MuiTypography-root-1 MuiTypography-caption-11 MuiTypography-colorInherit-30"
+    class="MuiTypography-root MuiTypography-caption MuiTypography-colorInherit"
   >
     Label
   </span>
@@ -41,7 +41,7 @@ exports[`<Label /> renders correctly with blue color label 1`] = `
   class="c0"
 >
   <span
-    class="MuiTypography-root-1 MuiTypography-caption-11 MuiTypography-colorInherit-30"
+    class="MuiTypography-root MuiTypography-caption MuiTypography-colorInherit"
   >
     Label
   </span>
@@ -65,7 +65,7 @@ exports[`<Label /> renders correctly with blueGrey color label 1`] = `
   class="c0"
 >
   <span
-    class="MuiTypography-root-1 MuiTypography-caption-11 MuiTypography-colorInherit-30"
+    class="MuiTypography-root MuiTypography-caption MuiTypography-colorInherit"
   >
     Label
   </span>
@@ -89,7 +89,7 @@ exports[`<Label /> renders correctly with colored label 1`] = `
   class="c0"
 >
   <span
-    class="MuiTypography-root-1 MuiTypography-caption-11 MuiTypography-colorInherit-30"
+    class="MuiTypography-root MuiTypography-caption MuiTypography-colorInherit"
   >
     Label
   </span>
@@ -113,7 +113,7 @@ exports[`<Label /> renders correctly with default label 1`] = `
   class="c0"
 >
   <span
-    class="MuiTypography-root-1 MuiTypography-caption-11 MuiTypography-colorInherit-30"
+    class="MuiTypography-root MuiTypography-caption MuiTypography-colorInherit"
   >
     Label
   </span>
@@ -137,7 +137,7 @@ exports[`<Label /> renders correctly with orange color label 1`] = `
   class="c0"
 >
   <span
-    class="MuiTypography-root-1 MuiTypography-caption-11 MuiTypography-colorInherit-30"
+    class="MuiTypography-root MuiTypography-caption MuiTypography-colorInherit"
   >
     Label
   </span>
@@ -161,7 +161,7 @@ exports[`<Label /> renders correctly with red color label 1`] = `
   class="c0"
 >
   <span
-    class="MuiTypography-root-1 MuiTypography-caption-11 MuiTypography-colorInherit-30"
+    class="MuiTypography-root MuiTypography-caption MuiTypography-colorInherit"
   >
     Label
   </span>
@@ -185,7 +185,7 @@ exports[`<Label /> renders correctly with teal color label 1`] = `
   class="c0"
 >
   <span
-    class="MuiTypography-root-1 MuiTypography-caption-11 MuiTypography-colorInherit-30"
+    class="MuiTypography-root MuiTypography-caption MuiTypography-colorInherit"
   >
     Label
   </span>
@@ -209,7 +209,7 @@ exports[`<Label /> renders correctly with yellow color label 1`] = `
   class="c0"
 >
   <span
-    class="MuiTypography-root-1 MuiTypography-caption-11 MuiTypography-colorInherit-30"
+    class="MuiTypography-root MuiTypography-caption MuiTypography-colorInherit"
   >
     Label
   </span>

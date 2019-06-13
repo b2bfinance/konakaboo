@@ -1,33 +1,37 @@
-import React from 'react';
-import { render, mount } from 'enzyme';
-import MoreInfoHeader, {
-  Wrapper,
-  LogoWrapper,
-  Logo,
-  CloseButton
-} from '../MoreInfoHeader';
 import IconButton from '@material-ui/core/IconButton';
+import { createMount, createRender } from '@material-ui/core/test-utils';
+import React from 'react';
+import MoreInfoHeader, {
+  CloseButton,
+  Logo,
+  LogoWrapper,
+  Wrapper
+} from '../MoreInfoHeader';
 
 describe('Wrapper', () => {
   test('renders correctly', () => {
+    const render = createRender();
     expect(render(<Wrapper />)).toMatchSnapshot();
   });
 });
 
 describe('LogoWrapper', () => {
   test('renders correctly', () => {
+    const render = createRender();
     expect(render(<LogoWrapper />)).toMatchSnapshot();
   });
 });
 
 describe('Logo', () => {
   test('renders correctly', () => {
+    const render = createRender();
     expect(render(<Logo />)).toMatchSnapshot();
   });
 });
 
 describe('CloseButton', () => {
   test('renders correctly', () => {
+    const render = createRender();
     expect(render(<CloseButton />)).toMatchSnapshot();
   });
 });
@@ -38,6 +42,7 @@ describe('MoreInfoHeader', () => {
   let onClose;
 
   beforeAll(() => {
+    const mount = createMount();
     const product = stubData.products.item;
 
     onClose = jest.fn();
@@ -55,10 +60,11 @@ describe('MoreInfoHeader', () => {
   });
 
   afterAll(() => {
-    wrapper.unmount();
+    wrapper.cleanUp();
   });
 
   test('renders correctly', () => {
+    const render = createRender();
     expect(render(Component)).toMatchSnapshot();
   });
 

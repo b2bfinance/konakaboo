@@ -32,7 +32,7 @@ export const CloseButton = styled.div`
 
 export default ({ title, brand, logo, onClose }) => (
   <Wrapper>
-    <Grid container spacing={32}>
+    <Grid container spacing={4}>
       <Hidden xsDown>
         <Grid item sm={3} md={3} xl={2}>
           <LogoWrapper>

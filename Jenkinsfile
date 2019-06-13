@@ -12,7 +12,7 @@ pipeline {
                 CODECOV_TOKEN="7e91e7ca-1bad-4783-89fb-8fee7d975e23"
             }
             steps {
-                sh 'docker run --rm -v $(pwd):/app --workdir /app node:11 yarn coverage'
+                sh 'docker run --rm -v $(pwd):/app --workdir /app -e CI=true node:11 yarn coverage'
 
                 step([
                     $class: 'CloverPublisher',
@@ -36,8 +36,8 @@ pipeline {
             }
             steps {
                 nvm(nvmInstallURL: 'https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh', nvmIoJsOrgMirror: 'https://iojs.org/dist', nvmNodeJsOrgMirror: 'https://nodejs.org/dist', version: 'v11.6') {
-                    sh 'NODE_ENV=production npm run-script build'
-                    sh 'npm run push'
+                    sh 'NODE_ENV=production yarn build'
+                    sh 'yarn push'
                 }
             }
         }
