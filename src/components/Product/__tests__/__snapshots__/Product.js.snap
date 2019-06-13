@@ -63,7 +63,7 @@ exports[`Product renders correctly 1`] = `
 }
 
 .c4 {
-  color: inherit !important;
+  color: inherit;
 }
 
 .c6 {
@@ -162,10 +162,10 @@ exports[`Product renders correctly 1`] = `
   class="c0"
 >
   <div
-    class="MuiGrid-container-1 c1"
+    class="MuiGrid-root c1 MuiGrid-container"
   >
     <div
-      class="MuiGrid-item-2 MuiGrid-grid-xs-12-41 MuiGrid-grid-md-2-59"
+      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-2"
     >
       <div
         class="c2"
@@ -178,32 +178,32 @@ exports[`Product renders correctly 1`] = `
       </div>
     </div>
     <div
-      class="MuiGrid-item-2 MuiGrid-grid-xs-12-41 MuiGrid-grid-md-7-64"
+      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-7"
     >
       <div
-        class="MuiGrid-container-1"
+        class="MuiGrid-root MuiTypography-root MuiTypography-body1 MuiTypography-colorTextPrimary MuiGrid-container"
       >
         <div
-          class="MuiGrid-item-2 MuiGrid-grid-xs-12-41"
+          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
         >
           <div
-            class="MuiGrid-container-1 MuiGrid-align-items-xs-center-9"
+            class="MuiGrid-root MuiGrid-container MuiGrid-align-items-xs-center"
           >
             <div
-              class="MuiGrid-item-2"
+              class="MuiGrid-root MuiGrid-item"
             >
               <p
-                class="MuiTypography-root-98 MuiTypography-headline-103 c4"
+                class="MuiTypography-root c4 MuiTypography-h5"
               >
                 Landbay
               </p>
             </div>
             <div
-              class="MuiGrid-item-2"
+              class="MuiGrid-root MuiGrid-item"
             >
               <svg
                 aria-hidden="true"
-                class="MuiSvgIcon-root-134 c5"
+                class="MuiSvgIcon-root c5"
                 focusable="false"
                 role="presentation"
                 viewBox="0 0 24 24"
@@ -220,10 +220,10 @@ exports[`Product renders correctly 1`] = `
           </div>
         </div>
         <div
-          class="MuiGrid-item-2 MuiGrid-grid-xs-12-41"
+          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
         >
           <p
-            class="MuiTypography-root-98 MuiTypography-body1-107 c4"
+            class="MuiTypography-root c4 MuiTypography-body1"
           >
             Landbay - Buy To Let Wizards
           </p>
@@ -231,10 +231,10 @@ exports[`Product renders correctly 1`] = `
       </div>
     </div>
     <div
-      class="MuiGrid-item-2 MuiGrid-grid-xs-12-41 MuiGrid-grid-md-3-60"
+      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-3"
     >
       <div
-        class="c6"
+        class="MuiGrid-root c6"
       >
         <div
           class="c7"
@@ -243,7 +243,7 @@ exports[`Product renders correctly 1`] = `
             class="c8"
           >
             <span
-              class="MuiTypography-root-98 MuiTypography-caption-108 MuiTypography-colorInherit-127"
+              class="MuiTypography-root MuiTypography-caption MuiTypography-colorInherit"
             >
               broker only
             </span>
@@ -252,7 +252,7 @@ exports[`Product renders correctly 1`] = `
             class="c8"
           >
             <span
-              class="MuiTypography-root-98 MuiTypography-caption-108 MuiTypography-colorInherit-127"
+              class="MuiTypography-root MuiTypography-caption MuiTypography-colorInherit"
             >
               consumer favourite
             </span>
@@ -262,84 +262,85 @@ exports[`Product renders correctly 1`] = `
     </div>
   </div>
   <div
-    class="MuiGrid-container-1 c9"
+    class="MuiGrid-root c9 MuiGrid-container"
   >
     <div
       class="c10"
     >
-      <span
-        class="MuiTypography-root-98 MuiTypography-subtitle2-117"
+      <h6
+        class="MuiTypography-root MuiTypography-subtitle2"
       >
         Max LTV
-      </span>
-      <span
-        class="MuiTypography-root-98 MuiTypography-h5-114 MuiTypography-colorTextSecondary-131"
+      </h6>
+      <h5
+        class="MuiTypography-root MuiTypography-h5 MuiTypography-colorTextSecondary"
       >
         85%
-      </span>
+      </h5>
     </div>
     <div
       class="c10"
     >
-      <span
-        class="MuiTypography-root-98 MuiTypography-subtitle2-117"
+      <h6
+        class="MuiTypography-root MuiTypography-subtitle2"
       >
         Initial Rate
-      </span>
-      <span
-        class="MuiTypography-root-98 MuiTypography-h5-114 MuiTypography-colorTextSecondary-131"
+      </h6>
+      <h5
+        class="MuiTypography-root MuiTypography-h5 MuiTypography-colorTextSecondary"
       >
         1.49%
-      </span>
+      </h5>
     </div>
     <div
       class="c10"
     >
-      <span
-        class="MuiTypography-root-98 MuiTypography-subtitle2-117"
+      <h6
+        class="MuiTypography-root MuiTypography-subtitle2"
       >
         Subsequent Rate
-      </span>
-      <span
-        class="MuiTypography-root-98 MuiTypography-h5-114 MuiTypography-colorTextSecondary-131"
+      </h6>
+      <h5
+        class="MuiTypography-root MuiTypography-h5 MuiTypography-colorTextSecondary"
       >
         2.75%
-      </span>
+      </h5>
     </div>
     <div
       class="c10"
     >
-      <span
-        class="MuiTypography-root-98 MuiTypography-subtitle2-117"
+      <h6
+        class="MuiTypography-root MuiTypography-subtitle2"
       >
         Fees
-      </span>
-      <span
-        class="MuiTypography-root-98 MuiTypography-h5-114 MuiTypography-colorTextSecondary-131"
+      </h6>
+      <h5
+        class="MuiTypography-root MuiTypography-h5 MuiTypography-colorTextSecondary"
       >
         £1,495
-      </span>
+      </h5>
     </div>
     <div
       class="c10"
     >
       <div
-        class="MuiGrid-container-1 MuiGrid-align-content-xs-center-13"
+        class="MuiGrid-root MuiGrid-container MuiGrid-align-content-xs-center"
       >
         <div
-          class="MuiGrid-item-2 MuiGrid-grid-xs-12-41"
+          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
         >
           <button
-            class="MuiTypography-root-98 MuiTypography-colorPrimary-128 MuiTypography-inline-133 MuiLink-root-143 MuiLink-button-147 MuiLink-underlineHover-145 c11"
+            class="MuiTypography-root MuiLink-root MuiLink-underlineHover c11 MuiLink-button MuiTypography-colorPrimary"
           >
             more details
           </button>
         </div>
         <div
-          class="MuiGrid-item-2 MuiGrid-grid-xs-12-41"
+          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
         >
           <a
-            class="MuiButtonBase-root-158 MuiFab-root-148 MuiFab-extended-152 MuiFab-primary-150 MuiFab-sizeMedium-157 c12"
+            aria-disabled="false"
+            class="MuiButtonBase-root MuiFab-root c12 MuiFab-extended MuiFab-primary MuiFab-sizeMedium"
             href="https://b2bfinance.com/enquire/buy-to-let"
             rel="noopener"
             role="button"
@@ -347,29 +348,31 @@ exports[`Product renders correctly 1`] = `
             target="_blank"
           >
             <span
-              class="MuiFab-label-149"
-            />
+              class="MuiFab-label"
+            >
+              Get Deal
+            </span>
           </a>
         </div>
       </div>
     </div>
     <p
-      class="MuiTypography-root-98 MuiTypography-body2-106 c13"
+      class="MuiTypography-root c13 MuiTypography-body2"
     >
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean bibendum facilisis condimentum. Donec laoreet porttitor condimentum. Nulla luctus efficitur magna, eget rhoncus metus placerat sed.
     </p>
     <div
-      class="MuiGrid-container-1 MuiGrid-align-items-xs-center-9 c14"
+      class="MuiGrid-root c14 MuiGrid-container MuiGrid-align-items-xs-center"
     >
       <div
-        class="MuiGrid-item-2"
+        class="MuiGrid-root MuiGrid-item"
       >
         <span
           class="c15"
         >
           <svg
             aria-hidden="true"
-            class="MuiSvgIcon-root-134 MuiSvgIcon-fontSizeInherit-140"
+            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit"
             focusable="false"
             role="presentation"
             viewBox="0 0 24 24"
@@ -378,19 +381,17 @@ exports[`Product renders correctly 1`] = `
               d="M0 0h24v24H0V0z"
               fill="none"
             />
-            <g>
-              <path
-                d="M12 7.13l.97 2.29.47 1.11 1.2.1 2.47.21-1.88 1.63-.91.79.27 1.18.56 2.41-2.12-1.28-1.03-.64-1.03.62-2.12 1.28.56-2.41.27-1.18-.91-.79-1.88-1.63 2.47-.21 1.2-.1.47-1.11.97-2.27M12 2L9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2z"
-              />
-            </g>
+            <path
+              d="M12 7.13l.97 2.29.47 1.11 1.2.1 2.47.21-1.88 1.63-.91.79.27 1.18.56 2.41-2.12-1.28-1.03-.64-1.03.62-2.12 1.28.56-2.41.27-1.18-.91-.79-1.88-1.63 2.47-.21 1.2-.1.47-1.11.97-2.27M12 2L9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2z"
+            />
           </svg>
         </span>
       </div>
       <div
-        class="MuiGrid-item-2"
+        class="MuiGrid-root MuiGrid-item"
       >
         <h6
-          class="MuiTypography-root-98 MuiTypography-subtitle1-116"
+          class="MuiTypography-root MuiTypography-subtitle1"
         >
           <span
             class="c16"

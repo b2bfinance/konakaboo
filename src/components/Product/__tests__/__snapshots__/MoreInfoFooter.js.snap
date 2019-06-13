@@ -20,22 +20,22 @@ exports[`MoreInfoFooter renders correctly 1`] = `
 }
 
 <div
-  class="MuiGrid-container-1 MuiGrid-align-items-xs-center-9 MuiGrid-justify-xs-space-between-20 c0"
+  class="MuiGrid-root c0 MuiGrid-container MuiGrid-align-items-xs-center MuiGrid-justify-xs-space-between"
 >
   <div
-    class="MuiGrid-item-2 MuiGrid-grid-xs-5-34 MuiGrid-grid-sm-7-50 MuiGrid-grid-lg-8-79"
+    class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-5 MuiGrid-grid-sm-7 MuiGrid-grid-lg-8"
   >
     <button
-      class="MuiButtonBase-root-124 MuiButton-root-98 MuiButton-text-100 MuiButton-flat-103 MuiButton-sizeSmall-121"
+      class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-sizeSmall"
       tabindex="0"
       type="button"
     >
       <span
-        class="MuiButton-label-99"
+        class="MuiButton-label"
       >
         <svg
           aria-hidden="true"
-          class="MuiSvgIcon-root-127 MuiSvgIcon-fontSizeSmall-134"
+          class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
           focusable="false"
           role="presentation"
           viewBox="0 0 24 24"
@@ -53,16 +53,17 @@ exports[`MoreInfoFooter renders correctly 1`] = `
     </button>
   </div>
   <div
-    class="MuiGrid-item-2 MuiGrid-grid-xs-7-36 MuiGrid-grid-sm-5-48 MuiGrid-grid-lg-4-75"
+    class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-7 MuiGrid-grid-sm-5 MuiGrid-grid-lg-4"
   >
     <a
-      class="MuiButtonBase-root-124 MuiFab-root-136 MuiFab-extended-140 MuiFab-primary-138 c1"
+      aria-disabled="false"
+      class="MuiButtonBase-root MuiFab-root c1 MuiFab-extended MuiFab-primary"
       href="https://b2bfinance.com/enquire/buy-to-let"
       role="button"
       tabindex="0"
     >
       <span
-        class="MuiFab-label-137"
+        class="MuiFab-label"
       >
         Continue
       </span>
@@ -80,6 +81,6 @@ exports[`Wrapper renders correctly 1`] = `
 }
 
 <div
-  class="c0"
+  class="MuiGrid-root c0"
 />
 `;

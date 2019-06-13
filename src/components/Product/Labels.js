@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { queries } from '../../utils/media';
 import Label from '../Label';
 
 export const Wrapper = styled.div`

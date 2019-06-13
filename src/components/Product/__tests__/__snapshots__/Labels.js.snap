@@ -30,7 +30,7 @@ exports[`Labels renders correctly 1`] = `
     class="c1"
   >
     <span
-      class="MuiTypography-root-1 MuiTypography-caption-11 MuiTypography-colorInherit-30"
+      class="MuiTypography-root MuiTypography-caption MuiTypography-colorInherit"
     >
       foo
     </span>
@@ -39,7 +39,7 @@ exports[`Labels renders correctly 1`] = `
     class="c1"
   >
     <span
-      class="MuiTypography-root-1 MuiTypography-caption-11 MuiTypography-colorInherit-30"
+      class="MuiTypography-root MuiTypography-caption MuiTypography-colorInherit"
     >
       bar
     </span>

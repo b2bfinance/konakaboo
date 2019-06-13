@@ -13,13 +13,13 @@ exports[`ApplyButton renders correctly 1`] = `
 }
 
 <button
-  class="MuiButtonBase-root-11 MuiFab-root-1 c0"
+  class="MuiButtonBase-root MuiFab-root c0"
   tabindex="0"
   theme="[object Object]"
   type="button"
 >
   <span
-    class="MuiFab-label-2"
+    class="MuiFab-label"
   >
     apply
   </span>

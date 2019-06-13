@@ -1,16 +1,17 @@
-import React from 'react';
-import styled, { css } from 'styled-components';
-import { queries } from '../../utils/media';
-import { getChosenWithModification } from '../../utils/filter';
+import Checkbox from '@material-ui/core/Checkbox';
+import IconButton from '@material-ui/core/IconButton';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import IconButton from '@material-ui/core/IconButton';
-import Checkbox from '@material-ui/core/Checkbox';
 import Radio from '@material-ui/core/Radio';
+import Typography from '@material-ui/core/Typography';
 import Close from '@material-ui/icons/Close';
+import React from 'react';
+import styled, { css } from 'styled-components';
+import { getChosenWithModification } from '../../utils/filter';
+import { queries } from '../../utils/media';
 import Header from './Header';
-import { Typography } from '@material-ui/core';
 
 export const Wrapper = styled.div`
   background-color: #fff;
@@ -52,7 +53,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Heading = styled(Typography)`
-  color: ${props => props.theme.filterHeaderColor} !important;
+  color: ${props => props.theme.filterHeaderColor};
 `;
 
 export function handleMouseDown(e) {
@@ -71,7 +72,7 @@ export default ({
 }) => (
   <Wrapper visible={visible} onMouseDown={handleMouseDown}>
     <Header>
-      <Heading variant="subheading">{title}</Heading>
+      <Heading variant="subtitle1">{title}</Heading>
       <IconButton onClick={handleClose} aria-label="Close Filter Choices">
         <Close />
       </IconButton>
@@ -88,19 +89,21 @@ export default ({
             )
           }
         >
-          {multi ? (
-            <Checkbox
-              checked={chosen.indexOf(choice.value) !== -1}
-              tabIndex={-1}
-              disableRipple
-            />
-          ) : (
-            <Radio
-              checked={chosen === choice.value}
-              tabIndex={-1}
-              disableRipple
-            />
-          )}
+          <ListItemIcon>
+            {multi ? (
+              <Checkbox
+                checked={chosen.indexOf(choice.value) !== -1}
+                tabIndex={-1}
+                disableRipple
+              />
+            ) : (
+              <Radio
+                checked={chosen === choice.value}
+                tabIndex={-1}
+                disableRipple
+              />
+            )}
+          </ListItemIcon>
           <ListItemText primary={choice.label} />
         </ListItem>
       ))}

@@ -38,7 +38,7 @@ export const ProductLogo = styled.img`
 `;
 
 export const ProductHeading = styled(Typography)`
-  color: ${props => props.theme.productHeadingColor} !important;
+  color: ${props => props.theme.productHeadingColor};
 `;
 
 export const ProductLabels = styled(Grid)`
@@ -58,11 +58,11 @@ export default ({ logo, brand, highlighted, title, labels }) => (
       </ProductLogoContainer>
     </Grid>
     <Grid item xs={12} md={7}>
-      <Grid container>
+      <Typography color="textPrimary" component={Grid} container>
         <Grid item xs={12}>
           <Grid container alignItems="center">
             <Grid item>
-              <ProductHeading variant="headline" component="p">
+              <ProductHeading variant="h5" component="p">
                 {brand}
               </ProductHeading>
             </Grid>
@@ -72,7 +72,7 @@ export default ({ logo, brand, highlighted, title, labels }) => (
         <Grid item xs={12}>
           <ProductHeading>{title}</ProductHeading>
         </Grid>
-      </Grid>
+      </Typography>
     </Grid>
     <Grid item xs={12} md={3}>
       {labels && labels.length > 0 && (

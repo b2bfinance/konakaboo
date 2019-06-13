@@ -37,7 +37,7 @@ export const ProductDescription = styled(Typography)`
 `;
 
 export const Product = ({
-  cta,
+  cta = 'Get Deal',
   highlighted,
   labels,
   title,
