@@ -9,11 +9,10 @@ pipeline {
         }
         stage('Tests') {
             environment {
-                CI="true"
                 CODECOV_TOKEN="7e91e7ca-1bad-4783-89fb-8fee7d975e23"
             }
             steps {
-                sh 'docker run --rm -v $(pwd):/app --workdir /app node:11 yarn coverage'
+                sh 'docker run --rm -v $(pwd):/app --workdir /app -e CI=true node:11 yarn coverage'
 
                 step([
                     $class: 'CloverPublisher',
