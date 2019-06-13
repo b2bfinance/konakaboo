@@ -36,8 +36,8 @@ pipeline {
             }
             steps {
                 nvm(nvmInstallURL: 'https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh', nvmIoJsOrgMirror: 'https://iojs.org/dist', nvmNodeJsOrgMirror: 'https://nodejs.org/dist', version: 'v11.6') {
-                    sh 'NODE_ENV=production yarn build'
-                    sh 'yarn push'
+                    sh 'NODE_ENV=production npm run build'
+                    sh 'npm run push'
                 }
             }
         }
