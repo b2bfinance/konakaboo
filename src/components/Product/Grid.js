@@ -10,9 +10,8 @@ export const Wrapper = styled(Col)`
   text-align: center;
 
   ${queries.tablet`
-    margin-top: 16px;
-    margin-bottom: 16px;
-    padding: 8px;
+    margin: 8px 0;
+    padding: 8px 16px;
     border-top: 0;
     border-left: 2px solid ${props => props.theme.productBorder};
   `};

@@ -6,10 +6,7 @@ import { Typography } from '@material-ui/core';
 import Labels from './Labels';
 import { queries } from '../../utils/media';
 
-export const Wrapper = styled(Grid)`
-  align-items: center;
-  padding: 16px;
-`;
+export const Wrapper = styled(Grid)``;
 
 export const HighlightedIcon = styled(WhatsHotICon)`
   margin-left: 0.25rem;
@@ -18,23 +15,23 @@ export const HighlightedIcon = styled(WhatsHotICon)`
 
 export const ProductLogoContainer = styled.div`
   background-color: white;
-  margin-right: 16px;
 
   ${queries.desktop`
+    display: flex;
+    margin-right: 16px;
+    margin-left: 12px;
     border: 2px solid ${props => props.theme.productBorder};
-    margin-bottom: -32px;
-    padding: 12px 8px;
+    margin-bottom: -8px;
+    padding: 4px;
     text-align: center;
+    height: 75px;
   `};
 `;
 
 export const ProductLogo = styled.img`
   max-width: 100%;
-  max-height: 125px;
-
-  ${queries.desktop`
-    max-height: 75px;
-  `};
+  max-height: 120px;
+  margin: auto;
 `;
 
 export const ProductHeading = styled(Typography)`
@@ -42,11 +39,10 @@ export const ProductHeading = styled(Typography)`
 `;
 
 export const ProductLabels = styled(Grid)`
-  margin-top: 0.5rem;
-
   ${queries.desktop`
-    float: right;
-    max-height: 75px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
   `};
 `;
 
@@ -74,12 +70,10 @@ export default ({ logo, brand, highlighted, title, labels }) => (
         </Grid>
       </Typography>
     </Grid>
-    <Grid item xs={12} md={3}>
-      {labels && labels.length > 0 && (
-        <ProductLabels>
-          <Labels labels={labels} />
-        </ProductLabels>
-      )}
-    </Grid>
+    {labels && labels.length > 0 && (
+      <ProductLabels item xs={12} md={3}>
+        <Labels labels={labels} />
+      </ProductLabels>
+    )}
   </Wrapper>
 );
