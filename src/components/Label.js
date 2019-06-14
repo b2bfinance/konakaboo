@@ -24,7 +24,7 @@ export const Label = styled.div`
   border-radius: 1rem;
   padding: 0.2rem 0.75rem;
   background-color: ${props => props.colorGroup[600]};
-  margin-right: 0.25rem;
+  margin-right: 0.5rem;
   color: ${props =>
     getContrastRatio(props.colorGroup[600], props.colorGroup[50]) >= 3
       ? props.colorGroup[50]

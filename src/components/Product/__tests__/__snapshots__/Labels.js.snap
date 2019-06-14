@@ -5,7 +5,7 @@ exports[`Labels renders correctly 1`] = `
   border-radius: 1rem;
   padding: 0.2rem 0.75rem;
   background-color: #546e7a;
-  margin-right: 0.25rem;
+  margin-right: 0.5rem;
   color: #eceff1;
 }
 
@@ -21,6 +21,14 @@ exports[`Labels renders correctly 1`] = `
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+@media (min-width:62em) {
+  .c0 {
+    margin-bottom: 0;
+  }
 }
 
 <div
