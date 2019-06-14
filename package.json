@@ -1,6 +1,6 @@
 {
   "name": "b2b-products-embed",
-  "version": "4.3.2",
+  "version": "4.4.0",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.1.1",
@@ -24,13 +24,14 @@
     "styled-components": "^4.3.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "REACT_APP_PROVIDER_URI=http://localhost:4000 react-scripts start",
     "build": "GENERATE_SOURCEMAP=false react-scripts build",
     "test": "react-scripts test --env jsdom",
     "coverage": "npm test -- --coverage",
     "eject": "react-scripts eject",
     "tidy": "prettier --config .prettierrc.json --write ./src/**/*.{js,jsx}",
-    "push": "./scripts/push.js"
+    "push": "./scripts/push.js",
+    "stub": "node ./stubs/products/index.js"
   },
   "devDependencies": {
     "@google-cloud/storage": "^1.6.0",
