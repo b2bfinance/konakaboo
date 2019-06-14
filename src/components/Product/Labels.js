@@ -1,10 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
 import Label from '../Label';
+import { queries } from '../../utils/media';
 
 export const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
+  line-height: 1;
+  margin-bottom: 8px;
+
+  ${queries.desktop`
+    margin-bottom: 0;
+  `}
 `;
 
 export default ({ labels }) => (
