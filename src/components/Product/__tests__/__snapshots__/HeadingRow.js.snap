@@ -25,10 +25,6 @@ exports[`HeadingRow renders correctly with highlight 1`] = `
   margin-bottom: 8px;
 }
 
-.c0 {
-  background-color: white;
-}
-
 .c1 {
   max-width: 100%;
   max-height: 120px;
@@ -43,15 +39,16 @@ exports[`HeadingRow renders correctly with highlight 1`] = `
 
 @media (min-width:62em) {
   .c0 {
+    background-color: white;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
+    padding: 4px;
     margin-right: 16px;
     margin-left: 12px;
     border: 2px solid;
     margin-bottom: -8px;
-    padding: 4px;
     text-align: center;
     height: 75px;
   }
@@ -175,10 +172,6 @@ exports[`HeadingRow renders correctly without highlight 1`] = `
   margin-bottom: 8px;
 }
 
-.c0 {
-  background-color: white;
-}
-
 .c1 {
   max-width: 100%;
   max-height: 120px;
@@ -193,15 +186,16 @@ exports[`HeadingRow renders correctly without highlight 1`] = `
 
 @media (min-width:62em) {
   .c0 {
+    background-color: white;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
+    padding: 4px;
     margin-right: 16px;
     margin-left: 12px;
     border: 2px solid;
     margin-bottom: -8px;
-    padding: 4px;
     text-align: center;
     height: 75px;
   }
