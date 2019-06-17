@@ -6,23 +6,20 @@ import { Typography } from '@material-ui/core';
 import Labels from './Labels';
 import { queries } from '../../utils/media';
 
-export const Wrapper = styled(Grid)``;
-
 export const HighlightedIcon = styled(WhatsHotICon)`
   margin-left: 0.25rem;
   color: ${props => props.theme.productHighlightColor};
 `;
 
 export const ProductLogoContainer = styled.div`
-  background-color: white;
-
   ${queries.desktop`
+    background-color: white;
     display: flex;
+    padding: 4px;
     margin-right: 16px;
     margin-left: 12px;
     border: 2px solid ${props => props.theme.productBorder};
     margin-bottom: -8px;
-    padding: 4px;
     text-align: center;
     height: 75px;
   `};
@@ -47,7 +44,7 @@ export const ProductLabels = styled(Grid)`
 `;
 
 export default ({ logo, brand, highlighted, title, labels }) => (
-  <Wrapper container>
+  <Grid container>
     <Grid item xs={12} md={2}>
       <ProductLogoContainer>
         <ProductLogo src={logo} alt={brand} />
@@ -75,5 +72,5 @@ export default ({ logo, brand, highlighted, title, labels }) => (
         <Labels labels={labels} />
       </ProductLabels>
     )}
-  </Wrapper>
+  </Grid>
 );
