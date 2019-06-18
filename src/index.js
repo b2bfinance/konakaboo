@@ -23,7 +23,6 @@ productsConfiguration.forEach((configuration, i) => {
       document.querySelector(selector)
     );
   } catch (e) {
-    console.log(e);
     throw new Error(
       `Invalid product configuration in window.PRODUCTS_EMBED_STATE[${i}]`
     );

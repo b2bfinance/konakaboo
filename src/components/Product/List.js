@@ -33,8 +33,6 @@ const useProductFetcher = provider => {
 export default ({ provider, cta }) => {
   const [loading, error, products] = useProductFetcher(provider);
 
-  console.log(loading);
-
   if (error) {
     return (
       <Error message="We had problems retrieving products for you, retry or come back later." />
