@@ -1,6 +1,6 @@
 {
   "name": "b2b-products-embed",
-  "version": "4.4.0",
+  "version": "4.5.0",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.1.1",
@@ -16,11 +16,7 @@
     "query-string": "^5.1.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-redux": "^7.0.1",
     "react-scripts": "3.0.1",
-    "redux": "^4.0.1",
-    "redux-mock-store": "^1.5.3",
-    "redux-thunk": "^2.3.0",
     "styled-components": "^4.3.1"
   },
   "scripts": {
