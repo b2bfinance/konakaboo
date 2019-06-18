@@ -1,25 +1,74 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AppContainer renders correctly with filters 1`] = `
+exports[`App renders correctly with filters 1`] = `
 <styled.div>
-  <List />
+  <_default
+    dispatch={[Function]}
+    filters={
+      Object {
+        "available": Array [
+          Object {
+            "choices": Array [
+              Object {
+                "label": "TEST_CHOICE_1_LABEL",
+                "value": "TEST_CHOICE_1",
+              },
+              Object {
+                "label": "TEST_CHOICE_2_LABEL",
+                "value": "TEST_CHOICE_2",
+              },
+            ],
+            "key": "TEST_KEY_1",
+            "multiChoice": true,
+            "title": "Test Title 1",
+          },
+          Object {
+            "choices": Array [
+              Object {
+                "label": "TEST_CHOICE_1_LABEL",
+                "value": "TEST_CHOICE_1",
+              },
+              Object {
+                "label": "TEST_CHOICE_2_LABEL",
+                "value": "TEST_CHOICE_2",
+              },
+            ],
+            "key": "TEST_KEY_2",
+            "multiChoice": false,
+            "title": "Test Title 2",
+          },
+        ],
+        "chosen": Object {
+          "0": Array [
+            "TEST_CHOICE_1",
+            "TEST_CHOICE_2",
+          ],
+          "1": "TEST_CHOICE_1",
+        },
+      }
+    }
+  />
   <WithStyles(ForwardRef(Grid))>
     <styled.div
       phone="100"
     >
-      <_default />
+      <_default
+        provider="?TEST_KEY_1=TEST_CHOICE_1%2CTEST_CHOICE_2&TEST_KEY_2=TEST_CHOICE_1"
+      />
     </styled.div>
   </WithStyles(ForwardRef(Grid))>
 </styled.div>
 `;
 
-exports[`AppContainer renders correctly without filters 1`] = `
+exports[`App renders correctly without filters 1`] = `
 <styled.div>
   <WithStyles(ForwardRef(Grid))>
     <styled.div
       phone="100"
     >
-      <_default />
+      <_default
+        provider=""
+      />
     </styled.div>
   </WithStyles(ForwardRef(Grid))>
 </styled.div>

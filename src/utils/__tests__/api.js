@@ -1,4 +1,4 @@
-import getProducts, { makeProviderURI } from '../api';
+import { fetchProducts, makeProviderURI } from '../api';
 
 test('appends filters with a question mark when the provider has no query strings', () => {
   expect(
@@ -19,11 +19,7 @@ test('appends filters with an ampersand when the provider has query strings', ()
 });
 
 test('request product data and gets json response', async () => {
-  const respone = await getProducts(
-    'http://localhost:3333',
-    stubData.filters.withNoChosen
-  );
-
+  const respone = await fetchProducts('http://localhost:3333');
   expect(respone).toBeDefined();
   expect(respone.data).toBeDefined();
   expect(respone.data).toBeInstanceOf(Array);

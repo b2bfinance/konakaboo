@@ -1,34 +1,29 @@
 import 'core-js/modules/es6.array.find';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
 import App from './components/App';
-import createStore from './store';
 import { ThemeProvider } from 'styled-components';
 import defaultTheme from './utils/theme';
 
-let products = window.PRODUCTS_EMBED_STATE || [];
+let productsConfiguration = window.PRODUCTS_EMBED_STATE || [];
 
-if (!products.length) {
-  products = [products];
+if (!productsConfiguration.length) {
+  productsConfiguration = [productsConfiguration];
 }
 
-products.forEach((product, i) => {
-  try {
-    const store = createStore(product);
-    const theme = { ...defaultTheme, ...store.getState().theme };
+productsConfiguration.forEach((configuration, i) => {
+  const theme = { ...defaultTheme, ...configuration.theme };
+  const selector = configuration.config.selector || '#products-embed-container';
 
+  try {
     ReactDOM.render(
-      <Provider store={store}>
-        <ThemeProvider theme={theme}>
-          <App />
-        </ThemeProvider>
-      </Provider>,
-      document.querySelector(
-        product.config.selector || '#products-embed-container'
-      )
+      <ThemeProvider theme={theme}>
+        <App config={configuration.config} filters={configuration.filters} />
+      </ThemeProvider>,
+      document.querySelector(selector)
     );
   } catch (e) {
+    console.log(e);
     throw new Error(
       `Invalid product configuration in window.PRODUCTS_EMBED_STATE[${i}]`
     );

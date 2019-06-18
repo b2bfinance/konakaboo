@@ -1,9 +1,5 @@
 import queryString from 'query-string';
 
-export function getChosenForGroup(chosen, group) {
-  return chosen[group];
-}
-
 export function getEmptyChosen(available) {
   return available.reduce((chosen, filter, i) => {
     chosen[i] = filter.multiChoice ? [] : '';

@@ -15,7 +15,7 @@ export function makeProviderURI(provider, filterState) {
   return `${provider}?${filterQuery}`;
 }
 
-export default async (provider, filterState) => {
-  const products = await fetch(makeProviderURI(provider, filterState));
+export const fetchProducts = async provider => {
+  const products = await fetch(provider);
   return products.json();
 };
