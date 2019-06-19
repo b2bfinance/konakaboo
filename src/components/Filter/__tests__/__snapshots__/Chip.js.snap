@@ -29,7 +29,6 @@ exports[`Chip renders correctly with selection 1`] = `
 
 exports[`ChipHolder renders correctly 1`] = `
 .c0 {
-  margin-bottom: 1.5rem;
   margin-right: 0.5rem;
   position: relative;
 }

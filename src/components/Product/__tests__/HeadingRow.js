@@ -1,6 +1,13 @@
 import React from 'react';
 import { createRender } from '@material-ui/core/test-utils';
-import HeadingRow, { ProductHeading } from '../HeadingRow';
+import HeadingRow, { Heading, ProductHeading } from '../HeadingRow';
+
+describe('Heading', () => {
+  test('renders correctly', () => {
+    const render = createRender();
+    expect(render(<Heading theme={stubData.theme} />)).toMatchSnapshot();
+  });
+});
 
 describe('HeadingRow', () => {
   let render;

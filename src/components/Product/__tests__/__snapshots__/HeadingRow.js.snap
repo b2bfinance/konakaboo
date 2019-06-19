@@ -1,7 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Heading renders correctly 1`] = `
+.c0 {
+  background-color: #fff;
+  padding: 16px;
+  border-bottom: 1px solid #eceff1;
+}
+
+@media (min-width:62em) {
+  .c0 {
+    background-color: transparent;
+    padding: 0;
+    border-bottom: 0;
+  }
+}
+
+<div
+  class="MuiGrid-root c0"
+  theme="[object Object]"
+/>
+`;
+
 exports[`HeadingRow renders correctly with highlight 1`] = `
-.c5 {
+.c6 {
   border-radius: 1rem;
   padding: 0.2rem 0.75rem;
   background-color: #546e7a;
@@ -9,11 +30,11 @@ exports[`HeadingRow renders correctly with highlight 1`] = `
   color: #eceff1;
 }
 
-.c5:last-child {
+.c6:last-child {
   margin-right: 0;
 }
 
-.c4 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -22,27 +43,44 @@ exports[`HeadingRow renders correctly with highlight 1`] = `
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   line-height: 1;
-  margin-bottom: 8px;
+  margin: 8px 0;
 }
 
-.c2 {
+.c0 {
+  padding: 16px;
+  border-bottom: 1px solid;
+}
+
+.c3 {
   margin-left: 0.25rem;
 }
 
 .c1 {
+  margin-bottom: 8px;
+}
+
+.c2 {
   max-width: 100%;
   max-height: 100%;
   margin: auto;
 }
 
 @media (min-width:62em) {
-  .c4 {
-    margin-bottom: 0;
+  .c5 {
+    margin: 0;
   }
 }
 
 @media (min-width:62em) {
   .c0 {
+    background-color: transparent;
+    padding: 0;
+    border-bottom: 0;
+  }
+}
+
+@media (min-width:62em) {
+  .c1 {
     background-color: white;
     display: -webkit-box;
     display: -webkit-flex;
@@ -51,7 +89,7 @@ exports[`HeadingRow renders correctly with highlight 1`] = `
     padding: 4px;
     margin-right: 16px;
     margin-left: 12px;
-    border: 2px solid;
+    border: 1px solid;
     margin-bottom: -8px;
     text-align: center;
     height: 85px;
@@ -59,7 +97,7 @@ exports[`HeadingRow renders correctly with highlight 1`] = `
 }
 
 @media (min-width:62em) {
-  .c3 {
+  .c4 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -76,21 +114,21 @@ exports[`HeadingRow renders correctly with highlight 1`] = `
 }
 
 <div
-  class="MuiGrid-root MuiGrid-container"
+  class="MuiGrid-root c0 MuiGrid-container"
 >
   <div
-    class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-2"
+    class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-3 MuiGrid-grid-md-2"
   >
     <div
-      class="c0"
+      class="c1"
     >
       <img
-        class="c1"
+        class="c2"
       />
     </div>
   </div>
   <div
-    class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-7"
+    class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-5 MuiGrid-grid-md-7"
   >
     <div
       class="MuiGrid-root MuiTypography-root MuiTypography-body1 MuiTypography-colorTextPrimary MuiGrid-container"
@@ -113,7 +151,7 @@ exports[`HeadingRow renders correctly with highlight 1`] = `
           >
             <svg
               aria-hidden="true"
-              class="MuiSvgIcon-root c2"
+              class="MuiSvgIcon-root c3"
               focusable="false"
               role="presentation"
               viewBox="0 0 24 24"
@@ -139,13 +177,13 @@ exports[`HeadingRow renders correctly with highlight 1`] = `
     </div>
   </div>
   <div
-    class="MuiGrid-root c3 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-3"
+    class="MuiGrid-root c4 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-4 MuiGrid-grid-md-3"
   >
     <div
-      class="c4"
+      class="c5"
     >
       <div
-        class="c5"
+        class="c6"
       >
         <span
           class="MuiTypography-root MuiTypography-caption MuiTypography-colorInherit"
@@ -154,7 +192,7 @@ exports[`HeadingRow renders correctly with highlight 1`] = `
         </span>
       </div>
       <div
-        class="c5"
+        class="c6"
       >
         <span
           class="MuiTypography-root MuiTypography-caption MuiTypography-colorInherit"
@@ -168,7 +206,7 @@ exports[`HeadingRow renders correctly with highlight 1`] = `
 `;
 
 exports[`HeadingRow renders correctly without highlight 1`] = `
-.c4 {
+.c5 {
   border-radius: 1rem;
   padding: 0.2rem 0.75rem;
   background-color: #546e7a;
@@ -176,11 +214,11 @@ exports[`HeadingRow renders correctly without highlight 1`] = `
   color: #eceff1;
 }
 
-.c4:last-child {
+.c5:last-child {
   margin-right: 0;
 }
 
-.c3 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -189,23 +227,40 @@ exports[`HeadingRow renders correctly without highlight 1`] = `
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   line-height: 1;
-  margin-bottom: 8px;
+  margin: 8px 0;
+}
+
+.c0 {
+  padding: 16px;
+  border-bottom: 1px solid;
 }
 
 .c1 {
+  margin-bottom: 8px;
+}
+
+.c2 {
   max-width: 100%;
   max-height: 100%;
   margin: auto;
 }
 
 @media (min-width:62em) {
-  .c3 {
-    margin-bottom: 0;
+  .c4 {
+    margin: 0;
   }
 }
 
 @media (min-width:62em) {
   .c0 {
+    background-color: transparent;
+    padding: 0;
+    border-bottom: 0;
+  }
+}
+
+@media (min-width:62em) {
+  .c1 {
     background-color: white;
     display: -webkit-box;
     display: -webkit-flex;
@@ -214,7 +269,7 @@ exports[`HeadingRow renders correctly without highlight 1`] = `
     padding: 4px;
     margin-right: 16px;
     margin-left: 12px;
-    border: 2px solid;
+    border: 1px solid;
     margin-bottom: -8px;
     text-align: center;
     height: 85px;
@@ -222,7 +277,7 @@ exports[`HeadingRow renders correctly without highlight 1`] = `
 }
 
 @media (min-width:62em) {
-  .c2 {
+  .c3 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -239,21 +294,21 @@ exports[`HeadingRow renders correctly without highlight 1`] = `
 }
 
 <div
-  class="MuiGrid-root MuiGrid-container"
+  class="MuiGrid-root c0 MuiGrid-container"
 >
   <div
-    class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-2"
+    class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-3 MuiGrid-grid-md-2"
   >
     <div
-      class="c0"
+      class="c1"
     >
       <img
-        class="c1"
+        class="c2"
       />
     </div>
   </div>
   <div
-    class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-7"
+    class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-5 MuiGrid-grid-md-7"
   >
     <div
       class="MuiGrid-root MuiTypography-root MuiTypography-body1 MuiTypography-colorTextPrimary MuiGrid-container"
@@ -286,13 +341,13 @@ exports[`HeadingRow renders correctly without highlight 1`] = `
     </div>
   </div>
   <div
-    class="MuiGrid-root c2 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-3"
+    class="MuiGrid-root c3 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-4 MuiGrid-grid-md-3"
   >
     <div
-      class="c3"
+      class="c4"
     >
       <div
-        class="c4"
+        class="c5"
       >
         <span
           class="MuiTypography-root MuiTypography-caption MuiTypography-colorInherit"
@@ -301,7 +356,7 @@ exports[`HeadingRow renders correctly without highlight 1`] = `
         </span>
       </div>
       <div
-        class="c4"
+        class="c5"
       >
         <span
           class="MuiTypography-root MuiTypography-caption MuiTypography-colorInherit"

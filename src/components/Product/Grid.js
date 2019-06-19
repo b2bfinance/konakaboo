@@ -5,7 +5,7 @@ import Col from '../Col';
 import { queries } from '../../utils/media';
 
 export const Wrapper = styled(Col)`
-  border-top: 2px solid ${props => props.theme.productBorder};
+  border-top: 1px solid ${props => props.theme.productBorder};
   padding: 16px 8px;
   text-align: center;
 
@@ -13,7 +13,7 @@ export const Wrapper = styled(Col)`
     margin: 8px 0;
     padding: 8px 16px;
     border-top: 0;
-    border-left: 2px solid ${props => props.theme.productBorder};
+    border-left: 1px solid ${props => props.theme.productBorder};
   `};
 
   &:first-child {
@@ -32,8 +32,10 @@ export const ProductMultiGrid = ({ columns, theme }) =>
       phone={100}
       tablet={80 / columns.length}
     >
-      <Typography variant="subtitle2">{column.label}</Typography>
-      <Typography variant="h5" color="textSecondary">
+      <Typography variant="subtitle2" color="textPrimary">
+        {column.label}
+      </Typography>
+      <Typography variant="h5" color="textPrimary">
         {column.value}
       </Typography>
       {column.subtext && (

@@ -1,14 +1,16 @@
+import Grid from '@material-ui/core/Grid';
+import Hidden from '@material-ui/core/Hidden';
+import Typography from '@material-ui/core/Typography';
 import React, { useState } from 'react';
 import styled, { css } from 'styled-components';
-import Grid from '@material-ui/core/Grid';
-import Confirm from './Confirm';
-import MoreInfo from './MoreInfo';
-import HeadingRow from './HeadingRow';
-import ProductGrid, { ProductMultiGrid } from './Grid';
-import MoreInfoButton from './MoreInfoButton';
+import { queries } from '../../utils/media';
 import ApplyButton from './ApplyButton';
+import Confirm from './Confirm';
 import FeaturedHighlightPointRow from './FeaturedHighlightPointRow';
-import Typography from '@material-ui/core/Typography';
+import ProductGrid, { ProductMultiGrid } from './Grid';
+import HeadingRow from './HeadingRow';
+import MoreInfo from './MoreInfo';
+import MoreInfoButton from './MoreInfoButton';
 
 export const Wrapper = styled.div`
   margin-bottom: 56px;
@@ -20,7 +22,6 @@ export const Wrapper = styled.div`
 `;
 
 export const ProductBody = styled(Grid)`
-  border: 2px solid ${props => props.theme.productBorder};
   background-color: ${props => props.theme.productBackground};
 
   ${props =>
@@ -28,11 +29,15 @@ export const ProductBody = styled(Grid)`
     css`
       border-color: ${props.theme.productHighlightBorder};
     `};
+
+  ${queries.desktop`
+    border: 1px solid ${props => props.theme.productBorder};
+  `}
 `;
 
 export const ProductDescription = styled(Typography)`
-  border-top: 2px solid ${props => props.theme.productBorder};
-  padding: 24px 16px;
+  border-top: 1px solid ${props => props.theme.productBorder};
+  padding: 16px;
   width: 100%;
 `;
 
@@ -95,10 +100,16 @@ export const Product = ({
             </Grid>
           </Grid>
         </ProductGrid>
-        {description && (
-          <ProductDescription variant="body2">{description}</ProductDescription>
-        )}
-        {feature_point && <FeaturedHighlightPointRow feature={feature_point} />}
+        <Hidden xsDown>
+          {description && (
+            <ProductDescription variant="body2">
+              {description}
+            </ProductDescription>
+          )}
+          {feature_point && (
+            <FeaturedHighlightPointRow feature={feature_point} />
+          )}
+        </Hidden>
       </ProductBody>
       {detailed && (
         <MoreInfo

@@ -14,6 +14,7 @@ import Filter from './Filter';
 
 export const Wrapper = styled(Grid)`
   justify-content: flex-end;
+  margin-bottom: 32px;
 `;
 
 export default ({ filters, dispatch }) => {

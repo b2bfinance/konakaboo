@@ -1,10 +1,10 @@
-import React from 'react';
-import MoreInfoHeader from './MoreInfoHeader';
-import MoreInfoBody from './MoreInfoBody';
-import MoreInfoFooter from './MoreInfoFooter';
-import styled from 'styled-components';
 import Drawer from '@material-ui/core/Drawer';
 import { makeStyles } from '@material-ui/styles';
+import React from 'react';
+import styled from 'styled-components';
+import MoreInfoBody from './MoreInfoBody';
+import MoreInfoFooter from './MoreInfoFooter';
+import MoreInfoHeader from './MoreInfoHeader';
 
 export const MoreInfoDrawer = styled(Drawer)`
   max-width: 60%;
@@ -29,6 +29,7 @@ export default ({
   links,
   brand,
   disclaimer,
+  description,
   detailed
 }) => {
   const classes = useStyles();
@@ -41,7 +42,11 @@ export default ({
         logo={links.logo}
         onClose={onClose}
       />
-      <MoreInfoBody detailed={detailed} disclaimer={disclaimer} />
+      <MoreInfoBody
+        description={description}
+        detailed={detailed}
+        disclaimer={disclaimer}
+      />
       <MoreInfoFooter link={links.apply} onClose={onClose} />
     </Drawer>
   );

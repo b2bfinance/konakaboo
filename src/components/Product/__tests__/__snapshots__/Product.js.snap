@@ -1,23 +1,39 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Product renders correctly 1`] = `
-.c10 {
+.c11 {
   margin-bottom: 8px !important;
   color: #3f51b5 !important;
 }
 
-.c11 {
+.c12 {
   background-color: #4caf50 !important;
   color: #fff !important;
   width: 100% !important;
   box-shadow: none !important;
 }
 
-.c11:hover {
+.c12:hover {
   color: #fff !important;
 }
 
-.c7 {
+.c10 {
+  min-height: 1px;
+  -webkit-flex: 0 0 100%;
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
+  max-width: 100%;
+  border-top: 1px solid #eceff1;
+  padding: 16px 8px;
+  text-align: center;
+}
+
+.c10:first-child {
+  border-top: 0;
+  border-left: 0;
+}
+
+.c8 {
   border-radius: 1rem;
   padding: 0.2rem 0.75rem;
   background-color: #546e7a;
@@ -25,11 +41,11 @@ exports[`Product renders correctly 1`] = `
   color: #eceff1;
 }
 
-.c7:last-child {
+.c8:last-child {
   margin-right: 0;
 }
 
-.c6 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -38,79 +54,76 @@ exports[`Product renders correctly 1`] = `
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   line-height: 1;
-  margin-bottom: 8px;
+  margin: 8px 0;
 }
 
-.c4 {
+.c1 {
+  background-color: #fff;
+  padding: 16px;
+  border-bottom: 1px solid #eceff1;
+}
+
+.c5 {
   margin-left: 0.25rem;
   color: #ffb74d;
 }
 
 .c2 {
+  margin-bottom: 8px;
+}
+
+.c3 {
   max-width: 100%;
   max-height: 100%;
   margin: auto;
 }
 
-.c3 {
+.c4 {
   color: inherit;
-}
-
-.c9 {
-  min-height: 1px;
-  -webkit-flex: 0 0 100%;
-  -ms-flex: 0 0 100%;
-  flex: 0 0 100%;
-  max-width: 100%;
-  border-top: 2px solid #eceff1;
-  padding: 16px 8px;
-  text-align: center;
-}
-
-.c9:first-child {
-  border-top: 0;
-  border-left: 0;
-}
-
-.c13 {
-  background-color: #eceff1;
-  border-top: 2px solid #eceff1;
-  padding: 8px 16px;
-}
-
-.c14 {
-  color: #f06292;
-  font-size: 1.25rem;
-  line-height: 0;
-}
-
-.c15 {
-  margin-left: 4px;
 }
 
 .c0 {
   margin-bottom: 56px;
 }
 
-.c8 {
-  border: 2px solid #eceff1;
+.c9 {
   background-color: #fff;
 }
 
-.c12 {
-  border-top: 2px solid #eceff1;
-  padding: 24px 16px;
-  width: 100%;
+@media (min-width:36em) {
+  .c10 {
+    -webkit-flex: 0 0 20%;
+    -ms-flex: 0 0 20%;
+    flex: 0 0 20%;
+    max-width: 20%;
+  }
+}
+
+@media (min-width:36em) {
+  .c10 {
+    margin: 8px 0;
+    padding: 8px 16px;
+    border-top: 0;
+    border-left: 1px solid #eceff1;
+  }
 }
 
 @media (min-width:62em) {
-  .c6 {
-    margin-bottom: 0;
+  .c7 {
+    margin: 0;
   }
 }
 
 @media (min-width:62em) {
   .c1 {
+    background-color: transparent;
+    padding: 0;
+    border-bottom: 0;
+  }
+}
+
+@media (min-width:62em) {
+  .c2 {
     background-color: white;
     display: -webkit-box;
     display: -webkit-flex;
@@ -119,7 +132,7 @@ exports[`Product renders correctly 1`] = `
     padding: 4px;
     margin-right: 16px;
     margin-left: 12px;
-    border: 2px solid #eceff1;
+    border: 1px solid #eceff1;
     margin-bottom: -8px;
     text-align: center;
     height: 85px;
@@ -127,7 +140,7 @@ exports[`Product renders correctly 1`] = `
 }
 
 @media (min-width:62em) {
-  .c5 {
+  .c6 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -143,21 +156,9 @@ exports[`Product renders correctly 1`] = `
   }
 }
 
-@media (min-width:36em) {
+@media (min-width:62em) {
   .c9 {
-    -webkit-flex: 0 0 20%;
-    -ms-flex: 0 0 20%;
-    flex: 0 0 20%;
-    max-width: 20%;
-  }
-}
-
-@media (min-width:36em) {
-  .c9 {
-    margin: 8px 0;
-    padding: 8px 16px;
-    border-top: 0;
-    border-left: 2px solid #eceff1;
+    border: 1px solid #eceff1;
   }
 }
 
@@ -165,23 +166,23 @@ exports[`Product renders correctly 1`] = `
   class="c0"
 >
   <div
-    class="MuiGrid-root MuiGrid-container"
+    class="MuiGrid-root c1 MuiGrid-container"
   >
     <div
-      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-2"
+      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-3 MuiGrid-grid-md-2"
     >
       <div
-        class="c1"
+        class="c2"
       >
         <img
           alt="Landbay"
-          class="c2"
+          class="c3"
           src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJcAAAA0CAMAAACwyVoLAAAAY1BMVEX///8xMDEIBQj29vYODA4iISIlJCUrKiuMjIweHR5gX2Dg4OBwb3AuLS7r6+ugn6AYFhjFxcW4uLhLSkuHhodDQkNaWVrT09M6OTqYmJhramvLy8uwsLBQT1CoqKja2tp4d3h9F85kAAADsklEQVRYhe2Z3XakIAyAYRQQEUTrODo66vs/5SaAPzNt99TORb0w7ekiJvCZhIRzltBjCvlrgG/k5Nonniu+HEfilSsmR5J45Yr+mmUj0cm1S06ufXIYrqKa+g3AUbjueihTao7GldRkVCRvjsZllZFNQZrb0bgiQ9OSZOXRuJRhV/VTf6k6Tet+O1PUaT2EMb4c59m0hhxJndxbP9vPz/mSziOYJ4SYezZlldshg1EL+ZUSZcxwXTb6P5cVwubbmZoLfg16Ugheu1GJeiRjwguztYLZ3IZnKYtgPoEKA8o72F6QNgGdCzopo0N/1+qHXJJStuVSDPRs2IXj2DmvBD1JMrHcmwQDl+VsftTWe8xoDQuCyc3Cv+Am0mgqHt7n1TT8tH594kqQRdxXLup2XLm0lJLB5qKJHBc+62WRXqI5cqSCaghaYdfPfJZdXBHVqHgxK5eDxM93XPrDKNU3AMgq5NK1Uh36JHMWV2duu2DRkbuY3fUWF/oF0Hi7clHMnQ0XvjBCgxYZGBWp9w13SX6LnbmYYPzASdxclq+77ueCxViOSy9cgAIRe+FyEbQdcOlH1/W4tDv/oMBb8JmNXAR103IXzXe5xhgpPnT4RuASE8eIvXIpTOt+cPll4a9InBvBgJlM+CXhGzXEW/avm+7nqjimU8tC5sM2doQgxWp84cLLOcuH9Tz2wYvgHcgF56PSujfsa6w9XJg24KkRk0J5LtkZC5l7k19wDc5fnHPwSoz5BRGE2mCYz0nygYdADq977uca4IlHrubwJHCVJJeUT/SZa5zjqK9t20LEwLG+JsD31MIfzx6x6Xe9bwcXrk/bpH3AaeMLF06LF67WhXg+j6gIq0BNoALMU6xnWGmA05/T97huLiEgLs7/5cKFQXzm6mBGN0udIAyLu7lszN2iyJX8mktMXVEUcM4n9IpGwfpQL1ykYivXtSv6DAu+bF2eP4qiTPHYFa4rzea6eZuLQtuVcUqiiy9X7gc2GhcuIjTd9CGG/PyDLH0Ip6lpsDshGf665vMmV+g2uIvsDUrB3IoLF2b0U9/WEu8cm7596Qs8NK0zv3Hfvt7girkXmZKGcaaDBoWxIJLz2DeRycIQLi9B2fIcFfNgzSwvSYra4RpTwxhOZgw3oN/lvakSL9WAw2quzT0+KJy/LXoVGbx224dLZxGs8y4iEY5bsr6ooGnDlfC78nWUe/QnObn2ycm1T06ufXJy7ZOTa59suf6a5UlWrqP+P8wB5eTaJ0fl+gciqEC9vx+3xQAAAABJRU5ErkJggg=="
         />
       </div>
     </div>
     <div
-      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-7"
+      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-5 MuiGrid-grid-md-7"
     >
       <div
         class="MuiGrid-root MuiTypography-root MuiTypography-body1 MuiTypography-colorTextPrimary MuiGrid-container"
@@ -196,7 +197,7 @@ exports[`Product renders correctly 1`] = `
               class="MuiGrid-root MuiGrid-item"
             >
               <p
-                class="MuiTypography-root c3 MuiTypography-h5"
+                class="MuiTypography-root c4 MuiTypography-h5"
               >
                 Landbay
               </p>
@@ -206,7 +207,7 @@ exports[`Product renders correctly 1`] = `
             >
               <svg
                 aria-hidden="true"
-                class="MuiSvgIcon-root c4"
+                class="MuiSvgIcon-root c5"
                 focusable="false"
                 role="presentation"
                 viewBox="0 0 24 24"
@@ -226,7 +227,7 @@ exports[`Product renders correctly 1`] = `
           class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
         >
           <p
-            class="MuiTypography-root c3 MuiTypography-body1"
+            class="MuiTypography-root c4 MuiTypography-body1"
           >
             Landbay - Buy To Let Wizards
           </p>
@@ -234,13 +235,13 @@ exports[`Product renders correctly 1`] = `
       </div>
     </div>
     <div
-      class="MuiGrid-root c5 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-3"
+      class="MuiGrid-root c6 MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-4 MuiGrid-grid-md-3"
     >
       <div
-        class="c6"
+        class="c7"
       >
         <div
-          class="c7"
+          class="c8"
         >
           <span
             class="MuiTypography-root MuiTypography-caption MuiTypography-colorInherit"
@@ -249,7 +250,7 @@ exports[`Product renders correctly 1`] = `
           </span>
         </div>
         <div
-          class="c7"
+          class="c8"
         >
           <span
             class="MuiTypography-root MuiTypography-caption MuiTypography-colorInherit"
@@ -261,66 +262,66 @@ exports[`Product renders correctly 1`] = `
     </div>
   </div>
   <div
-    class="MuiGrid-root c8 MuiGrid-container"
+    class="MuiGrid-root c9 MuiGrid-container"
   >
     <div
-      class="c9"
+      class="c10"
     >
       <h6
-        class="MuiTypography-root MuiTypography-subtitle2"
+        class="MuiTypography-root MuiTypography-subtitle2 MuiTypography-colorTextPrimary"
       >
         Max LTV
       </h6>
       <h5
-        class="MuiTypography-root MuiTypography-h5 MuiTypography-colorTextSecondary"
+        class="MuiTypography-root MuiTypography-h5 MuiTypography-colorTextPrimary"
       >
         85%
       </h5>
     </div>
     <div
-      class="c9"
+      class="c10"
     >
       <h6
-        class="MuiTypography-root MuiTypography-subtitle2"
+        class="MuiTypography-root MuiTypography-subtitle2 MuiTypography-colorTextPrimary"
       >
         Initial Rate
       </h6>
       <h5
-        class="MuiTypography-root MuiTypography-h5 MuiTypography-colorTextSecondary"
+        class="MuiTypography-root MuiTypography-h5 MuiTypography-colorTextPrimary"
       >
         1.49%
       </h5>
     </div>
     <div
-      class="c9"
+      class="c10"
     >
       <h6
-        class="MuiTypography-root MuiTypography-subtitle2"
+        class="MuiTypography-root MuiTypography-subtitle2 MuiTypography-colorTextPrimary"
       >
         Subsequent Rate
       </h6>
       <h5
-        class="MuiTypography-root MuiTypography-h5 MuiTypography-colorTextSecondary"
+        class="MuiTypography-root MuiTypography-h5 MuiTypography-colorTextPrimary"
       >
         2.75%
       </h5>
     </div>
     <div
-      class="c9"
+      class="c10"
     >
       <h6
-        class="MuiTypography-root MuiTypography-subtitle2"
+        class="MuiTypography-root MuiTypography-subtitle2 MuiTypography-colorTextPrimary"
       >
         Fees
       </h6>
       <h5
-        class="MuiTypography-root MuiTypography-h5 MuiTypography-colorTextSecondary"
+        class="MuiTypography-root MuiTypography-h5 MuiTypography-colorTextPrimary"
       >
         £1,495
       </h5>
     </div>
     <div
-      class="c9"
+      class="c10"
     >
       <div
         class="MuiGrid-root MuiGrid-container MuiGrid-align-content-xs-center"
@@ -329,7 +330,7 @@ exports[`Product renders correctly 1`] = `
           class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
         >
           <button
-            class="MuiTypography-root MuiLink-root MuiLink-underlineHover c10 MuiLink-button MuiTypography-colorPrimary"
+            class="MuiTypography-root MuiLink-root MuiLink-underlineHover c11 MuiLink-button MuiTypography-colorPrimary"
           >
             more details
           </button>
@@ -339,7 +340,7 @@ exports[`Product renders correctly 1`] = `
         >
           <a
             aria-disabled="false"
-            class="MuiButtonBase-root MuiFab-root c11 MuiFab-extended MuiFab-primary MuiFab-sizeMedium"
+            class="MuiButtonBase-root MuiFab-root c12 MuiFab-extended MuiFab-primary MuiFab-sizeMedium"
             href="https://b2bfinance.com/enquire/buy-to-let"
             rel="noopener"
             role="button"
@@ -353,51 +354,6 @@ exports[`Product renders correctly 1`] = `
             </span>
           </a>
         </div>
-      </div>
-    </div>
-    <p
-      class="MuiTypography-root c12 MuiTypography-body2"
-    >
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean bibendum facilisis condimentum. Donec laoreet porttitor condimentum. Nulla luctus efficitur magna, eget rhoncus metus placerat sed.
-    </p>
-    <div
-      class="MuiGrid-root c13 MuiGrid-container MuiGrid-align-items-xs-center"
-    >
-      <div
-        class="MuiGrid-root MuiGrid-item"
-      >
-        <span
-          class="c14"
-        >
-          <svg
-            aria-hidden="true"
-            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit"
-            focusable="false"
-            role="presentation"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M0 0h24v24H0V0z"
-              fill="none"
-            />
-            <path
-              d="M12 7.13l.97 2.29.47 1.11 1.2.1 2.47.21-1.88 1.63-.91.79.27 1.18.56 2.41-2.12-1.28-1.03-.64-1.03.62-2.12 1.28.56-2.41.27-1.18-.91-.79-1.88-1.63 2.47-.21 1.2-.1.47-1.11.97-2.27M12 2L9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2z"
-            />
-          </svg>
-        </span>
-      </div>
-      <div
-        class="MuiGrid-root MuiGrid-item"
-      >
-        <h6
-          class="MuiTypography-root MuiTypography-subtitle1"
-        >
-          <span
-            class="c15"
-          >
-            Awarded best broker 2019
-          </span>
-        </h6>
       </div>
     </div>
   </div>
