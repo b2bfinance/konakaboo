@@ -1,13 +1,8 @@
 import {
-  getChosenForGroup,
+  generateChipLabel,
   getEmptyChosen,
-  getQueryStringFromState,
-  generateChipLabel
+  getQueryStringFromState
 } from '../filter';
-
-test('gets the chosen filter from the specified group', () => {
-  expect(getChosenForGroup({ 0: ['CHOSEN'] }, 0)).toEqual(['CHOSEN']);
-});
 
 test('resets all chosen filters', () => {
   const resetChosenFilters = getEmptyChosen([

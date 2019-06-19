@@ -1,9 +1,10 @@
 import { createMount, createRender } from '@material-ui/core/test-utils';
 import Cancel from '@material-ui/icons/Cancel';
-import React from 'react';
+import React, { useReducer } from 'react';
 import Chip, { BaseChip } from '../Chip';
 import Filter from '../Filter';
 import List, { Wrapper } from '../List';
+import filtersReducer from '../../../reducers/filters';
 
 test('Wrapper renders correctly', () => {
   const render = createRender();
@@ -11,29 +12,22 @@ test('Wrapper renders correctly', () => {
 });
 
 describe('List', () => {
-  let handleResetFiltersForGroup;
-  let handleSetChosenForGroup;
-  let handleResetFilters;
   let mount;
   let wrapper;
 
   beforeEach(() => {
     mount = createMount();
-    handleResetFiltersForGroup = jest.fn();
-    handleSetChosenForGroup = jest.fn();
-    handleResetFilters = jest.fn();
 
-    wrapper = mount(
-      <List
-        filtersChosen={stubData.filters.withSingleAndMultiChoiceChosen.chosen}
-        filtersAvailable={
-          stubData.filters.withSingleAndMultiChoiceChosen.available
-        }
-        handleResetFiltersForGroup={handleResetFiltersForGroup}
-        handleResetFilters={handleResetFilters}
-        handleSetChosenForGroup={handleSetChosenForGroup}
-      />
-    );
+    const FiltersList = () => {
+      const [reducedFilters, dispatchFilters] = useReducer(
+        filtersReducer,
+        stubData.filters.withSingleAndMultiChoiceChosen
+      );
+
+      return <List filters={reducedFilters} dispatch={dispatchFilters} />;
+    };
+
+    wrapper = mount(<FiltersList />);
   });
 
   afterEach(() => {
@@ -46,7 +40,7 @@ describe('List', () => {
     expect(chips.last().text()).toBe('TEST_CHOICE_1_LABEL');
   });
 
-  test('will toggle filter visiblilty when clicking associated chip', () => {
+  test('will show filter when clicking associated chip', () => {
     const chip = wrapper.find(Chip).first();
 
     chip.simulate('click');
@@ -59,13 +53,6 @@ describe('List', () => {
     ).toBe(true);
 
     chip.simulate('click');
-
-    expect(
-      wrapper
-        .find(Filter)
-        .first()
-        .prop('visible')
-    ).toBe(false);
   });
 
   test('will close the filter when clicking the associated delete element', () => {

@@ -21,13 +21,13 @@ export const ProductLogoContainer = styled.div`
     border: 2px solid ${props => props.theme.productBorder};
     margin-bottom: -8px;
     text-align: center;
-    height: 75px;
+    height: 85px;
   `};
 `;
 
 export const ProductLogo = styled.img`
   max-width: 100%;
-  max-height: 120px;
+  max-height: 100%;
   margin: auto;
 `;
 

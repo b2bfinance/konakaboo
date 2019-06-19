@@ -1,17 +1,11 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import styled from 'styled-components';
 import Grid from '@material-ui/core/Grid';
+import React, { useReducer } from 'react';
+import styled from 'styled-components';
+import filtersReducer from '../reducers/filters';
 import Col from './Col';
-import { default as ProductList } from './Product/List';
 import { default as FilterList } from './Filter/List';
-import { loadProducts } from '../actions/products';
-
-import {
-  resetFiltersForGroup,
-  resetAllChosenFilters,
-  setChosenFiltersForGroup
-} from '../actions/filter';
+import { default as ProductList } from './Product/List';
+import { makeProviderURI } from '../utils/api';
 
 export const Wrapper = styled.div`
   font-family: ${props => props.theme.mainFontFamily};
@@ -25,72 +19,22 @@ export const Wrapper = styled.div`
   }
 `;
 
-export class AppContainer extends Component {
-  componentDidMount() {
-    this.props.loadProducts();
-  }
+export default ({ config, filters }) => {
+  const [reducedFilters, dispatchFilters] = useReducer(filtersReducer, filters);
 
-  render() {
-    const {
-      filtersChosen,
-      filtersAvailable,
-      filterCount,
-      products,
-      cta,
-      hasFetched,
-      isFetching,
-      error,
-      handleResetFiltersForGroup,
-      handleResetFilters,
-      handleSetChosenForGroup
-    } = this.props;
-
-    return (
-      <Wrapper>
-        {filterCount > 0 && (
-          <FilterList
-            filtersChosen={filtersChosen}
-            filtersAvailable={filtersAvailable}
-            handleResetFiltersForGroup={handleResetFiltersForGroup}
-            handleResetFilters={handleResetFilters}
-            handleSetChosenForGroup={handleSetChosenForGroup}
+  return (
+    <Wrapper>
+      {reducedFilters.available.length > 0 && (
+        <FilterList filters={reducedFilters} dispatch={dispatchFilters} />
+      )}
+      <Grid>
+        <Col phone="100">
+          <ProductList
+            provider={makeProviderURI(config.provider, reducedFilters)}
+            cta={config.cta}
           />
-        )}
-        <Grid>
-          <Col phone="100">
-            <ProductList
-              cta={cta}
-              products={products}
-              hasFetched={hasFetched}
-              isFetching={isFetching}
-              error={error}
-            />
-          </Col>
-        </Grid>
-      </Wrapper>
-    );
-  }
-}
-
-export const mapDispatchToProps = {
-  handleResetFiltersForGroup: resetFiltersForGroup,
-  handleResetFilters: resetAllChosenFilters,
-  handleSetChosenForGroup: setChosenFiltersForGroup,
-  loadProducts
+        </Col>
+      </Grid>
+    </Wrapper>
+  );
 };
-
-export const mapStateToProps = ({ config, filters, products }) => ({
-  cta: config.cta,
-  filtersChosen: filters.chosen,
-  filtersAvailable: filters.available,
-  filterCount: filters.available.length,
-  isFetching: products.isFetching,
-  hasFetched: !!products.items,
-  products: products.items,
-  error: products.error
-});
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(AppContainer);

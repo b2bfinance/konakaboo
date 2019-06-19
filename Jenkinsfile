@@ -19,8 +19,8 @@ pipeline {
                     cloverReportDir: 'coverage',
                     cloverReportFileName: 'clover.xml',
                     healthyTarget: [methodCoverage: 95, conditionalCoverage: 95, statementCoverage: 95],
-                    unhealthyTarget: [methodCoverage: 93, conditionalCoverage: 93, statementCoverage: 93],
-                    failingTarget: [methodCoverage: 90, conditionalCoverage: 90, statementCoverage: 90]
+                    unhealthyTarget: [methodCoverage: 90, conditionalCoverage: 90, statementCoverage: 90],
+                    failingTarget: [methodCoverage: 85, conditionalCoverage: 85, statementCoverage: 85]
                 ])
                 
                 sh 'curl -s https://codecov.io/bash | bash -s - -t '

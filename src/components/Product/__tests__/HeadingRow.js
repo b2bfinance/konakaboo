@@ -1,8 +1,14 @@
 import React from 'react';
-import { render } from 'enzyme';
+import { createRender } from '@material-ui/core/test-utils';
 import HeadingRow, { ProductHeading } from '../HeadingRow';
 
 describe('HeadingRow', () => {
+  let render;
+
+  beforeEach(() => {
+    render = createRender();
+  });
+
   test('renders correctly without highlight', () => {
     expect(
       render(<HeadingRow labels={['foo', 'bar']} theme={stubData.theme} />)
@@ -12,7 +18,11 @@ describe('HeadingRow', () => {
   test('renders correctly with highlight', () => {
     expect(
       render(
-        <HeadingRow highlight labels={['foo', 'bar']} theme={stubData.theme} />
+        <HeadingRow
+          highlighted
+          labels={['foo', 'bar']}
+          theme={stubData.theme}
+        />
       )
     ).toMatchSnapshot();
   });
@@ -20,6 +30,7 @@ describe('HeadingRow', () => {
 
 describe('ProductHeading', () => {
   test('renders correctly', () => {
+    const render = createRender();
     expect(render(<ProductHeading />)).toMatchSnapshot();
   });
 });

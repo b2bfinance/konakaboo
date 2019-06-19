@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, shallow } from 'enzyme';
-import { Wrapper, AppContainer, mapStateToProps } from '../App';
+import App, { Wrapper } from '../App';
 
 describe('Wrapper', () => {
   test('renders correctly', () => {
@@ -8,39 +8,26 @@ describe('Wrapper', () => {
   });
 });
 
-describe('AppContainer', () => {
+describe('App', () => {
   test('renders correctly with filters', () => {
     expect(
-      shallow(<AppContainer loadProducts={jest.fn()} filterCount={1} />)
+      shallow(
+        <App
+          filters={stubData.filters.withSingleAndMultiChoiceChosen}
+          config={{ provider: '' }}
+        />
+      )
     ).toMatchSnapshot();
   });
 
   test('renders correctly without filters', () => {
     expect(
-      shallow(<AppContainer loadProducts={jest.fn()} filterCount={0} />)
+      shallow(
+        <App
+          filters={{ available: [], chosen: {} }}
+          config={{ provider: '' }}
+        />
+      )
     ).toMatchSnapshot();
-  });
-
-  test('should dispatch loadProducts', () => {
-    const loadProducts = jest.fn();
-    shallow(<AppContainer loadProducts={loadProducts} />);
-    expect(loadProducts.mock.calls.length).toBe(1);
-  });
-
-  test('mapStateToProps maps the state correctly', () => {
-    const mappedState = mapStateToProps({
-      config: {},
-      filters: { available: [] },
-      products: {}
-    });
-
-    expect(mappedState).toHaveProperty('filtersChosen');
-    expect(mappedState).toHaveProperty('filtersAvailable');
-    expect(mappedState).toHaveProperty('filterCount');
-    expect(mappedState).toHaveProperty('isFetching');
-    expect(mappedState).toHaveProperty('hasFetched');
-    expect(mappedState).toHaveProperty('products');
-    expect(mappedState).toHaveProperty('error');
-    expect(mappedState).toHaveProperty('cta');
   });
 });
