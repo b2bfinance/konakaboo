@@ -1,8 +1,12 @@
+import React from 'react';
 import { configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import theme from './utils/theme';
 import productStubs from '../stubs/products/response.json';
 import 'jest-styled-components';
+
+// @material-ui uses layout effects which creates triggers false positives in tests.
+React.useLayoutEffect = React.useEffect;
 
 const filterStateStubs = [
   { chosen: {} },
