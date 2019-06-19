@@ -1,46 +1,32 @@
 {
-  "name": "b2b-products-embed",
-  "version": "4.5.0",
+  "name": "products-embed",
+  "version": "5.0.0",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.1.1",
-    "@material-ui/icons": "^4.1.0",
+    "@material-ui/icons": "^4.2.0",
     "@material-ui/styles": "^4.1.1",
-    "core-js": "^2.5.5",
-    "enzyme": "^3.10.0",
-    "enzyme-adapter-react-16": "^1.14.0",
-    "enzyme-to-json": "^3.3.5",
+    "@types/jest": "24.0.15",
+    "@types/node": "12.0.8",
+    "@types/react": "16.8.20",
+    "@types/react-dom": "16.8.4",
     "isomorphic-fetch": "^2.2.1",
-    "jest-styled-components": "^6.3.1",
-    "prettier": "^1.11.1",
-    "query-string": "^5.1.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.1",
-    "styled-components": "^4.3.1"
+    "typescript": "3.5.2"
   },
   "scripts": {
-    "start": "REACT_APP_PROVIDER_URI=http://localhost:4000 react-scripts start",
-    "build": "GENERATE_SOURCEMAP=false react-scripts build",
-    "test": "react-scripts test --env jsdom",
-    "coverage": "npm test -- --coverage",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "tidy": "prettier --config .prettierrc.json --write ./src/**/*.{js,jsx}",
+    "coverage": "npm test -- --coverage",
     "push": "./scripts/push.js",
     "stub": "node ./stubs/products/index.js"
   },
-  "devDependencies": {
-    "@google-cloud/storage": "^1.6.0",
-    "babel-plugin-module-resolver": "^2.7.1"
-  },
-  "jest": {
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
-    ],
-    "collectCoverageFrom": [
-      "src/**/*.{js,jsx}",
-      "!src/index.js"
-    ]
+  "eslintConfig": {
+    "extends": "react-app"
   },
   "browserslist": {
     "production": [
@@ -53,5 +39,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@google-cloud/storage": "^2.5.0"
   }
 }

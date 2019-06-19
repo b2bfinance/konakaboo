@@ -23,16 +23,16 @@
  *   metadata wasn't set which will cause access issues.
  */
 
-const fs = require('fs');
-const path = require('path');
-const gcStorage = require('@google-cloud/storage');
-const pkg = require('../package.json');
+const fs = require("fs");
+const path = require("path");
+const gcStorage = require("@google-cloud/storage");
+const pkg = require("../package.json");
 
-const bucketName = 'b2bfinanceassets';
+const bucketName = "b2bfinanceassets";
 
 const storageOptions = {
-  projectId: 'b2bfinance-186310',
-  keyFilename: process.env.GCLOUD_STORAGE_KEY_FILE || '/run/secrets/google.json'
+  projectId: "b2bfinance-186310",
+  keyFilename: process.env.GCLOUD_STORAGE_KEY_FILE || "/run/secrets/google.json"
 };
 
 const Storage = gcStorage(storageOptions);
@@ -48,7 +48,7 @@ function fatal(message, err) {
 }
 
 function root(location) {
-  return path.join(__dirname, '..', location);
+  return path.join(__dirname, "..", location);
 }
 
 function run(bucket, src, dest) {
@@ -59,31 +59,31 @@ function run(bucket, src, dest) {
 
   fs.createReadStream(src)
     .pipe(file.createWriteStream({ gzip: true }))
-    .on('error', err => {
-      fatal('Error uploading build.', err);
+    .on("error", err => {
+      fatal("Error uploading build.", err);
     })
-    .on('finish', async () => {
+    .on("finish", async () => {
       try {
         await file.makePublic();
 
         await file.setMetadata({
-          contentType: 'application/javascript',
-          contentLanguage: 'en',
-          cacheControl: 'max-age=86400'
+          contentType: "application/javascript",
+          contentLanguage: "en",
+          cacheControl: "max-age=86400"
         });
       } catch (e) {
-        fatal('Unable to complete actions to ensure browsers love us.', e);
+        fatal("Unable to complete actions to ensure browsers love us.", e);
       }
     });
 }
 
 async function getSource() {
   const am = require(root(`/build/asset-manifest.json`));
-  const staticDir = root('./build/static/js');
+  const staticDir = root("./build/static/js");
   const buildFilename = `./build/${new Date().getTime()}.js`;
 
   if (!am) {
-    fatal('Cannot find asset-manifest.');
+    fatal("Cannot find asset-manifest.");
   }
 
   try {
@@ -93,7 +93,7 @@ async function getSource() {
       files.map(file => fs.promises.readFile(path.join(staticDir, file)))
     );
 
-    await fs.promises.writeFile(buildFilename, contents.join(''));
+    await fs.promises.writeFile(buildFilename, contents.join(""));
   } catch (e) {
     fatal(e);
   }
@@ -114,5 +114,5 @@ const main = async buildVersion => {
 
 do {
   main(version);
-  version = version.substr(0, version.lastIndexOf('.'));
-} while (version != '');
+  version = version.substr(0, version.lastIndexOf("."));
+} while (version != "");
