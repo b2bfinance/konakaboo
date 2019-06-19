@@ -6,15 +6,21 @@ import TableRow from '@material-ui/core/TableRow';
 import Typography from '@material-ui/core/Typography';
 import React from 'react';
 import styled from 'styled-components';
+import Hidden from '@material-ui/core/Hidden';
+import { queries } from '../../utils/media';
 
 export const Wrapper = styled(Grid)`
   padding: 16px;
 `;
 
 export const Disclaimer = styled.div`
-  margin-bottom: 32px;
+  margin-bottom: 16px;
   background-color: ${props => props.theme.productBorder};
   padding: 16px;
+
+  ${queries.desktop`
+    margin-bottom: 32px;
+  `}
 `;
 
 export const DetailRow = styled(TableRow)`
@@ -25,13 +31,20 @@ export const DetailCell = styled(TableCell)`
   border: 0 !important;
 `;
 
-export default ({ detailed, disclaimer }) => (
+export default ({ description, detailed, disclaimer }) => (
   <Wrapper>
     {disclaimer && (
       <Disclaimer>
         <Typography>{disclaimer}</Typography>
       </Disclaimer>
     )}
+    <Hidden smUp>
+      {description && (
+        <Typography variant="body2" paragraph>
+          {description}
+        </Typography>
+      )}
+    </Hidden>
     <Grid container spacing={4}>
       {detailed &&
         Object.keys(detailed).map(heading => (

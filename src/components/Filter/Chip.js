@@ -4,7 +4,6 @@ import Chip from '@material-ui/core/Chip';
 export { Chip as BaseChip };
 
 export const ChipHolder = styled.span`
-  margin-bottom: 1.5rem;
   margin-right: 0.5rem;
   position: relative;
 `;

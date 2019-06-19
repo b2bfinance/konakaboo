@@ -22,12 +22,12 @@ exports[`Labels renders correctly 1`] = `
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   line-height: 1;
-  margin-bottom: 8px;
+  margin: 8px 0;
 }
 
 @media (min-width:62em) {
   .c0 {
-    margin-bottom: 0;
+    margin: 0;
   }
 }
 

@@ -7,10 +7,10 @@ export const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   line-height: 1;
-  margin-bottom: 8px;
+  margin: 8px 0;
 
   ${queries.desktop`
-    margin-bottom: 0;
+    margin: 0;
   `}
 `;
 

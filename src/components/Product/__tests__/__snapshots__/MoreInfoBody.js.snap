@@ -22,8 +22,14 @@ exports[`DetailRow renders correctly 1`] = `
 
 exports[`Disclaimer renders correctly 1`] = `
 .c0 {
-  margin-bottom: 32px;
+  margin-bottom: 16px;
   padding: 16px;
+}
+
+@media (min-width:62em) {
+  .c0 {
+    margin-bottom: 32px;
+  }
 }
 
 <div
@@ -37,7 +43,7 @@ exports[`MoreInfoBody renders correctly 1`] = `
 }
 
 .c1 {
-  margin-bottom: 32px;
+  margin-bottom: 16px;
   padding: 16px;
 }
 
@@ -47,6 +53,12 @@ exports[`MoreInfoBody renders correctly 1`] = `
 
 .c3 {
   border: 0 !important;
+}
+
+@media (min-width:62em) {
+  .c1 {
+    margin-bottom: 32px;
+  }
 }
 
 <div
