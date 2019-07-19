@@ -1,1 +1,16 @@
-[![codecov](https://codecov.io/gh/legalweb/products-embed/branch/master/graph/badge.svg?token=J7uCEayARA)](https://codecov.io/gh/legalweb/products-embed)
+# products-embed
+
+[![Travis][build-badge]][build]
+[![npm package][npm-badge]][npm]
+[![Coveralls][coveralls-badge]][coveralls]
+
+Describe products-embed here.
+
+[build-badge]: https://img.shields.io/travis/user/repo/master.png?style=flat-square
+[build]: https://travis-ci.org/user/repo
+
+[npm-badge]: https://img.shields.io/npm/v/npm-package.png?style=flat-square
+[npm]: https://www.npmjs.org/package/npm-package
+
+[coveralls-badge]: https://img.shields.io/coveralls/user/repo/master.png?style=flat-square
+[coveralls]: https://coveralls.io/github/user/repo

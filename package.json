@@ -1,46 +1,48 @@
 {
-  "name": "products-embed",
+  "name": "b2b-products-embed",
   "version": "5.0.0",
-  "private": true,
-  "dependencies": {
-    "@material-ui/core": "^4.1.1",
-    "@material-ui/icons": "^4.2.0",
-    "@material-ui/styles": "^4.1.1",
-    "@types/jest": "24.0.15",
-    "@types/node": "12.0.8",
-    "@types/react": "16.8.20",
-    "@types/react-dom": "16.8.4",
-    "isomorphic-fetch": "^2.2.1",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1",
-    "typescript": "3.5.2"
-  },
+  "description": "products-embed React component",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "files": [
+    "css",
+    "es",
+    "lib",
+    "umd"
+  ],
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "coverage": "npm test -- --coverage",
-    "push": "./scripts/push.js",
-    "stub": "node ./stubs/products/index.js"
+    "build": "nwb build-react-component",
+    "clean": "nwb clean-module && nwb clean-demo",
+    "prepublishOnly": "npm run build",
+    "start": "nwb serve-react-demo",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "test:watch": "jest --watch"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "dependencies": {
+    "@material-ui/core": "^4.2.1"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "peerDependencies": {
+    "react": "16.x"
   },
   "devDependencies": {
-    "@google-cloud/storage": "^2.5.0"
-  }
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "@testing-library/jest-dom": "^4.0.0",
+    "@testing-library/react": "^8.0.5",
+    "babel-jest": "^24.8.0",
+    "jest": "^24.8.0",
+    "nwb": "0.23.x",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "author": "Kyle Needham <kyle.needham@b2bfinance.com>",
+  "homepage": "https://github.com/legalweb/products-embed",
+  "license": "MIT",
+  "repository": "https://github.com/legalweb/products-embed",
+  "keywords": [
+    "b2bfinance",
+    "products embed"
+  ]
 }
