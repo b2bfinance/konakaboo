@@ -1,8 +1,3 @@
-import React, { Component } from "react";
-import { Grid } from "@material-ui/core";
-
-export default class extends Component {
-  render() {
-    return <h2>Welcome to React components</h2>;
-  }
-}
+export { default, EmbedContext } from "./EmbedWrapper";
+export { default as theme } from "./utils/theme";
+export * from "./constants";
