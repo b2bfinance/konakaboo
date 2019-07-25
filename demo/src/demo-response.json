@@ -9,19 +9,23 @@
       "columns": [
         {
           "label": "Max LTV",
-          "value": "85%"
+          "value": "85%",
+          "subtext": "remortgage"
         },
         {
           "label": "Initial Rate",
-          "value": "1.49%"
+          "value": "1.49%",
+          "subtext": "4 years"
         },
         {
           "label": "Subsequent Rate",
-          "value": "2.75%"
+          "value": "2.75%",
+          "subtext": "Fixed"
         },
         {
           "label": "Fees",
-          "value": "£1,495"
+          "value": "£1,495",
+          "subtext": "added to loan"
         }
       ],
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean bibendum facilisis condimentum. Donec laoreet porttitor condimentum. Nulla luctus efficitur magna, eget rhoncus metus placerat sed.",
