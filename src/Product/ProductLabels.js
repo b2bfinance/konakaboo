@@ -6,7 +6,7 @@ const useStyles = makeStyles(theme => ({
   productLabelsWrapper: {
     display: "flex",
     flexWrap: "wrap",
-    lineHeigth: 1,
+    lineHeight: 1,
     margin: theme.spacing(1, 0),
     [theme.breakpoints.up("sm")]: {
       margin: 0

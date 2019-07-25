@@ -33,7 +33,7 @@ const useStyles = makeStyles(theme => ({
     maxHeight: "100%",
     margin: "auto"
   },
-  productHighligtedIcon: {
+  productHighlightedIcon: {
     marginLeft: theme.spacing(0.5),
     color: theme.palette.product.headingHighlightIcon
   },
@@ -65,11 +65,7 @@ const ProductHeadingRow = ({ logo, brand, highlighted, title, labels }) => {
                   {brand}
                 </Typography>
               </Grid>
-              <Grid item>
-                {highlighted && (
-                  <WhatsHotIcon className={classes.productHighligtedIcon} />
-                )}
-              </Grid>
+              <Grid item>{highlighted && <WhatsHotIcon className={classes.productHighlightedIcon} />}</Grid>
             </Grid>
           </Grid>
           <Grid item xs={12}>

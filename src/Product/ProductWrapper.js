@@ -1,8 +1,14 @@
 import { Button, Grid, Hidden, Typography } from "@material-ui/core";
+import { blue } from "@material-ui/core/colors";
 import { makeStyles } from "@material-ui/styles";
 import React, { useContext, useState } from "react";
 import { EmbedContext } from "../EmbedWrapper";
+import ProductColumns from "./ProductColumns";
+import ProductConfirm from "./ProductConfirm";
+import ProductFeaturedPoint from "./ProductFeaturedPoint";
 import ProductHeadingRow from "./ProductHeadingRow";
+import ProductMoreInfo from "./ProductMoreInfo";
+import ProductPrimaryButton from "./ProductPrimaryButton";
 
 const useStyles = makeStyles(theme => ({
   productWrapper: {
@@ -14,6 +20,19 @@ const useStyles = makeStyles(theme => ({
   productDescription: {
     borderTop: `1px solid ${theme.palette.grey[100]}`,
     padding: theme.spacing(2)
+  },
+  productActionsColumn: {
+    padding: theme.spacing(2, 1)
+  },
+  productMoreInfoButton: {
+    display: "flex",
+    justifySelf: "center",
+    textTransform: "lowercase",
+    color: blue[700]
+  },
+  productApplyButton: {
+    marginTop: theme.spacing(0.5),
+    width: "100%"
   }
 }));
 
@@ -41,6 +60,10 @@ const ProductWrapper = ({
     config: [config]
   } = useContext(EmbedContext);
 
+  const handleMoreInfoClick = () => {
+    setWithInfo(true);
+  };
+
   const handleApplyButtonClick = e => {
     config.onApply();
 
@@ -51,49 +74,59 @@ const ProductWrapper = ({
   };
 
   return (
-    <div className={classes.productBody}>
-      <ProductHeadingRow
-        logo={links.logo}
-        brand={brand}
-        highlighted={highlighted}
-        title={title}
-        labels={labels}
-      />
-      <Grid className={classes.productBody} container>
-        <Grid item xs={12} sm={9}>
-          grid
-        </Grid>
-        <Grid item xs={12} sm={3}>
-          <Grid container alignContent="center">
-            <Grid item xs={12}>
-              {detailed && "MoreInfoButton"}
-            </Grid>
-            <Grid item xs={12}>
-              <Button
-                variant="contained"
-                color="primary"
-                size="medium"
-                href={links.apply}
-                target="_blank"
-                rel="noopener"
-                onClick={handleApplyButtonClick}
-              >
-                {config.cta}
+    <div className={classes.productWrapper}>
+      <ProductHeadingRow logo={links.logo} brand={brand} highlighted={highlighted} title={title} labels={labels} />
+      <Grid className={classes.productBody} container alignItems="center">
+        <ProductColumns columns={columns} />
+        <Grid className={classes.productActionsColumn} item xs={12} md={3}>
+          <Grid container justify="center">
+            {detailed && (
+              <Button className={classes.productMoreInfoButton} variant="text" onClick={handleMoreInfoClick}>
+                more details
               </Button>
-            </Grid>
+            )}
+            <ProductPrimaryButton
+              className={classes.productApplyButton}
+              size="large"
+              href={links.apply}
+              target="_blank"
+              rel="noopener"
+              onClick={handleApplyButtonClick}
+            >
+              {config.cta}
+            </ProductPrimaryButton>
           </Grid>
         </Grid>
-        <Hidden xsDown>
+        <Hidden xsDown implementation="css">
           {description && (
             <Typography className={classes.productDescription} variant="body2">
               {description}
             </Typography>
           )}
-          {featurePoint && "Feature Point"}
         </Hidden>
       </Grid>
-      {detailed && "MoreInfo"}
-      {meta.confirm && "Confirm"}
+      <Grid container>{featurePoint && <ProductFeaturedPoint description={featurePoint} />}</Grid>
+      {detailed && (
+        <ProductMoreInfo
+          open={withInfo}
+          onClose={() => setWithInfo(false)}
+          title={title}
+          links={links}
+          brand={brand}
+          description={description}
+          detailed={detailed}
+          disclaimer={disclaimer}
+        />
+      )}
+      {meta.confirm && (
+        <ProductConfirm
+          open={withConfirmation}
+          handleRequestClose={() => setWithConfirmation(false)}
+          title={meta.confirm.heading}
+          description={meta.confirm.description}
+          forwardUrl={links.apply}
+        />
+      )}
     </div>
   );
 };
