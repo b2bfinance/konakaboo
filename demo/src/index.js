@@ -1,32 +1,61 @@
 import { Container, Grid, Typography } from "@material-ui/core";
 import { ThemeProvider } from "@material-ui/styles";
-import React, { Component } from "react";
+import React from "react";
 import { render } from "react-dom";
-import ProductsEmbed from "../../src";
-import theme from "../../src/utils/theme";
+import ProductsEmbed, { theme } from "../../src";
 import demoProducts from "./demo-response.json";
 
-class Demo extends Component {
-  render() {
-    return (
-      <ThemeProvider theme={theme}>
-        <Container>
-          <Grid container spacing={2}>
-            <Grid item xs={12}>
-              <Typography variant="h1">Products Embed</Typography>
-            </Grid>
-            <Grid item xs={12}>
-              <ProductsEmbed
-                products={{
-                  products: demoProducts
-                }}
-              />
-            </Grid>
-          </Grid>
-        </Container>
-      </ThemeProvider>
-    );
-  }
-}
+const products = demoProducts;
+
+const filters = {
+  chosen: ["", [75, 85]],
+  available: [
+    {
+      title: "Exclude Fees",
+      key: "exclude_fees",
+      multiChoice: false,
+      choices: [
+        {
+          label: "Yes",
+          value: "true"
+        },
+        {
+          label: "No",
+          value: "false"
+        }
+      ]
+    },
+    {
+      title: "LTV",
+      key: "ltv",
+      multiChoice: true,
+      choices: [
+        {
+          label: "85% LTV",
+          value: 85
+        },
+        {
+          label: "75% LTV",
+          value: 75
+        }
+      ]
+    }
+  ]
+};
+
+const Demo = () => (
+  <ThemeProvider theme={theme}>
+    <Container>
+      <Grid container spacing={2}>
+        <Grid item xs={12}>
+          <Typography variant="h1">Products Embed</Typography>
+        </Grid>
+        <Grid item xs={12}>
+          <ProductsEmbed products={products} filters={filters} />
+        </Grid>
+      </Grid>
+    </Container>
+  </ThemeProvider>
+);
 
 render(<Demo />, document.querySelector("#demo"));
