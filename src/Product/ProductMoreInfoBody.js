@@ -9,7 +9,7 @@ const useStyles = makeStyles(theme => ({
   productMoreInfoBodyDisclaimer: {
     width: "100%",
     marginBottom: theme.spacing(2),
-    backgroundColor: theme.palette.grey[100],
+    backgroundColor: theme.palette.grey[200],
     padding: theme.spacing(2),
     [theme.breakpoints.up("md")]: {
       marginBottom: theme.spacing(4)
@@ -41,34 +41,33 @@ const ProductMoreInfoBody = ({ description, detailed, disclaimer }) => {
         )}
       </Hidden>
       <Grid container spacing={4}>
-        {detailed &&
-          Object.keys(detailed).map(heading => (
-            <Grid item xs={12} sm={6} lg={4} key={heading}>
-              <Typography variant="h6">{heading}</Typography>
-              <Table padding="none">
-                <TableBody>
-                  {detailed[heading].map(detail =>
-                    detail.label ? (
-                      <TableRow className={classes.productMoreInfoBodyDetailRow} key={detail.label}>
-                        <TableCell className={classes.productMoreInfoBodyDetailCell} variant="head">
-                          {detail.label}
-                        </TableCell>
-                        <TableCell className={classes.productMoreInfoBodyDetailCell} align="right">
-                          {detail.value}
-                        </TableCell>
-                      </TableRow>
-                    ) : (
-                      <TableRow className={classes.productMoreInfoBodyDetailRow} key={detail.value}>
-                        <TableCell className={classes.productMoreInfoBodyDetailCell}>
-                          <Typography paragraph>{detail.value}</Typography>
-                        </TableCell>
-                      </TableRow>
-                    )
-                  )}
-                </TableBody>
-              </Table>
-            </Grid>
-          ))}
+        {detailed.map(detail => (
+          <Grid item xs={12} sm={6} lg={4} key={detail.title}>
+            <Typography variant="h6">{detail.title}</Typography>
+            <Table padding="none">
+              <TableBody>
+                {detail.rows.map(row =>
+                  row.label ? (
+                    <TableRow className={classes.productMoreInfoBodyDetailRow} key={row.label}>
+                      <TableCell className={classes.productMoreInfoBodyDetailCell} variant="head">
+                        {row.label}
+                      </TableCell>
+                      <TableCell className={classes.productMoreInfoBodyDetailCell} align="right">
+                        {row.value}
+                      </TableCell>
+                    </TableRow>
+                  ) : (
+                    <TableRow className={classes.productMoreInfoBodyDetailRow} key={row.value}>
+                      <TableCell className={classes.productMoreInfoBodyDetailCell}>
+                        <Typography paragraph>{row.value}</Typography>
+                      </TableCell>
+                    </TableRow>
+                  )
+                )}
+              </TableBody>
+            </Table>
+          </Grid>
+        ))}
       </Grid>
     </Grid>
   );

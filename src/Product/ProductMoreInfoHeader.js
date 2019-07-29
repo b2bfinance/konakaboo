@@ -6,10 +6,10 @@ import React from "react";
 const useStyles = makeStyles(theme => ({
   productMoreInfoHeaderWrapper: {
     padding: theme.spacing(1),
-    borderBottom: `2px solid ${theme.palette.grey[100]}`
+    borderBottom: `2px solid ${theme.palette.grey[200]}`
   },
   productMoreInfoHeaderLogoWrapper: {
-    border: `2px solid ${theme.palette.grey[100]}`,
+    border: `2px solid ${theme.palette.grey[200]}`,
     display: "flex",
     height: 100,
     width: 150

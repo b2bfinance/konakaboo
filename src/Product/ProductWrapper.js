@@ -3,32 +3,37 @@ import { blue } from "@material-ui/core/colors";
 import { makeStyles } from "@material-ui/styles";
 import React, { useContext, useState } from "react";
 import { EmbedContext } from "../EmbedWrapper";
-import ProductColumns from "./ProductColumns";
-import ProductConfirm from "./ProductConfirm";
-import ProductFeaturedPoint from "./ProductFeaturedPoint";
-import ProductHeadingRow from "./ProductHeadingRow";
-import ProductMoreInfo from "./ProductMoreInfo";
-import ProductPrimaryButton from "./ProductPrimaryButton";
+import {
+  ProductColumns,
+  ProductConfirm,
+  ProductFeaturedPoint,
+  ProductHeadingRow,
+  ProductMoreInfo,
+  ProductPrimaryButton
+} from ".";
 
 const useStyles = makeStyles(theme => ({
   productWrapper: {
-    opacity: props => (props.faded ? 0.6 : 1)
+    opacity: props => (props.faded ? 0.6 : 1),
+    marginBottom: theme.spacing(6)
   },
   productBody: {
-    backgroundColor: theme.palette.common.white
+    backgroundColor: theme.palette.common.white,
+    border: `1px solid ${theme.palette.grey[200]}`
   },
   productDescription: {
-    borderTop: `1px solid ${theme.palette.grey[100]}`,
+    borderTop: `1px solid ${theme.palette.grey[200]}`,
     padding: theme.spacing(2)
   },
   productActionsColumn: {
-    padding: theme.spacing(2, 1)
+    padding: theme.spacing(2, 4)
   },
   productMoreInfoButton: {
+    padding: theme.spacing(0, 1),
     display: "flex",
     justifySelf: "center",
     textTransform: "lowercase",
-    color: blue[700]
+    color: blue[800]
   },
   productApplyButton: {
     marginTop: theme.spacing(0.5),
@@ -52,7 +57,6 @@ const ProductWrapper = ({
   const classes = useStyles({
     faded: meta.faded
   });
-
   const [withInfo, setWithInfo] = useState(false);
   const [withConfirmation, setWithConfirmation] = useState(false);
 
@@ -73,6 +77,8 @@ const ProductWrapper = ({
     }
   };
 
+  console.log("hot");
+
   return (
     <div className={classes.productWrapper}>
       <ProductHeadingRow logo={links.logo} brand={brand} highlighted={highlighted} title={title} labels={labels} />
@@ -80,7 +86,7 @@ const ProductWrapper = ({
         <ProductColumns columns={columns} />
         <Grid className={classes.productActionsColumn} item xs={12} md={3}>
           <Grid container justify="center">
-            {detailed && (
+            {detailed.length > 0 && (
               <Button className={classes.productMoreInfoButton} variant="text" onClick={handleMoreInfoClick}>
                 more details
               </Button>
@@ -106,7 +112,7 @@ const ProductWrapper = ({
         </Hidden>
       </Grid>
       <Grid container>{featurePoint && <ProductFeaturedPoint description={featurePoint} />}</Grid>
-      {detailed && (
+      {detailed.length > 0 && (
         <ProductMoreInfo
           open={withInfo}
           onClose={() => setWithInfo(false)}

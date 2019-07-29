@@ -3,10 +3,11 @@ import ProductWrapper from "./ProductWrapper";
 import { EmbedContext } from "../EmbedWrapper";
 
 const ProductList = () => {
-  const { products } = useContext(EmbedContext);
-  const data = products[0].products.data;
+  const {
+    products: [products]
+  } = useContext(EmbedContext);
 
-  return data.map(product => (
+  return products.data.map(product => (
     <ProductWrapper
       key={product.id}
       highlighted={product.highlighted}

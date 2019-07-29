@@ -1,4 +1,4 @@
-import Drawer from "@material-ui/core/Drawer";
+import { Drawer } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
 import React from "react";
 import ProductMoreInfoBody from "./ProductMoreInfoBody";
