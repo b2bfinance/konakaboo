@@ -1,4 +1,4 @@
-import { green, orange, pink } from "@material-ui/core/colors";
+import { green, orange, pink, teal } from "@material-ui/core/colors";
 import { createMuiTheme } from "@material-ui/core/styles";
 
 const theme = createMuiTheme({
@@ -7,7 +7,10 @@ const theme = createMuiTheme({
       headingHighlightIcon: orange[300],
       productFeaturedIconColor: pink[300]
     },
-    primary: green
+    primary: green,
+    secondary: {
+      main: teal[500]
+    }
   },
   typography: {
     fontFamily: `"Roboto", "Helvetica", "Arial", sans-serif`,
