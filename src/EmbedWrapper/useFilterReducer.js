@@ -3,19 +3,18 @@ import { getEmptyChosen } from "../utils/filter";
 import { useReducer } from "react";
 
 export const initialState = {
-  chosen: {},
+  chosen: [],
   available: []
 };
 
 const filterReducer = (state = initialState, action) => {
   switch (action.type) {
     case SET_FILTER:
+      state.chosen[action.group] = action.chosen;
+
       return {
         ...state,
-        chosen: {
-          ...state.chosen,
-          [action.group]: action.payload
-        }
+        chosen: [...state.chosen]
       };
     case RESET_FILTERS:
       return {
@@ -23,17 +22,15 @@ const filterReducer = (state = initialState, action) => {
         chosen: getEmptyChosen(state.available)
       };
     case RESET_GROUP_FILTERS:
+      state.chosen[action.group] = state.available[action.group].multiChoice ? [] : "";
+
       return {
         ...state,
-        chosen: {
-          ...state.chosen,
-          [action.group]: state.available[action.group].multiChoice ? [] : ""
-        }
+        chosen: [...state.chosen]
       };
     default:
       return state;
   }
 };
 
-export default filters =>
-  useReducer(filterReducer, { ...initialState, ...filters });
+export default filters => useReducer(filterReducer, { ...initialState, ...filters });
