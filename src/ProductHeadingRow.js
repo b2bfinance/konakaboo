@@ -6,7 +6,7 @@ import ProductLabels from "./ProductLabels";
 
 const useStyles = makeStyles(theme => ({
   productHeadingWrapper: {
-    backgroundColor: theme.palette.grey[200],
+    backgroundColor: theme.palette.grey[100],
     padding: theme.spacing(2),
     [theme.breakpoints.up("xs")]: {
       backgroundColor: "transparent",
@@ -22,7 +22,7 @@ const useStyles = makeStyles(theme => ({
       padding: theme.spacing(0.5),
       marginRight: theme.spacing(2),
       marginLeft: theme.spacing(1.5),
-      border: `1px solid ${theme.palette.grey[200]}`,
+      border: `1px solid ${theme.palette.grey[100]}`,
       marginBottom: theme.spacing(-1),
       textAlign: "center",
       height: theme.spacing(11)

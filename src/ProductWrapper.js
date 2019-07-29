@@ -17,10 +17,10 @@ const useStyles = makeStyles(theme => ({
   },
   productBody: {
     backgroundColor: theme.palette.common.white,
-    border: `1px solid ${theme.palette.grey[200]}`
+    border: `1px solid ${theme.palette.grey[100]}`
   },
   productDescription: {
-    borderTop: `1px solid ${theme.palette.grey[200]}`,
+    borderTop: `1px solid ${theme.palette.grey[100]}`,
     padding: theme.spacing(2)
   },
   productActionsColumn: {
