@@ -1,4 +1,3 @@
-import { useReducer } from "react";
 import useConfigReducer from "./useConfigReducer";
 import useFilterReducer from "./useFilterReducer";
 import useProductReducer from "./useProductReducer";

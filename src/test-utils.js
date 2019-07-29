@@ -1,6 +1,6 @@
-import { render } from "@testing-library/react";
 import { ThemeProvider } from "@material-ui/styles";
-import theme from "./utils/theme";
+import { render } from "@testing-library/react";
+import theme from "./utils";
 
 const Providers = ({ children }) => {
   return <ThemeProvider theme={theme}>{children}</ThemeProvider>;

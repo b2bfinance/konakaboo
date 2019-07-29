@@ -1,16 +1,14 @@
 import { Button, Grid, Hidden, Typography } from "@material-ui/core";
 import { blue } from "@material-ui/core/colors";
 import { makeStyles } from "@material-ui/styles";
-import React, { useContext, useState } from "react";
-import {
-  EmbedContext,
-  ProductColumns,
-  ProductConfirm,
-  ProductFeaturedPoint,
-  ProductHeadingRow,
-  ProductMoreInfo,
-  ProductPrimaryButton
-} from ".";
+import React, { useState } from "react";
+import { useConfigState } from "./hooks";
+import ProductColumns from "./ProductColumns";
+import ProductConfirm from "./ProductConfirm";
+import ProductFeaturedPoint from "./ProductFeaturedPoint";
+import ProductHeadingRow from "./ProductHeadingRow";
+import ProductMoreInfo from "./ProductMoreInfo";
+import ProductPrimaryButton from "./ProductPrimaryButton";
 
 const useStyles = makeStyles(theme => ({
   productWrapper: {
@@ -59,10 +57,7 @@ const ProductWrapper = ({
   });
   const [withInfo, setWithInfo] = useState(false);
   const [withConfirmation, setWithConfirmation] = useState(false);
-
-  const {
-    config: [config]
-  } = useContext(EmbedContext);
+  const config = useConfigState();
 
   const handleMoreInfoClick = () => {
     setWithInfo(true);

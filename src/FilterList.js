@@ -2,11 +2,11 @@ import { Chip, Grid, Popover } from "@material-ui/core";
 import ArrowDropDown from "@material-ui/icons/ArrowDropDown";
 import Cancel from "@material-ui/icons/Cancel";
 import { makeStyles } from "@material-ui/styles";
-import React, { useContext, useState } from "react";
-import { FilterWrapper } from ".";
+import React, { useState } from "react";
 import { RESET_FILTERS, RESET_GROUP_FILTERS } from "./constants";
-import { EmbedContext } from "./EmbedWrapper";
-import { generateChipLabel } from "./utils/filter";
+import FilterWrapper from "./FilterWrapper";
+import { useFilterDispatch, useFilterState } from "./hooks";
+import { generateChipLabel } from "./utils";
 
 const useStyles = makeStyles(theme => ({
   filterListWrapper: {
@@ -22,10 +22,8 @@ const FilterList = () => {
   const classes = useStyles();
   const [activeGroup, setActiveGroup] = useState(null);
   const [anchorEl, setAnchorEl] = useState(null);
-
-  const {
-    filters: [filters, dispatchFilterAction]
-  } = useContext(EmbedContext);
+  const filters = useFilterState();
+  const dispatchFilters = useFilterDispatch();
 
   const handleChipClick = group => e => {
     setAnchorEl(e.currentTarget);
@@ -33,7 +31,7 @@ const FilterList = () => {
   };
 
   const handleChipDelete = group => () => {
-    dispatchFilterAction({
+    dispatchFilters({
       type: RESET_GROUP_FILTERS,
       group
     });
@@ -45,7 +43,7 @@ const FilterList = () => {
   };
 
   const handleResetAllFilters = () => {
-    dispatchFilterAction({
+    dispatchFilters({
       type: RESET_FILTERS
     });
   };
