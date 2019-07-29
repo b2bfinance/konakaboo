@@ -1,8 +1,8 @@
-import Grid from "@material-ui/core/Grid";
+import { CssBaseline, Grid } from "@material-ui/core";
 import React, { createContext } from "react";
-import useEmbedReducer from "./useEmbedReducer";
+import { FilterList } from "../Filter";
 import { ProductList } from "../Product";
-import { CssBaseline } from "@material-ui/core";
+import useEmbedReducer from "./useEmbedReducer";
 
 export const EmbedContext = createContext();
 
@@ -13,7 +13,7 @@ const EmbedWrapper = ({ config, filters, products }) => {
     <EmbedContext.Provider value={embedReducer}>
       <CssBaseline />
       <Grid item xs={12}>
-        filters
+        <FilterList />
       </Grid>
       <Grid item xs={12}>
         <Grid item xs={12}>
