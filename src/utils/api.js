@@ -1,7 +1,7 @@
 import axios from "axios";
 import { getQueryStringFromState } from "./filter";
 
-export function makeProviderURI(provider, filters) {
+export const makeProviderURI = (provider, filters) => {
   const filterQuery = getQueryStringFromState(filters);
 
   if (!filterQuery) {
@@ -13,6 +13,6 @@ export function makeProviderURI(provider, filters) {
   }
 
   return `${provider}?${filterQuery}`;
-}
+};
 
 export const fetchProducts = async provider => await axios.get(provider);

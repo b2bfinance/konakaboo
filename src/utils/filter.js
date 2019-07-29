@@ -4,7 +4,7 @@ export function getEmptyChosen(available) {
   return available.reduce((chosen, filter, i) => {
     chosen[i] = filter.multiChoice ? [] : "";
     return chosen;
-  }, {});
+  }, []);
 }
 
 export function getQueryStringFromState(filterState) {
@@ -48,15 +48,15 @@ export function generateChipLabel(title, multi, chosen, choices) {
   return title;
 }
 
-export function getChosenWithModification(chosen, multi, value) {
+export function addChoiceToChosen(chosen, multi, choice) {
   if (multi) {
-    if (chosen.indexOf(value) === -1) {
-      chosen.push(value);
+    if (chosen.indexOf(choice) === -1) {
+      chosen.push(choice);
       return chosen;
     }
 
-    return chosen.filter(f => f !== value);
+    return chosen.filter(f => f !== choice);
   }
 
-  return value;
+  return choice;
 }
