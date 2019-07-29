@@ -40,8 +40,8 @@ const getLabel = label => {
 };
 
 const ProductLabel = ({ label }) => {
-  const classes = useStyles({ colorGroup: colors[color] || colors.blueGrey });
   const [color, text] = getLabel(label);
+  const classes = useStyles({ colorGroup: colors[color] || colors.blueGrey });
 
   return (
     <div className={classes.productLabelWrapper}>
