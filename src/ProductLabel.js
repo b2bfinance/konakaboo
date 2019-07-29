@@ -17,13 +17,16 @@ const useStyles = makeStyles(theme => ({
   productLabelWrapper: {
     borderRadius: theme.spacing(4),
     padding: theme.spacing(0.5, 1.5),
-    backgroundColor: props => props.colorGroup[600],
+    border: "1px solid",
+    borderColor: props => props.colorGroup[500],
     marginRight: theme.spacing(1),
-    color: props =>
-      getContrastRatio(props.colorGroup[600], props.colorGroup[50]) >= 3 ? props.colorGroup[50] : colors.blueGrey[800],
     "&:last-child": {
       marginRight: 0
     }
+  },
+  productLabelText: {
+    fontWeight: theme.typography.fontWeightBold,
+    color: props => props.colorGroup[500]
   }
 }));
 
@@ -42,7 +45,7 @@ const ProductLabel = ({ label }) => {
 
   return (
     <div className={classes.productLabelWrapper}>
-      <Typography color="inherit" variant="caption">
+      <Typography className={classes.productLabelText} color="inherit" variant="caption">
         {text}
       </Typography>
     </div>

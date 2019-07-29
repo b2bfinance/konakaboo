@@ -19,7 +19,7 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.up("sm")]: {
       backgroundColor: theme.palette.common.white,
       display: "flex",
-      padding: theme.spacing(0.5),
+      padding: theme.spacing(1),
       marginRight: theme.spacing(2),
       marginLeft: theme.spacing(1.5),
       border: `1px solid ${theme.palette.grey[100]}`,
@@ -50,7 +50,7 @@ const ProductHeadingRow = ({ logo, brand, highlighted, title, labels }) => {
   const classes = useStyles();
 
   return (
-    <Grid className={classes.productHeadingWrapper} container>
+    <Grid className={classes.productHeadingWrapper} container alignItems="flex-start">
       <Grid item xs={12} sm={3} md={2}>
         <div className={classes.productLogoWrapper}>
           <img className={classes.productLogo} src={logo} alt={brand} />
