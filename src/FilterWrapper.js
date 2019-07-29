@@ -12,9 +12,8 @@ import {
 import Close from "@material-ui/icons/Close";
 import { makeStyles } from "@material-ui/styles";
 import React, { useContext } from "react";
-import { SET_FILTER } from "../constants";
-import { EmbedContext } from "../EmbedWrapper";
-import { addChoiceToChosen } from "../utils/filter";
+import { SET_FILTER } from "./constants";
+import { EmbedContext, addChoiceToChosen } from ".";
 
 const useStyles = makeStyles(theme => ({
   filterWrapperHeader: {

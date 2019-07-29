@@ -24,5 +24,4 @@ export const productReducer = (state, action) => {
   }
 };
 
-export default products =>
-  useReducer(productReducer, { ...initialState, ...products });
+export default products => useReducer(productReducer, { ...initialState, ...products });

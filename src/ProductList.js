@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import ProductWrapper from "./ProductWrapper";
-import { EmbedContext } from "../EmbedWrapper";
+import { EmbedContext } from "./EmbedWrapper";
 
 const ProductList = () => {
   const {

@@ -2,13 +2,13 @@ import { Container, Grid, Typography } from "@material-ui/core";
 import { ThemeProvider } from "@material-ui/styles";
 import React from "react";
 import { render } from "react-dom";
-import ProductsEmbed, { theme } from "../../src";
+import { EmbedWrapper, theme } from "../../src";
 import demoProducts from "./demo-response.json";
 
 const products = demoProducts;
 
 const filters = {
-  chosen: ["", [75, 85]],
+  chosen: ["", []],
   available: [
     {
       title: "Exclude Fees",
@@ -51,7 +51,7 @@ const Demo = () => (
           <Typography variant="h1">Products Embed</Typography>
         </Grid>
         <Grid item xs={12}>
-          <ProductsEmbed products={products} filters={filters} />
+          <EmbedWrapper products={products} filters={filters} />
         </Grid>
       </Grid>
     </Container>

@@ -4,9 +4,9 @@ import Cancel from "@material-ui/icons/Cancel";
 import { makeStyles } from "@material-ui/styles";
 import React, { useContext, useState } from "react";
 import { FilterWrapper } from ".";
-import { RESET_FILTERS, RESET_GROUP_FILTERS } from "../constants";
-import { EmbedContext } from "../EmbedWrapper";
-import { generateChipLabel } from "../utils/filter";
+import { RESET_FILTERS, RESET_GROUP_FILTERS } from "./constants";
+import { EmbedContext } from "./EmbedWrapper";
+import { generateChipLabel } from "./utils/filter";
 
 const useStyles = makeStyles(theme => ({
   filterListWrapper: {

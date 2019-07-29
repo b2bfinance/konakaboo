@@ -1,8 +1,7 @@
 import { CssBaseline, Grid } from "@material-ui/core";
 import React, { createContext } from "react";
-import { FilterList } from "../Filter";
-import { ProductList } from "../Product";
-import useEmbedReducer from "./useEmbedReducer";
+import { FilterList, ProductList } from ".";
+import useEmbedReducer from "./hooks/useEmbedReducer";
 
 export const EmbedContext = createContext();
 

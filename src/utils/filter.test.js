@@ -1,5 +1,5 @@
 import { generateChipLabel, getEmptyChosen, getQueryStringFromState } from "./filter";
-import { filters } from "../test-utils";
+import { filters } from "./test-utils";
 
 test("resets all chosen filters", () => {
   const resetChosenFilters = getEmptyChosen([{ multiChoice: true }, { multiChoice: false }]);

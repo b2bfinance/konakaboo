@@ -2,8 +2,8 @@ import { Button, Grid, Hidden, Typography } from "@material-ui/core";
 import { blue } from "@material-ui/core/colors";
 import { makeStyles } from "@material-ui/styles";
 import React, { useContext, useState } from "react";
-import { EmbedContext } from "../EmbedWrapper";
 import {
+  EmbedContext,
   ProductColumns,
   ProductConfirm,
   ProductFeaturedPoint,
@@ -76,8 +76,6 @@ const ProductWrapper = ({
       setWithConfirmation(true);
     }
   };
-
-  console.log("hot");
 
   return (
     <div className={classes.productWrapper}>
