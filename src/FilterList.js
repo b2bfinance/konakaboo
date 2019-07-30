@@ -22,7 +22,7 @@ const FilterList = () => {
   const classes = useStyles();
   const [activeGroup, setActiveGroup] = useState(null);
   const [anchorEl, setAnchorEl] = useState(null);
-  const filters = useFilterState();
+  const { chosen, available } = useFilterState();
   const dispatchFilters = useFilterDispatch();
 
   const handleChipClick = group => e => {
@@ -50,16 +50,16 @@ const FilterList = () => {
 
   return (
     <Grid className={classes.filterListWrapper} container>
-      {filters.available.map((filter, i) => (
+      {available.map((filter, i) => (
         <React.Fragment key={i}>
           <Chip
             className={classes.filterListChip}
-            selection={filters.chosen[i]}
-            label={generateChipLabel(filter.title, filter.multiChoice, filters.chosen[i], filter.choices)}
-            deleteIcon={filters.chosen[i].length > 0 ? <Cancel /> : <ArrowDropDown />}
+            selection={chosen[i]}
+            label={generateChipLabel(filter.title, filter.multiChoice, chosen[i], filter.choices)}
+            deleteIcon={chosen[i].length > 0 ? <Cancel /> : <ArrowDropDown />}
             onClick={handleChipClick(filter.key)}
             onDelete={handleChipDelete(i)}
-            color={filters.chosen[i].length > 0 ? "secondary" : "default"}
+            color={chosen[i].length > 0 ? "secondary" : "default"}
           />
           <Popover
             open={Boolean(anchorEl) && activeGroup === filter.key}
@@ -71,7 +71,7 @@ const FilterList = () => {
               multi={filter.multiChoice}
               title={filter.title}
               choices={filter.choices}
-              chosen={filters.chosen[i]}
+              chosen={chosen[i]}
               onClose={handlePopoverClose}
             />
           </Popover>

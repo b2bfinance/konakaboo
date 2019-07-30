@@ -20,6 +20,7 @@ const useStyles = makeStyles(theme => ({
     border: `1px solid ${theme.palette.grey[100]}`
   },
   productDescription: {
+    width: "100%",
     borderTop: `1px solid ${theme.palette.grey[100]}`,
     padding: theme.spacing(2)
   },
@@ -50,21 +51,26 @@ const ProductWrapper = ({
   featurePoint,
   detailed,
   disclaimer,
-  meta
+  meta,
+  product
 }) => {
   const classes = useStyles({
     faded: meta.faded
   });
   const [withInfo, setWithInfo] = useState(false);
   const [withConfirmation, setWithConfirmation] = useState(false);
-  const config = useConfigState();
+  const { onMoreDetails, onApply, cta } = useConfigState();
 
   const handleMoreInfoClick = () => {
+    onMoreDetails(product, () => {
+      setWithInfo(false);
+    });
+
     setWithInfo(true);
   };
 
   const handleApplyButtonClick = e => {
-    config.onApply();
+    onApply(product);
 
     if (meta.confirm) {
       e.preventDefault();
@@ -92,19 +98,23 @@ const ProductWrapper = ({
               rel="noopener"
               onClick={handleApplyButtonClick}
             >
-              {config.cta}
+              {cta}
             </ProductPrimaryButton>
           </Grid>
         </Grid>
-        <Hidden xsDown implementation="css">
-          {description && (
-            <Typography className={classes.productDescription} variant="body2">
+        {description && (
+          <Hidden className={classes.productDescription} xsDown implementation="css">
+            <Typography variant="body2" color="textSecondary">
               {description}
             </Typography>
-          )}
-        </Hidden>
+          </Hidden>
+        )}
       </Grid>
-      <Grid container>{featurePoint && <ProductFeaturedPoint description={featurePoint} />}</Grid>
+      {featurePoint && (
+        <Grid container>
+          <ProductFeaturedPoint description={featurePoint} />
+        </Grid>
+      )}
       {detailed.length > 0 && (
         <ProductMoreInfo
           open={withInfo}

@@ -11,7 +11,6 @@ const filterReducer = (state = initialState, action) => {
   switch (action.type) {
     case SET_FILTER:
       state.chosen[action.group] = action.chosen;
-
       return {
         ...state,
         chosen: [...state.chosen]
@@ -23,7 +22,6 @@ const filterReducer = (state = initialState, action) => {
       };
     case RESET_GROUP_FILTERS:
       state.chosen[action.group] = state.available[action.group].multiChoice ? [] : "";
-
       return {
         ...state,
         chosen: [...state.chosen]
@@ -33,4 +31,4 @@ const filterReducer = (state = initialState, action) => {
   }
 };
 
-export default filters => useReducer(filterReducer, { ...initialState, ...filters });
+export default filterState => useReducer(filterReducer, { ...initialState, ...filterState });
