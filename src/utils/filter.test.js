@@ -1,5 +1,5 @@
 import { generateChipLabel, getEmptyChosen, getQueryStringFromState } from "./filter";
-import { filters } from "./test-utils";
+import { filters } from "../test-utils";
 
 test("resets all chosen filters", () => {
   const resetChosenFilters = getEmptyChosen([{ multiChoice: true }, { multiChoice: false }]);
@@ -52,10 +52,10 @@ describe("generateChipLabel", () => {
   });
 
   test("creates a none multi label with chosen", () => {
-    expect(generateChipLabel("label", false, "chosen_1", choices)).toBe("Chosen Label");
+    expect(generateChipLabel("label", false, "chosen_1", choices)).toBe("label: Chosen Label");
   });
 
   test("creates a multi label with chosen", () => {
-    expect(generateChipLabel("label", true, ["chosen_1", "chosen_2"], choices)).toBe("Chosen Label +1");
+    expect(generateChipLabel("label", true, ["chosen_1", "chosen_2"], choices)).toBe("label +2");
   });
 });

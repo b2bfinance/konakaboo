@@ -35,14 +35,14 @@ export function getQueryStringFromState(filterState) {
 
 export function generateChipLabel(title, multi, chosen, choices) {
   const firstChosen = multi ? chosen[0] : chosen;
-  const firstSelection = choices.find(f => f.value === firstChosen);
+  const selected = choices.find(f => f.value === firstChosen);
 
-  if (multi && chosen.length > 1) {
-    return `${firstSelection.label} +${chosen.length - 1}`;
+  if (!multi && firstChosen) {
+    return `${title}: ${selected.label}`;
   }
 
-  if (firstSelection) {
-    return firstSelection.label;
+  if (multi && chosen.length > 0) {
+    return `${title} +${chosen.length}`;
   }
 
   return title;
