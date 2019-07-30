@@ -2,11 +2,10 @@ import { useReducer } from "react";
 
 export const initialState = {
   cta: "Get Deal",
-  loadingErrorMessage:
-    "We had problems retrieving products for you, retry or come back later.",
+  loadingErrorMessage: "There were errors getting the products for you. Please retry or come back later",
   provider: null,
-  onMoreDetails: () => {},
-  onApply: () => {}
+  onMoreDetails: (product, closeDetails) => {},
+  onApply: product => {}
 };
 
 const configReducer = (state = initialState, action) => {
@@ -16,5 +15,4 @@ const configReducer = (state = initialState, action) => {
   }
 };
 
-export default config =>
-  useReducer(configReducer, { ...initialState, ...config });
+export default configState => useReducer(configReducer, { ...initialState, ...configState });
