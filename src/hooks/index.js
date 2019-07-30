@@ -6,5 +6,6 @@ export { default as useFilterDispatch } from "./useFilterDispatch";
 export { default as useFilterReducer } from "./useFilterReducer";
 export { default as useFilterState } from "./useFilterState";
 export { default as useProductDispatch } from "./useProductDispatch";
+export { default as useProductFetcher } from "./useProductFetcher";
 export { default as useProductReducer } from "./useProductReducer";
 export { default as useProductState } from "./useProductState";
