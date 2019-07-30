@@ -1,16 +1,14 @@
 import { useContext } from "react";
-import { EmbedContext } from "..";
+import { EmbedContext } from "../EmbedWrapper";
 
 const useProductDispatch = () => {
-  const {
-    products: [_, productsDispatch]
-  } = useContext(EmbedContext);
+  const context = useContext(EmbedContext);
 
-  if (!productsDispatch) {
+  if (!context) {
     throw new Error("useProductDispatch must be used within EmbedContext.Provider");
   }
 
-  return productsDispatch;
+  return context.products[1];
 };
 
 export default useProductDispatch;

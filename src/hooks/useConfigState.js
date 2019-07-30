@@ -1,16 +1,14 @@
 import { useContext } from "react";
-import { EmbedContext } from "..";
+import { EmbedContext } from "../EmbedWrapper";
 
 const useConfigState = () => {
-  const {
-    config: [config]
-  } = useContext(EmbedContext);
+  const context = useContext(EmbedContext);
 
-  if (!config) {
+  if (!context) {
     throw new Error("useConfigState must be used within EmbedContext.Provider");
   }
 
-  return config;
+  return context.config[0];
 };
 
 export default useConfigState;
