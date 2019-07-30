@@ -31,11 +31,11 @@ const filters = {
       multiChoice: true,
       choices: [
         {
-          label: "85% LTV",
+          label: "85%",
           value: 85
         },
         {
-          label: "75% LTV",
+          label: "75%",
           value: 75
         }
       ]
