@@ -1,5 +1,4 @@
 import { Chip, Grid, Popover } from "@material-ui/core";
-import ArrowDropDown from "@material-ui/icons/ArrowDropDown";
 import Cancel from "@material-ui/icons/Cancel";
 import { makeStyles } from "@material-ui/styles";
 import React, { useState } from "react";
@@ -56,9 +55,9 @@ const FilterList = () => {
             className={classes.filterListChip}
             selection={chosen[i]}
             label={generateChipLabel(filter.title, filter.multiChoice, chosen[i], filter.choices)}
-            deleteIcon={chosen[i].length > 0 ? <Cancel /> : <ArrowDropDown />}
+            deleteIcon={<Cancel />}
             onClick={handleChipClick(filter.key)}
-            onDelete={handleChipDelete(i)}
+            onDelete={chosen[i].length > 0 ? handleChipDelete(i) : null}
             color={chosen[i].length > 0 ? "secondary" : "default"}
           />
           <Popover
