@@ -10,6 +10,9 @@ const theme = createMuiTheme({
     primary: green,
     secondary: {
       main: teal[500]
+    },
+    error: {
+      main: orange[500]
     }
   },
   typography: {
