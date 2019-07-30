@@ -20,10 +20,8 @@ const useStyles = makeStyles(theme => ({
       backgroundColor: theme.palette.common.white,
       display: "flex",
       padding: theme.spacing(1),
-      marginRight: theme.spacing(2),
-      marginLeft: theme.spacing(1.5),
+      margin: theme.spacing(0, 2, -1, 1.5),
       border: `1px solid ${theme.palette.grey[100]}`,
-      marginBottom: theme.spacing(-1),
       textAlign: "center",
       height: theme.spacing(11)
     }
