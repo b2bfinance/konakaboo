@@ -2,7 +2,7 @@ import { makeStyles, Typography } from "@material-ui/core";
 import React from "react";
 import { useProductFetcher, useProductState, useConfigState } from "./hooks";
 import ProductWrapper from "./ProductWrapper";
-import ProductMask from "./ProdcutMask";
+import ProductMask from "./ProductMask";
 
 const useStyles = makeStyles(theme => ({
   productListWrapper: {

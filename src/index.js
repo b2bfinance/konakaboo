@@ -9,6 +9,7 @@ export { default as ProductFeaturedPoint } from "./ProductFeaturedPoint";
 export { default as ProductHeadingRow } from "./ProductHeadingRow";
 export { default as ProductLabel } from "./ProductLabel";
 export { default as ProductList } from "./ProductList";
+export { default as ProductMask } from "./ProductMask";
 export { default as ProductMoreInfo } from "./ProductMoreInfo";
 export { default as ProductMoreInfoBody } from "./ProductMoreInfoBody";
 export { default as ProductMoreInfoFooter } from "./ProductMoreInfoFooter";
