@@ -7,21 +7,25 @@ const useStyles = makeStyles(theme => ({
   productFeaturePointWrapper: {
     backgroundColor: theme.palette.grey[100],
     padding: theme.spacing(1, 2),
-    lineHeight: 0
+    lineHeight: 0,
   },
   productFeaturePointIcon: {
-    color: theme.palette.product.productFeaturedIconColor
+    color: theme.palette.product.productFeaturedIconColor,
   },
   productFeatureDescription: {
-    marginLeft: theme.spacing(0.5)
-  }
+    marginLeft: theme.spacing(0.5),
+  },
 }));
 
 const ProductFeaturePoint = ({ description }) => {
   const classes = useStyles();
 
   return (
-    <Grid className={classes.productFeaturePointWrapper} container alignItems="center">
+    <Grid
+      className={classes.productFeaturePointWrapper}
+      container
+      alignItems="center"
+    >
       <Grid item>
         <div className={classes.productFeaturePointIcon}>
           <GradeOutline fontSize="small" />

@@ -9,15 +9,20 @@ const useStyles = makeStyles(theme => ({
     borderTop: `2px solid ${theme.palette.grey[100]}`,
     padding: theme.spacing(2),
     marginTop: "auto",
-    minHeight: theme.spacing(11)
-  }
+    minHeight: theme.spacing(11),
+  },
 }));
 
 const ProductMoreInfoFooter = ({ link, onClose }) => {
   const classes = useStyles();
 
   return (
-    <Grid className={classes.productMoreInfoFooterWrapper} container alignItems="center" justify="space-between">
+    <Grid
+      className={classes.productMoreInfoFooterWrapper}
+      container
+      alignItems="center"
+      justify="space-between"
+    >
       <Grid item xs={5} sm={7} lg={8}>
         <Button onClick={onClose} variant="text" size="small">
           <CloseIcon fontSize="small" /> close

@@ -1,10 +1,18 @@
-import { Grid, Hidden, Table, TableBody, TableCell, TableRow, Typography } from "@material-ui/core";
+import {
+  Grid,
+  Hidden,
+  Table,
+  TableBody,
+  TableCell,
+  TableRow,
+  Typography,
+} from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
 import React from "react";
 
 const useStyles = makeStyles(theme => ({
   productMoreInfoBodyWrapper: {
-    padding: theme.spacing(2)
+    padding: theme.spacing(2),
   },
   productMoreInfoBodyDisclaimer: {
     width: "100%",
@@ -12,15 +20,15 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: theme.palette.grey[100],
     padding: theme.spacing(2),
     [theme.breakpoints.up("md")]: {
-      marginBottom: theme.spacing(4)
-    }
+      marginBottom: theme.spacing(4),
+    },
   },
   productMoreInfoBodyDetailRow: {
-    height: 24
+    height: 24,
   },
   productMoreInfoBodyDetailCell: {
-    border: 0
-  }
+    border: 0,
+  },
 }));
 
 const ProductMoreInfoBody = ({ description, detailed, disclaimer }) => {
@@ -48,17 +56,31 @@ const ProductMoreInfoBody = ({ description, detailed, disclaimer }) => {
               <TableBody>
                 {detail.rows.map(row =>
                   row.label ? (
-                    <TableRow className={classes.productMoreInfoBodyDetailRow} key={row.label}>
-                      <TableCell className={classes.productMoreInfoBodyDetailCell} variant="head">
+                    <TableRow
+                      className={classes.productMoreInfoBodyDetailRow}
+                      key={row.label}
+                    >
+                      <TableCell
+                        className={classes.productMoreInfoBodyDetailCell}
+                        variant="head"
+                      >
                         {row.label}
                       </TableCell>
-                      <TableCell className={classes.productMoreInfoBodyDetailCell} align="right">
+                      <TableCell
+                        className={classes.productMoreInfoBodyDetailCell}
+                        align="right"
+                      >
                         {row.value}
                       </TableCell>
                     </TableRow>
                   ) : (
-                    <TableRow className={classes.productMoreInfoBodyDetailRow} key={row.value}>
-                      <TableCell className={classes.productMoreInfoBodyDetailCell}>
+                    <TableRow
+                      className={classes.productMoreInfoBodyDetailRow}
+                      key={row.value}
+                    >
+                      <TableCell
+                        className={classes.productMoreInfoBodyDetailCell}
+                      >
                         <Typography paragraph>{row.value}</Typography>
                       </TableCell>
                     </TableRow>

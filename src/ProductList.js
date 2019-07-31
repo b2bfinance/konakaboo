@@ -6,13 +6,13 @@ import ProductMask from "./ProductMask";
 
 const useStyles = makeStyles(theme => ({
   productListWrapper: {
-    opacity: props => (props.loading ? 0.75 : 1)
+    opacity: props => (props.loading ? 0.75 : 1),
   },
   productListError: {
     backgroundColor: theme.palette.error.main,
     padding: theme.spacing(2),
-    color: theme.palette.error.contrastText
-  }
+    color: theme.palette.error.contrastText,
+  },
 }));
 
 const ProductList = () => {
@@ -26,11 +26,15 @@ const ProductList = () => {
   useProductFetcher();
 
   const classes = useStyles({
-    loading: loading
+    loading: loading,
   });
 
   if (error) {
-    return <Typography className={classes.productListError}>{loadingErrorMessage}</Typography>;
+    return (
+      <Typography className={classes.productListError}>
+        {loadingErrorMessage}
+      </Typography>
+    );
   }
 
   if (loading && data.length === 0) {

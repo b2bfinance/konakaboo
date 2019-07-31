@@ -6,7 +6,7 @@ const useEmbedReducer = ({ config, filters, products }) => {
   return {
     config: useConfigReducer(config),
     filters: useFilterReducer(filters),
-    products: useProductReducer(products)
+    products: useProductReducer(products),
   };
 };
 

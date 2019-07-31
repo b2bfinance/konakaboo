@@ -6,24 +6,24 @@ import React from "react";
 const useStyles = makeStyles(theme => ({
   productMoreInfoHeaderWrapper: {
     padding: theme.spacing(1),
-    borderBottom: `2px solid ${theme.palette.grey[100]}`
+    borderBottom: `2px solid ${theme.palette.grey[100]}`,
   },
   productMoreInfoHeaderLogoWrapper: {
     border: `2px solid ${theme.palette.grey[100]}`,
     display: "flex",
     height: 100,
-    width: 150
+    width: 150,
   },
   productMoreInfoHeaderLogo: {
     maxWidth: "100%",
     maxHeight: "100%",
-    margin: "auto"
+    margin: "auto",
   },
   productMoreInfoHeaderCloseButton: {
     position: "absolute",
     top: theme.spacing(1),
-    right: theme.spacing(1)
-  }
+    right: theme.spacing(1),
+  },
 }));
 
 const ProductMoreInfoHeader = ({ title, brand, logo, onClose }) => {
@@ -35,7 +35,11 @@ const ProductMoreInfoHeader = ({ title, brand, logo, onClose }) => {
         <Hidden xsDown>
           <Grid item sm={3} md={3} xl={2}>
             <div className={classes.productMoreInfoHeaderLogoWrapper}>
-              <img className={classes.productMoreInfoHeaderLogo} src={logo} alt={brand} />
+              <img
+                className={classes.productMoreInfoHeaderLogo}
+                src={logo}
+                alt={brand}
+              />
             </div>
           </Grid>
         </Hidden>

@@ -8,15 +8,20 @@ const useStyles = makeStyles(theme => ({
     boxShadow: "none",
     borderRadius: theme.spacing(10),
     color: theme.palette.common.white,
-    display: "flex"
-  }
+    display: "flex",
+  },
 }));
 
 const productPrimaryButton = ({ children, className, ...props }) => {
   const classes = useStyles();
 
   return (
-    <Button className={clsx(classes.productPrimaryButton, className)} variant="contained" color="primary" {...props}>
+    <Button
+      className={clsx(classes.productPrimaryButton, className)}
+      variant="contained"
+      color="primary"
+      {...props}
+    >
       {children}
     </Button>
   );

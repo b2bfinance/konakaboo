@@ -8,7 +8,9 @@ export const renderProducts = (selector, config, filters, products, theme) => {
   const element = document.querySelector(selector);
 
   if (!element) {
-    throw new Error(`Cannot render products into ${selector} as it does not exist in the document.`);
+    throw new Error(
+      `Cannot render products into ${selector} as it does not exist in the document.`
+    );
   }
 
   render(

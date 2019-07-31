@@ -13,31 +13,31 @@ import ProductPrimaryButton from "./ProductPrimaryButton";
 const useStyles = makeStyles(theme => ({
   productWrapper: {
     opacity: props => (props.faded ? 0.6 : 1),
-    marginBottom: theme.spacing(6)
+    marginBottom: theme.spacing(6),
   },
   productBody: {
     backgroundColor: theme.palette.common.white,
-    border: `1px solid ${theme.palette.grey[100]}`
+    border: `1px solid ${theme.palette.grey[100]}`,
   },
   productDescription: {
     width: "100%",
     borderTop: `1px solid ${theme.palette.grey[100]}`,
-    padding: theme.spacing(2)
+    padding: theme.spacing(2),
   },
   productActionsColumn: {
-    padding: theme.spacing(2, 4)
+    padding: theme.spacing(2, 4),
   },
   productMoreInfoButton: {
     padding: theme.spacing(0, 1),
     display: "flex",
     justifySelf: "center",
     textTransform: "lowercase",
-    color: blue[800]
+    color: blue[800],
   },
   productApplyButton: {
     marginTop: theme.spacing(0.5),
-    width: "100%"
-  }
+    width: "100%",
+  },
 }));
 
 const ProductWrapper = ({
@@ -52,10 +52,10 @@ const ProductWrapper = ({
   detailed,
   disclaimer,
   meta,
-  product
+  product,
 }) => {
   const classes = useStyles({
-    faded: meta.faded
+    faded: meta.faded,
   });
   const [withInfo, setWithInfo] = useState(false);
   const [withConfirmation, setWithConfirmation] = useState(false);
@@ -80,13 +80,23 @@ const ProductWrapper = ({
 
   return (
     <div className={classes.productWrapper}>
-      <ProductHeadingRow logo={links.logo} brand={brand} highlighted={highlighted} title={title} labels={labels} />
+      <ProductHeadingRow
+        logo={links.logo}
+        brand={brand}
+        highlighted={highlighted}
+        title={title}
+        labels={labels}
+      />
       <Grid className={classes.productBody} container alignItems="center">
         <ProductColumns columns={columns} />
         <Grid className={classes.productActionsColumn} item xs={12} md={3}>
           <Grid container justify="center">
             {detailed.length > 0 && (
-              <Button className={classes.productMoreInfoButton} variant="text" onClick={handleMoreInfoClick}>
+              <Button
+                className={classes.productMoreInfoButton}
+                variant="text"
+                onClick={handleMoreInfoClick}
+              >
                 more details
               </Button>
             )}
@@ -103,7 +113,11 @@ const ProductWrapper = ({
           </Grid>
         </Grid>
         {description && (
-          <Hidden className={classes.productDescription} xsDown implementation="css">
+          <Hidden
+            className={classes.productDescription}
+            xsDown
+            implementation="css"
+          >
             <Typography variant="body2" color="textSecondary">
               {description}
             </Typography>

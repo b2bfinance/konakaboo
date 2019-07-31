@@ -16,17 +16,17 @@ const useStyles = makeStyles(theme => ({
       margin: theme.spacing(2, 0),
       padding: theme.spacing(0, 2),
       borderTop: 0,
-      borderRight: `1px solid ${theme.palette.grey[100]}`
+      borderRight: `1px solid ${theme.palette.grey[100]}`,
     },
     "&:first-child": {
-      borderTop: 0
-    }
-  }
+      borderTop: 0,
+    },
+  },
 }));
 
 const ProductColumns = ({ columns }) => {
   const classes = useStyles({
-    width: 75 / columns.length
+    width: 75 / columns.length,
   });
 
   return columns.map((column, i) => (

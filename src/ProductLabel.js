@@ -1,5 +1,12 @@
 import { Typography } from "@material-ui/core";
-import { blue, blueGrey, orange, red, teal, yellow } from "@material-ui/core/colors";
+import {
+  blue,
+  blueGrey,
+  orange,
+  red,
+  teal,
+  yellow,
+} from "@material-ui/core/colors";
 import { getContrastRatio } from "@material-ui/core/styles/colorManipulator";
 import { makeStyles } from "@material-ui/styles";
 import React from "react";
@@ -10,7 +17,7 @@ const colors = {
   red,
   orange,
   yellow,
-  teal
+  teal,
 };
 
 const useStyles = makeStyles(theme => ({
@@ -21,13 +28,13 @@ const useStyles = makeStyles(theme => ({
     borderColor: props => props.colorGroup[500],
     marginRight: theme.spacing(1),
     "&:last-child": {
-      marginRight: 0
-    }
+      marginRight: 0,
+    },
   },
   productLabelText: {
     fontWeight: theme.typography.fontWeightBold,
-    color: props => props.colorGroup[500]
-  }
+    color: props => props.colorGroup[500],
+  },
 }));
 
 const getLabel = label => {
@@ -45,7 +52,11 @@ const ProductLabel = ({ label }) => {
 
   return (
     <div className={classes.productLabelWrapper}>
-      <Typography className={classes.productLabelText} color="inherit" variant="caption">
+      <Typography
+        className={classes.productLabelText}
+        color="inherit"
+        variant="caption"
+      >
         {text}
       </Typography>
     </div>

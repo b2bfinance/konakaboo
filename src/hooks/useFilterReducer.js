@@ -4,7 +4,7 @@ import { useReducer } from "react";
 
 export const initialState = {
   chosen: [],
-  available: []
+  available: [],
 };
 
 const filterReducer = (state = initialState, action) => {
@@ -13,22 +13,25 @@ const filterReducer = (state = initialState, action) => {
       state.chosen[action.group] = action.chosen;
       return {
         ...state,
-        chosen: [...state.chosen]
+        chosen: [...state.chosen],
       };
     case RESET_FILTERS:
       return {
         ...state,
-        chosen: getEmptyChosen(state.available)
+        chosen: getEmptyChosen(state.available),
       };
     case RESET_GROUP_FILTERS:
-      state.chosen[action.group] = state.available[action.group].multiChoice ? [] : "";
+      state.chosen[action.group] = state.available[action.group].multiChoice
+        ? []
+        : "";
       return {
         ...state,
-        chosen: [...state.chosen]
+        chosen: [...state.chosen],
       };
     default:
       return state;
   }
 };
 
-export default filterState => useReducer(filterReducer, { ...initialState, ...filterState });
+export default filterState =>
+  useReducer(filterReducer, { ...initialState, ...filterState });

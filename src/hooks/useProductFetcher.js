@@ -1,5 +1,9 @@
 import { useEffect } from "react";
-import { PRODUCTS_ERROR, PRODUCTS_LOAD_START, SET_PRODUCTS } from "../constants";
+import {
+  PRODUCTS_ERROR,
+  PRODUCTS_LOAD_START,
+  SET_PRODUCTS,
+} from "../constants";
 import { fetchProducts, makeProviderURI } from "../utils";
 import useConfigState from "./useConfigState";
 import useFilterState from "./useFilterState";
@@ -16,12 +20,15 @@ const useProductFetcher = () => {
   }
 
   // Add filter params to our provider
-  const providerWithFilters = makeProviderURI(configState.provider, filterState);
+  const providerWithFilters = makeProviderURI(
+    configState.provider,
+    filterState
+  );
 
   useEffect(() => {
     const fetchData = async () => {
       dispatchProductAction({
-        type: PRODUCTS_LOAD_START
+        type: PRODUCTS_LOAD_START,
       });
 
       try {
@@ -31,12 +38,12 @@ const useProductFetcher = () => {
         dispatchProductAction({
           type: SET_PRODUCTS,
           payload: {
-            data: productsResponseData.data
-          }
+            data: productsResponseData.data,
+          },
         });
       } catch (e) {
         dispatchProductAction({
-          type: PRODUCTS_ERROR
+          type: PRODUCTS_ERROR,
         });
       }
     };

@@ -1,8 +1,15 @@
-import { generateChipLabel, getEmptyChosen, getQueryStringFromState } from "./filter";
+import {
+  generateChipLabel,
+  getEmptyChosen,
+  getQueryStringFromState,
+} from "./filter";
 import { filters } from "../test-utils";
 
 test("resets all chosen filters", () => {
-  const resetChosenFilters = getEmptyChosen([{ multiChoice: true }, { multiChoice: false }]);
+  const resetChosenFilters = getEmptyChosen([
+    { multiChoice: true },
+    { multiChoice: false },
+  ]);
 
   expect(resetChosenFilters[0]).toBeInstanceOf(Array);
   expect(resetChosenFilters[0]).toHaveLength(0);
@@ -15,11 +22,15 @@ test("creates a query string with no filters", () => {
 });
 
 test("creates a query string with a multi choice filter", () => {
-  expect(getQueryStringFromState(filters.withMultiChoiceChosen)).toBe("TEST_KEY=TEST_CHOICE%2CTEST_CHOICE");
+  expect(getQueryStringFromState(filters.withMultiChoiceChosen)).toBe(
+    "TEST_KEY=TEST_CHOICE%2CTEST_CHOICE"
+  );
 });
 
 test("creates a query string with single choice filter", () => {
-  expect(getQueryStringFromState(filters.withSingleChoiceChosen)).toBe("TEST_KEY=TEST_CHOICE");
+  expect(getQueryStringFromState(filters.withSingleChoiceChosen)).toBe(
+    "TEST_KEY=TEST_CHOICE"
+  );
 });
 
 test("creates a query string with single and multi choice filters", () => {
@@ -40,7 +51,7 @@ describe("generateChipLabel", () => {
   const choices = [
     { label: "Chosen Label", value: "chosen_1" },
     { label: "Chosen Label", value: "chosen_2" },
-    { label: "Chosen Label", value: "chosen_3" }
+    { label: "Chosen Label", value: "chosen_3" },
   ];
 
   test("creates a none multi label with no chosen", () => {
@@ -52,10 +63,14 @@ describe("generateChipLabel", () => {
   });
 
   test("creates a none multi label with chosen", () => {
-    expect(generateChipLabel("label", false, "chosen_1", choices)).toBe("label: Chosen Label");
+    expect(generateChipLabel("label", false, "chosen_1", choices)).toBe(
+      "label: Chosen Label"
+    );
   });
 
   test("creates a multi label with chosen", () => {
-    expect(generateChipLabel("label", true, ["chosen_1", "chosen_2"], choices)).toBe("label +2");
+    expect(
+      generateChipLabel("label", true, ["chosen_1", "chosen_2"], choices)
+    ).toBe("label +2");
   });
 });

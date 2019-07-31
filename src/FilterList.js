@@ -10,11 +10,11 @@ import { generateChipLabel } from "./utils";
 const useStyles = makeStyles(theme => ({
   filterListWrapper: {
     justifyContent: "flex-end",
-    marginBottom: theme.spacing(4)
+    marginBottom: theme.spacing(4),
   },
   filterListChip: {
-    marginRight: theme.spacing(1)
-  }
+    marginRight: theme.spacing(1),
+  },
 }));
 
 const FilterList = () => {
@@ -32,7 +32,7 @@ const FilterList = () => {
   const handleChipDelete = group => () => {
     dispatchFilters({
       type: RESET_GROUP_FILTERS,
-      group
+      group,
     });
   };
 
@@ -43,7 +43,7 @@ const FilterList = () => {
 
   const handleResetAllFilters = () => {
     dispatchFilters({
-      type: RESET_FILTERS
+      type: RESET_FILTERS,
     });
   };
 
@@ -54,7 +54,12 @@ const FilterList = () => {
           <Chip
             className={classes.filterListChip}
             selection={chosen[i]}
-            label={generateChipLabel(filter.title, filter.multiChoice, chosen[i], filter.choices)}
+            label={generateChipLabel(
+              filter.title,
+              filter.multiChoice,
+              chosen[i],
+              filter.choices
+            )}
             deleteIcon={<Cancel />}
             onClick={handleChipClick(filter.key)}
             onDelete={chosen[i].length > 0 ? handleChipDelete(i) : null}

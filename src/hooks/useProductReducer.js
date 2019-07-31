@@ -1,10 +1,14 @@
 import { useReducer } from "react";
-import { PRODUCTS_ERROR, PRODUCTS_LOAD_START, SET_PRODUCTS } from "../constants";
+import {
+  PRODUCTS_ERROR,
+  PRODUCTS_LOAD_START,
+  SET_PRODUCTS,
+} from "../constants";
 
 export const initialState = {
   loading: false,
   error: false,
-  data: []
+  data: [],
 };
 
 export const productReducer = (state, action) => {
@@ -13,22 +17,23 @@ export const productReducer = (state, action) => {
       return {
         ...state,
         loading: false,
-        data: action.payload.data
+        data: action.payload.data,
       };
     case PRODUCTS_LOAD_START:
       return {
         ...state,
-        loading: true
+        loading: true,
       };
     case PRODUCTS_ERROR:
       return {
         ...state,
         loading: false,
-        error: true
+        error: true,
       };
     default:
       return state;
   }
 };
 
-export default productState => useReducer(productReducer, { ...initialState, ...productState });
+export default productState =>
+  useReducer(productReducer, { ...initialState, ...productState });
