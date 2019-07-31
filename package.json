@@ -17,7 +17,8 @@
     "start": "nwb serve-react-demo",
     "test": "jest",
     "test:coverage": "jest --coverage",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "precommit": "lint-staged"
   },
   "dependencies": {
     "@material-ui/core": "^4.2.1",
@@ -39,9 +40,17 @@
     "@types/react-dom": "^16.8.5",
     "babel-jest": "^24.8.0",
     "jest": "^24.8.0",
+    "lint-staged": "^9.2.1",
     "nwb": "0.23.x",
+    "prettier": "^1.18.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,json}": [
+      "prettier --print-width 80 --no-semi true --trailing-comma es5 --write",
+      "git add"
+    ]
   },
   "author": "Kyle Needham <kyle.needham@b2bfinance.com>",
   "homepage": "https://github.com/legalweb/products-embed",
