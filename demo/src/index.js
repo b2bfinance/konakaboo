@@ -5,7 +5,9 @@ import { render } from "react-dom";
 import { EmbedWrapper, theme } from "../../src";
 import demoProducts from "./demo-response.json";
 
-const products = demoProducts;
+const products = {
+  preloadedProducts: demoProducts.data,
+};
 
 const filters = {
   chosen: ["", []],
@@ -17,13 +19,13 @@ const filters = {
       choices: [
         {
           label: "Yes",
-          value: "true"
+          value: "true",
         },
         {
           label: "No",
-          value: "false"
-        }
-      ]
+          value: "false",
+        },
+      ],
     },
     {
       title: "LTV",
@@ -32,15 +34,15 @@ const filters = {
       choices: [
         {
           label: "85%",
-          value: 85
+          value: 85,
         },
         {
           label: "75%",
-          value: 75
-        }
-      ]
-    }
-  ]
+          value: 75,
+        },
+      ],
+    },
+  ],
 };
 
 const Demo = () => (
