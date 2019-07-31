@@ -8,24 +8,36 @@ import { fetchProducts, makeProviderURI } from "../utils";
 import useConfigState from "./useConfigState";
 import useFilterState from "./useFilterState";
 import useProductDispatch from "./useProductDispatch";
+import useProductState from "./useProductState";
 
 const useProductFetcher = () => {
-  const configState = useConfigState();
+  const { preloadedProducts } = useProductState();
+  const { provider } = useConfigState();
   const filterState = useFilterState();
   const dispatchProductAction = useProductDispatch();
 
-  // No provider means we don't need to fetch any products let's abort now.
-  if (!configState.provider) {
-    return;
-  }
-
   // Add filter params to our provider
-  const providerWithFilters = makeProviderURI(
-    configState.provider,
-    filterState
-  );
+  const providerWithFilters = makeProviderURI(provider, filterState);
 
   useEffect(() => {
+    // If we have preloaded products and have not filtered then set
+    // the preloaded products as the currently active products
+    if (preloadedProducts.length > 0 && provider === providerWithFilters) {
+      dispatchProductAction({
+        type: SET_PRODUCTS,
+        payload: {
+          products: preloadedProducts,
+        },
+      });
+
+      return;
+    }
+
+    // No provider means we don't need to fetch any products let's abort now.
+    if (!provider) {
+      return;
+    }
+
     const fetchData = async () => {
       dispatchProductAction({
         type: PRODUCTS_LOAD_START,
@@ -38,7 +50,7 @@ const useProductFetcher = () => {
         dispatchProductAction({
           type: SET_PRODUCTS,
           payload: {
-            data: productsResponseData.data,
+            products: productsResponseData.data,
           },
         });
       } catch (e) {

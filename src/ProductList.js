@@ -16,13 +16,12 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const ProductList = () => {
-  const { loading, error, data } = useProductState();
+  const { loading, error, products } = useProductState();
   const { loadingErrorMessage } = useConfigState();
 
-  /**
-   * Fetch our products and dispatch them through the product dispatcher which will
-   * update our `productState`.
-   */
+  // Fetch our products using the provider given in the
+  // config options. Preloaded products will be used
+  // if we have them and no filters have been set.
   useProductFetcher();
 
   const classes = useStyles({
@@ -37,7 +36,7 @@ const ProductList = () => {
     );
   }
 
-  if (loading && data.length === 0) {
+  if (loading && products.length === 0) {
     return (
       <React.Fragment>
         <ProductMask />
@@ -51,7 +50,7 @@ const ProductList = () => {
 
   return (
     <div className={classes.productListWrapper}>
-      {data.map((product, i) => (
+      {products.map((product, i) => (
         <ProductWrapper
           key={product.id || i}
           highlighted={product.highlighted}

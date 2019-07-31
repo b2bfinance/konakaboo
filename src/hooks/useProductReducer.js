@@ -8,7 +8,8 @@ import {
 export const initialState = {
   loading: false,
   error: false,
-  data: [],
+  preloadedProducts: [],
+  products: [],
 };
 
 export const productReducer = (state, action) => {
@@ -17,7 +18,7 @@ export const productReducer = (state, action) => {
       return {
         ...state,
         loading: false,
-        data: action.payload.data,
+        products: action.payload.products,
       };
     case PRODUCTS_LOAD_START:
       return {
