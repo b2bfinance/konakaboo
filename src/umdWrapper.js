@@ -1,10 +1,11 @@
 import { createMuiTheme } from "@material-ui/core/styles";
 import { ThemeProvider } from "@material-ui/styles";
+import React from "react";
 import { render } from "react-dom";
 import EmbedWrapper from "./EmbedWrapper";
 import { theme as muiTheme } from "./utils";
 
-export const renderProducts = (selector, config, filters, products, theme) => {
+const renderProducts = (selector, { config, filters, products, theme }) => {
   const element = document.querySelector(selector);
 
   if (!element) {
@@ -14,9 +15,13 @@ export const renderProducts = (selector, config, filters, products, theme) => {
   }
 
   render(
-    element,
     <ThemeProvider theme={theme ? createMuiTheme(theme) : muiTheme}>
       <EmbedWrapper config={config} filters={filters} products={products} />
-    </ThemeProvider>
+    </ThemeProvider>,
+    element
   );
+};
+
+export default {
+  renderProducts,
 };

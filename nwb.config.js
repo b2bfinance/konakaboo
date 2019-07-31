@@ -3,8 +3,8 @@ module.exports = {
   npm: {
     esModules: true,
     umd: {
-      global: "ProductEmbed",
-      entry: "./src/umdWrapper.js"
-    }
-  }
+      global: "ProductsEmbed",
+      entry: "./src/umdWrapper.js",
+    },
+  },
 };
