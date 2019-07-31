@@ -47,6 +47,10 @@ const FilterList = () => {
     });
   };
 
+  if (available.length === 0) {
+    return null;
+  }
+
   return (
     <Grid className={classes.filterListWrapper} container>
       {available.map((filter, i) => (
