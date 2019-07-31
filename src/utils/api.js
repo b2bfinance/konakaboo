@@ -4,6 +4,10 @@ import { getQueryStringFromState } from "./filter";
 export const makeProviderURI = (provider, filters) => {
   const filterQuery = getQueryStringFromState(filters);
 
+  if (!provider) {
+    return null;
+  }
+
   if (!filterQuery) {
     return provider;
   }
