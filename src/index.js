@@ -1,5 +1,6 @@
 export * from "./constants";
-export { default as EmbedWrapper, EmbedContext } from "./EmbedWrapper";
+export { default as EmbedContext } from "./EmbedContext";
+export { default as EmbedWrapper } from "./EmbedWrapper";
 export { default as FilterList } from "./FilterList";
 export { default as FilterWrapper } from "./FilterWrapper";
 export * from "./hooks";

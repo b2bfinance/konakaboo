@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { EmbedContext } from "../EmbedWrapper";
+import EmbedContext from "../EmbedContext";
 
 const useConfigState = () => {
   const context = useContext(EmbedContext);
