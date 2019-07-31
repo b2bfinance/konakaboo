@@ -1,4 +1,5 @@
 import { Grid, Typography } from "@material-ui/core";
+import { pink } from "@material-ui/core/colors";
 import GradeOutline from "@material-ui/icons/GradeOutlined";
 import { makeStyles } from "@material-ui/styles";
 import React from "react";
@@ -10,7 +11,7 @@ const useStyles = makeStyles(theme => ({
     lineHeight: 0,
   },
   productFeaturePointIcon: {
-    color: theme.palette.product.productFeaturedIconColor,
+    color: pink[300],
   },
   productFeatureDescription: {
     marginLeft: theme.spacing(0.5),

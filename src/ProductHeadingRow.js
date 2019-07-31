@@ -1,7 +1,8 @@
-import React from "react";
-import { makeStyles } from "@material-ui/styles";
 import { Grid, Typography } from "@material-ui/core";
+import { orange } from "@material-ui/core/colors";
 import WhatsHotIcon from "@material-ui/icons/Whatshot";
+import { makeStyles } from "@material-ui/styles";
+import React from "react";
 import ProductLabels from "./ProductLabels";
 
 const useStyles = makeStyles(theme => ({
@@ -33,7 +34,7 @@ const useStyles = makeStyles(theme => ({
   },
   productHighlightedIcon: {
     marginLeft: theme.spacing(0.5),
-    color: theme.palette.product.headingHighlightIcon,
+    color: orange[300],
   },
   productLabels: {
     [theme.breakpoints.up("sm")]: {
