@@ -4,7 +4,7 @@ import React from "react";
 
 const useStyles = makeStyles(theme => ({
   productColumnWrapper: {
-    borderTop: `1px solid ${theme.palette.grey[100]}`,
+    borderTop: `1px solid ${theme.palette.grey[200]}`,
     padding: theme.spacing(2, 1),
     textAlign: "center",
     flexGrow: 0,
@@ -16,7 +16,7 @@ const useStyles = makeStyles(theme => ({
       margin: theme.spacing(2, 0),
       padding: theme.spacing(0, 2),
       borderTop: 0,
-      borderRight: `1px solid ${theme.palette.grey[100]}`,
+      borderRight: `1px solid ${theme.palette.grey[200]}`,
     },
     "&:first-child": {
       borderTop: 0,

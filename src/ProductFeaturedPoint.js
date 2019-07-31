@@ -6,7 +6,7 @@ import React from "react";
 
 const useStyles = makeStyles(theme => ({
   productFeaturePointWrapper: {
-    backgroundColor: theme.palette.grey[100],
+    backgroundColor: theme.palette.grey[200],
     padding: theme.spacing(1, 2),
     lineHeight: 0,
   },

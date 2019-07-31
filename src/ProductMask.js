@@ -4,7 +4,7 @@ import React from "react";
 const useStyles = makeStyles(theme => ({
   productMaskWrapper: {
     marginBottom: theme.spacing(6),
-    backgroundColor: theme.palette.grey[100],
+    backgroundColor: theme.palette.grey[200],
     height: theme.spacing(20),
   },
 }));

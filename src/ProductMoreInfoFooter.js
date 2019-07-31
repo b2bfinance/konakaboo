@@ -6,7 +6,7 @@ import ProductPrimaryButton from "./ProductPrimaryButton";
 
 const useStyles = makeStyles(theme => ({
   productMoreInfoFooterWrapper: {
-    borderTop: `2px solid ${theme.palette.grey[100]}`,
+    borderTop: `2px solid ${theme.palette.grey[200]}`,
     padding: theme.spacing(2),
     marginTop: "auto",
     minHeight: theme.spacing(11),
