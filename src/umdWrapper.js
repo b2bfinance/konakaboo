@@ -5,7 +5,17 @@ import { render } from "react-dom";
 import EmbedWrapper from "./EmbedWrapper";
 import { theme as muiTheme } from "./utils";
 
-const renderProducts = (selector, { config, filters, products, theme }) => {
+const renderProducts = ({
+  selector,
+  products,
+  productsLimit,
+  chosenFilters,
+  availableFilters,
+  cta,
+  provider,
+  onMoreDetails,
+  onApply,
+}) => {
   const element = document.querySelector(selector);
 
   if (!element) {
