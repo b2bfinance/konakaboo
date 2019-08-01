@@ -4,7 +4,7 @@ import { makeStyles } from "@material-ui/styles";
 import React, { useState } from "react";
 import { RESET_FILTERS, RESET_GROUP_FILTERS } from "./constants";
 import FilterWrapper from "./FilterWrapper";
-import { useFilterDispatch, useFilterState } from "./hooks";
+import { useEmbedDispatch, useEmbedState } from "./hooks";
 import { generateChipLabel } from "./utils";
 
 const useStyles = makeStyles(theme => ({
@@ -21,8 +21,8 @@ const FilterList = () => {
   const classes = useStyles();
   const [activeGroup, setActiveGroup] = useState(null);
   const [anchorEl, setAnchorEl] = useState(null);
-  const { chosen, available } = useFilterState();
-  const dispatchFilters = useFilterDispatch();
+  const { chosenFilters, availableFilters } = useEmbedState();
+  const dispatchAction = useEmbedDispatch();
 
   const handleChipClick = group => e => {
     setAnchorEl(e.currentTarget);
@@ -30,7 +30,7 @@ const FilterList = () => {
   };
 
   const handleChipDelete = group => () => {
-    dispatchFilters({
+    dispatchAction({
       type: RESET_GROUP_FILTERS,
       group,
     });
@@ -42,32 +42,32 @@ const FilterList = () => {
   };
 
   const handleResetAllFilters = () => {
-    dispatchFilters({
+    dispatchAction({
       type: RESET_FILTERS,
     });
   };
 
-  if (available.length === 0) {
+  if (availableFilters.length === 0) {
     return null;
   }
 
   return (
     <Grid className={classes.filterListWrapper} container>
-      {available.map((filter, i) => (
+      {availableFilters.map((filter, i) => (
         <React.Fragment key={i}>
           <Chip
             className={classes.filterListChip}
-            selection={chosen[i]}
+            selection={chosenFilters[i]}
             label={generateChipLabel(
               filter.title,
               filter.multiChoice,
-              chosen[i],
+              chosenFilters[i],
               filter.choices
             )}
             deleteIcon={<Cancel />}
             onClick={handleChipClick(filter.key)}
-            onDelete={chosen[i].length > 0 ? handleChipDelete(i) : null}
-            color={chosen[i].length > 0 ? "secondary" : "default"}
+            onDelete={chosenFilters[i].length > 0 ? handleChipDelete(i) : null}
+            color={chosenFilters[i].length > 0 ? "secondary" : "default"}
           />
           <Popover
             open={Boolean(anchorEl) && activeGroup === filter.key}
@@ -79,7 +79,7 @@ const FilterList = () => {
               multi={filter.multiChoice}
               title={filter.title}
               choices={filter.choices}
-              chosen={chosen[i]}
+              chosen={chosenFilters[i]}
               onClose={handlePopoverClose}
             />
           </Popover>

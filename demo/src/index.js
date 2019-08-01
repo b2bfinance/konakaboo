@@ -5,13 +5,10 @@ import { render } from "react-dom";
 import { EmbedWrapper, theme } from "../../src";
 import demoProducts from "./demo-response.json";
 
-const products = {
-  preloadedProducts: demoProducts.data,
-};
-
-const filters = {
-  chosen: ["", []],
-  available: [
+const embedOptions = {
+  products: demoProducts.data,
+  chosenFilters: ["", []],
+  availableFilters: [
     {
       title: "Exclude Fees",
       key: "exclude_fees",
@@ -53,7 +50,7 @@ const Demo = () => (
           <Typography variant="h1">Products Embed</Typography>
         </Grid>
         <Grid item xs={12}>
-          <EmbedWrapper products={products} filters={filters} />
+          <EmbedWrapper {...embedOptions} />
         </Grid>
       </Grid>
     </Container>

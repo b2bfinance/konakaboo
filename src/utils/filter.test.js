@@ -1,7 +1,7 @@
 import {
   generateChipLabel,
   getEmptyChosen,
-  getQueryStringFromState,
+  makeFilterQueryString,
 } from "./filter";
 import { filters } from "../test-utils";
 
@@ -17,34 +17,19 @@ test("resets all chosen filters", () => {
   expect(resetChosenFilters[1]).toHaveLength(0);
 });
 
-test("creates a query string with no filters", () => {
-  expect(getQueryStringFromState(filters.withNoChosen)).toBe("");
-});
-
-test("creates a query string with a multi choice filter", () => {
-  expect(getQueryStringFromState(filters.withMultiChoiceChosen)).toBe(
+test("Creates query strings from filters", () => {
+  expect(makeFilterQueryString(filters.withNoChosen)).toBe("");
+  expect(makeFilterQueryString(filters.withMultiChoiceChosen)).toBe(
     "TEST_KEY=TEST_CHOICE%2CTEST_CHOICE"
   );
-});
-
-test("creates a query string with single choice filter", () => {
-  expect(getQueryStringFromState(filters.withSingleChoiceChosen)).toBe(
+  expect(makeFilterQueryString(filters.withSingleChoiceChosen)).toBe(
     "TEST_KEY=TEST_CHOICE"
   );
-});
-
-test("creates a query string with single and multi choice filters", () => {
-  expect(getQueryStringFromState(filters.withSingleAndMultiChoiceChosen)).toBe(
+  expect(makeFilterQueryString(filters.withSingleAndMultiChoiceChosen)).toBe(
     "TEST_KEY_1=TEST_CHOICE_1%2CTEST_CHOICE_2&TEST_KEY_2=TEST_CHOICE_1"
   );
-});
-
-test("will not create a query string with multi choice filters that has null values", () => {
-  expect(getQueryStringFromState(filters.withNullMultiChoiceChosen)).toBe("");
-});
-
-test("will not create a query string with single choice filters that has null values", () => {
-  expect(getQueryStringFromState(filters.withNullSingleChoiceChosen)).toBe("");
+  expect(makeFilterQueryString(filters.withNullMultiChoiceChosen)).toBe("");
+  expect(makeFilterQueryString(filters.withNullSingleChoiceChosen)).toBe("");
 });
 
 describe("generateChipLabel", () => {

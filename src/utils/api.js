@@ -1,22 +1,20 @@
 import axios from "axios";
-import { getQueryStringFromState } from "./filter";
 
-export const makeProviderURI = (provider, filters) => {
-  const filterQuery = getQueryStringFromState(filters);
-
+export const makeProviderURI = (provider, filterQueryString) => {
   if (!provider) {
     return null;
   }
 
-  if (!filterQuery) {
+  if (!filterQueryString) {
     return provider;
   }
 
   if (provider.indexOf("?") !== -1) {
-    return `${provider}&${filterQuery}`;
+    return `${provider}&${filterQueryString}`;
   }
 
-  return `${provider}?${filterQuery}`;
+  return `${provider}?${filterQueryString}`;
 };
 
-export const fetchProducts = async provider => await axios.get(provider);
+export const fetchProducts = async (provider, filterQuery) =>
+  await axios.get(makeProviderURI(provider, filterQuery));

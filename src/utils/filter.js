@@ -1,36 +1,36 @@
 import queryString from "query-string";
 
-export function getEmptyChosen(available) {
-  return available.reduce((chosen, filter, i) => {
+export function getEmptyChosen(availableFilters) {
+  return availableFilters.reduce((chosen, filter, i) => {
     chosen[i] = filter.multiChoice ? [] : "";
     return chosen;
   }, []);
 }
 
-export function getQueryStringFromState(filterState) {
-  return queryString.stringify(
-    Object.keys(filterState.chosen).reduce((filters, chosen) => {
-      const available = filterState.available[chosen];
-      const isMulti = available.multiChoice;
-      const value = filterState.chosen[chosen];
+export function makeFilterQueryString({ availableFilters, chosenFilters }) {
+  const queryObject = chosenFilters.reduce((filters, chosen, chosenIndex) => {
+    const available = availableFilters[chosenIndex];
+    const isMulti = available.multiChoice;
+    const value = chosenFilters[chosenIndex];
 
-      if (isMulti) {
-        const filteredValues = value.filter(f => (f ? f : false));
+    if (isMulti) {
+      const filteredValues = value.filter(f => (f ? f : false));
 
-        if (filteredValues.length) {
-          filters[available.key] = filteredValues.join(",");
-        }
-
-        return filters;
-      }
-
-      if (value) {
-        filters[available.key] = value;
+      if (filteredValues.length) {
+        filters[available.key] = filteredValues.join(",");
       }
 
       return filters;
-    }, {})
-  );
+    }
+
+    if (value) {
+      filters[available.key] = value;
+    }
+
+    return filters;
+  }, {});
+
+  return queryString.stringify(queryObject);
 }
 
 export function generateChipLabel(title, multi, chosen, choices) {

@@ -1,6 +1,6 @@
 import { makeStyles, Typography } from "@material-ui/core";
-import React from "react";
-import { useProductFetcher, useProductState, useConfigState } from "./hooks";
+import React, { useState } from "react";
+import { useProductFetcherEffect, useEmbedState } from "./hooks";
 import ProductWrapper from "./ProductWrapper";
 import ProductMask from "./ProductMask";
 
@@ -16,27 +16,27 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const ProductList = () => {
-  const { loading, error, products } = useProductState();
-  const { loadingErrorMessage } = useConfigState();
+  const { products, productsLoading, productsError } = useEmbedState();
 
   // Fetch our products using the provider given in the
   // config options. Preloaded products will be used
-  // if we have them and no filters have been set.
-  useProductFetcher();
+  // if we have them with no filters have been set.
+  useProductFetcherEffect();
 
   const classes = useStyles({
-    loading: loading,
+    loading: productsLoading,
   });
 
-  if (error) {
+  if (productsError) {
     return (
       <Typography className={classes.productListError}>
-        {loadingErrorMessage}
+        There were errors getting the products for you. Please retry or come
+        back later
       </Typography>
     );
   }
 
-  if (loading && products.length === 0) {
+  if (productsLoading && products.length === 0) {
     return (
       <React.Fragment>
         <ProductMask />

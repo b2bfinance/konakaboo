@@ -1,15 +1,34 @@
 import { CssBaseline, Grid } from "@material-ui/core";
-import React from "react";
+import React, { useReducer } from "react";
 import EmbedContext from "./EmbedContext";
 import FilterList from "./FilterList";
-import { useEmbedReducer } from "./hooks";
+import { embedReducer } from "./utils";
 import ProductList from "./ProductList";
 
-const EmbedWrapper = ({ config, filters, products }) => {
-  const embedReducer = useEmbedReducer({ config, filters, products });
+const EmbedWrapper = ({
+  products = [],
+  chosenFilters = [],
+  availableFilters = [],
+  cta = "Get Deal",
+  provider = null,
+  onMoreDetails = null,
+  onApply = null,
+}) => {
+  const [state, dispatch] = useReducer(embedReducer, {
+    products: [],
+    productsLoading: false,
+    productsError: false,
+    preFetchedProducts: products,
+    chosenFilters,
+    availableFilters,
+    cta,
+    provider,
+    onMoreDetails,
+    onApply,
+  });
 
   return (
-    <EmbedContext.Provider value={embedReducer}>
+    <EmbedContext.Provider value={{ state, dispatch }}>
       <CssBaseline />
       <Grid item xs={12}>
         <FilterList />

@@ -13,12 +13,13 @@ export * from "@testing-library/react";
 export { renderWithProviders as render };
 
 export const filters = {
-  withNoChosen: { chosen: {} },
+  withNoChosen: {
+    chosenFilters: [],
+    availableFilters: [],
+  },
   withNullMultiChoiceChosen: {
-    chosen: {
-      0: [undefined, ""],
-    },
-    available: [
+    chosenFilters: [[undefined, ""]],
+    availableFilters: [
       {
         multiChoice: true,
         key: "TEST_KEY",
@@ -26,10 +27,8 @@ export const filters = {
     ],
   },
   withNullSingleChoiceChosen: {
-    chosen: {
-      0: undefined,
-    },
-    available: [
+    chosenFilters: [undefined],
+    availableFilters: [
       {
         multiChoice: false,
         key: "TEST_KEY",
@@ -37,10 +36,8 @@ export const filters = {
     ],
   },
   withMultiChoiceChosen: {
-    chosen: {
-      0: ["TEST_CHOICE", "TEST_CHOICE"],
-    },
-    available: [
+    chosenFilters: [["TEST_CHOICE", "TEST_CHOICE"]],
+    availableFilters: [
       {
         multiChoice: true,
         key: "TEST_KEY",
@@ -48,10 +45,8 @@ export const filters = {
     ],
   },
   withSingleChoiceChosen: {
-    chosen: {
-      0: "TEST_CHOICE",
-    },
-    available: [
+    chosenFilters: ["TEST_CHOICE"],
+    availableFilters: [
       {
         multiChoice: false,
         key: "TEST_KEY",
@@ -59,11 +54,8 @@ export const filters = {
     ],
   },
   withSingleAndMultiChoiceChosen: {
-    chosen: {
-      0: ["TEST_CHOICE_1", "TEST_CHOICE_2"],
-      1: "TEST_CHOICE_1",
-    },
-    available: [
+    chosenFilters: [["TEST_CHOICE_1", "TEST_CHOICE_2"], "TEST_CHOICE_1"],
+    availableFilters: [
       {
         title: "Test Title 1",
         multiChoice: true,

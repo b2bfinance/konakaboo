@@ -1,16 +1,16 @@
 import { useContext } from "react";
 import EmbedContext from "../EmbedContext";
 
-const useFilterDispatch = () => {
+const useEmbedDispatch = () => {
   const context = useContext(EmbedContext);
 
   if (!context) {
     throw new Error(
-      "useFilterDispatch must be used within EmbedContext.Provider"
+      "useEmbedDispatch must be used within EmbedContext.Provider"
     );
   }
 
-  return context.filters[1];
+  return context.dispatch;
 };
 
-export default useFilterDispatch;
+export default useEmbedDispatch;

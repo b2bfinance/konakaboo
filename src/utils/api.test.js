@@ -1,17 +1,16 @@
 import { makeProviderURI } from "./api";
 import { filters } from "../test-utils";
+import { makeFilterQueryString } from "./filter";
 
-test("appends filters with a question mark when the provider has no query strings", () => {
-  expect(
-    makeProviderURI("http://localhost:3000", filters.withSingleChoiceChosen)
-  ).toBe("http://localhost:3000?TEST_KEY=TEST_CHOICE");
-});
+test("Creates a valid provider url", () => {
+  const filterQueryString = makeFilterQueryString(
+    filters.withSingleChoiceChosen
+  );
 
-test("appends filters with an ampersand when the provider has query strings", () => {
+  expect(makeProviderURI("http://localhost:3000", filterQueryString)).toBe(
+    "http://localhost:3000?TEST_KEY=TEST_CHOICE"
+  );
   expect(
-    makeProviderURI(
-      "http://localhost:3000?query=test",
-      filters.withSingleChoiceChosen
-    )
+    makeProviderURI("http://localhost:3000?query=test", filterQueryString)
   ).toBe("http://localhost:3000?query=test&TEST_KEY=TEST_CHOICE");
 });

@@ -1,11 +1,3 @@
-export { default as useConfigDispatch } from "./useConfigDispatch";
-export { default as useConfigReducer } from "./useConfigReducer";
-export { default as useConfigState } from "./useConfigState";
-export { default as useEmbedReducer } from "./useEmbedReducer";
-export { default as useFilterDispatch } from "./useFilterDispatch";
-export { default as useFilterReducer } from "./useFilterReducer";
-export { default as useFilterState } from "./useFilterState";
-export { default as useProductDispatch } from "./useProductDispatch";
-export { default as useProductFetcher } from "./useProductFetcher";
-export { default as useProductReducer } from "./useProductReducer";
-export { default as useProductState } from "./useProductState";
+export { default as useEmbedDispatch } from "./useEmbedDispatch";
+export { default as useEmbedState } from "./useEmbedState";
+export { default as useProductFetcherEffect } from "./useProductFetcherEffect";
