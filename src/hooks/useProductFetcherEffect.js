@@ -1,6 +1,10 @@
-import { useEffect, useMemo, useState } from "react";
-import { PRODUCTS_ERROR, PRODUCTS_LOADING, SET_PRODUCTS } from "../constants";
-import { fetchProducts } from "../utils";
+import { useEffect } from "react";
+import {
+  fetchProducts,
+  PRODUCTS_ERROR,
+  PRODUCTS_LOADING,
+  PRODUCTS_SET,
+} from "../utils";
 import useEmbedDispatch from "./useEmbedDispatch";
 import useEmbedState from "./useEmbedState";
 
@@ -13,7 +17,7 @@ const useProductFetcherEffect = () => {
     // the preloaded products as the currently active products
     if (preFetchedProducts.length > 0 && !filterQuery) {
       dispatchAction({
-        type: SET_PRODUCTS,
+        type: PRODUCTS_SET,
         payload: preFetchedProducts,
       });
 
@@ -35,7 +39,7 @@ const useProductFetcherEffect = () => {
         const productsResponseData = productsResponse.data;
 
         dispatchAction({
-          type: SET_PRODUCTS,
+          type: PRODUCTS_SET,
           payload: productsResponseData.data,
         });
       } catch (e) {

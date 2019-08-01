@@ -7,6 +7,7 @@ import ProductList from "./ProductList";
 
 const EmbedWrapper = ({
   products = [],
+  productsLimit = 10,
   chosenFilters = [],
   availableFilters = [],
   cta = "Get Deal",
@@ -14,10 +15,21 @@ const EmbedWrapper = ({
   onMoreDetails = null,
   onApply = null,
 }) => {
+  if (!provider) {
+    if (products.length === 0) {
+      throw new Error("You must supply a provider or products.");
+    }
+
+    if (availableFilters.length > 0) {
+      throw new Error("You must supply a provider when using filters.");
+    }
+  }
+
   const [state, dispatch] = useReducer(embedReducer, {
     products: [],
     productsLoading: false,
     productsError: false,
+    productsLimit,
     preFetchedProducts: products,
     chosenFilters,
     availableFilters,

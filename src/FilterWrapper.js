@@ -12,9 +12,8 @@ import {
 import Close from "@material-ui/icons/Close";
 import { makeStyles } from "@material-ui/styles";
 import React from "react";
-import { SET_FILTER } from "./constants";
 import { useEmbedDispatch } from "./hooks";
-import { addChoiceToChosen } from "./utils";
+import { addChoiceToChosen, FILTERS_SET } from "./utils";
 
 const useStyles = makeStyles(theme => ({
   filterWrapperHeader: {
@@ -36,7 +35,7 @@ export default ({ group, multi, title, choices, chosen, onClose }) => {
 
   const handleSetChosen = choice => () => {
     dispatchAction({
-      type: SET_FILTER,
+      type: FILTERS_SET,
       group: group,
       chosen: addChoiceToChosen(chosen, multi, choice),
     });

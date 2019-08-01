@@ -2,10 +2,9 @@ import { Chip, Grid, Popover } from "@material-ui/core";
 import Cancel from "@material-ui/icons/Cancel";
 import { makeStyles } from "@material-ui/styles";
 import React, { useState } from "react";
-import { RESET_FILTERS, RESET_GROUP_FILTERS } from "./constants";
 import FilterWrapper from "./FilterWrapper";
 import { useEmbedDispatch, useEmbedState } from "./hooks";
-import { generateChipLabel } from "./utils";
+import { FILTERS_GROUP_RESET, FILTERS_RESET, generateChipLabel } from "./utils";
 
 const useStyles = makeStyles(theme => ({
   filterListWrapper: {
@@ -31,7 +30,7 @@ const FilterList = () => {
 
   const handleChipDelete = group => () => {
     dispatchAction({
-      type: RESET_GROUP_FILTERS,
+      type: FILTERS_GROUP_RESET,
       group,
     });
   };
@@ -43,7 +42,7 @@ const FilterList = () => {
 
   const handleResetAllFilters = () => {
     dispatchAction({
-      type: RESET_FILTERS,
+      type: FILTERS_RESET,
     });
   };
 

@@ -1,8 +1,14 @@
-import { makeStyles, Typography } from "@material-ui/core";
-import React, { useState } from "react";
-import { useProductFetcherEffect, useEmbedState } from "./hooks";
-import ProductWrapper from "./ProductWrapper";
+import { Grid, makeStyles, Typography } from "@material-ui/core";
+import React from "react";
+import {
+  useEmbedDispatch,
+  useEmbedState,
+  useProductFetcherEffect,
+} from "./hooks";
 import ProductMask from "./ProductMask";
+import ProductPrimaryButton from "./ProductPrimaryButton";
+import ProductWrapper from "./ProductWrapper";
+import { PRODUCTS_INCREASE_LIMIT } from "./utils";
 
 const useStyles = makeStyles(theme => ({
   productListWrapper: {
@@ -16,7 +22,14 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const ProductList = () => {
-  const { products, productsLoading, productsError } = useEmbedState();
+  const {
+    products,
+    productsLimit,
+    productsLoading,
+    productsError,
+  } = useEmbedState();
+
+  const dispatchAction = useEmbedDispatch();
 
   // Fetch our products using the provider given in the
   // config options. Preloaded products will be used
@@ -26,6 +39,12 @@ const ProductList = () => {
   const classes = useStyles({
     loading: productsLoading,
   });
+
+  const handleLoadMore = () => {
+    dispatchAction({
+      type: PRODUCTS_INCREASE_LIMIT,
+    });
+  };
 
   if (productsError) {
     return (
@@ -50,7 +69,7 @@ const ProductList = () => {
 
   return (
     <div className={classes.productListWrapper}>
-      {products.map((product, i) => (
+      {products.slice(0, productsLimit).map((product, i) => (
         <ProductWrapper
           key={product.id || i}
           highlighted={product.highlighted}
@@ -67,6 +86,19 @@ const ProductList = () => {
           product={product}
         />
       ))}
+      {products.length > productsLimit && (
+        <Grid container justify="center">
+          <Grid item>
+            <ProductPrimaryButton
+              variant="contained"
+              color="secondary"
+              onClick={handleLoadMore}
+            >
+              Load more
+            </ProductPrimaryButton>
+          </Grid>
+        </Grid>
+      )}
     </div>
   );
 };

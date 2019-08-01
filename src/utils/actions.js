@@ -1,0 +1,8 @@
+// Actions types used by embedReducer
+export const FILTERS_SET = "FILTERS_SET";
+export const FILTERS_RESET = "FILTERS_RESET";
+export const FILTERS_GROUP_RESET = "FILTERS_GROUP_RESET";
+export const PRODUCTS_SET = "PRODUCTS_SET";
+export const PRODUCTS_LOADING = "PRODUCTS_LOADING";
+export const PRODUCTS_ERROR = "PRODUCTS_ERROR";
+export const PRODUCTS_INCREASE_LIMIT = "PRODUCTS_INCREASE_LIMIT";

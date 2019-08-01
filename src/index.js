@@ -1,4 +1,3 @@
-export * from "./constants";
 export { default as EmbedContext } from "./EmbedContext";
 export { default as EmbedWrapper } from "./EmbedWrapper";
 export { default as FilterList } from "./FilterList";
@@ -17,4 +16,3 @@ export { default as ProductMoreInfoFooter } from "./ProductMoreInfoFooter";
 export { default as ProductMoreInfoHeader } from "./ProductMoreInfoHeader";
 export { default as ProductPrimaryButton } from "./ProductPrimaryButton";
 export { default as ProductWrapper } from "./ProductWrapper";
-export * from "./utils";
