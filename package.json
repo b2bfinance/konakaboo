@@ -1,6 +1,6 @@
 {
   "name": "@b2bfinance/products-embed",
-  "version": "5.0.0-alpha.4",
+  "version": "5.0.0-alpha.5",
   "description": "products-embed React component",
   "main": "lib/index.js",
   "module": "es/index.js",

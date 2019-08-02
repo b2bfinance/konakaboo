@@ -1,6 +1,4 @@
-<h1 align="center">
-  Products Embed
-</h1>
+# Products Embed
 
 [![Storybook][storybook-badge]][storybook]
 [![Travis][build-badge]][build]
