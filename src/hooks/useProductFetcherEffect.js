@@ -9,13 +9,23 @@ import useEmbedDispatch from "./useEmbedDispatch";
 import useEmbedState from "./useEmbedState";
 
 const useProductFetcherEffect = () => {
-  const { preFetchedProducts, provider, filterQuery } = useEmbedState();
+  const {
+    products,
+    preFetchedProducts,
+    provider,
+    filterQuery,
+  } = useEmbedState();
+
   const dispatchAction = useEmbedDispatch();
 
   useEffect(() => {
     // If we have preloaded products and have not filtered then set
     // the preloaded products as the currently active products
-    if (preFetchedProducts.length > 0 && !filterQuery) {
+    if (
+      preFetchedProducts.length > 0 &&
+      !filterQuery &&
+      products !== preFetchedProducts
+    ) {
       dispatchAction({
         type: PRODUCTS_SET,
         payload: preFetchedProducts,
