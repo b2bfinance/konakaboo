@@ -2,37 +2,26 @@ import { CssBaseline, Grid } from "@material-ui/core";
 import React, { useReducer } from "react";
 import EmbedContext from "./EmbedContext";
 import FilterList from "./FilterList";
-import { embedReducer } from "./utils";
+import { embedReducer, makeFilterQueryString } from "./utils";
 import ProductList from "./ProductList";
 
 const EmbedWrapper = ({
   products = [],
   productsLimit = 10,
-  chosenFilters = [],
-  availableFilters = [],
+  filters = [],
   cta = "Get Deal",
   provider = null,
   onMoreDetails = null,
   onApply = null,
 }) => {
-  if (!provider) {
-    if (products.length === 0) {
-      throw new Error("You must supply a provider or products.");
-    }
-
-    if (availableFilters.length > 0) {
-      throw new Error("You must supply a provider when using filters.");
-    }
-  }
-
   const [state, dispatch] = useReducer(embedReducer, {
     products: [],
     productsLoading: false,
     productsError: false,
+    filterQuery: makeFilterQueryString(filters),
     productsLimit,
     preFetchedProducts: products,
-    chosenFilters,
-    availableFilters,
+    filters,
     cta,
     provider,
     onMoreDetails,
