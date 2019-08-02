@@ -28,7 +28,7 @@ const useProductFetcherEffect = () => {
     ) {
       dispatchAction({
         type: PRODUCTS_SET,
-        payload: preFetchedProducts,
+        products: preFetchedProducts,
       });
 
       return;
@@ -50,7 +50,7 @@ const useProductFetcherEffect = () => {
 
         dispatchAction({
           type: PRODUCTS_SET,
-          payload: productsResponseData.data,
+          products: productsResponseData.data,
         });
       } catch (e) {
         dispatchAction({

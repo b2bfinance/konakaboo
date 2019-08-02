@@ -13,7 +13,7 @@ import Close from "@material-ui/icons/Close";
 import { makeStyles } from "@material-ui/styles";
 import React from "react";
 import { useEmbedDispatch } from "./hooks";
-import { addChoiceToChosen, FILTERS_SET } from "./utils";
+import { FILTERS_TOGGLE } from "./utils";
 
 const useStyles = makeStyles(theme => ({
   filterWrapperHeader: {
@@ -29,15 +29,18 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default ({ group, multi, title, choices, chosen, onClose }) => {
+const isSelected = (filter, choice) =>
+  filter.selected.indexOf(choice.value) !== -1;
+
+export default ({ filter, onClose }) => {
   const classes = useStyles();
   const dispatchAction = useEmbedDispatch();
 
   const handleSetChosen = choice => () => {
     dispatchAction({
-      type: FILTERS_SET,
-      group: group,
-      chosen: addChoiceToChosen(chosen, multi, choice),
+      type: FILTERS_TOGGLE,
+      filter,
+      choice,
     });
   };
 
@@ -54,7 +57,7 @@ export default ({ group, multi, title, choices, chosen, onClose }) => {
             className={classes.filterWrapperHeaderTitle}
             variant="subtitle1"
           >
-            {title}
+            {filter.title}
           </Typography>
         </Grid>
         <Grid item>
@@ -62,31 +65,27 @@ export default ({ group, multi, title, choices, chosen, onClose }) => {
             color="inherit"
             size="small"
             onClick={onClose}
-            aria-label={`Close ${title} filter selection`}
+            aria-label={`Close ${filter.title} filter`}
           >
             <Close />
           </IconButton>
         </Grid>
       </Grid>
       <List>
-        {choices.map(choice => (
-          <ListItem
-            key={choice.value}
-            button
-            onClick={handleSetChosen(choice.value)}
-          >
+        {filter.choices.map(choice => (
+          <ListItem key={choice.value} button onClick={handleSetChosen(choice)}>
             <ListItemIcon className={classes.filterWrapperListIcon}>
-              {multi ? (
+              {filter.multiChoice ? (
                 <Checkbox
                   edge="start"
-                  checked={chosen.indexOf(choice.value) !== -1}
+                  checked={isSelected(filter, choice)}
                   tabIndex={-1}
                   disableRipple
                 />
               ) : (
                 <Radio
                   edge="start"
-                  checked={chosen === choice.value}
+                  checked={isSelected(filter, choice)}
                   tabIndex={-1}
                   disableRipple
                 />
