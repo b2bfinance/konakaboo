@@ -13,11 +13,13 @@
     "build": "nwb build-react-component",
     "clean": "nwb clean-module && nwb clean-demo",
     "prepublishOnly": "npm run build",
-    "start": "nwb serve-react-demo",
+    "start": "yarn storybook",
     "test": "jest",
     "test:coverage": "jest --coverage",
     "test:watch": "jest --watch",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "axios": "^0.19.0",
@@ -25,29 +27,34 @@
     "query-string": "^6.8.1"
   },
   "peerDependencies": {
-    "react": "16.x",
-    "react-dom": "16.x",
     "@material-ui/core": "4.x",
     "@material-ui/icons": "4.x",
-    "@material-ui/styles": "4.x"
+    "@material-ui/styles": "4.x",
+    "react": "16.x",
+    "react-dom": "16.x"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
+    "@material-ui/core": "^4.2.1",
+    "@material-ui/icons": "^4.2.1",
+    "@material-ui/styles": "^4.2.1",
+    "@storybook/addon-actions": "^5.1.10",
+    "@storybook/addon-links": "^5.1.10",
+    "@storybook/addons": "^5.1.10",
+    "@storybook/react": "^5.1.10",
     "@testing-library/jest-dom": "^4.0.0",
     "@testing-library/react": "^8.0.5",
     "@types/react-dom": "^16.8.5",
     "babel-jest": "^24.8.0",
+    "babel-loader": "^8.0.6",
     "jest": "^24.8.0",
     "lint-staged": "^9.2.1",
     "nwb": "0.23.x",
     "prettier": "^1.18.2",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "@material-ui/core": "^4.2.1",
-    "@material-ui/icons": "^4.2.1",
-    "@material-ui/styles": "^4.2.1"
+    "react-dom": "^16.8.6"
   },
   "lint-staged": {
     "**/*.{js,jsx,json}": [
