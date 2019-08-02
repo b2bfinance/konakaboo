@@ -1,4 +1,5 @@
 import { Grid, makeStyles, Typography } from "@material-ui/core";
+import ListIcon from "@material-ui/icons/List";
 import React from "react";
 import {
   useEmbedDispatch,
@@ -8,7 +9,7 @@ import {
 import ProductMask from "./ProductMask";
 import ProductPrimaryButton from "./ProductPrimaryButton";
 import ProductWrapper from "./ProductWrapper";
-import { PRODUCTS_INCREASE_LIMIT } from "./utils";
+import { PRODUCTS_INCREASE_LIMIT, FILTERS_RESET } from "./utils";
 
 const useStyles = makeStyles(theme => ({
   productListWrapper: {
@@ -19,7 +20,64 @@ const useStyles = makeStyles(theme => ({
     padding: theme.spacing(2),
     color: theme.palette.error.contrastText,
   },
+  productListEmptyWrapper: {
+    margin: theme.spacing(10, 0),
+    textAlign: "center",
+  },
 }));
+
+const ProductListLoading = () => (
+  <React.Fragment>
+    <ProductMask />
+    <ProductMask />
+    <ProductMask />
+    <ProductMask />
+    <ProductMask />
+  </React.Fragment>
+);
+
+const ProductListError = ({ classes }) => (
+  <Typography className={classes.productListError}>
+    There were errors getting the products for you. Please retry or come back
+    later
+  </Typography>
+);
+
+const ProductListEmpty = ({ classes }) => {
+  const { filters } = useEmbedState();
+  const dispatchAction = useEmbedDispatch();
+  const hasFilters = filters.some(filter => filter.selected.length > 0);
+
+  const handleResetFilters = () => {
+    dispatchAction({
+      type: FILTERS_RESET,
+    });
+  };
+
+  return (
+    <Grid className={classes.productListEmptyWrapper} container>
+      <Grid item xs={12}>
+        <Typography variant="h1">No products found</Typography>
+      </Grid>
+      <Grid item xs={12}>
+        <Typography color="textSecondary" paragraph>
+          It looks like we couldn't find any products for you.
+        </Typography>
+      </Grid>
+      {hasFilters && (
+        <Grid item xs={12}>
+          <ProductPrimaryButton
+            color="secondary"
+            size="large"
+            onClick={handleResetFilters}
+          >
+            Reset Filters
+          </ProductPrimaryButton>
+        </Grid>
+      )}
+    </Grid>
+  );
+};
 
 const ProductList = () => {
   const {
@@ -47,24 +105,15 @@ const ProductList = () => {
   };
 
   if (productsError) {
-    return (
-      <Typography className={classes.productListError}>
-        There were errors getting the products for you. Please retry or come
-        back later
-      </Typography>
-    );
+    return <ProductListError classes={classes} />;
   }
 
   if (productsLoading && products.length === 0) {
-    return (
-      <React.Fragment>
-        <ProductMask />
-        <ProductMask />
-        <ProductMask />
-        <ProductMask />
-        <ProductMask />
-      </React.Fragment>
-    );
+    return <ProductListLoading />;
+  }
+
+  if (products.length === 0) {
+    return <ProductListEmpty classes={classes} />;
   }
 
   return (
