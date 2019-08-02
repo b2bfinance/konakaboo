@@ -31,14 +31,14 @@ const ProductColumns = ({ columns }) => {
 
   return columns.map((column, i) => (
     <div className={classes.productColumnWrapper} key={i}>
-      <Typography variant="subtitle2" color="textPrimary">
+      <Typography variant="subtitle2" component="div" color="textPrimary">
         {column.label}
       </Typography>
-      <Typography variant="h5" color="textPrimary">
+      <Typography variant="h5" component="div" color="textPrimary">
         {column.value}
       </Typography>
       {column.subtext && (
-        <Typography variant="caption" color="textSecondary">
+        <Typography variant="caption" component="div" color="textSecondary">
           {column.subtext}
         </Typography>
       )}
