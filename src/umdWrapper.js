@@ -26,7 +26,16 @@ const renderProducts = ({
 
   render(
     <ThemeProvider theme={theme ? createMuiTheme(theme) : muiTheme}>
-      <EmbedWrapper config={config} filters={filters} products={products} />
+      <EmbedWrapper
+        products={products}
+        productsLimit={productsLimit}
+        chosenFilters={chosenFilters}
+        availableFilters={availableFilters}
+        cta={cta}
+        provider={provider}
+        onMoreDetails={onMoreDetails}
+        onApply={onApply}
+      />
     </ThemeProvider>,
     element
   );
