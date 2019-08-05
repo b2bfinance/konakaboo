@@ -16,3 +16,4 @@ export { default as ProductMoreInfoFooter } from "./ProductMoreInfoFooter";
 export { default as ProductMoreInfoHeader } from "./ProductMoreInfoHeader";
 export { default as ProductPrimaryButton } from "./ProductPrimaryButton";
 export { default as ProductWrapper } from "./ProductWrapper";
+export * from "./utils";

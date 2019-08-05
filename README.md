@@ -22,28 +22,85 @@ yarn add @b2bfinance/products-embed
 ```jsx
 import React from "react";
 import ReactDOM from "react-dom";
-import { EmbedWrapper } from "@b2bfinance/products-embed";
-
-// Defaults
-const options = {
-  products = [],
-  productsLimit = 10,
-  chosenFilters = [],
-  availableFilters = [],
-  cta = "Get Deal",
-  provider = null,
-  onMoreDetails = null,
-  onApply = null,
-};
+import { ThemeProvider } from "@material-ui/styles";
+import { EmbedWrapper, theme } from "@b2bfinance/products-embed";
 
 function App() {
-  return <EmbedWrapper {...options} />;
+  return (
+    <ThemeProvider theme={theme}>
+      <EmbedWrapper
+        products={[]}
+        productsLimit={10}
+        filters={[]}
+        cta={"Get Deal"}
+        provider={null}
+        onMoreDetails={null}
+        onApply={null}
+      />
+    </ThemeProvider>
+  );
 }
 
 ReactDOM.render(<App />, document.querySelector("#app"));
 ```
 
-**Please note** if you choose not to supply products then you must supply a provider, and vice versa.
+### Products
+
+Products must be an array of objects matching the `Product` type below.
+
+```typescript
+type Product = {
+  id: String;
+  type: String;
+  issuer: String;
+  title: String;
+  brand: String;
+  product: String;
+  description: String;
+  highlighted: Boolean;
+  labels: String[];
+  columns: {
+    label: String;
+    value: String;
+  }[];
+  detailed: {
+    title: String;
+    rows: {
+      label: String;
+      value: String;
+    }[];
+  }[];
+  feature_point: String;
+  links: {
+    apply: String;
+    logo: String;
+  };
+  meta: {
+    faded: Boolean;
+    confirm: {
+      description: String;
+      heading: String;
+    };
+  };
+};
+```
+
+### Filters
+
+Filters must be an array of objects matching the `Filter` type below.
+
+```typescript
+type Filter = {
+  title: String;
+  key: String;
+  multiChoice: Boolean;
+  selected: String[];
+  choices: {
+    label: String;
+    value: String;
+  }[];
+};
+```
 
 [storybook-badge]: https://cdn.jsdelivr.net/gh/storybooks/brand@master/badge/badge-storybook.svg
 [storybook]: https://storybook.js.org/

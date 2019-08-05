@@ -4,7 +4,7 @@ import { makeStyles } from "@material-ui/styles";
 import React, { useState } from "react";
 import FilterWrapper from "./FilterWrapper";
 import { useEmbedDispatch, useEmbedState } from "./hooks";
-import { FILTERS_GROUP_RESET, FILTERS_RESET, generateChipLabel } from "./utils";
+import { FILTERS_GROUP_RESET, FILTERS_RESET } from "./utils";
 
 const useStyles = makeStyles(theme => ({
   filterListWrapper: {
@@ -16,11 +16,21 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
+const hasSelected = selected => selected.length > 0;
+
+const generateChipLabel = filter => {
+  if (filter.selected.length > 0) {
+    return `${filter.title} +${filter.selected.length}`;
+  }
+
+  return filter.title;
+};
+
 const FilterList = () => {
   const classes = useStyles();
   const [activeGroup, setActiveGroup] = useState(null);
   const [anchorEl, setAnchorEl] = useState(null);
-  const { chosenFilters, availableFilters } = useEmbedState();
+  const { filters } = useEmbedState();
   const dispatchAction = useEmbedDispatch();
 
   const handleChipClick = group => e => {
@@ -28,10 +38,10 @@ const FilterList = () => {
     setActiveGroup(group);
   };
 
-  const handleChipDelete = group => () => {
+  const handleChipDelete = filter => () => {
     dispatchAction({
       type: FILTERS_GROUP_RESET,
-      group,
+      filter,
     });
   };
 
@@ -46,41 +56,30 @@ const FilterList = () => {
     });
   };
 
-  if (availableFilters.length === 0) {
+  if (filters.length === 0) {
     return null;
   }
 
   return (
     <Grid className={classes.filterListWrapper} container>
-      {availableFilters.map((filter, i) => (
+      {filters.map((filter, i) => (
         <React.Fragment key={i}>
           <Chip
             className={classes.filterListChip}
-            selection={chosenFilters[i]}
-            label={generateChipLabel(
-              filter.title,
-              filter.multiChoice,
-              chosenFilters[i],
-              filter.choices
-            )}
+            label={generateChipLabel(filter)}
             deleteIcon={<Cancel />}
             onClick={handleChipClick(filter.key)}
-            onDelete={chosenFilters[i].length > 0 ? handleChipDelete(i) : null}
-            color={chosenFilters[i].length > 0 ? "secondary" : "default"}
+            onDelete={
+              hasSelected(filter.selected) ? handleChipDelete(filter) : null
+            }
+            color={hasSelected(filter.selected) ? "secondary" : "default"}
           />
           <Popover
             open={Boolean(anchorEl) && activeGroup === filter.key}
             anchorEl={anchorEl}
             onClose={handlePopoverClose}
           >
-            <FilterWrapper
-              group={i}
-              multi={filter.multiChoice}
-              title={filter.title}
-              choices={filter.choices}
-              chosen={chosenFilters[i]}
-              onClose={handlePopoverClose}
-            />
+            <FilterWrapper filter={filter} onClose={handlePopoverClose} />
           </Popover>
         </React.Fragment>
       ))}

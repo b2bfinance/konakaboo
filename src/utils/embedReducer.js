@@ -1,70 +1,120 @@
 import {
   FILTERS_GROUP_RESET,
   FILTERS_RESET,
-  FILTERS_SET,
+  FILTERS_TOGGLE,
   PRODUCTS_ERROR,
   PRODUCTS_INCREASE_LIMIT,
   PRODUCTS_LOADING,
   PRODUCTS_SET,
 } from "./actions";
-import { getEmptyChosen, makeFilterQueryString } from "./filter";
+import { makeFilterQueryString } from "./filter";
 
 const embedReducer = (state, action) => {
   switch (action.type) {
-    case PRODUCTS_SET:
+    case PRODUCTS_SET: {
       return {
         ...state,
         productsLoading: false,
-        products: action.payload,
+        products: action.products,
       };
-    case PRODUCTS_LOADING:
+    }
+    case PRODUCTS_LOADING: {
       return {
         ...state,
         productsLoading: true,
       };
-    case PRODUCTS_ERROR:
+    }
+    case PRODUCTS_ERROR: {
       return {
         ...state,
         productsError: true,
       };
-    case PRODUCTS_INCREASE_LIMIT:
-      const increasedLimit = state.productsLimit + 10;
-      const productsLength = state.products.length;
+    }
+    case PRODUCTS_INCREASE_LIMIT: {
+      return {
+        ...state,
+        productsLimit: state.productsLimit + 10,
+      };
+    }
+    case FILTERS_TOGGLE: {
+      const newFilters = state.filters.map(filter => {
+        if (filter.key === action.filter.key) {
+          // Check the selected store to see if we have this filter selected.
+          const isAlreadySet =
+            filter.selected.indexOf(action.choice.value) !== -1;
+
+          if (isAlreadySet) {
+            // We already have this filter selected so we need to remove it
+            // from the selected store.
+            return {
+              ...filter,
+              selected: filter.selected.filter(
+                value => value !== action.choice.value
+              ),
+            };
+          }
+
+          if (filter.multiChoice) {
+            // Filter is not already selected and is a multiChoice so we
+            // need to add it to the already present selected.
+            return {
+              ...filter,
+              selected: [...filter.selected, action.choice.value],
+            };
+          }
+
+          // By the power of deduction we know this choice is not set
+          // and it's not a multiChoice so we'll create an array with
+          // only this choice.
+          return {
+            ...filter,
+            selected: [action.choice.value],
+          };
+        }
+
+        // Simply return filters that are not related to our action.
+        return filter;
+      });
 
       return {
         ...state,
-        // If the increased limit is greater than our products length then
-        // we'll set the products length as the limit instead
-        productsLimit:
-          productsLength < increasedLimit ? productsLength : increasedLimit,
+        filterQuery: makeFilterQueryString(newFilters),
+        filters: newFilters,
       };
-    case FILTERS_SET:
-      state.chosenFilters[action.group] = action.chosen;
-
-      return {
-        ...state,
-        filterQuery: makeFilterQueryString(state),
-        chosenFilters: [...state.chosenFilters],
-      };
-    case FILTERS_RESET:
-      const emptyChosenFilters = getEmptyChosen(state.availableFilters);
-
-      return {
-        ...state,
-        filterQuery: makeFilterQueryString(state),
-        chosenFilters: emptyChosenFilters,
-      };
-    case FILTERS_GROUP_RESET:
-      const isMultiChoice = state.availableFilters[action.group].multiChoice;
-      state.chosenFilters[action.group] = isMultiChoice ? [] : "";
+    }
+    case FILTERS_RESET: {
+      const newFilters = state.filters.map(filter => ({
+        ...filter,
+        selected: [],
+      }));
 
       return {
         ...state,
         filterQuery: "",
-        chosenFilters: [...state.chosenFilters],
+        filters: newFilters,
       };
-    default:
+    }
+    case FILTERS_GROUP_RESET: {
+      const newFilters = state.filters.map(filter => {
+        if (filter.key === action.filter.key) {
+          return {
+            ...filter,
+            selected: [],
+          };
+        }
+
+        return filter;
+      });
+
+      return {
+        ...state,
+        filterQuery: makeFilterQueryString(newFilters),
+        filters: newFilters,
+      };
+    }
+    default: {
       return state;
+    }
   }
 };
 

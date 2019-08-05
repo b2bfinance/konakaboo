@@ -8,7 +8,6 @@ const useStyles = makeStyles(theme => ({
     boxShadow: "none",
     borderRadius: theme.spacing(10),
     color: theme.palette.common.white,
-    display: "flex",
   },
 }));
 
