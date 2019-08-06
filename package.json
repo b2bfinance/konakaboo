@@ -1,5 +1,5 @@
 {
-  "name": "@b2bfinance/konakaboo",
+  "name": "@b2bfinance/tablo",
   "version": "5.0.0-alpha.6",
   "description": "Display a list of products",
   "main": "lib/index.js",
@@ -64,12 +64,12 @@
     ]
   },
   "author": "Kyle Needham <kyle.needham@b2bfinance.com>",
-  "homepage": "https://github.com/b2bfinance/konakaboo",
+  "homepage": "https://github.com/b2bfinance/tablo",
   "license": "MIT",
-  "repository": "https://github.com/b2bfinance/konakaboo",
+  "repository": "https://github.com/b2bfinance/tablo",
   "keywords": [
     "b2bfinance",
-    "konakaboo",
+    "tablo",
     "list"
   ]
 }
