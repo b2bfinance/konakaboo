@@ -1,4 +1,4 @@
-# Products Embed
+# Konakaboo
 
 [![Storybook][storybook-badge]][storybook]
 [![Travis][build-badge]][build]
@@ -11,10 +11,10 @@ Display a list of products.
 
 ```sh
 // with npm
-npm install @b2bfinance/products-embed
+npm install @b2bfinance/konakaboo
 
 // with yarn
-yarn add @b2bfinance/products-embed
+yarn add @b2bfinance/konakaboo
 ```
 
 ## Usage
@@ -23,7 +23,7 @@ yarn add @b2bfinance/products-embed
 import React from "react";
 import ReactDOM from "react-dom";
 import { ThemeProvider } from "@material-ui/styles";
-import { EmbedWrapper, theme } from "@b2bfinance/products-embed";
+import { EmbedWrapper, theme } from "@b2bfinance/konakaboo";
 
 function App() {
   return (
@@ -104,9 +104,9 @@ type Filter = {
 
 [storybook-badge]: https://cdn.jsdelivr.net/gh/storybooks/brand@master/badge/badge-storybook.svg
 [storybook]: https://storybook.js.org/
-[build-badge]: https://img.shields.io/travis/legalweb/products-embed/master.png?style=flat-square
-[build]: https://travis-ci.org/legalweb/products-embed
-[npm-badge]: https://img.shields.io/npm/v/@b2bfinance/products-embed.png?style=flat-square
-[npm]: https://www.npmjs.org/package/@b2bfinance/products-embed
-[coveralls-badge]: https://img.shields.io/coveralls/legalweb/products-embed/master.png?style=flat-square
-[coveralls]: https://coveralls.io/github/legalweb/products-embed
+[build-badge]: https://img.shields.io/travis/b2bfinance/konakaboo/master.png?style=flat-square
+[build]: https://travis-ci.org/b2bfinance/konakaboo
+[npm-badge]: https://img.shields.io/npm/v/@b2bfinance/konakaboo.png?style=flat-square
+[npm]: https://www.npmjs.org/package/@b2bfinance/konakaboo
+[coveralls-badge]: https://img.shields.io/coveralls/b2bfinance/konakaboo/master.png?style=flat-square
+[coveralls]: https://coveralls.io/github/b2bfinance/konakaboo

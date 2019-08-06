@@ -1,7 +1,7 @@
 {
-  "name": "@b2bfinance/products-embed",
+  "name": "@b2bfinance/konakaboo",
   "version": "5.0.0-alpha.6",
-  "description": "products-embed React component",
+  "description": "Display a list of products",
   "main": "lib/index.js",
   "module": "es/index.js",
   "files": [
@@ -64,11 +64,12 @@
     ]
   },
   "author": "Kyle Needham <kyle.needham@b2bfinance.com>",
-  "homepage": "https://github.com/legalweb/products-embed",
+  "homepage": "https://github.com/b2bfinance/konakaboo",
   "license": "MIT",
-  "repository": "https://github.com/legalweb/products-embed",
+  "repository": "https://github.com/b2bfinance/konakaboo",
   "keywords": [
     "b2bfinance",
-    "products embed"
+    "konakaboo",
+    "list"
   ]
 }
