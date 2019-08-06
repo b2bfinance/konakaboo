@@ -104,9 +104,9 @@ type Filter = {
 
 [storybook-badge]: https://cdn.jsdelivr.net/gh/storybooks/brand@master/badge/badge-storybook.svg
 [storybook]: https://storybook.js.org/
-[build-badge]: https://img.shields.io/travis/b2bfinance/konakaboo/master.png?style=flat-square
-[build]: https://travis-ci.org/b2bfinance/konakaboo
-[npm-badge]: https://img.shields.io/npm/v/@b2bfinance/konakaboo.png?style=flat-square
-[npm]: https://www.npmjs.org/package/@b2bfinance/konakaboo
-[coveralls-badge]: https://img.shields.io/coveralls/b2bfinance/konakaboo/master.png?style=flat-square
-[coveralls]: https://coveralls.io/github/b2bfinance/konakaboo
+[build-badge]: https://img.shields.io/travis/b2bfinance/tablo/master.png?style=flat-square
+[build]: https://travis-ci.org/b2bfinance/tablo
+[npm-badge]: https://img.shields.io/npm/v/@b2bfinance/tablo.png?style=flat-square
+[npm]: https://www.npmjs.org/package/@b2bfinance/tablo
+[coveralls-badge]: https://img.shields.io/coveralls/b2bfinance/tablo/master.png?style=flat-square
+[coveralls]: https://coveralls.io/github/b2bfinance/tablo
