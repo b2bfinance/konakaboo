@@ -1,4 +1,4 @@
-# Konakaboo
+# Tablo
 
 [![Storybook][storybook-badge]][storybook]
 [![Travis][build-badge]][build]
@@ -11,10 +11,10 @@ Display a list of products.
 
 ```sh
 // with npm
-npm install @b2bfinance/konakaboo
+npm install @b2bfinance/tablo
 
 // with yarn
-yarn add @b2bfinance/konakaboo
+yarn add @b2bfinance/tablo
 ```
 
 ## Usage
@@ -23,7 +23,7 @@ yarn add @b2bfinance/konakaboo
 import React from "react";
 import ReactDOM from "react-dom";
 import { ThemeProvider } from "@material-ui/styles";
-import { EmbedWrapper, theme } from "@b2bfinance/konakaboo";
+import { EmbedWrapper, theme } from "@b2bfinance/tablo";
 
 function App() {
   return (
