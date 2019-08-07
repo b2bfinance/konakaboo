@@ -21,7 +21,7 @@
     "precommit": "lint-staged",
     "storybook": "start-storybook -s ./storybook-mocks -p 9001",
     "create-products-storybook": "rimraf ./storybook-mocks && node --experimental-modules ./.storybook/generate-mocks.mjs",
-    "build-storybook": "build-storybook",
+    "build-storybook": "build-storybook -s ./storybook-mocks",
     "deploy-storybook": "storybook-to-ghpages"
   },
   "dependencies": {
