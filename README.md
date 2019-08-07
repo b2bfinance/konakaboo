@@ -101,7 +101,7 @@ type Filter = {
 ```
 
 [storybook-badge]: https://cdn.jsdelivr.net/gh/storybooks/brand@master/badge/badge-storybook.svg
-[storybook]: https://storybook.js.org/
+[storybook]: https://b2bfinance.github.io/tablo/
 [build-badge]: https://img.shields.io/travis/b2bfinance/tablo/master.png?style=flat-square
 [build]: https://travis-ci.org/b2bfinance/tablo
 [npm-badge]: https://img.shields.io/npm/v/@b2bfinance/tablo.png?style=flat-square
