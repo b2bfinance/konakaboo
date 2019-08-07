@@ -51,11 +51,9 @@ Products must be an array of objects matching the `Product` type below.
 ```typescript
 type Product = {
   id: String;
-  type: String;
   issuer: String;
   title: String;
   brand: String;
-  product: String;
   description: String;
   highlighted: Boolean;
   labels: String[];
