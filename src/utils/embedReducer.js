@@ -7,6 +7,7 @@ import {
   PRODUCTS_LOADING,
   PRODUCTS_SET,
 } from "./actions";
+import { makeProviderURI } from "./api";
 import { makeFilterQueryString } from "./filter";
 
 const embedReducer = (state, action) => {
@@ -78,7 +79,10 @@ const embedReducer = (state, action) => {
 
       return {
         ...state,
-        filterQuery: makeFilterQueryString(newFilters),
+        provider: makeProviderURI(
+          state.provider,
+          makeFilterQueryString(newFilters)
+        ),
         filters: newFilters,
       };
     }
@@ -90,7 +94,7 @@ const embedReducer = (state, action) => {
 
       return {
         ...state,
-        filterQuery: "",
+        provider: "",
         filters: newFilters,
       };
     }
@@ -108,7 +112,10 @@ const embedReducer = (state, action) => {
 
       return {
         ...state,
-        filterQuery: makeFilterQueryString(newFilters),
+        provider: makeProviderURI(
+          state.provider,
+          makeFilterQueryString(newFilters)
+        ),
         filters: newFilters,
       };
     }

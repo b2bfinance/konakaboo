@@ -16,5 +16,4 @@ export const makeProviderURI = (provider, filterQueryString) => {
   return `${provider}?${filterQueryString}`;
 };
 
-export const fetchProducts = async (provider, filterQuery) =>
-  await axios.get(makeProviderURI(provider, filterQuery));
+export const fetchProducts = async provider => await axios.get(provider);

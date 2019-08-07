@@ -14,9 +14,9 @@ export const generateFilter = () => ({
     })),
 });
 
-export const generateFilters = () =>
+export const generateFilters = count =>
   " "
-    .repeat(Math.max(2, faker.random.number(5)))
+    .repeat(count)
     .split("")
     .map(() => generateFilter());
 

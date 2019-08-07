@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import {
   fetchProducts,
   PRODUCTS_ERROR,
@@ -9,26 +9,21 @@ import useEmbedDispatch from "./useEmbedDispatch";
 import useEmbedState from "./useEmbedState";
 
 const useProductFetcherEffect = () => {
-  const {
-    products,
-    preFetchedProducts,
-    provider,
-    filterQuery,
-  } = useEmbedState();
-
+  const isFirstRender = useRef(true);
+  const { products, provider } = useEmbedState();
   const dispatchAction = useEmbedDispatch();
 
   useEffect(() => {
-    // If we have preloaded products and have not filtered then set
-    // the preloaded products as the currently active products
-    if (
-      preFetchedProducts.length > 0 &&
-      !filterQuery &&
-      products !== preFetchedProducts
-    ) {
+    // It's the first render and we already have products, so we don't
+    // need to go fetching any this time round.
+    if (isFirstRender && products.length > 0) {
+      isFirstRender.current = false;
+
+      // We still dispatch the products set action to handle the
+      // product loading state.
       dispatchAction({
         type: PRODUCTS_SET,
-        products: preFetchedProducts,
+        products,
       });
 
       return;
@@ -45,7 +40,7 @@ const useProductFetcherEffect = () => {
       });
 
       try {
-        const productsResponse = await fetchProducts(provider, filterQuery);
+        const productsResponse = await fetchProducts(provider);
         const productsResponseData = productsResponse.data;
 
         dispatchAction({
@@ -60,7 +55,7 @@ const useProductFetcherEffect = () => {
     };
 
     fetchData();
-  }, [filterQuery]);
+  }, [provider, products]);
 };
 
 export default useProductFetcherEffect;

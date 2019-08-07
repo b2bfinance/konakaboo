@@ -59,7 +59,7 @@ const ProductHeadingRow = ({ logo, brand, highlighted, title, labels }) => {
           <img className={classes.productLogo} src={logo} alt={brand} />
         </div>
       </Grid>
-      <Grid item xs={12} sm={5} md={7}>
+      <Grid item xs={12} sm={5} md={6}>
         <Typography color="textPrimary" component={Grid} container>
           <Grid item xs={12}>
             <Grid container alignItems="center">
@@ -81,7 +81,7 @@ const ProductHeadingRow = ({ logo, brand, highlighted, title, labels }) => {
         </Typography>
       </Grid>
       {labels && labels.length > 0 && (
-        <Grid className={classes.productLabels} item xs={12} sm={4} md={3}>
+        <Grid className={classes.productLabels} item xs={12} sm={4} md={4}>
           <ProductLabels labels={labels} />
         </Grid>
       )}

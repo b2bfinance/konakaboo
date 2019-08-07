@@ -2,6 +2,7 @@
   "name": "@b2bfinance/tablo",
   "version": "5.0.0-alpha.6",
   "description": "Display a list of products",
+  "sideEffects": false,
   "main": "lib/index.js",
   "module": "es/index.js",
   "files": [
@@ -13,13 +14,15 @@
     "build": "nwb build-react-component",
     "clean": "nwb clean-module && nwb clean-demo",
     "prepublishOnly": "npm run build",
-    "start": "yarn storybook",
+    "start": "yarn create-products-storybook & yarn storybook",
     "test": "jest",
     "test:coverage": "jest --coverage",
     "test:watch": "jest --watch",
     "precommit": "lint-staged",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "storybook": "start-storybook -s ./storybook-mocks -p 9001",
+    "create-products-storybook": "rimraf ./storybook-mocks && node --experimental-modules ./.storybook/generate-mocks.mjs",
+    "build-storybook": "build-storybook",
+    "deploy-storybook": "storybook-to-ghpages"
   },
   "dependencies": {
     "axios": "^0.19.0",
@@ -44,6 +47,7 @@
     "@storybook/addon-links": "^5.1.10",
     "@storybook/addons": "^5.1.10",
     "@storybook/react": "^5.1.10",
+    "@storybook/storybook-deployer": "^2.8.1",
     "@testing-library/jest-dom": "^4.0.0",
     "@testing-library/react": "^8.0.5",
     "@types/react-dom": "^16.8.5",
@@ -55,7 +59,8 @@
     "nwb": "0.23.x",
     "prettier": "^1.18.2",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "rimraf": "^2.6.3"
   },
   "lint-staged": {
     "**/*.{js,jsx,json}": [
