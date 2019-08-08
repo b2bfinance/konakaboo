@@ -1,5 +1,4 @@
 import { Grid, makeStyles, Typography } from "@material-ui/core";
-import ListIcon from "@material-ui/icons/List";
 import React from "react";
 import {
   useEmbedDispatch,
@@ -9,7 +8,7 @@ import {
 import ProductMask from "./ProductMask";
 import ProductPrimaryButton from "./ProductPrimaryButton";
 import ProductWrapper from "./ProductWrapper";
-import { PRODUCTS_INCREASE_LIMIT, FILTERS_RESET } from "./utils";
+import { FILTERS_RESET, PRODUCTS_INCREASE_LIMIT } from "./utils";
 
 const useStyles = makeStyles(theme => ({
   productListWrapper: {
@@ -90,8 +89,8 @@ const ProductList = () => {
   const dispatchAction = useEmbedDispatch();
 
   // Fetch our products using the provider given in the
-  // config options. Preloaded products will be used
-  // if we have them with no filters have been set.
+  // config options. Products supplied as a prop will be used
+  // on the first render.
   useProductFetcherEffect();
 
   const classes = useStyles({
