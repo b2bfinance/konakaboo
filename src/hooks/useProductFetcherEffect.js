@@ -1,6 +1,8 @@
 import { useEffect, useRef } from "react";
 import {
   fetchProducts,
+  makeFilterQueryString,
+  makeProviderURI,
   PRODUCTS_ERROR,
   PRODUCTS_LOADING,
   PRODUCTS_SET,
@@ -9,29 +11,25 @@ import useEmbedDispatch from "./useEmbedDispatch";
 import useEmbedState from "./useEmbedState";
 
 const useProductFetcherEffect = () => {
-  const isFirstRender = useRef(true);
-  const { products, provider } = useEmbedState();
+  const firstRender = useRef(true);
+  const { provider, products, filters } = useEmbedState();
   const dispatchAction = useEmbedDispatch();
 
   useEffect(() => {
-    // It's the first render and we already have products, so we don't
-    // need to go fetching any this time round.
-    if (isFirstRender && products.length > 0) {
-      isFirstRender.current = false;
-
-      // We still dispatch the products set action to handle the
-      // product loading state.
-      dispatchAction({
-        type: PRODUCTS_SET,
-        products,
-      });
-
-      return;
-    }
+    let isMounted = true;
 
     // No provider means we don't need to fetch any products let's abort now.
     if (!provider) {
       return;
+    }
+
+    if (firstRender.current) {
+      firstRender.current = false;
+
+      // Don't fetch products on first render if we have some already.
+      if (products.length > 0) {
+        return;
+      }
     }
 
     const fetchData = async () => {
@@ -40,22 +38,33 @@ const useProductFetcherEffect = () => {
       });
 
       try {
-        const productsResponse = await fetchProducts(provider);
+        const productsResponse = await fetchProducts(
+          makeProviderURI(provider, makeFilterQueryString(filters))
+        );
+
         const productsResponseData = productsResponse.data;
 
-        dispatchAction({
-          type: PRODUCTS_SET,
-          products: productsResponseData.data,
-        });
+        if (isMounted) {
+          dispatchAction({
+            type: PRODUCTS_SET,
+            products: productsResponseData.data,
+          });
+        }
       } catch (e) {
-        dispatchAction({
-          type: PRODUCTS_ERROR,
-        });
+        if (isMounted) {
+          dispatchAction({
+            type: PRODUCTS_ERROR,
+          });
+        }
       }
     };
 
     fetchData();
-  }, [provider, products]);
+
+    return () => {
+      isMounted = false;
+    };
+  }, [filters]);
 };
 
 export default useProductFetcherEffect;

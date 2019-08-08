@@ -1,4 +1,5 @@
 import {
+  SET_STATE,
   FILTERS_GROUP_RESET,
   FILTERS_RESET,
   FILTERS_TOGGLE,
@@ -7,11 +8,15 @@ import {
   PRODUCTS_LOADING,
   PRODUCTS_SET,
 } from "./actions";
-import { makeProviderURI } from "./api";
-import { makeFilterQueryString } from "./filter";
 
 const embedReducer = (state, action) => {
   switch (action.type) {
+    case SET_STATE: {
+      return {
+        ...state,
+        ...action.payload,
+      };
+    }
     case PRODUCTS_SET: {
       return {
         ...state,
@@ -79,10 +84,6 @@ const embedReducer = (state, action) => {
 
       return {
         ...state,
-        provider: makeProviderURI(
-          state.provider,
-          makeFilterQueryString(newFilters)
-        ),
         filters: newFilters,
       };
     }
@@ -94,7 +95,6 @@ const embedReducer = (state, action) => {
 
       return {
         ...state,
-        provider: "",
         filters: newFilters,
       };
     }
@@ -112,10 +112,6 @@ const embedReducer = (state, action) => {
 
       return {
         ...state,
-        provider: makeProviderURI(
-          state.provider,
-          makeFilterQueryString(newFilters)
-        ),
         filters: newFilters,
       };
     }
