@@ -53,6 +53,26 @@ storiesOf("EmbedWrapper", module)
     <Story>
       <EmbedWrapper
         provider="http://localhost:9001/products.json"
+        filters={generateFilters(2)}
+        onApply={action("apply")}
+        onMoreDetails={action("more-details")}
+      />
+    </Story>
+  ))
+  .add("with provider and products", () => (
+    <Story>
+      <EmbedWrapper
+        provider="http://localhost:9001/products.json"
+        products={generateProducts(3)}
+        filters={generateFilters(2)}
+        onApply={action("apply")}
+        onMoreDetails={action("more-details")}
+      />
+    </Story>
+  ))
+  .add("with no products", () => (
+    <Story>
+      <EmbedWrapper
         onApply={action("apply")}
         onMoreDetails={action("more-details")}
       />
