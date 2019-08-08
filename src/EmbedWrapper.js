@@ -1,30 +1,20 @@
 import { CssBaseline, Grid } from "@material-ui/core";
-import React, { useReducer } from "react";
+import React, { useEffect } from "react";
 import EmbedContext from "./EmbedContext";
 import FilterList from "./FilterList";
+import { useEmbedReducer } from "./hooks";
 import ProductList from "./ProductList";
-import { embedReducer, makeFilterQueryString, makeProviderURI } from "./utils";
+import { SET_STATE } from "./utils";
 
-const EmbedWrapper = ({
-  products = [],
-  productsLimit = 10,
-  filters = [],
-  cta = "Get Deal",
-  provider = null,
-  onMoreDetails = null,
-  onApply = null,
-}) => {
-  const [state, dispatch] = useReducer(embedReducer, {
-    products,
-    productsLoading: true,
-    productsError: false,
-    provider: makeProviderURI(provider, makeFilterQueryString(filters)),
-    productsLimit,
-    filters,
-    cta,
-    onMoreDetails,
-    onApply,
-  });
+const EmbedWrapper = props => {
+  const [state, dispatch] = useEmbedReducer(props);
+
+  useEffect(() => {
+    dispatch({
+      type: SET_STATE,
+      payload: props,
+    });
+  }, [props]);
 
   return (
     <EmbedContext.Provider value={{ state, dispatch }}>
