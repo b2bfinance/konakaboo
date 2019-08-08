@@ -1,13 +1,41 @@
-import { generateProducts } from "../test/product-mocks";
+import "colors";
 import fs from "fs";
+import path from "path";
+import { generateProducts } from "../test/product-mocks";
 
-const main = async () => {
-  await fs.promises.mkdir("./storybook-mocks");
+const logInfo = (...messages) => {
+  console.log("info".green.bold, "=>", ...messages);
+};
 
-  await fs.promises.writeFile(
-    "./storybook-mocks/products.json",
+const logError = (...messages) => {
+  console.log("Error".red.bold, "\n\n", ...messages, "\n\n");
+};
+
+const createMockDirectory = mockDirectory => fs.promises.mkdir(mockDirectory);
+
+const createMockProducts = filePath =>
+  fs.promises.writeFile(
+    filePath,
     JSON.stringify({ data: generateProducts(50) })
   );
+
+const main = async () => {
+  const mockDirectory = path.resolve("./storybook-mocks");
+
+  try {
+    await createMockDirectory(mockDirectory);
+    logInfo(`Created mock directory at ${mockDirectory}`);
+  } catch (e) {
+    logError(e.message.red);
+  }
+
+  try {
+    const productsMockPath = path.join(mockDirectory, "products.json");
+    await createMockProducts(productsMockPath);
+    logInfo(`Created product mocks at ${productsMockPath}`);
+  } catch (e) {
+    logError(e.message.red);
+  }
 };
 
 main();

@@ -2,7 +2,7 @@ import faker from "faker";
 
 export const generateFilter = () => ({
   title: faker.random.word(),
-  key: faker.random.uuid(),
+  key: faker.lorem.slug(),
   selected: [],
   multiChoice: faker.random.boolean(),
   choices: " "
