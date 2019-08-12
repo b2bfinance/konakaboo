@@ -11,6 +11,10 @@ const useStyles = makeStyles(theme => ({
     marginTop: "auto",
     minHeight: theme.spacing(11),
   },
+  productMoreInfoFooterPrimaryButton: {
+    display: "flex",
+    marginLeft: "auto",
+  },
 }));
 
 const ProductMoreInfoFooter = ({ link, onClose }) => {
@@ -29,7 +33,11 @@ const ProductMoreInfoFooter = ({ link, onClose }) => {
         </Button>
       </Grid>
       <Grid item xs={7} sm={5} lg={4}>
-        <ProductPrimaryButton size="large" href={link}>
+        <ProductPrimaryButton
+          className={classes.productMoreInfoFooterPrimaryButton}
+          size="large"
+          href={link}
+        >
           Continue
         </ProductPrimaryButton>
       </Grid>
