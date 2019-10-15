@@ -1,7 +1,7 @@
 import "colors";
 import fs from "fs";
 import path from "path";
-import { generateProducts } from "../test/product-mocks";
+import { generateProducts } from "../test/product-mocks.mjs";
 
 const logInfo = (...messages) => {
   console.log("info".green.bold, "=>", ...messages);
