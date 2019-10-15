@@ -13,7 +13,7 @@ const defaultState = {
 };
 
 const useEmbedReducer = state => {
-  const initialState = defaults(state, defaultState);
+  const initialState = defaults({}, state, defaultState);
   const willLoad = initialState.provider && initialState.products.length === 0;
 
   return useReducer(embedReducer, {
