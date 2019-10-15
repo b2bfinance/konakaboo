@@ -1,5 +1,6 @@
 import { useReducer } from "react";
 import { embedReducer } from "../utils";
+import defaults from "lodash.defaults";
 
 const defaultState = {
   products: [],
@@ -12,11 +13,7 @@ const defaultState = {
 };
 
 const useEmbedReducer = state => {
-  const initialState = {
-    ...defaultState,
-    ...state,
-  };
-
+  const initialState = defaults(state, defaultState);
   const willLoad = initialState.provider && initialState.products.length === 0;
 
   return useReducer(embedReducer, {
