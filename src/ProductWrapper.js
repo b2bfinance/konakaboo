@@ -77,8 +77,10 @@ const ProductWrapper = ({
     }
 
     if (meta.confirm) {
-      e.preventDefault();
-      setWithConfirmation(true);
+      if (meta.confirm.title || meta.confirm.description) {
+        e.preventDefault();
+        setWithConfirmation(true);
+      }
     }
   };
 
