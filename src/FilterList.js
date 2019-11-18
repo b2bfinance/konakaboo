@@ -16,7 +16,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const hasSelected = selected => selected.length > 0;
+const hasSelected = selected => selected && selected.length > 0;
 
 const generateChipLabel = filter => {
   if (filter.selected.length > 0) {
