@@ -7,28 +7,29 @@ import ProductLabels from "./ProductLabels";
 
 const useStyles = makeStyles(theme => ({
   productHeadingWrapper: {
-    backgroundColor: theme.palette.grey[200],
+    backgroundColor: theme.palette.common.white,
+    borderBottom: 0,
     padding: theme.spacing(2),
-    [theme.breakpoints.up("xs")]: {
-      backgroundColor: theme.palette.common.white,
-      borderBottom: 0,
+    [theme.breakpoints.up("md")]: {
+      backgroundColor: "transparent",
+      padding: 0,
     },
   },
   productLogoWrapper: {
     marginBottom: theme.spacing(1),
-    [theme.breakpoints.up("sm")]: {
+    height: theme.spacing(11),
+    [theme.breakpoints.up("md")]: {
       backgroundColor: theme.palette.common.white,
       display: "flex",
       padding: theme.spacing(1),
-      margin: theme.spacing(0, 2, -1, 1.5),
+      marginRight: theme.spacing(1.5),
       border: `1px solid ${theme.palette.grey[200]}`,
       textAlign: "center",
-      height: theme.spacing(11),
     },
   },
   productLogo: {
     maxWidth: "100%",
-    maxHeight: 80,
+    maxHeight: "100%",
     margin: "auto",
   },
   productHighlightedIcon: {
@@ -36,7 +37,7 @@ const useStyles = makeStyles(theme => ({
     color: orange[300],
   },
   productLabels: {
-    [theme.breakpoints.up("sm")]: {
+    [theme.breakpoints.up("md")]: {
       display: "flex",
       justifyContent: "flex-end",
       alignItems: "center",
