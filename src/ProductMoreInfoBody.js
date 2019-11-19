@@ -54,11 +54,11 @@ const ProductMoreInfoBody = ({ description, detailed, disclaimer }) => {
             <Typography variant="h6">{detail.title}</Typography>
             <Table padding="none">
               <TableBody>
-                {detail.rows.map(row =>
+                {detail.rows.map((row, index) =>
                   row.label ? (
                     <TableRow
                       className={classes.productMoreInfoBodyDetailRow}
-                      key={row.label}
+                      key={index}
                     >
                       <TableCell
                         className={classes.productMoreInfoBodyDetailCell}
@@ -76,7 +76,7 @@ const ProductMoreInfoBody = ({ description, detailed, disclaimer }) => {
                   ) : (
                     <TableRow
                       className={classes.productMoreInfoBodyDetailRow}
-                      key={row.value}
+                      key={index}
                     >
                       <TableCell
                         className={classes.productMoreInfoBodyDetailCell}
