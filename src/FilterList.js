@@ -27,7 +27,7 @@ const generateChipLabel = filter => {
 };
 
 const FilterList = ({ filters, onFilter }) => {
-  const [state, dispatch] = useReducer(filterReducer, { filters });
+  const [filterState, dispatch] = useReducer(filterReducer, filters);
   const classes = useStyles();
   const [activeGroup, setActiveGroup] = useState(null);
   const [anchorEl, setAnchorEl] = useState(null);
