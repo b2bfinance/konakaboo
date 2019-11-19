@@ -1,3 +1,4 @@
+import { CssBaseline } from "@material-ui/core";
 import { ThemeProvider } from "@material-ui/styles";
 import { addDecorator, configure } from "@storybook/react";
 import React from "react";
@@ -11,7 +12,10 @@ function loadStories() {
 }
 
 const ProvidersDecorator = storyFn => (
-  <ThemeProvider theme={theme}>{storyFn()}</ThemeProvider>
+  <ThemeProvider theme={theme}>
+    <CssBaseline />
+    {storyFn()}
+  </ThemeProvider>
 );
 
 addDecorator(ProvidersDecorator);

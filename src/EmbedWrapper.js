@@ -1,4 +1,4 @@
-import { CssBaseline, Grid } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
 import React from "react";
 import FilterList from "./FilterList";
 import ProductList from "./ProductList";
@@ -14,13 +14,12 @@ const EmbedWrapper = ({
   productsLimit = 10,
   filters = [],
   cta = "Get Deal",
-  onFilter,
-  onMoreDetails,
-  onApply,
+  onFilter = () => {},
+  onMoreDetails = () => {},
+  onApply = () => {},
 }) => {
   return (
-    <>
-      <CssBaseline />
+    <Grid container>
       <Grid item xs={12}>
         <FilterList filters={createFilterState(filters)} onFilter={onFilter} />
       </Grid>
@@ -35,7 +34,7 @@ const EmbedWrapper = ({
           />
         </Grid>
       </Grid>
-    </>
+    </Grid>
   );
 };
 
