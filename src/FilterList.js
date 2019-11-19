@@ -19,7 +19,7 @@ const useStyles = makeStyles(theme => ({
 const hasSelected = selected => selected && selected.length > 0;
 
 const generateChipLabel = filter => {
-  if (filter.selected.length > 0) {
+  if (hasSelected(filter.selected)) {
     return `${filter.title} +${filter.selected.length}`;
   }
 
