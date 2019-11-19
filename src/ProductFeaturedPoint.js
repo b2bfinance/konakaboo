@@ -8,7 +8,7 @@ const useStyles = makeStyles(theme => ({
   productFeaturePointWrapper: {
     backgroundColor: theme.palette.grey[200],
     padding: theme.spacing(1, 2),
-    lineHeight: 0,
+    lineHeight: 1,
   },
   productFeaturePointIcon: {
     color: pink[300],
