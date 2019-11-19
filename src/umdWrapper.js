@@ -1,9 +1,10 @@
+import { CssBaseline } from "@material-ui/core";
 import { createMuiTheme } from "@material-ui/core/styles";
 import { ThemeProvider } from "@material-ui/styles";
 import React from "react";
 import ReactDOM from "react-dom";
 import EmbedWrapper from "./EmbedWrapper";
-import { theme as muiTheme } from "./utils/theme";
+import { default as muiTheme } from "./utils/theme";
 
 const renderProducts = ({
   theme,
@@ -12,9 +13,9 @@ const renderProducts = ({
   productsLimit,
   filters,
   cta,
-  provider,
   onMoreDetails,
   onApply,
+  onFilter,
 }) => {
   const element = document.querySelector(selector);
 
@@ -26,14 +27,15 @@ const renderProducts = ({
 
   ReactDOM.render(
     <ThemeProvider theme={theme ? createMuiTheme(theme) : muiTheme}>
+      <CssBaseline />
       <EmbedWrapper
         products={products}
         productsLimit={productsLimit}
         filters={filters}
         cta={cta}
-        provider={provider}
         onMoreDetails={onMoreDetails}
         onApply={onApply}
+        onFilter={onFilter}
       />
     </ThemeProvider>,
     element
