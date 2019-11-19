@@ -1,47 +1,7 @@
-import {
-  SET_STATE,
-  FILTERS_GROUP_RESET,
-  FILTERS_RESET,
-  FILTERS_TOGGLE,
-  PRODUCTS_ERROR,
-  PRODUCTS_INCREASE_LIMIT,
-  PRODUCTS_LOADING,
-  PRODUCTS_SET,
-} from "./actions";
+import { FILTERS_GROUP_RESET, FILTERS_RESET, FILTERS_TOGGLE } from "./actions";
 
-const embedReducer = (state, action) => {
+const filterReducer = (state, action) => {
   switch (action.type) {
-    case SET_STATE: {
-      return {
-        ...state,
-        ...action.payload,
-      };
-    }
-    case PRODUCTS_SET: {
-      return {
-        ...state,
-        productsLoading: false,
-        products: action.products,
-      };
-    }
-    case PRODUCTS_LOADING: {
-      return {
-        ...state,
-        productsLoading: true,
-      };
-    }
-    case PRODUCTS_ERROR: {
-      return {
-        ...state,
-        productsError: true,
-      };
-    }
-    case PRODUCTS_INCREASE_LIMIT: {
-      return {
-        ...state,
-        productsLimit: state.productsLimit + 10,
-      };
-    }
     case FILTERS_TOGGLE: {
       const newFilters = state.filters.map(filter => {
         if (filter.key === action.filter.key) {
@@ -121,4 +81,4 @@ const embedReducer = (state, action) => {
   }
 };
 
-export default embedReducer;
+export default filterReducer;

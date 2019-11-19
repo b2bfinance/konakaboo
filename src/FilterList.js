@@ -1,10 +1,10 @@
 import { Chip, Grid, Popover } from "@material-ui/core";
 import Cancel from "@material-ui/icons/Cancel";
 import { makeStyles } from "@material-ui/styles";
-import React, { useState } from "react";
+import React, { useState, useReducer } from "react";
 import FilterWrapper from "./FilterWrapper";
-import { useEmbedDispatch, useEmbedState } from "./hooks";
-import { FILTERS_GROUP_RESET, FILTERS_RESET } from "./utils";
+import { FILTERS_GROUP_RESET, FILTERS_RESET } from "./utils/actions";
+import filterReducer from "./utils/filterReducer";
 
 const useStyles = makeStyles(theme => ({
   filterListWrapper: {
@@ -16,7 +16,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const hasSelected = selected => selected && selected.length > 0;
+const hasSelected = selected => selected.length > 0;
 
 const generateChipLabel = filter => {
   if (hasSelected(filter.selected)) {
@@ -26,12 +26,11 @@ const generateChipLabel = filter => {
   return filter.title;
 };
 
-const FilterList = () => {
+const FilterList = ({ filters, onFilter }) => {
+  const [state, dispatch] = useReducer(filterReducer, { filters });
   const classes = useStyles();
   const [activeGroup, setActiveGroup] = useState(null);
   const [anchorEl, setAnchorEl] = useState(null);
-  const { filters } = useEmbedState();
-  const dispatchAction = useEmbedDispatch();
 
   const handleChipClick = group => e => {
     setAnchorEl(e.currentTarget);
@@ -39,7 +38,7 @@ const FilterList = () => {
   };
 
   const handleChipDelete = filter => () => {
-    dispatchAction({
+    dispatch({
       type: FILTERS_GROUP_RESET,
       filter,
     });
@@ -51,7 +50,7 @@ const FilterList = () => {
   };
 
   const handleResetAllFilters = () => {
-    dispatchAction({
+    dispatch({
       type: FILTERS_RESET,
     });
   };
@@ -62,7 +61,7 @@ const FilterList = () => {
 
   return (
     <Grid className={classes.filterListWrapper} container>
-      {filters.map((filter, i) => (
+      {state.filters.map((filter, i) => (
         <React.Fragment key={i}>
           <Chip
             className={classes.filterListChip}
@@ -79,7 +78,11 @@ const FilterList = () => {
             anchorEl={anchorEl}
             onClose={handlePopoverClose}
           >
-            <FilterWrapper filter={filter} onClose={handlePopoverClose} />
+            <FilterWrapper
+              filter={filter}
+              onClose={handlePopoverClose}
+              dispatch={dispatch}
+            />
           </Popover>
         </React.Fragment>
       ))}

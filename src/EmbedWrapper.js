@@ -1,33 +1,41 @@
 import { CssBaseline, Grid } from "@material-ui/core";
-import React, { useEffect } from "react";
-import EmbedContext from "./EmbedContext";
+import React from "react";
 import FilterList from "./FilterList";
-import { useEmbedReducer } from "./hooks";
 import ProductList from "./ProductList";
-import { SET_STATE } from "./utils";
 
-const EmbedWrapper = props => {
-  const [state, dispatch] = useEmbedReducer(props);
+const createFilterState = (filters = []) =>
+  filters.map(filter => ({
+    selected: [],
+    ...filter,
+  }));
 
-  useEffect(() => {
-    dispatch({
-      type: SET_STATE,
-      payload: props,
-    });
-  }, [props]);
-
+const EmbedWrapper = ({
+  products = [],
+  productsLimit = 10,
+  filters = [],
+  cta = "Get Deal",
+  onFilter,
+  onMoreDetails,
+  onApply,
+}) => {
   return (
-    <EmbedContext.Provider value={{ state, dispatch }}>
+    <>
       <CssBaseline />
       <Grid item xs={12}>
-        <FilterList />
+        <FilterList filters={createFilterState(filters)} onFilter={onFilter} />
       </Grid>
       <Grid item xs={12}>
         <Grid item xs={12}>
-          <ProductList />
+          <ProductList
+            products={products}
+            limit={productsLimit}
+            onMoreDetails={onMoreDetails}
+            onApply={onApply}
+            cta={cta}
+          />
         </Grid>
       </Grid>
-    </EmbedContext.Provider>
+    </>
   );
 };
 

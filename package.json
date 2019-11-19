@@ -1,6 +1,6 @@
 {
   "name": "@b2bfinance/tablo",
-  "version": "5.0.0-alpha.10",
+  "version": "5.0.0-beta.0",
   "description": "Display a list of products",
   "sideEffects": false,
   "main": "lib/index.js",
@@ -25,10 +25,7 @@
     "deploy-storybook": "storybook-to-ghpages"
   },
   "dependencies": {
-    "axios": "^0.19.0",
-    "clsx": "^1.0.4",
-    "lodash.defaults": "^4.2.0",
-    "query-string": "^6.8.1"
+    "clsx": "^1.0.4"
   },
   "peerDependencies": {
     "@material-ui/core": "4.x",

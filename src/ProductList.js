@@ -1,57 +1,17 @@
 import { Grid, makeStyles, Typography } from "@material-ui/core";
-import React from "react";
-import {
-  useEmbedDispatch,
-  useEmbedState,
-  useProductFetcherEffect,
-} from "./hooks";
-import ProductMask from "./ProductMask";
+import React, { useState } from "react";
 import ProductPrimaryButton from "./ProductPrimaryButton";
 import ProductWrapper from "./ProductWrapper";
-import { FILTERS_RESET, PRODUCTS_INCREASE_LIMIT } from "./utils";
 
-const useStyles = makeStyles(theme => ({
-  productListWrapper: {
-    opacity: props => (props.loading ? 0.75 : 1),
-  },
-  productListError: {
-    backgroundColor: theme.palette.error.main,
-    padding: theme.spacing(2),
-    color: theme.palette.error.contrastText,
-  },
+const useProductListEmptyStyles = makeStyles(theme => ({
   productListEmptyWrapper: {
     margin: theme.spacing(10, 0),
     textAlign: "center",
   },
 }));
 
-const ProductListLoading = () => (
-  <React.Fragment>
-    <ProductMask />
-    <ProductMask />
-    <ProductMask />
-    <ProductMask />
-    <ProductMask />
-  </React.Fragment>
-);
-
-const ProductListError = ({ classes }) => (
-  <Typography className={classes.productListError}>
-    There were errors getting the products for you. Please retry or come back
-    later
-  </Typography>
-);
-
-const ProductListEmpty = ({ classes }) => {
-  const { filters } = useEmbedState();
-  const dispatchAction = useEmbedDispatch();
-  const hasFilters = filters.some(filter => filter.selected.length > 0);
-
-  const handleResetFilters = () => {
-    dispatchAction({
-      type: FILTERS_RESET,
-    });
-  };
+const ProductListEmpty = () => {
+  const classes = useProductListEmptyStyles();
 
   return (
     <Grid className={classes.productListEmptyWrapper} container>
@@ -60,64 +20,27 @@ const ProductListEmpty = ({ classes }) => {
       </Grid>
       <Grid item xs={12}>
         <Typography color="textSecondary" paragraph>
-          It looks like we couldn't find any products for you.
+          It looks like we couldn't find any products matching your criteria.
         </Typography>
       </Grid>
-      {hasFilters && (
-        <Grid item xs={12}>
-          <ProductPrimaryButton
-            color="secondary"
-            size="large"
-            onClick={handleResetFilters}
-          >
-            Reset Filters
-          </ProductPrimaryButton>
-        </Grid>
-      )}
     </Grid>
   );
 };
 
-const ProductList = () => {
-  const {
-    products,
-    productsLimit,
-    productsLoading,
-    productsError,
-  } = useEmbedState();
-
-  const dispatchAction = useEmbedDispatch();
-
-  // Fetch our products using the provider given in the
-  // config options. Products supplied as a prop will be used
-  // on the first render.
-  useProductFetcherEffect();
-
-  const classes = useStyles({
-    loading: productsLoading,
-  });
+const ProductList = ({ products, limit, onMoreDetails, onApply, cta }) => {
+  const [productCount, setProductCount] = useState(limit);
 
   const handleLoadMore = () => {
-    dispatchAction({
-      type: PRODUCTS_INCREASE_LIMIT,
-    });
+    setProductCount(productCount + limit);
   };
 
-  if (productsError) {
-    return <ProductListError classes={classes} />;
-  }
-
-  if (productsLoading && products.length === 0) {
-    return <ProductListLoading />;
-  }
-
   if (products.length === 0) {
-    return <ProductListEmpty classes={classes} />;
+    return <ProductListEmpty />;
   }
 
   return (
-    <div className={classes.productListWrapper}>
-      {products.slice(0, productsLimit).map((product, i) => (
+    <>
+      {products.slice(0, productCount).map((product, i) => (
         <ProductWrapper
           key={product.id || i}
           highlighted={product.highlighted}
@@ -132,9 +55,12 @@ const ProductList = () => {
           disclaimer={product.disclaimer}
           meta={product.meta}
           product={product}
+          onMoreDetails={onMoreDetails}
+          onApply={onApply}
+          cta={cta}
         />
       ))}
-      {products.length > productsLimit && (
+      {products.length > productCount && (
         <Grid container justify="center">
           <Grid item>
             <ProductPrimaryButton
@@ -147,7 +73,7 @@ const ProductList = () => {
           </Grid>
         </Grid>
       )}
-    </div>
+    </>
   );
 };
 

@@ -2,7 +2,6 @@ import { Button, Grid, Hidden, Typography } from "@material-ui/core";
 import { blue } from "@material-ui/core/colors";
 import { makeStyles } from "@material-ui/styles";
 import React, { useState } from "react";
-import { useEmbedState } from "./hooks";
 import ProductColumns from "./ProductColumns";
 import ProductConfirm from "./ProductConfirm";
 import ProductFeaturedPoint from "./ProductFeaturedPoint";
@@ -53,13 +52,15 @@ const ProductWrapper = ({
   disclaimer,
   meta,
   product,
+  onMoreDetails,
+  onApply,
+  cta,
 }) => {
   const classes = useStyles({
     faded: meta.faded,
   });
   const [withInfo, setWithInfo] = useState(false);
   const [withConfirmation, setWithConfirmation] = useState(false);
-  const { onMoreDetails, onApply, cta } = useEmbedState();
 
   const handleMoreInfoClick = () => {
     if (onMoreDetails) {

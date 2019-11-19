@@ -12,8 +12,7 @@ import {
 import Close from "@material-ui/icons/Close";
 import { makeStyles } from "@material-ui/styles";
 import React from "react";
-import { useEmbedDispatch } from "./hooks";
-import { FILTERS_TOGGLE } from "./utils";
+import { FILTERS_TOGGLE } from "./utils/actions";
 
 const useStyles = makeStyles(theme => ({
   filterWrapperHeader: {
@@ -32,12 +31,11 @@ const useStyles = makeStyles(theme => ({
 const isSelected = (filter, choice) =>
   filter.selected.indexOf(choice.value) !== -1;
 
-export default ({ filter, onClose }) => {
+export default ({ filter, onClose, dispatch }) => {
   const classes = useStyles();
-  const dispatchAction = useEmbedDispatch();
 
   const handleSetChosen = choice => () => {
-    dispatchAction({
+    dispatch({
       type: FILTERS_TOGGLE,
       filter,
       choice,
@@ -45,7 +43,7 @@ export default ({ filter, onClose }) => {
   };
 
   return (
-    <React.Fragment>
+    <>
       <Grid
         className={classes.filterWrapperHeader}
         container
@@ -95,6 +93,6 @@ export default ({ filter, onClose }) => {
           </ListItem>
         ))}
       </List>
-    </React.Fragment>
+    </>
   );
 };

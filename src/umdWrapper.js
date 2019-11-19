@@ -1,16 +1,16 @@
 import { createMuiTheme } from "@material-ui/core/styles";
 import { ThemeProvider } from "@material-ui/styles";
 import React from "react";
-import { render } from "react-dom";
+import ReactDOM from "react-dom";
 import EmbedWrapper from "./EmbedWrapper";
-import { theme as muiTheme } from "./utils";
+import { theme as muiTheme } from "./utils/theme";
 
 const renderProducts = ({
+  theme,
   selector,
   products,
   productsLimit,
-  chosenFilters,
-  availableFilters,
+  filters,
   cta,
   provider,
   onMoreDetails,
@@ -24,13 +24,12 @@ const renderProducts = ({
     );
   }
 
-  render(
+  ReactDOM.render(
     <ThemeProvider theme={theme ? createMuiTheme(theme) : muiTheme}>
       <EmbedWrapper
         products={products}
         productsLimit={productsLimit}
-        chosenFilters={chosenFilters}
-        availableFilters={availableFilters}
+        filters={filters}
         cta={cta}
         provider={provider}
         onMoreDetails={onMoreDetails}
