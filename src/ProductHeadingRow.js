@@ -10,8 +10,7 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: theme.palette.grey[200],
     padding: theme.spacing(2),
     [theme.breakpoints.up("xs")]: {
-      backgroundColor: "transparent",
-      padding: 0,
+      backgroundColor: theme.palette.common.white,
       borderBottom: 0,
     },
   },
@@ -29,7 +28,7 @@ const useStyles = makeStyles(theme => ({
   },
   productLogo: {
     maxWidth: "100%",
-    maxHeight: "100%",
+    maxHeight: 80,
     margin: "auto",
   },
   productHighlightedIcon: {
