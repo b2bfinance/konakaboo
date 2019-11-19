@@ -39,7 +39,7 @@ const ProductList = ({ products, limit, onMoreDetails, onApply, cta }) => {
   }
 
   return (
-    <>
+    <React.Fragment>
       {products.slice(0, productCount).map((product, i) => (
         <ProductWrapper
           key={product.id || i}
@@ -73,7 +73,7 @@ const ProductList = ({ products, limit, onMoreDetails, onApply, cta }) => {
           </Grid>
         </Grid>
       )}
-    </>
+    </React.Fragment>
   );
 };
 

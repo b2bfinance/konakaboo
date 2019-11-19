@@ -43,7 +43,7 @@ export default ({ filter, onClose, dispatch }) => {
   };
 
   return (
-    <>
+    <React.Fragment>
       <Grid
         className={classes.filterWrapperHeader}
         container
@@ -93,6 +93,6 @@ export default ({ filter, onClose, dispatch }) => {
           </ListItem>
         ))}
       </List>
-    </>
+    </React.Fragment>
   );
 };
