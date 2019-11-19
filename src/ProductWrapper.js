@@ -12,7 +12,7 @@ import ProductPrimaryButton from "./ProductPrimaryButton";
 const useStyles = makeStyles(theme => ({
   productWrapper: {
     opacity: props => (props.faded ? 0.6 : 1),
-    marginBottom: theme.spacing(6),
+    marginBottom: theme.spacing(8),
   },
   productBody: {
     backgroundColor: theme.palette.common.white,
