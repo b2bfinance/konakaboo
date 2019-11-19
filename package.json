@@ -1,6 +1,6 @@
 {
   "name": "@b2bfinance/tablo",
-  "version": "5.0.0-alpha.9",
+  "version": "5.0.0-alpha.10",
   "description": "Display a list of products",
   "sideEffects": false,
   "main": "lib/index.js",
