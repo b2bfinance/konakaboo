@@ -26,6 +26,8 @@ import { ThemeProvider } from "@material-ui/styles";
 import { EmbedWrapper, theme } from "@b2bfinance/tablo";
 
 function App() {
+  const noOp = () => {};
+
   return (
     <ThemeProvider theme={theme}>
       <EmbedWrapper
@@ -33,9 +35,9 @@ function App() {
         productsLimit={10}
         filters={[]}
         cta={"Get Deal"}
-        provider={null}
-        onMoreDetails={null}
-        onApply={null}
+        onMoreDetails={noOp}
+        onApply={noOp}
+        onFilter={noOp}
       />
     </ThemeProvider>
   );
