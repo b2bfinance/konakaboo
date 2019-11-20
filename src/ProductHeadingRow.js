@@ -36,13 +36,6 @@ const useStyles = makeStyles(theme => ({
     marginLeft: theme.spacing(0.5),
     color: orange[300],
   },
-  productLabels: {
-    [theme.breakpoints.up("md")]: {
-      display: "flex",
-      justifyContent: "flex-end",
-      alignItems: "center",
-    },
-  },
 }));
 
 const ProductHeadingRow = ({ logo, brand, highlighted, title, labels }) => {
@@ -59,7 +52,7 @@ const ProductHeadingRow = ({ logo, brand, highlighted, title, labels }) => {
           <img className={classes.productLogo} src={logo} alt={brand} />
         </div>
       </Grid>
-      <Grid item xs={12} sm={5} md={6}>
+      <Grid item xs={12} sm={9} md={10}>
         <Typography color="textPrimary" component={Grid} container>
           <Grid item xs={12}>
             <Grid container alignItems="center">
@@ -77,14 +70,10 @@ const ProductHeadingRow = ({ logo, brand, highlighted, title, labels }) => {
           </Grid>
           <Grid item xs={12}>
             <Typography>{title}</Typography>
+            {labels && labels.length > 0 && <ProductLabels labels={labels} />}
           </Grid>
         </Typography>
       </Grid>
-      {labels && labels.length > 0 && (
-        <Grid className={classes.productLabels} item xs={12} sm={4} md={4}>
-          <ProductLabels labels={labels} />
-        </Grid>
-      )}
     </Grid>
   );
 };

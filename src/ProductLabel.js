@@ -21,8 +21,8 @@ const colors = {
 
 const useStyles = makeStyles(theme => ({
   productLabelWrapper: {
-    borderRadius: theme.spacing(4),
-    padding: theme.spacing(0.5, 1.5),
+    borderRadius: theme.spacing(2),
+    padding: theme.spacing(0.25, 1),
     backgroundColor: props => props.colorGroup[500],
     marginRight: theme.spacing(1),
     "&:last-child": {
