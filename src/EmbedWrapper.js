@@ -3,25 +3,21 @@ import React from "react";
 import FilterList from "./FilterList";
 import ProductList from "./ProductList";
 
-const createFilterState = (filters = []) =>
-  filters.map(filter => ({
-    selected: [],
-    ...filter,
-  }));
+const noOp = () => {};
 
 const EmbedWrapper = ({
   products = [],
   productsLimit = 10,
   filters = [],
   cta = "Get Deal",
-  onFilter = () => {},
-  onMoreDetails = () => {},
-  onApply = () => {},
+  onFilter = noOp,
+  onMoreDetails = noOp,
+  onApply = noOp,
 }) => {
   return (
     <Grid container>
       <Grid item xs={12}>
-        <FilterList filters={createFilterState(filters)} onFilter={onFilter} />
+        <FilterList filters={filters} onFilter={onFilter} />
       </Grid>
       <Grid item xs={12}>
         <Grid item xs={12}>
