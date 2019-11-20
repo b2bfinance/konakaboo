@@ -1,7 +1,13 @@
 import { Chip, Grid, Popover } from "@material-ui/core";
 import Cancel from "@material-ui/icons/Cancel";
 import { makeStyles } from "@material-ui/styles";
-import React, { useEffect, useReducer, useRef, useState } from "react";
+import React, {
+  useCallback,
+  useEffect,
+  useReducer,
+  useRef,
+  useState,
+} from "react";
 import FilterWrapper from "./FilterWrapper";
 import { FILTERS_GROUP_RESET, FILTERS_RESET } from "./utils/actions";
 import filterReducer from "./utils/filterReducer";
@@ -31,7 +37,11 @@ const FilterList = ({ filters, onFilter }) => {
   const classes = useStyles();
   const [activeGroup, setActiveGroup] = useState(null);
   const [anchorEl, setAnchorEl] = useState(null);
+
   const firstRender = useRef(true);
+  const filterChangeHandler = useCallback(() => onFilter(filterState), [
+    filterState,
+  ]);
 
   useEffect(() => {
     if (firstRender.current) {
@@ -39,10 +49,8 @@ const FilterList = ({ filters, onFilter }) => {
       return;
     }
 
-    if (onFilter) {
-      onFilter(filterState);
-    }
-  }, [filterState, onFilter]);
+    filterChangeHandler();
+  }, [filterChangeHandler]);
 
   const handleChipClick = group => e => {
     setAnchorEl(e.currentTarget);
