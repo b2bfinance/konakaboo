@@ -14,11 +14,15 @@ import filterReducer from "./utils/filterReducer";
 
 const useStyles = makeStyles(theme => ({
   filterListWrapper: {
-    justifyContent: "flex-end",
-    marginBottom: theme.spacing(4),
+    marginBottom: theme.spacing(3),
+    flexDirection: "column",
+    [theme.breakpoints.up("sm")]: {
+      justifyContent: "flex-end",
+      flexDirection: "row",
+    },
   },
   filterListChip: {
-    marginRight: theme.spacing(1),
+    margin: theme.spacing(0, 1, 1),
   },
 }));
 
@@ -108,7 +112,11 @@ const FilterList = ({ filters, onFilter }) => {
           </Popover>
         </React.Fragment>
       ))}
-      <Chip label="Reset Filters" onClick={handleResetAllFilters} />
+      <Chip
+        className={classes.filterListChip}
+        label="Reset Filters"
+        onClick={handleResetAllFilters}
+      />
     </Grid>
   );
 };
