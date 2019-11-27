@@ -3,7 +3,6 @@
 [![Storybook][storybook-badge]][storybook]
 [![Travis][build-badge]][build]
 [![npm package][npm-badge]][npm]
-[![Coveralls][coveralls-badge]][coveralls]
 
 Display a list of products.
 
@@ -108,5 +107,3 @@ type Filter = {
 [build]: https://travis-ci.org/b2bfinance/tablo
 [npm-badge]: https://img.shields.io/npm/v/@b2bfinance/tablo.png?style=flat-square
 [npm]: https://www.npmjs.org/package/@b2bfinance/tablo
-[coveralls-badge]: https://img.shields.io/coveralls/b2bfinance/tablo/master.png?style=flat-square
-[coveralls]: https://coveralls.io/github/b2bfinance/tablo

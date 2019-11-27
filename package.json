@@ -12,11 +12,10 @@
   ],
   "scripts": {
     "build": "nwb build-react-component",
-    "clean": "nwb clean-module && nwb clean-demo",
+    "clean": "nwb clean-module && rimraf ./storybook-mocks",
     "prepublishOnly": "npm run build",
     "start": "yarn mocks-storybook & yarn storybook",
     "test": "jest",
-    "test:coverage": "jest --coverage",
     "test:watch": "jest --watch",
     "precommit": "lint-staged",
     "storybook": "start-storybook -s ./storybook-mocks -p 9001",
