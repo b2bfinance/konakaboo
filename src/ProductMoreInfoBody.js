@@ -6,14 +6,12 @@ import {
   TableCell,
   TableRow,
   Typography,
+  Box,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
 import React from "react";
 
 const useStyles = makeStyles(theme => ({
-  productMoreInfoBodyWrapper: {
-    padding: theme.spacing(2),
-  },
   productMoreInfoBodyDisclaimer: {
     width: "100%",
     marginBottom: theme.spacing(2),
@@ -35,7 +33,7 @@ const ProductMoreInfoBody = ({ description, detailed, disclaimer }) => {
   const classes = useStyles();
 
   return (
-    <Grid className={classes.productMoreInfoBodyWrapper} container>
+    <Box p={2}>
       {disclaimer && (
         <div className={classes.productMoreInfoBodyDisclaimer}>
           <Typography>{disclaimer}</Typography>
@@ -91,7 +89,7 @@ const ProductMoreInfoBody = ({ description, detailed, disclaimer }) => {
           </Grid>
         ))}
       </Grid>
-    </Grid>
+    </Box>
   );
 };
 
