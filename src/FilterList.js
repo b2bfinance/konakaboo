@@ -37,11 +37,13 @@ const FilterList = ({ filters, onFilter }) => {
   const classes = useStyles();
   const [activeGroup, setActiveGroup] = useState(null);
   const [anchorEl, setAnchorEl] = useState(null);
-
   const firstRender = useRef(true);
-  const filterChangeHandler = useCallback(() => onFilter(filterState), [
-    filterState,
-  ]);
+
+  const filterChangeHandler = useCallback(() => {
+    if (typeof onFilter === "function") {
+      onFilter(filterState);
+    }
+  }, [filterState]);
 
   useEffect(() => {
     if (firstRender.current) {

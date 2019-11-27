@@ -63,17 +63,15 @@ const ProductWrapper = ({
   const [withConfirmation, setWithConfirmation] = useState(false);
 
   const handleMoreInfoClick = () => {
-    if (onMoreDetails) {
-      onMoreDetails(product, () => {
-        setWithInfo(false);
-      });
+    if (typeof onMoreDetails === "function") {
+      onMoreDetails(product);
     }
 
     setWithInfo(true);
   };
 
   const handleApplyButtonClick = e => {
-    if (onApply) {
+    if (typeof onApply === "function") {
       onApply(product);
     }
 
