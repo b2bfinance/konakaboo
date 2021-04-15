@@ -11,9 +11,9 @@ const logError = (...messages) => {
   console.log("Error".red.bold, "\n\n", ...messages, "\n\n");
 };
 
-const createMockDirectory = mockDirectory => fs.promises.mkdir(mockDirectory);
+const createMockDirectory = (mockDirectory) => fs.promises.mkdir(mockDirectory);
 
-const createMockProducts = filePath =>
+const createMockProducts = (filePath) =>
   fs.promises.writeFile(
     filePath,
     JSON.stringify({ data: generateProducts(50) })

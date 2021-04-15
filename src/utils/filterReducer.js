@@ -3,7 +3,7 @@ import { FILTERS_GROUP_RESET, FILTERS_RESET, FILTERS_TOGGLE } from "./actions";
 const filterReducer = (state, action) => {
   switch (action.type) {
     case FILTERS_TOGGLE: {
-      const newFilters = state.map(filter => {
+      const newFilters = state.map((filter) => {
         if (filter.key === action.filter.key) {
           // Check the selected store to see if we have this filter selected.
           const isAlreadySet =
@@ -15,7 +15,7 @@ const filterReducer = (state, action) => {
             return {
               ...filter,
               selected: filter.selected.filter(
-                value => value !== action.choice.value
+                (value) => value !== action.choice.value
               ),
             };
           }
@@ -45,7 +45,7 @@ const filterReducer = (state, action) => {
       return newFilters;
     }
     case FILTERS_RESET: {
-      const newFilters = state.map(filter => ({
+      const newFilters = state.map((filter) => ({
         ...filter,
         selected: [],
       }));
@@ -53,7 +53,7 @@ const filterReducer = (state, action) => {
       return newFilters;
     }
     case FILTERS_GROUP_RESET: {
-      const newFilters = state.map(filter => {
+      const newFilters = state.map((filter) => {
         if (filter.key === action.filter.key) {
           return {
             ...filter,
