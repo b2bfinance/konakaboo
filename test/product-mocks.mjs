@@ -1,34 +1,34 @@
 import faker from "faker";
 
 export const generateProduct = () => ({
-  id: faker.random.uuid(),
+  id: faker.datatype.uuid(),
   title: faker.commerce.productName(),
   brand: faker.company.companyName(),
   description: faker.lorem.paragraph(),
-  highlighted: faker.random.boolean(),
-  labels: [faker.random.word(), faker.random.word()],
+  highlighted:faker.datatype.boolean(),
+  labels: [faker.random.word(),faker.random.word()],
   columns: " "
     .repeat(4)
     .split("")
     .map(() => ({
-      label: faker.random.word(),
-      value: faker.random.number(),
-      subtext: faker.random.word(),
+      label:faker.random.word(),
+      value: faker.datatype.number(),
+      subtext:faker.random.word(),
     })),
   detailed: " "
     .repeat(6)
     .split("")
     .map(() => ({
-      title: faker.random.word(),
+      title:faker.random.word(),
       rows: " "
-        .repeat(Math.max(2, faker.random.number(10)))
+        .repeat(Math.max(2, faker.datatype.number(10)))
         .split("")
         .map(() => ({
-          label: faker.random.word(),
-          value: faker.random.number(),
+          label:faker.random.word(),
+          value: faker.datatype.number(),
         })),
     })),
-  feature_point: faker.random.words(),
+  feature_point:faker.random.words(),
   links: {
     apply: "#apply",
     logo:
@@ -37,7 +37,7 @@ export const generateProduct = () => ({
   meta: {
     faded: false,
     confirm: {
-      heading: faker.random.words(),
+      heading:faker.random.words(),
       description: faker.lorem.paragraph(),
     },
   },
