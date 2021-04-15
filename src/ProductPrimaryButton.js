@@ -3,20 +3,25 @@ import { Button } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
 import clsx from "clsx";
 
-const useStyles = makeStyles(theme => ({
-  productPrimaryButton: {
-    boxShadow: "none",
-    borderRadius: theme.spacing(10),
-    color: theme.palette.common.white,
-  },
-}));
+const useStyles = makeStyles(
+  (theme) => ({
+    wrapper: {
+      boxShadow: "none",
+      borderRadius: theme.spacing(10),
+      color: theme.palette.common.white,
+    },
+  }),
+  {
+    name: "ProductPrimaryButton",
+  }
+);
 
-const productPrimaryButton = ({ children, className, ...props }) => {
+const ProductPrimaryButton = ({ children, className, ...props }) => {
   const classes = useStyles();
 
   return (
     <Button
-      className={clsx(classes.productPrimaryButton, className)}
+      className={clsx(classes.wrapper, className)}
       variant="contained"
       color="primary"
       {...props}
@@ -26,4 +31,4 @@ const productPrimaryButton = ({ children, className, ...props }) => {
   );
 };
 
-export default productPrimaryButton;
+export default ProductPrimaryButton;

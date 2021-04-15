@@ -4,12 +4,17 @@ import { makeStyles } from "@material-ui/styles";
 import React from "react";
 import ProductPrimaryButton from "./ProductPrimaryButton";
 
-const useStyles = makeStyles(() => ({
-  productMoreInfoFooterPrimaryButton: {
-    display: "flex",
-    marginLeft: "auto",
-  },
-}));
+const useStyles = makeStyles(
+  () => ({
+    primaryButton: {
+      display: "flex",
+      marginLeft: "auto",
+    },
+  }),
+  {
+    name: "ProductMoreInfoFooter",
+  }
+);
 
 const ProductMoreInfoFooter = ({ link, onClose }) => {
   const classes = useStyles();
@@ -24,7 +29,7 @@ const ProductMoreInfoFooter = ({ link, onClose }) => {
         </Grid>
         <Grid item xs={7} sm={5} lg={4}>
           <ProductPrimaryButton
-            className={classes.productMoreInfoFooterPrimaryButton}
+            className={classes.primaryButton}
             size="large"
             href={link}
           >

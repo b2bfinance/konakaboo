@@ -12,23 +12,28 @@ import FilterWrapper from "./FilterWrapper";
 import { FILTERS_GROUP_RESET, FILTERS_RESET } from "./utils/actions";
 import filterReducer from "./utils/filterReducer";
 
-const useStyles = makeStyles(theme => ({
-  filterListWrapper: {
-    marginBottom: theme.spacing(3),
-    flexDirection: "column",
-    [theme.breakpoints.up("sm")]: {
-      justifyContent: "flex-end",
-      flexDirection: "row",
+const useStyles = makeStyles(
+  (theme) => ({
+    wrapper: {
+      marginBottom: theme.spacing(3),
+      flexDirection: "column",
+      [theme.breakpoints.up("sm")]: {
+        justifyContent: "flex-end",
+        flexDirection: "row",
+      },
     },
-  },
-  filterListChip: {
-    margin: theme.spacing(0, 1, 1),
-  },
-}));
+    chip: {
+      margin: theme.spacing(0, 1, 1),
+    },
+  }),
+  {
+    name: "FilterList",
+  }
+);
 
-const hasSelected = selected => selected.length > 0;
+const hasSelected = (selected) => selected.length > 0;
 
-const generateChipLabel = filter => {
+const generateChipLabel = (filter) => {
   if (hasSelected(filter.selected)) {
     return `${filter.title} +${filter.selected.length}`;
   }
@@ -58,12 +63,12 @@ const FilterList = ({ filters, onFilter }) => {
     filterChangeHandler();
   }, [filterChangeHandler]);
 
-  const handleChipClick = group => e => {
+  const handleChipClick = (group) => (e) => {
     setAnchorEl(e.currentTarget);
     setActiveGroup(group);
   };
 
-  const handleChipDelete = filter => () => {
+  const handleChipDelete = (filter) => () => {
     dispatch({
       type: FILTERS_GROUP_RESET,
       filter,
@@ -86,11 +91,11 @@ const FilterList = ({ filters, onFilter }) => {
   }
 
   return (
-    <Grid className={classes.filterListWrapper} container>
+    <Grid className={classes.wrapper} container>
       {filterState.map((filter, i) => (
         <React.Fragment key={i}>
           <Chip
-            className={classes.filterListChip}
+            className={classes.chip}
             label={generateChipLabel(filter)}
             deleteIcon={<Cancel />}
             onClick={handleChipClick(filter.key)}
@@ -113,7 +118,7 @@ const FilterList = ({ filters, onFilter }) => {
         </React.Fragment>
       ))}
       <Chip
-        className={classes.filterListChip}
+        className={classes.chip}
         label="Reset Filters"
         onClick={handleResetAllFilters}
       />

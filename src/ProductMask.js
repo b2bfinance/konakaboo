@@ -1,13 +1,18 @@
 import { makeStyles } from "@material-ui/styles";
 import React from "react";
 
-const useStyles = makeStyles(theme => ({
-  productMaskWrapper: {
-    marginBottom: theme.spacing(6),
-    backgroundColor: theme.palette.grey[200],
-    height: theme.spacing(20),
-  },
-}));
+const useStyles = makeStyles(
+  (theme) => ({
+    wrapper: {
+      marginBottom: theme.spacing(6),
+      backgroundColor: theme.palette.grey[200],
+      height: theme.spacing(20),
+    },
+  }),
+  {
+    name: "ProductMask",
+  }
+);
 
 const ProductMask = () => {
   const classes = useStyles();

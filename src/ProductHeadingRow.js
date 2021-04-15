@@ -5,51 +5,52 @@ import { makeStyles } from "@material-ui/styles";
 import React from "react";
 import ProductLabels from "./ProductLabels";
 
-const useStyles = makeStyles(theme => ({
-  productHeadingWrapper: {
-    backgroundColor: theme.palette.common.white,
-    borderBottom: 0,
-    padding: theme.spacing(2),
-    [theme.breakpoints.up("md")]: {
-      backgroundColor: "transparent",
-      padding: 0,
-    },
-  },
-  productLogoWrapper: {
-    marginBottom: theme.spacing(1),
-    height: theme.spacing(11),
-    [theme.breakpoints.up("md")]: {
+const useStyles = makeStyles(
+  (theme) => ({
+    wrapper: {
       backgroundColor: theme.palette.common.white,
-      display: "flex",
-      padding: theme.spacing(1),
-      marginRight: theme.spacing(1.5),
-      border: `1px solid ${theme.palette.grey[200]}`,
-      textAlign: "center",
+      borderBottom: 0,
+      padding: theme.spacing(2),
+      [theme.breakpoints.up("md")]: {
+        backgroundColor: "transparent",
+        padding: 0,
+      },
     },
-  },
-  productLogo: {
-    maxWidth: "100%",
-    maxHeight: "100%",
-    margin: "auto",
-  },
-  productHighlightedIcon: {
-    marginLeft: theme.spacing(0.5),
-    color: orange[300],
-  },
-}));
+    logoWrapper: {
+      marginBottom: theme.spacing(1),
+      height: theme.spacing(11),
+      [theme.breakpoints.up("md")]: {
+        backgroundColor: theme.palette.common.white,
+        display: "flex",
+        padding: theme.spacing(1),
+        marginRight: theme.spacing(1.5),
+        border: `1px solid ${theme.palette.grey[200]}`,
+        textAlign: "center",
+      },
+    },
+    logo: {
+      maxWidth: "100%",
+      maxHeight: "100%",
+      margin: "auto",
+    },
+    highlightedIcon: {
+      marginLeft: theme.spacing(0.5),
+      color: orange[300],
+    },
+  }),
+  {
+    name: "ProductHeadingRow",
+  }
+);
 
 const ProductHeadingRow = ({ logo, brand, highlighted, title, labels }) => {
   const classes = useStyles();
 
   return (
-    <Grid
-      className={classes.productHeadingWrapper}
-      container
-      alignItems="flex-start"
-    >
+    <Grid className={classes.wrapper} container alignItems="flex-start">
       <Grid item xs={12} sm={3} md={2}>
-        <div className={classes.productLogoWrapper}>
-          <img className={classes.productLogo} src={logo} alt={brand} />
+        <div className={classes.logoWrapper}>
+          <img className={classes.logo} src={logo} alt={brand} />
         </div>
       </Grid>
       <Grid item xs={12} sm={9} md={10}>
@@ -63,7 +64,7 @@ const ProductHeadingRow = ({ logo, brand, highlighted, title, labels }) => {
               </Grid>
               <Grid item>
                 {highlighted && (
-                  <WhatsHotIcon className={classes.productHighlightedIcon} />
+                  <WhatsHotIcon className={classes.highlightedIcon} />
                 )}
               </Grid>
             </Grid>

@@ -14,27 +14,32 @@ import { makeStyles } from "@material-ui/styles";
 import React from "react";
 import { FILTERS_TOGGLE } from "./utils/actions";
 
-const useStyles = makeStyles(theme => ({
-  filterWrapperHeader: {
-    padding: theme.spacing(2),
-    backgroundColor: theme.palette.secondary.main,
-    color: theme.palette.secondary.contrastText,
-  },
-  filterWrapperHeaderTitle: {
-    marginRight: theme.spacing(2),
-  },
-  filterWrapperListIcon: {
-    minWidth: theme.spacing(5),
-  },
-}));
+const useStyles = makeStyles(
+  (theme) => ({
+    header: {
+      padding: theme.spacing(2),
+      backgroundColor: theme.palette.secondary.main,
+      color: theme.palette.secondary.contrastText,
+    },
+    headerTitle: {
+      marginRight: theme.spacing(2),
+    },
+    listIcon: {
+      minWidth: theme.spacing(5),
+    },
+  }),
+  {
+    name: "FilterWrapper",
+  }
+);
 
 const isSelected = (filter, choice) =>
   filter.selected.indexOf(choice.value) !== -1;
 
-export default ({ filter, onClose, dispatch }) => {
+export const FilterWrapper = ({ filter, onClose, dispatch }) => {
   const classes = useStyles();
 
-  const handleSetChosen = choice => () => {
+  const handleSetChosen = (choice) => () => {
     dispatch({
       type: FILTERS_TOGGLE,
       filter,
@@ -45,16 +50,13 @@ export default ({ filter, onClose, dispatch }) => {
   return (
     <React.Fragment>
       <Grid
-        className={classes.filterWrapperHeader}
+        className={classes.header}
         container
         alignItems="center"
         justify="space-between"
       >
         <Grid item>
-          <Typography
-            className={classes.filterWrapperHeaderTitle}
-            variant="subtitle1"
-          >
+          <Typography className={classes.headerTitle} variant="subtitle1">
             {filter.title}
           </Typography>
         </Grid>
@@ -70,9 +72,9 @@ export default ({ filter, onClose, dispatch }) => {
         </Grid>
       </Grid>
       <List>
-        {filter.choices.map(choice => (
+        {filter.choices.map((choice) => (
           <ListItem key={choice.value} button onClick={handleSetChosen(choice)}>
-            <ListItemIcon className={classes.filterWrapperListIcon}>
+            <ListItemIcon className={classes.listIcon}>
               {filter.multiChoice ? (
                 <Checkbox
                   edge="start"
@@ -96,3 +98,5 @@ export default ({ filter, onClose, dispatch }) => {
     </React.Fragment>
   );
 };
+
+export default FilterWrapper;

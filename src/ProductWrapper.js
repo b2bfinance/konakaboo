@@ -9,35 +9,40 @@ import ProductHeadingRow from "./ProductHeadingRow";
 import ProductMoreInfo from "./ProductMoreInfo";
 import ProductPrimaryButton from "./ProductPrimaryButton";
 
-const useStyles = makeStyles(theme => ({
-  productWrapper: {
-    opacity: props => (props.faded ? 0.6 : 1),
-    marginBottom: theme.spacing(8),
-  },
-  productBody: {
-    backgroundColor: theme.palette.common.white,
-    border: `1px solid ${theme.palette.grey[200]}`,
-  },
-  productDescription: {
-    width: "100%",
-    borderTop: `1px solid ${theme.palette.grey[200]}`,
-    padding: theme.spacing(2),
-  },
-  productActionsColumn: {
-    padding: theme.spacing(2, 4),
-  },
-  productMoreInfoButton: {
-    padding: theme.spacing(0, 1),
-    display: "flex",
-    justifySelf: "center",
-    textTransform: "lowercase",
-    color: blue[800],
-  },
-  productApplyButton: {
-    marginTop: theme.spacing(0.5),
-    width: "100%",
-  },
-}));
+const useStyles = makeStyles(
+  (theme) => ({
+    wrapper: {
+      opacity: (props) => (props.faded ? 0.6 : 1),
+      marginBottom: theme.spacing(8),
+    },
+    body: {
+      backgroundColor: theme.palette.common.white,
+      border: `1px solid ${theme.palette.grey[200]}`,
+    },
+    description: {
+      width: "100%",
+      borderTop: `1px solid ${theme.palette.grey[200]}`,
+      padding: theme.spacing(2),
+    },
+    actionsColumn: {
+      padding: theme.spacing(2, 4),
+    },
+    moreInfoButton: {
+      padding: theme.spacing(0, 1),
+      display: "flex",
+      justifySelf: "center",
+      textTransform: "lowercase",
+      color: blue[800],
+    },
+    applyButton: {
+      marginTop: theme.spacing(0.5),
+      width: "100%",
+    },
+  }),
+  {
+    name: "ProductWrapper",
+  }
+);
 
 const ProductWrapper = ({
   highlighted,
@@ -70,7 +75,7 @@ const ProductWrapper = ({
     setWithInfo(true);
   };
 
-  const handleApplyButtonClick = e => {
+  const handleApplyButtonClick = (e) => {
     if (typeof onApply === "function") {
       onApply(product);
     }
@@ -84,7 +89,7 @@ const ProductWrapper = ({
   };
 
   return (
-    <div className={classes.productWrapper}>
+    <div className={classes.wrapper}>
       <ProductHeadingRow
         logo={links.logo}
         brand={brand}
@@ -92,13 +97,13 @@ const ProductWrapper = ({
         title={title}
         labels={labels}
       />
-      <Grid className={classes.productBody} container alignItems="center">
+      <Grid className={classes.body} container alignItems="center">
         <ProductColumns columns={columns} />
-        <Grid className={classes.productActionsColumn} item xs={12} md={3}>
+        <Grid className={classes.actionsColumn} item xs={12} md={3}>
           <Grid container justify="center">
             {detailed.length > 0 && (
               <Button
-                className={classes.productMoreInfoButton}
+                className={classes.moreInfoButton}
                 variant="text"
                 onClick={handleMoreInfoClick}
               >
@@ -106,7 +111,7 @@ const ProductWrapper = ({
               </Button>
             )}
             <ProductPrimaryButton
-              className={classes.productApplyButton}
+              className={classes.applyButton}
               size="large"
               href={links.apply}
               target="_blank"
@@ -118,11 +123,7 @@ const ProductWrapper = ({
           </Grid>
         </Grid>
         {description && (
-          <Hidden
-            className={classes.productDescription}
-            xsDown
-            implementation="css"
-          >
+          <Hidden className={classes.description} xsDown implementation="css">
             <Typography variant="body2" color="textSecondary">
               {description}
             </Typography>

@@ -19,23 +19,28 @@ const colors = {
   teal,
 };
 
-const useStyles = makeStyles(theme => ({
-  productLabelWrapper: {
-    borderRadius: theme.spacing(2),
-    padding: theme.spacing(0.25, 1),
-    backgroundColor: props => props.colorGroup[500],
-    marginRight: theme.spacing(1),
-    "&:last-child": {
-      marginRight: 0,
+const useStyles = makeStyles(
+  (theme) => ({
+    wrapper: {
+      borderRadius: theme.spacing(2),
+      padding: theme.spacing(0.25, 1),
+      backgroundColor: (props) => props.colorGroup[500],
+      marginRight: theme.spacing(1),
+      "&:last-child": {
+        marginRight: 0,
+      },
     },
-  },
-  productLabelText: {
-    fontWeight: theme.typography.fontWeightBold,
-    color: props => theme.palette.getContrastText(props.colorGroup[500]),
-  },
-}));
+    text: {
+      fontWeight: theme.typography.fontWeightBold,
+      color: (props) => theme.palette.getContrastText(props.colorGroup[500]),
+    },
+  }),
+  {
+    name: "ProductLabel",
+  }
+);
 
-const getLabel = label => {
+const getLabel = (label) => {
   if (label.startsWith("#")) {
     const firstSpaceIndex = label.indexOf(" ");
     return [label.slice(1, firstSpaceIndex), label.slice(firstSpaceIndex + 1)];
@@ -52,12 +57,8 @@ const ProductLabel = ({ label }) => {
   });
 
   return (
-    <div className={classes.productLabelWrapper}>
-      <Typography
-        className={classes.productLabelText}
-        color="inherit"
-        variant="caption"
-      >
+    <div className={classes.wrapper}>
+      <Typography className={classes.text} color="inherit" variant="caption">
         {text}
       </Typography>
     </div>

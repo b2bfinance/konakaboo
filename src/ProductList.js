@@ -3,18 +3,23 @@ import React, { useState } from "react";
 import ProductPrimaryButton from "./ProductPrimaryButton";
 import ProductWrapper from "./ProductWrapper";
 
-const useProductListEmptyStyles = makeStyles(theme => ({
-  productListEmptyWrapper: {
-    margin: theme.spacing(10, 0),
-    textAlign: "center",
-  },
-}));
+const useProductListEmptyStyles = makeStyles(
+  (theme) => ({
+    wrapper: {
+      margin: theme.spacing(10, 0),
+      textAlign: "center",
+    },
+  }),
+  {
+    name: "ProductListEmpty",
+  }
+);
 
 const ProductListEmpty = () => {
   const classes = useProductListEmptyStyles();
 
   return (
-    <Grid className={classes.productListEmptyWrapper} container>
+    <Grid className={classes.wrapper} container>
       <Grid item xs={12}>
         <Typography variant="h1">No products found</Typography>
       </Grid>

@@ -2,27 +2,32 @@ import { Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
 import React from "react";
 
-const useStyles = makeStyles(theme => ({
-  productColumnWrapper: {
-    borderTop: `1px solid ${theme.palette.grey[200]}`,
-    padding: theme.spacing(2, 1),
-    textAlign: "center",
-    flexGrow: 0,
-    flexBasis: "100%",
-    maxWidth: "100%",
-    [theme.breakpoints.up("md")]: {
-      flexBasis: props => `${props.width}%`,
-      maxWidth: props => `${props.width}%`,
-      margin: theme.spacing(2, 0),
-      padding: theme.spacing(0, 2),
-      borderTop: 0,
-      borderRight: `1px solid ${theme.palette.grey[200]}`,
+const useStyles = makeStyles(
+  (theme) => ({
+    wrapper: {
+      borderTop: `1px solid ${theme.palette.grey[200]}`,
+      padding: theme.spacing(2, 1),
+      textAlign: "center",
+      flexGrow: 0,
+      flexBasis: "100%",
+      maxWidth: "100%",
+      [theme.breakpoints.up("md")]: {
+        flexBasis: (props) => `${props.width}%`,
+        maxWidth: (props) => `${props.width}%`,
+        margin: theme.spacing(2, 0),
+        padding: theme.spacing(0, 2),
+        borderTop: 0,
+        borderRight: `1px solid ${theme.palette.grey[200]}`,
+      },
+      "&:first-child": {
+        borderTop: 0,
+      },
     },
-    "&:first-child": {
-      borderTop: 0,
-    },
-  },
-}));
+  }),
+  {
+    name: "ProductColumns",
+  }
+);
 
 const ProductColumns = ({ columns }) => {
   const classes = useStyles({
@@ -30,7 +35,7 @@ const ProductColumns = ({ columns }) => {
   });
 
   return columns.map((column, i) => (
-    <div className={classes.productColumnWrapper} key={i}>
+    <div className={classes.wrapper} key={i}>
       <Typography variant="subtitle2" component="div" color="textPrimary">
         {column.label}
       </Typography>

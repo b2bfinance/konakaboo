@@ -9,14 +9,19 @@ import { makeStyles } from "@material-ui/styles";
 import React from "react";
 import ProductPrimaryButton from "./ProductPrimaryButton";
 
-const useStyles = makeStyles(theme => ({
-  productConfirmWrapper: {
-    textAlign: "center",
-  },
-  productConfirmActions: {
-    margin: `${theme.spacing(2)}px auto`,
-  },
-}));
+const useStyles = makeStyles(
+  (theme) => ({
+    wrapper: {
+      textAlign: "center",
+    },
+    actions: {
+      margin: `${theme.spacing(2)}px auto`,
+    },
+  }),
+  {
+    name: "ProductConfirm",
+  }
+);
 
 const ProductConfirm = ({
   open,
@@ -29,7 +34,7 @@ const ProductConfirm = ({
 
   return (
     <Dialog
-      className={classes.productConfirmWrapper}
+      className={classes.wrapper}
       open={open}
       onClose={handleRequestClose}
     >
@@ -37,13 +42,7 @@ const ProductConfirm = ({
       <DialogContent>
         <DialogContentText>{description}</DialogContentText>
         <Grid container>
-          <Grid
-            className={classes.productConfirmActions}
-            item
-            xs={12}
-            sm={8}
-            lg={4}
-          >
+          <Grid className={classes.actions} item xs={12} sm={8} lg={4}>
             <ProductPrimaryButton size="large" href={forwardUrl}>
               Confirm
             </ProductPrimaryButton>
