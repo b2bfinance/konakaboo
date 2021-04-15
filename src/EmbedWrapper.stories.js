@@ -1,59 +1,62 @@
-import { action } from "@storybook/addon-actions";
-import { storiesOf } from "@storybook/react";
+import { CssBaseline } from "@material-ui/core";
+import { ThemeProvider } from "@material-ui/styles";
 import React from "react";
-import {
-  addSelectedToMany,
-  generateFilters,
-  generateProducts,
-  Story,
-} from "../test";
+import theme from "../src/utils/theme";
+import { addSelectedToMany, generateFilters, generateProducts } from "../test";
 import EmbedWrapper from "./EmbedWrapper";
 
-storiesOf("EmbedWrapper", module)
-  .add("with products", () => (
-    <Story>
-      <EmbedWrapper
-        products={generateProducts(3)}
-        onApply={action("apply")}
-        onMoreDetails={action("more-details")}
-      />
-    </Story>
-  ))
-  .add("with limited products", () => (
-    <Story>
-      <EmbedWrapper
-        products={generateProducts(3)}
-        productsLimit={1}
-        onApply={action("apply")}
-        onMoreDetails={action("more-details")}
-      />
-    </Story>
-  ))
-  .add("with filters", () => (
-    <Story>
-      <EmbedWrapper
-        filters={generateFilters(3)}
-        products={generateProducts(3)}
-        onApply={action("apply")}
-        onMoreDetails={action("more-details")}
-      />
-    </Story>
-  ))
-  .add("with selected filters", () => (
-    <Story>
-      <EmbedWrapper
-        filters={addSelectedToMany(generateFilters(3))}
-        products={generateProducts(3)}
-        onApply={action("apply")}
-        onMoreDetails={action("more-details")}
-      />
-    </Story>
-  ))
-  .add("with no products", () => (
-    <Story>
-      <EmbedWrapper
-        onApply={action("apply")}
-        onMoreDetails={action("more-details")}
-      />
-    </Story>
-  ));
+const Template = (args) => (
+  <ThemeProvider theme={theme}>
+    <CssBaseline />
+    <EmbedWrapper {...args} />
+  </ThemeProvider>
+);
+
+export default {
+  title: "EmbedWrapper",
+  component: Template,
+  argTypes: {
+    onApply: {
+      action: "onApply",
+    },
+    onMoreDetails: {
+      action: "onMoreDetails",
+    },
+    onFilter: {
+      action: "onFilter",
+    },
+  },
+};
+
+const genericArgs = {
+  products: generateProducts(3),
+};
+
+export const WithProducts = Template.bind({});
+WithProducts.args = {
+  ...genericArgs,
+};
+
+export const WithLimitedProducts = Template.bind({});
+WithLimitedProducts.args = {
+  ...genericArgs,
+  productsLimit: 1,
+};
+
+export const WithFilters = Template.bind({});
+WithFilters.args = {
+  ...genericArgs,
+  filters: generateFilters(3),
+};
+
+export const WithSelectedFilters = Template.bind({});
+WithSelectedFilters.args = {
+  ...genericArgs,
+  filters: addSelectedToMany(generateFilters(3)),
+};
+
+export const WithNoProducts = Template.bind({});
+WithNoProducts.args = {
+  ...genericArgs,
+  products: [],
+};
