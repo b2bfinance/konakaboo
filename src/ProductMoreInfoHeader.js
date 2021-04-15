@@ -3,19 +3,27 @@ import CloseIcon from "@material-ui/icons/Close";
 import { makeStyles } from "@material-ui/styles";
 import React from "react";
 
-const useStyles = makeStyles(() => ({
-  productMoreInfoHeaderLogo: {
-    maxWidth: "100%",
-    maxHeight: "100%",
-    margin: "auto",
-  },
-}));
+const useStyles = makeStyles(
+  (theme) => ({
+    header: {
+      borderBottom: `2px solid ${theme.palette.grey[200]}`,
+    },
+    headerLogo: {
+      maxWidth: "100%",
+      maxHeight: "100%",
+      margin: "auto",
+    },
+  }),
+  {
+    name: "ProductMoreInfoHeader",
+  }
+);
 
 const ProductMoreInfoHeader = ({ title, brand, logo, onClose }) => {
   const classes = useStyles();
 
   return (
-    <Box p={1} borderBottom={2} borderColor="grey.200">
+    <Box className={classes.header} p={1}>
       <Grid container>
         <Hidden xsDown>
           <Grid item sm={3} md={3} xl={2}>
@@ -27,11 +35,7 @@ const ProductMoreInfoHeader = ({ title, brand, logo, onClose }) => {
               width={150}
               borderColor="grey.200"
             >
-              <img
-                className={classes.productMoreInfoHeaderLogo}
-                src={logo}
-                alt={brand}
-              />
+              <img className={classes.headerLogo} src={logo} alt={brand} />
             </Box>
           </Grid>
         </Hidden>
