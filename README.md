@@ -118,7 +118,7 @@ You can use a custom theme by creating your own [MuiTheme](https://material-ui.c
 
 When creating your own theme there are a few Tablo specific options which must be supplied. You can see the defaults below.
 
-```js
+```
 {
   "productHeadingRow": {
     "logoBorder": "#eeeeee",
@@ -126,6 +126,7 @@ When creating your own theme there are a few Tablo specific options which must b
     "backgroundMobile": "white",
     "logoBackground": "white",
     "highlightedIcon": "#ffb74d"
+    "ribbonBackground": "#ffb74d",
   },
   "productWrapper": {
     "bodyBackground": "white",
