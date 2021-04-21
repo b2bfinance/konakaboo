@@ -33,6 +33,7 @@ function Tablo() {
         productsLimit={10}
         filters={[]}
         cta={"Get Deal"}
+        ribbonText={"Hot"}
         onMoreDetails={noOp}
         onApply={noOp}
         onFilter={noOp}
