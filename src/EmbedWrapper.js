@@ -10,6 +10,7 @@ const EmbedWrapper = ({
   productsLimit = 10,
   filters = [],
   cta = "Get Deal",
+  ribbonText = "Hot",
   onFilter = noOp,
   onMoreDetails = noOp,
   onApply = noOp,
@@ -27,6 +28,7 @@ const EmbedWrapper = ({
             onMoreDetails={onMoreDetails}
             onApply={onApply}
             cta={cta}
+            ribbonText={ribbonText}
           />
         </Grid>
       </Grid>

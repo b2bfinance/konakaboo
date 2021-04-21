@@ -59,6 +59,7 @@ const ProductWrapper = ({
   onMoreDetails,
   onApply,
   cta,
+  ribbonText,
 }) => {
   const classes = useStyles({
     faded: meta.faded,
@@ -95,6 +96,7 @@ const ProductWrapper = ({
         highlighted={highlighted}
         title={title}
         labels={labels}
+        ribbonText={ribbonText}
       />
       <Grid className={classes.body} container alignItems="center">
         <ProductColumns columns={columns} />

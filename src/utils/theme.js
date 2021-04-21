@@ -25,6 +25,7 @@ const theme = createMuiTheme({
       backgroundMobile: "white",
       logoBackground: "white",
       highlightedIcon: orange[300],
+      ribbonBackground: orange[300],
     },
     productWrapper: {
       bodyBackground: "white",

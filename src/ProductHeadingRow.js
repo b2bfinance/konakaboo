@@ -7,6 +7,8 @@ import ProductLabels from "./ProductLabels";
 const useStyles = makeStyles(
   (theme) => ({
     wrapper: {
+      position: "relative",
+      overflow: "hidden",
       backgroundColor: theme.tablo.productHeadingRow.backgroundMobile,
       borderBottom: 0,
       padding: theme.spacing(2),
@@ -16,11 +18,11 @@ const useStyles = makeStyles(
       },
     },
     logoWrapper: {
-      marginBottom: theme.spacing(1),
-      height: theme.spacing(11),
+      marginBottom: theme.spacing(0.5),
       backgroundColor: theme.tablo.productHeadingRow.logoBackground,
       [theme.breakpoints.up("md")]: {
         display: "flex",
+        height: theme.spacing(11),
         padding: theme.spacing(1),
         marginRight: theme.spacing(1.5),
         border: `1px solid ${theme.tablo.productHeadingRow.logoBorder}`,
@@ -36,13 +38,37 @@ const useStyles = makeStyles(
       marginLeft: theme.spacing(0.5),
       color: theme.tablo.productHeadingRow.highlightedIcon,
     },
+    ribbon: {
+      position: "absolute",
+      transform: "rotate(45deg)",
+      width: theme.spacing(17),
+      top: theme.spacing(2),
+      right: theme.spacing(-5),
+      textAlign: "center",
+      backgroundColor: theme.tablo.productHeadingRow.ribbonBackground,
+      color: theme.palette.getContrastText(
+        theme.tablo.productHeadingRow.ribbonBackground
+      ),
+      [theme.breakpoints.up("md")]: {
+        transform: "rotate(-45deg)",
+        left: theme.spacing(-5),
+        right: "unset",
+      },
+    },
   }),
   {
     name: "ProductHeadingRow",
   }
 );
 
-const ProductHeadingRow = ({ logo, brand, highlighted, title, labels }) => {
+const ProductHeadingRow = ({
+  logo,
+  brand,
+  highlighted,
+  ribbonText,
+  title,
+  labels,
+}) => {
   const classes = useStyles();
 
   return (
@@ -74,6 +100,11 @@ const ProductHeadingRow = ({ logo, brand, highlighted, title, labels }) => {
           </Grid>
         </Typography>
       </Grid>
+      {highlighted && ribbonText && (
+        <div className={classes.ribbon}>
+          <Typography variant="body2">{ribbonText}</Typography>
+        </div>
+      )}
     </Grid>
   );
 };

@@ -32,7 +32,14 @@ const ProductListEmpty = () => {
   );
 };
 
-const ProductList = ({ products, limit, onMoreDetails, onApply, cta }) => {
+const ProductList = ({
+  products,
+  limit,
+  onMoreDetails,
+  onApply,
+  cta,
+  ribbonText,
+}) => {
   const [productCount, setProductCount] = useState(limit);
 
   const handleLoadMore = () => {
@@ -63,6 +70,7 @@ const ProductList = ({ products, limit, onMoreDetails, onApply, cta }) => {
           onMoreDetails={onMoreDetails}
           onApply={onApply}
           cta={cta}
+          ribbonText={ribbonText}
         />
       ))}
       {products.length > productCount && (
