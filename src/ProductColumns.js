@@ -5,7 +5,7 @@ import React from "react";
 const useStyles = makeStyles(
   (theme) => ({
     wrapper: {
-      borderTop: `1px solid ${theme.palette.grey[200]}`,
+      borderTop: `1px solid ${theme.tablo.productColumns.border}`,
       padding: theme.spacing(2, 1),
       textAlign: "center",
       flexGrow: 0,
@@ -17,7 +17,7 @@ const useStyles = makeStyles(
         margin: theme.spacing(2, 0),
         padding: theme.spacing(0, 2),
         borderTop: 0,
-        borderRight: `1px solid ${theme.palette.grey[200]}`,
+        borderRight: `1px solid ${theme.tablo.productColumns.border}`,
       },
       "&:first-child": {
         borderTop: 0,

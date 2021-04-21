@@ -5,7 +5,10 @@ import React from "react";
 import ProductPrimaryButton from "./ProductPrimaryButton";
 
 const useStyles = makeStyles(
-  () => ({
+  (theme) => ({
+    wrapper: {
+      borderColor: theme.tablo.productMoreInfoFooter.border,
+    },
     primaryButton: {
       display: "flex",
       marginLeft: "auto",
@@ -20,7 +23,13 @@ const ProductMoreInfoFooter = ({ link, onClose }) => {
   const classes = useStyles();
 
   return (
-    <Box mt="auto" p={2} minHeight={80} borderTop={2} borderColor="grey.200">
+    <Box
+      className={classes.wrapper}
+      mt="auto"
+      p={2}
+      minHeight={80}
+      borderTop={2}
+    >
       <Grid container alignItems="center" justify="space-between">
         <Grid item xs={5} sm={7} lg={8}>
           <Button onClick={onClose} variant="text" size="small">

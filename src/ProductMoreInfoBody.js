@@ -16,7 +16,7 @@ const useStyles = makeStyles(
     disclaimer: {
       width: "100%",
       marginBottom: theme.spacing(2),
-      backgroundColor: theme.palette.grey[200],
+      backgroundColor: theme.tablo.productMoreInfoBody.disclaimerBackground,
       padding: theme.spacing(2),
       [theme.breakpoints.up("md")]: {
         marginBottom: theme.spacing(4),

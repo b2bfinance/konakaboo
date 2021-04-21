@@ -1,5 +1,4 @@
 import { Button, Grid, Hidden, Typography } from "@material-ui/core";
-import { blue } from "@material-ui/core/colors";
 import { makeStyles } from "@material-ui/styles";
 import React, { useState } from "react";
 import ProductColumns from "./ProductColumns";
@@ -16,12 +15,12 @@ const useStyles = makeStyles(
       marginBottom: theme.spacing(8),
     },
     body: {
-      backgroundColor: theme.palette.common.white,
-      border: `1px solid ${theme.palette.grey[200]}`,
+      backgroundColor: theme.tablo.productWrapper.bodyBackground,
+      border: `1px solid ${theme.tablo.productWrapper.bodyBorder}`,
     },
     description: {
       width: "100%",
-      borderTop: `1px solid ${theme.palette.grey[200]}`,
+      borderTop: `1px solid ${theme.tablo.productWrapper.descriptionBorder}`,
       padding: theme.spacing(2),
     },
     actionsColumn: {
@@ -32,7 +31,7 @@ const useStyles = makeStyles(
       display: "flex",
       justifySelf: "center",
       textTransform: "lowercase",
-      color: blue[800],
+      color: theme.tablo.productWrapper.moreInfoColor,
     },
     applyButton: {
       marginTop: theme.spacing(0.5),

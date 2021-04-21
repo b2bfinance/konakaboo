@@ -1,5 +1,4 @@
 import { Grid, Typography } from "@material-ui/core";
-import { orange } from "@material-ui/core/colors";
 import WhatsHotIcon from "@material-ui/icons/Whatshot";
 import { makeStyles } from "@material-ui/styles";
 import React from "react";
@@ -8,23 +7,23 @@ import ProductLabels from "./ProductLabels";
 const useStyles = makeStyles(
   (theme) => ({
     wrapper: {
-      backgroundColor: theme.palette.common.white,
+      backgroundColor: theme.tablo.productHeadingRow.backgroundMobile,
       borderBottom: 0,
       padding: theme.spacing(2),
       [theme.breakpoints.up("md")]: {
-        backgroundColor: "transparent",
+        backgroundColor: theme.tablo.productHeadingRow.background,
         padding: 0,
       },
     },
     logoWrapper: {
       marginBottom: theme.spacing(1),
       height: theme.spacing(11),
+      backgroundColor: theme.tablo.productHeadingRow.logoBackground,
       [theme.breakpoints.up("md")]: {
-        backgroundColor: theme.palette.common.white,
         display: "flex",
         padding: theme.spacing(1),
         marginRight: theme.spacing(1.5),
-        border: `1px solid ${theme.palette.grey[200]}`,
+        border: `1px solid ${theme.tablo.productHeadingRow.logoBorder}`,
         textAlign: "center",
       },
     },
@@ -35,7 +34,7 @@ const useStyles = makeStyles(
     },
     highlightedIcon: {
       marginLeft: theme.spacing(0.5),
-      color: orange[300],
+      color: theme.tablo.productHeadingRow.highlightedIcon,
     },
   }),
   {

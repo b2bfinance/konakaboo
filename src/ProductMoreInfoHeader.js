@@ -6,7 +6,7 @@ import React from "react";
 const useStyles = makeStyles(
   (theme) => ({
     header: {
-      borderBottom: `2px solid ${theme.palette.grey[200]}`,
+      borderBottom: `2px solid ${theme.tablo.productMoreInfoHeader.headerBorder}`,
     },
     headerLogo: {
       maxWidth: "100%",

@@ -6,7 +6,7 @@ import ProductMoreInfoFooter from "./ProductMoreInfoFooter";
 import ProductMoreInfoHeader from "./ProductMoreInfoHeader";
 
 const useStyles = makeStyles(
-  (theme) => ({
+  () => ({
     paper: {
       width: "60%",
       "@media(max-width: 1280px)": {

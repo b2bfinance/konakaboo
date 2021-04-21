@@ -23,7 +23,7 @@ import ReactDOM from "react-dom";
 import { ThemeProvider } from "@material-ui/styles";
 import { EmbedWrapper, theme } from "@b2bfinance/tablo";
 
-function App() {
+function Tablo() {
   const noOp = () => {};
 
   return (
@@ -41,7 +41,10 @@ function App() {
   );
 }
 
-ReactDOM.render(<App />, document.querySelector("#app"));
+ReactDOM.render(
+  <Tablo />,
+  document.querySelector("#element-to-render-products-into")
+);
 ```
 
 ### Products
@@ -57,17 +60,23 @@ type Product = {
   description: String;
   highlighted: Boolean;
   labels: String[];
-  columns: {
-    label: String;
-    value: String;
-  }[];
-  detailed: {
-    title: String;
-    rows: {
+  columns: [
+    {
       label: String;
       value: String;
-    }[];
-  }[];
+    }
+  ];
+  detailed: [
+    {
+      title: String;
+      rows: [
+        {
+          label: String;
+          value: String;
+        }
+      ];
+    }
+  ];
   feature_point: String;
   links: {
     apply: String;
@@ -93,11 +102,54 @@ type Filter = {
   key: String;
   multiChoice: Boolean;
   selected: String[];
-  choices: {
-    label: String;
-    value: String;
-  }[];
+  choices: [
+    {
+      label: String;
+      value: String;
+    }
+  ];
 };
+```
+
+### Theme Options
+
+You can use a custom theme by creating your own [MuiTheme](https://material-ui.com/customization/default-theme/#default-theme) and using that in your `ThemeProvider` instead of the one exported from Tablo.
+
+When creating your own theme there are a few Tablo specific options which must be supplied. You can see the defaults below.
+
+```js
+{
+  "productHeadingRow": {
+    "logoBorder": "#eeeeee",
+    "background": "transparent",
+    "backgroundMobile": "white",
+    "logoBackground": "white",
+    "highlightedIcon": "#ffb74d"
+  },
+  "productWrapper": {
+    "bodyBackground": "white",
+    "bodyBorder": "#eeeeee",
+    "moreInfoColor": "#1565c0",
+    "descriptionBorder": "#eeeeee"
+  },
+  "productColumns": {
+    "border": "#eeeeee"
+  },
+  "productFeaturePoint": {
+    "background": "#eeeeee",
+    "icon": "#f06292",
+    "text": null // uses the default material text color.
+  },
+  "productMoreInfoHeader": {
+    "headerBorder": "#eeeeee"
+  },
+  "productMoreInfoBody": {
+    "disclaimerBackground": "#eeeeee"
+  },
+  "productMoreInfoFooter": {
+    "border": "#eeeeee"
+  }
+}
 ```
 
 [storybook-badge]: https://cdn.jsdelivr.net/gh/storybooks/brand@master/badge/badge-storybook.svg

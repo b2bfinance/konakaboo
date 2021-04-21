@@ -1,5 +1,4 @@
 import { Grid, Typography } from "@material-ui/core";
-import { pink } from "@material-ui/core/colors";
 import GradeOutline from "@material-ui/icons/GradeOutlined";
 import { makeStyles } from "@material-ui/styles";
 import React from "react";
@@ -7,15 +6,16 @@ import React from "react";
 const useStyles = makeStyles(
   (theme) => ({
     wrapper: {
-      backgroundColor: theme.palette.grey[200],
+      backgroundColor: theme.tablo.productFeaturePoint.background,
       padding: theme.spacing(1, 2),
       lineHeight: 1,
     },
     icon: {
-      color: pink[300],
+      color: theme.tablo.productFeaturePoint.icon,
     },
     description: {
       marginLeft: theme.spacing(0.5),
+      color: theme.tablo.productFeaturePoint.text,
     },
   }),
   {
