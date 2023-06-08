@@ -44,13 +44,9 @@ ReactDOM.render(
 );
 ```
 
-### Products
-
-Products are an array of objects matching the `Product` type in `./ProductTypes`
-
 ### Theme Options
 
-You can use theme [style overrides mui](https://mui.com/material-ui/customization/theme-components/#theme-style-overrides). Tablo named components are as follows:
+You can use [style overrides](https://mui.com/material-ui/customization/theme-components/#theme-style-overrides) from mui. Tablo named components are as follows:
 
 ```
 TabloProductHeadingRow
