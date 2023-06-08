@@ -1,25 +1,23 @@
-import { Grid, makeStyles, Typography } from "@material-ui/core";
+import { Box, Button, Grid, Typography } from "@mui/material";
 import React, { useState } from "react";
-import ProductPrimaryButton from "./ProductPrimaryButton";
-import ProductWrapper from "./ProductWrapper";
+import { makeStyles } from "tss-react/mui";
+import { ProductWrapper } from "./ProductWrapper";
+import { Product } from "./ProductTypes";
 
-const useProductListEmptyStyles = makeStyles(
-  (theme) => ({
-    wrapper: {
-      margin: theme.spacing(10, 0),
-      textAlign: "center",
-    },
-  }),
-  {
-    name: "ProductListEmpty",
-  }
-);
+const useProductListEmptyStyles = makeStyles({
+  name: "TabloProductListEmpty",
+})((theme) => ({
+  root: {
+    margin: theme.spacing(10, 0),
+    textAlign: "center",
+  },
+}));
 
 const ProductListEmpty = () => {
-  const classes = useProductListEmptyStyles();
+  const { classes } = useProductListEmptyStyles();
 
   return (
-    <Grid className={classes.wrapper} container>
+    <Grid className={classes.root} container>
       <Grid item xs={12}>
         <Typography variant="h1">No products found</Typography>
       </Grid>
@@ -32,7 +30,22 @@ const ProductListEmpty = () => {
   );
 };
 
-const ProductList = ({
+export type ProductListProps = {
+  products: Product[];
+  limit: number;
+  onMoreDetails: (product: Product) => void;
+  onApply: (product: Product) => void;
+  cta: string;
+  ribbonText: string;
+};
+
+const useProductListStyles = makeStyles({
+  name: "TabloProductList",
+})(() => ({
+  root: {},
+}));
+
+export const ProductList: React.FC<ProductListProps> = ({
   products,
   limit,
   onMoreDetails,
@@ -40,6 +53,7 @@ const ProductList = ({
   cta,
   ribbonText,
 }) => {
+  const { classes } = useProductListStyles();
   const [productCount, setProductCount] = useState(limit);
 
   const handleLoadMore = () => {
@@ -51,21 +65,10 @@ const ProductList = ({
   }
 
   return (
-    <React.Fragment>
+    <Box className={classes.root}>
       {products.slice(0, productCount).map((product, i) => (
         <ProductWrapper
           key={product.id || i}
-          highlighted={product.highlighted}
-          labels={product.labels}
-          title={product.title}
-          links={product.links}
-          brand={product.brand}
-          columns={product.columns}
-          description={product.description}
-          featurePoint={product.feature_point}
-          detailed={product.detailed}
-          disclaimer={product.disclaimer}
-          meta={product.meta}
           product={product}
           onMoreDetails={onMoreDetails}
           onApply={onApply}
@@ -74,20 +77,18 @@ const ProductList = ({
         />
       ))}
       {products.length > productCount && (
-        <Grid container justify="center">
+        <Grid container>
           <Grid item>
-            <ProductPrimaryButton
+            <Button
               variant="contained"
               color="secondary"
               onClick={handleLoadMore}
             >
               Load more
-            </ProductPrimaryButton>
+            </Button>
           </Grid>
         </Grid>
       )}
-    </React.Fragment>
+    </Box>
   );
 };
-
-export default ProductList;

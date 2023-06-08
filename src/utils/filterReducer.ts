@@ -1,6 +1,35 @@
-import { FILTERS_GROUP_RESET, FILTERS_RESET, FILTERS_TOGGLE } from "./actions";
+import { ProductFilter, ProductFilterChoice } from "../ProductTypes";
 
-const filterReducer = (state, action) => {
+export const FILTERS_TOGGLE = "FILTERS_TOGGLE";
+export const FILTERS_RESET = "FILTERS_RESET";
+export const FILTERS_GROUP_RESET = "FILTERS_GROUP_RESET";
+
+export type FilterState = ProductFilter[];
+
+export type FilterActionToggle = {
+  type: typeof FILTERS_TOGGLE;
+  filter: ProductFilter;
+  choice: ProductFilterChoice;
+};
+
+export type FilterActionReset = {
+  type: typeof FILTERS_RESET;
+};
+
+export type FilterActionGroupReset = {
+  type: typeof FILTERS_GROUP_RESET;
+  filter: ProductFilter;
+};
+
+export type FilterActions =
+  | FilterActionToggle
+  | FilterActionReset
+  | FilterActionGroupReset;
+
+export const filterReducer = (
+  state: FilterState,
+  action: FilterActions
+): FilterState => {
   switch (action.type) {
     case FILTERS_TOGGLE: {
       const newFilters = state.map((filter) => {
@@ -71,5 +100,3 @@ const filterReducer = (state, action) => {
     }
   }
 };
-
-export default filterReducer;

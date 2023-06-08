@@ -1,4 +1,5 @@
 import {
+  Box,
   Grid,
   Hidden,
   Table,
@@ -6,39 +7,47 @@ import {
   TableCell,
   TableRow,
   Typography,
-  Box,
-} from "@material-ui/core";
-import { makeStyles } from "@material-ui/styles";
+} from "@mui/material";
 import React from "react";
+import { makeStyles } from "tss-react/mui";
+import { Product, ProductDetailed } from "./ProductTypes";
 
-const useStyles = makeStyles(
-  (theme) => ({
-    disclaimer: {
-      width: "100%",
-      marginBottom: theme.spacing(2),
-      backgroundColor: theme.tablo.productMoreInfoBody.disclaimerBackground,
-      padding: theme.spacing(2),
-      [theme.breakpoints.up("md")]: {
-        marginBottom: theme.spacing(4),
-      },
+const useStyles = makeStyles({
+  name: "TabloProductMoreInfoBody",
+})((theme) => ({
+  root: {},
+  disclaimer: {
+    width: "100%",
+    marginBottom: theme.spacing(2),
+    backgroundColor: theme.palette.grey[200],
+    padding: theme.spacing(2),
+    [theme.breakpoints.up("md")]: {
+      marginBottom: theme.spacing(4),
     },
-    detailRow: {
-      height: 24,
-    },
-    detailCell: {
-      border: 0,
-    },
-  }),
-  {
-    name: "ProductMoreInfoBody",
-  }
-);
+  },
+  detailRow: {
+    height: 24,
+  },
+  detailCell: {
+    border: 0,
+  },
+}));
 
-const ProductMoreInfoBody = ({ description, detailed, disclaimer }) => {
-  const classes = useStyles();
+export type ProductMoreInfoBodyProps = {
+  description?: Product["description"];
+  detailed: ProductDetailed[];
+  disclaimer?: Product["disclaimer"];
+};
+
+export const ProductMoreInfoBody: React.FC<ProductMoreInfoBodyProps> = ({
+  description,
+  detailed,
+  disclaimer,
+}) => {
+  const { classes } = useStyles();
 
   return (
-    <Box p={2}>
+    <Box className={classes.root} p={2}>
       {disclaimer && (
         <div className={classes.disclaimer}>
           <Typography>{disclaimer}</Typography>
@@ -83,5 +92,3 @@ const ProductMoreInfoBody = ({ description, detailed, disclaimer }) => {
     </Box>
   );
 };
-
-export default ProductMoreInfoBody;

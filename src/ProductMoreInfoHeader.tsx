@@ -1,31 +1,46 @@
-import { Grid, Hidden, IconButton, Typography, Box } from "@material-ui/core";
-import CloseIcon from "@material-ui/icons/Close";
-import { makeStyles } from "@material-ui/styles";
+import CloseIcon from "@mui/icons-material/Close";
+import { Box, Grid, IconButton, Typography } from "@mui/material";
 import React from "react";
+import { makeStyles } from "tss-react/mui";
 
-const useStyles = makeStyles(
-  (theme) => ({
-    header: {
-      borderBottom: `2px solid ${theme.tablo.productMoreInfoHeader.headerBorder}`,
-    },
-    headerLogo: {
-      maxWidth: "100%",
-      maxHeight: "100%",
-      margin: "auto",
-    },
-  }),
-  {
-    name: "ProductMoreInfoHeader",
-  }
-);
+const useStyles = makeStyles({
+  name: "TabloProductMoreInfoHeader",
+})((theme) => ({
+  root: {
+    borderBottom: `2px solid ${theme.palette.grey[200]}`,
+  },
+  headerLogo: {
+    maxWidth: "100%",
+    maxHeight: "100%",
+    margin: "auto",
+  },
+}));
 
-const ProductMoreInfoHeader = ({ title, brand, logo, onClose }) => {
-  const classes = useStyles();
+export type ProductMoreInfoHeaderProps = {
+  title: string;
+  brand: string;
+  logo: string;
+  onClose: () => void;
+};
+
+export const ProductMoreInfoHeader: React.FC<ProductMoreInfoHeaderProps> = ({
+  title,
+  brand,
+  logo,
+  onClose,
+}) => {
+  const { classes } = useStyles();
 
   return (
-    <Box className={classes.header} p={1}>
+    <Box className={classes.root} p={1}>
       <Grid container>
-        <Hidden xsDown>
+        <Box
+          sx={{
+            display: {
+              xs: "none",
+            },
+          }}
+        >
           <Grid item sm={3} md={3} xl={2}>
             <Box
               display="flex"
@@ -38,7 +53,7 @@ const ProductMoreInfoHeader = ({ title, brand, logo, onClose }) => {
               <img className={classes.headerLogo} src={logo} alt={brand} />
             </Box>
           </Grid>
-        </Hidden>
+        </Box>
         <Grid item sm={9} md={9} xl={10}>
           <Grid container>
             <Grid item xs={12}>
@@ -58,5 +73,3 @@ const ProductMoreInfoHeader = ({ title, brand, logo, onClose }) => {
     </Box>
   );
 };
-
-export default ProductMoreInfoHeader;

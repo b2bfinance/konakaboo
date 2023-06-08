@@ -1,11 +1,23 @@
-import { Grid } from "@material-ui/core";
+import { Grid } from "@mui/material";
 import React from "react";
-import FilterList from "./FilterList";
-import ProductList from "./ProductList";
+import { FilterList } from "./FilterList";
+import { ProductList } from "./ProductList";
+import { Product, ProductFilter } from "./ProductTypes";
 
 const noOp = () => {};
 
-const EmbedWrapper = ({
+export type EmbedWrapperProps = {
+  products?: Product[];
+  productsLimit?: number;
+  filters?: ProductFilter[];
+  cta?: string;
+  ribbonText?: string;
+  onFilter?: (filters: ProductFilter[]) => void;
+  onMoreDetails?: (product: Product) => void;
+  onApply?: (product: Product) => void;
+};
+
+export const EmbedWrapper: React.FC<EmbedWrapperProps> = ({
   products = [],
   productsLimit = 10,
   filters = [],
@@ -35,5 +47,3 @@ const EmbedWrapper = ({
     </Grid>
   );
 };
-
-export default EmbedWrapper;

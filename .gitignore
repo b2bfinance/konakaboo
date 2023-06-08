@@ -1,8 +1,5 @@
-/demo/dist
-/es
-/lib
+/dist
 /node_modules
-/umd
 npm-debug.log*
-/storybook-static
-/storybook-mocks
+.parcel-cache
+yarn-error.log

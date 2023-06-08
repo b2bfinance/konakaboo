@@ -1,6 +1,5 @@
-import { Chip, Grid, Popover } from "@material-ui/core";
-import Cancel from "@material-ui/icons/Cancel";
-import { makeStyles } from "@material-ui/styles";
+import Cancel from "@mui/icons-material/Cancel";
+import { Chip, Grid, Popover } from "@mui/material";
 import React, {
   useCallback,
   useEffect,
@@ -8,32 +7,35 @@ import React, {
   useRef,
   useState,
 } from "react";
+import { makeStyles } from "tss-react/mui";
 import FilterWrapper from "./FilterWrapper";
-import { FILTERS_GROUP_RESET, FILTERS_RESET } from "./utils/actions";
-import filterReducer from "./utils/filterReducer";
+import {
+  FILTERS_GROUP_RESET,
+  FILTERS_RESET,
+  filterReducer,
+} from "./utils/filterReducer";
+import { ProductFilter } from "./ProductTypes";
 
-const useStyles = makeStyles(
-  (theme) => ({
-    wrapper: {
-      marginBottom: theme.spacing(3),
-      flexDirection: "column",
-      [theme.breakpoints.up("sm")]: {
-        justifyContent: "flex-end",
-        flexDirection: "row",
-      },
+const useStyles = makeStyles({
+  name: "TabloFilterList",
+})((theme) => ({
+  root: {
+    marginBottom: theme.spacing(3),
+    flexDirection: "column",
+    [theme.breakpoints.up("sm")]: {
+      justifyContent: "flex-end",
+      flexDirection: "row",
     },
-    chip: {
-      margin: theme.spacing(0, 1, 1),
-    },
-  }),
-  {
-    name: "FilterList",
-  }
-);
+  },
+  chip: {
+    margin: theme.spacing(0, 1, 1),
+  },
+}));
 
-const hasSelected = (selected) => selected.length > 0;
+const hasSelected = (selected: ProductFilter["selected"]) =>
+  selected.length > 0;
 
-const generateChipLabel = (filter) => {
+const generateChipLabel = (filter: ProductFilter) => {
   if (hasSelected(filter.selected)) {
     return `${filter.title} +${filter.selected.length}`;
   }
@@ -41,11 +43,19 @@ const generateChipLabel = (filter) => {
   return filter.title;
 };
 
-const FilterList = ({ filters, onFilter }) => {
+export type FilterListProps = {
+  filters: ProductFilter[];
+  onFilter?: (filters: ProductFilter[]) => void;
+};
+
+export const FilterList: React.FC<FilterListProps> = ({
+  filters,
+  onFilter,
+}) => {
   const [filterState, dispatch] = useReducer(filterReducer, filters);
-  const classes = useStyles();
-  const [activeGroup, setActiveGroup] = useState(null);
-  const [anchorEl, setAnchorEl] = useState(null);
+  const { classes } = useStyles();
+  const [activeGroup, setActiveGroup] = useState<null | string>(null);
+  const [anchorEl, setAnchorEl] = useState<null | Element>(null);
   const firstRender = useRef(true);
 
   const filterChangeHandler = useCallback(() => {
@@ -63,12 +73,12 @@ const FilterList = ({ filters, onFilter }) => {
     filterChangeHandler();
   }, [filterChangeHandler]);
 
-  const handleChipClick = (group) => (e) => {
+  const handleChipClick = (group: string) => (e: React.SyntheticEvent) => {
     setAnchorEl(e.currentTarget);
     setActiveGroup(group);
   };
 
-  const handleChipDelete = (filter) => () => {
+  const handleChipDelete = (filter: ProductFilter) => () => {
     dispatch({
       type: FILTERS_GROUP_RESET,
       filter,
@@ -91,7 +101,7 @@ const FilterList = ({ filters, onFilter }) => {
   }
 
   return (
-    <Grid className={classes.wrapper} container>
+    <Grid className={classes.root} container>
       {filterState.map((filter, i) => (
         <React.Fragment key={i}>
           <Chip
@@ -100,7 +110,9 @@ const FilterList = ({ filters, onFilter }) => {
             deleteIcon={<Cancel />}
             onClick={handleChipClick(filter.key)}
             onDelete={
-              hasSelected(filter.selected) ? handleChipDelete(filter) : null
+              hasSelected(filter.selected)
+                ? handleChipDelete(filter)
+                : undefined
             }
             color={hasSelected(filter.selected) ? "secondary" : "default"}
           />
@@ -125,5 +137,3 @@ const FilterList = ({ filters, onFilter }) => {
     </Grid>
   );
 };
-
-export default FilterList;
