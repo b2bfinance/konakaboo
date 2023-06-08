@@ -136,11 +136,9 @@ export const ProductWrapper: React.FC<ProductWrapperProps> = ({
           </Box>
         )}
       </Grid>
-      {product.feature_point && (
-        <Grid container>
-          <ProductFeaturedPoint description={product.feature_point} />
-        </Grid>
-      )}
+      <Grid container>
+        <ProductFeaturedPoint description={product.feature_point} />
+      </Grid>
       {product.detailed.length > 0 && (
         <ProductMoreInfo
           open={withInfo}
