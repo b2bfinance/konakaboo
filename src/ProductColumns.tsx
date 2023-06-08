@@ -3,9 +3,9 @@ import React from "react";
 import { makeStyles } from "tss-react/mui";
 import { Product } from "./ProductTypes";
 
-const useStyles = makeStyles<{ width: number }>({
+const useStyles = makeStyles({
   name: "TabloProductColumns",
-})((theme, { width }) => ({
+})((theme) => ({
   root: {},
   column: {
     borderTop: `1px solid ${theme.palette.grey[200]}`,
@@ -26,9 +26,7 @@ export type ProductColumnsProps = {
 };
 
 export const ProductColumns: React.FC<ProductColumnsProps> = ({ columns }) => {
-  const { classes } = useStyles({
-    width: 75 / columns.length,
-  });
+  const { classes } = useStyles();
 
   return (
     <Grid className={classes.root} container alignItems="center" height={1}>
@@ -37,7 +35,7 @@ export const ProductColumns: React.FC<ProductColumnsProps> = ({ columns }) => {
           className={classes.column}
           item
           xs={12}
-          sm={6}
+          sm={columns.length <= 1 ? 12 : 6}
           lg={12 / columns.length}
           key={i}
         >
