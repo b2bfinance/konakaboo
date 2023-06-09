@@ -62,7 +62,7 @@ export const ProductMoreInfoBody: React.FC<ProductMoreInfoBodyProps> = ({
       </Hidden>
       <Grid container spacing={4}>
         {detailed.map((detail) => (
-          <Grid item xs={12} sm={6} lg={4} key={detail.title}>
+          <Grid item xs={12} sm={6} key={detail.title}>
             <Typography variant="h6">{detail.title}</Typography>
             <Table padding="none">
               <TableBody>
